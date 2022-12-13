@@ -1,0 +1,6 @@
+[submodule "cores/multix-zinnia-sdk-megaAVR"]
+	path = cores/multix-zinnia-sdk-megaAVR
+	url = https://github.com/askn37/multix-zinnia-sdk-megaAVR.git
+[submodule "cores/megaAVR"]
+	path = cores/megaAVR
+	url = https://github.com/askn37/MacroMicroAPI_core.git
