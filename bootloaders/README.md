@@ -1,15 +1,15 @@
-# bootloaders
+# Bootloaders for megaAVR / tinyAVR
 
 - optiboot_x2 -- ブートローダーソース群（megaAVR用）
-- optiboot_dx2 -- ブートローダーソース群（modernAVR用）
 - empty -- 空のダミーHEXだけがある
 - hex -- ビルド済のブートローダーHEXファイル群
 （Arduino IDE サブメニューから選択される）
 
 このフォルダ以下に含まれる
-`optiboot_x2`または
-`optiboot_dx2`は
+`optiboot_x2`は
 `optiboot`ver.8 を原型とするが、実体は大きく異なる。
+
+> [[moderAVR系統用ブートローダー]はこちら](https://github.com/askn37/multix-zinnia-sdk-modernAVR/tree/main/bootloaders)
 
 ## optiboot_x2
 
@@ -30,44 +30,13 @@ PGMEMアドレス`MAPPED_PROGMEM_START+2`以降にSPM命令群スニペットが
 `megaAVR` `tinyAVR`各系統の全品種でバイナリは原則共通だ。
 HEXフォルダには主だったUART/LED違いのバリエーションが置かれている。
 
-> 既定値は 28pin以上の品種について
+> 既定値は 28pin以上の品種用は
 `USART0`
 `TX:PA0`
 `RX:PA1`
 `LED:PA7`
 で基本的に統一されている。\
 > 小ピン品種ではこの設定ができないので
-バリエーションがある。
-
-## optiboot_dx2
-
-これは AVR DA/DB/DD/EA系統用の NVM v2仕様ブートローダーだ。
-`DxCore`版と似ているが以下の点で異なる。
-
-- マクロ`APP_NOSPM`が無効でビルドされた場合、
-PGMEMアドレス`PROGMEM_START+2`以降にSPM命令群スニペットが配置される。
-既定で有効。
-- マクロ`RS485`が有効でビルドされる場合、
-周辺機能USARTによるRS485機能の`XDIR`ペリフェラルピン出力が有効になる。
-（原型はGPIO操作で`RS485_XDIR`を制御していた。）
-- マクロ`USART`が有効でビルドされる場合、
-同期従装置USARTが有効になり`XCK`ペリフェラルピンで外部同期クロックを受給できるようになる。
-`XCK`ピンは該当USART周辺機能固定となるので任意には変更できない。
-- EEPROM領域リード/ライトに対応。
-- `STK_GET_PARAMETER`コマンドに対して
-`not BIGBOOT`ビルドでは常にダミー値（0x03固定）を返す。
-`BIGBOOT`ビルドでは正しく`optiboot`バージョンを返す。
-
-AVR DA/DB/DD系統の全品種でバイナリは原則共通だ。
-HEXフォルダには主だったUART/LED違いのバリエーションが置かれている。
-（DxCore版は品種別にバイナリが異なる）
-
-> 28pin以上の品種は
-```TX:PA0```
-```RX:PA1```
-```LED:PA7```
-で基本的に統一されている。\
-> 小ピン品種ではこの設定はできないので
 バリエーションがある。
 
 ## EEPROM書込＋検証
@@ -79,7 +48,7 @@ EEPROM領域をスケッチと同時に書くことが出来る。
 
 ```c
 #include <avr/eeprom.h>
-char estring[] EEMEM = "0123456789ABVDEF";  // <-- HERE
+char estring[] EEMEM = "0123456789ABCDEF";  // <-- HERE
 ```
 
 その後`Save guard "Retained"`とした場合、
@@ -115,10 +84,8 @@ FLASH消去/書換を行うのに使うことが出来る。
 - `MCUdude`版や`DxCore`版の同種の機能とは仕様が異なり、相互に互換性はない。
 
 > 実際の使用例は
-[FlashNVM_sample](https://github.com/askn37/MacroMicroAPI_lib/tree/b5d0d734ce43017d904106a845f7fc4c8ccb3f91/examples/EEPROM%20and%20NVM/FlashNVM_sample)
+[[FlashNVM_sample]](https://github.com/askn37/MacroMicroAPI_lib/tree/b5d0d734ce43017d904106a845f7fc4c8ccb3f91/examples/EEPROM%20and%20NVM/FlashNVM_sample)
 を参照のこと。
-
-
 
 ## optibootバージョン
 
@@ -126,19 +93,18 @@ FLASH消去/書換を行うのに使うことが出来る。
 
 |ADDR|NAME|内容|
 |----|----|---|
-|$01AE|OPTIBOOT_MINVER|0x02|
-|$01AF|OPTIBOOT_MAJVER|0x29|
+|$01FE|OPTIBOOT_MINVER|0x02|
+|$01FF|OPTIBOOT_MAJVER|0x29|
 
 ## リビルド
 
-詳細は```makeall.*.sh```や
-```parse_options.mk```を参照のこと。
+詳細は`makeall.*.sh`や
+`parse_options.mk`を参照のこと。
 それぞれのカレントディレクトリで
-次のようにすれば```hex```フォルダが更新される。
+次のようにすれば`hex`フォルダが更新される。
 
 ```c
 optiboot_x2> sh makeall.megaAVR.sh
-optiboot_dx2> sh makeall.modernAVR.sh
 ```
 
 > Windows環境での動作確認はされていない。（要makeコマンド）
