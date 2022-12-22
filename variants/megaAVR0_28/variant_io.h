@@ -364,6 +364,11 @@ typedef enum USART_RS485_ALT_enum
 #define GPR_GPR3  _SFR_MEM8(0x001F)
 
 
+#define CLKSEL_OSCHF_gc  CLKCTRL_CLKSEL_OSC20M_gc
+#define CLKSEL_OSC32K_gc CLKCTRL_CLKSEL_OSCULP32K_gc
+#define SLEEP_MODE_ADC   SLEEP_MODE_STANDBY
+
+
 /* EVSYS.SWEVENTA  bit masks and bit positions */
 #define EVSYS_SWEVENTA_gm       0xFF    /* Software event on channel select group mask. */
 #define EVSYS_SWEVENTA_gp       0       /* Software event on channel select group position. */
@@ -392,7 +397,9 @@ typedef enum USART_RS485_ALT_enum
 #define TCA_SINGLE_CNTAEI_bm    (1<<0)  /* Count on Event Input A bit mask. */
 #define TCA_SINGLE_CNTAEI_bp    0       /* Count on Event Input A bit position. */
 
+#ifndef SLEEP_MODE_ADC
 #define SLEEP_MODE_ADC          SLEEP_MODE_IDLE
+#endif
 
 #define SWEVENTA        STROBE
 #define USERADC0START   USERADC0
