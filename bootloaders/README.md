@@ -13,7 +13,7 @@
 
 ## optiboot_x2
 
-これは megaAVR/tinyAVR系統用の NVM v1仕様ブートローダーだ。
+これは __megaAVR/tinyAVR__ 系統用の NVM v1仕様ブートローダーだ。
 ほぼ`MCUdude`版に似るが以下の点で異なる。
 
 - マクロ`APP_NOSPM`が無効でビルドされた場合、
@@ -27,7 +27,7 @@ PGMEMアドレス`MAPPED_PROGMEM_START+2`以降にSPM命令群スニペットが
 `XCK`ピンは該当USART周辺機能固定となるので任意には変更できない。
 - EEPROM領域リード/ライトに対応。
 
-`megaAVR` `tinyAVR`各系統の全品種でバイナリは原則共通だ。
+__megaAVR__ __tinyAVR__ 各系統の全品種でバイナリは原則共通だ。
 HEXフォルダには主だったUART/LED違いのバリエーションが置かれている。
 
 > 既定値は 28pin以上の品種用は
@@ -107,7 +107,7 @@ FLASH消去/書換を行うのに使うことが出来る。
 optiboot_x2> sh makeall.megaAVR.sh
 ```
 
-> Windows環境での動作確認はされていない。（要makeコマンド）
+> Windows環境での確認はされていない。（要makeコマンド）
 
 ## 著作表示
 
