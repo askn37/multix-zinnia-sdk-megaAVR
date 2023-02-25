@@ -229,20 +229,20 @@ megaAVR0.menu.90_console_baud.20=-
 megaAVR0.menu.90_console_baud.21_2400bps.build.console_baud=-DCONSOLE_BAUD=2400
 megaAVR0.menu.90_console_baud.21_2400bps=CONSOLE_BAUD=2400 bps (for ULP)
 megaAVR0.menu.95_bootloader.01_UART0_A0_LA7.bootloader.file=hex/boot_atmega_UART0_A0_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.01_UART0_A0_LA7.build.console_select=-DSerial=Serial0
+megaAVR0.menu.95_bootloader.01_UART0_A0_LA7.build.console_select=-DSerial=Serial0A
 megaAVR0.menu.95_bootloader.01_UART0_A0_LA7=UART0 TX:PA0 RX:PA1 LED=PA7 (default)
 megaAVR0.menu.95_bootloader.02_UART1_C0_LA7.bootloader.file=hex/boot_atmega_UART1_C0_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.02_UART1_C0_LA7.build.console_select=-DSerial=Serial1
+megaAVR0.menu.95_bootloader.02_UART1_C0_LA7.build.console_select=-DSerial=Serial1A
 megaAVR0.menu.95_bootloader.02_UART1_C0_LA7=UART1 TX:PC0 RX:PC1 LED=PA7
 megaAVR0.menu.95_bootloader.03_UART2_F0_LA7.bootloader.file=hex/boot_atmega_UART2_F0_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.03_UART2_F0_LA7.build.console_select=-DSerial=Serial2
+megaAVR0.menu.95_bootloader.03_UART2_F0_LA7.build.console_select=-DSerial=Serial2A
 megaAVR0.menu.95_bootloader.03_UART2_F0_LA7=UART2 TX:PF0 RX:PF1 LED=PA7
 megaAVR0.menu.95_bootloader.10=-
 megaAVR0.menu.95_bootloader.11_UART3_B0_LA7.bootloader.file=hex/boot_atmega_UART3_B0_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.11_UART3_B0_LA7.build.console_select=-DSerial=Serial3
+megaAVR0.menu.95_bootloader.11_UART3_B0_LA7.build.console_select=-DSerial=Serial3A
 megaAVR0.menu.95_bootloader.11_UART3_B0_LA7=UART3 TX:PB0 RX:PB1 LED=PA7 (48pin only)
 megaAVR0.menu.95_bootloader.12_UART2_F4_LA7.bootloader.file=hex/boot_atmega_UART2_F4_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.12_UART2_F4_LA7.build.console_select=-DSerial=Serial2
+megaAVR0.menu.95_bootloader.12_UART2_F4_LA7.build.console_select=-DSerial=Serial2A
 megaAVR0.menu.95_bootloader.12_UART2_F4_LA7=UART2 TX:PF4 RX:PF5 LED=PA7 (32/48pin only)
 
 
@@ -566,15 +566,15 @@ tinyAVR012.menu.90_console_baud.20=-
 tinyAVR012.menu.90_console_baud.21_2400bps.build.console_baud=-DCONSOLE_BAUD=2400
 tinyAVR012.menu.90_console_baud.21_2400bps=CONSOLE_BAUD=2400 bps (for ULP)
 tinyAVR012.menu.95_bootloader.01_UART0_B2_LA7.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LA7.hex
-tinyAVR012.menu.95_bootloader.01_UART0_B2_LA7.build.console_select=-DSerial=Serial0
+tinyAVR012.menu.95_bootloader.01_UART0_B2_LA7.build.console_select=-DSerial=Serial0A
 tinyAVR012.menu.95_bootloader.01_UART0_B2_LA7=UART0 TX:PB2 RX:PB3 LED=PA7 (default)
 tinyAVR012.menu.95_bootloader.11_UART0_A1_LA7_.bootloader.file=hex/boot_attiny_UART0_A1_{upload.speed}_LA7.hex
-tinyAVR012.menu.95_bootloader.11_UART0_A1_LA7_.build.console_select=-DSerial=Serial0
+tinyAVR012.menu.95_bootloader.11_UART0_A1_LA7_.build.console_select=-DSerial=Serial1A
 tinyAVR012.menu.95_bootloader.11_UART0_A1_LA7_=UART0 TX:PA1 RX:PA2 LED=PA7 (alternative)
 tinyAVR012.menu.95_bootloader.20=-
 tinyAVR012.menu.95_bootloader.21_UART1_C2_LA7.bootloader.file=hex/boot_attiny_UART1_C2_{upload.speed}_LA7.hex
-tinyAVR012.menu.95_bootloader.21_UART1_C2_LA7.build.console_select=-DSerial=Serial1
-tinyAVR012.menu.95_bootloader.21_UART1_C2_LA7=UART1 TX:PC2 RX:PC3 LED=PA7 (tinyAVR-2 20/24pin only)
+tinyAVR012.menu.95_bootloader.21_UART1_C2_LA7.build.console_select=-DSerial=Serial1B
+tinyAVR012.menu.95_bootloader.21_UART1_C2_LA7=UART1 TX:PC2 RX:PC1 LED=PA7 (tinyAVR-2 20/24pin only)
 
 
 tinyAVR01.bootloader.BODCFG=0b{bootloader.bod_lvl}{bootloader.bod_sample}{bootloader.bod_mode}00
@@ -721,10 +721,10 @@ tinyAVR01.menu.90_console_baud.20=-
 tinyAVR01.menu.90_console_baud.21_2400bps.build.console_baud=-DCONSOLE_BAUD=2400
 tinyAVR01.menu.90_console_baud.21_2400bps=CONSOLE_BAUD=2400 bps (for ULP)
 tinyAVR01.menu.95_bootloader.01_UART0_A6_LA3.bootloader.file=hex/boot_attiny_UART0_A6_{upload.speed}_LA3.hex
-tinyAVR01.menu.95_bootloader.01_UART0_A6_LA3.build.console_select=-DSerial=Serial0
+tinyAVR01.menu.95_bootloader.01_UART0_A6_LA3.build.console_select=-DSerial=Serial0A
 tinyAVR01.menu.95_bootloader.01_UART0_A6_LA3=UART0 TX:PA6 RX:PA7 LED=PA3 (default)
 tinyAVR01.menu.95_bootloader.11_UART0_A1_LA3.bootloader.file=hex/boot_attiny_UART0_A1_{upload.speed}_LA3.hex
-tinyAVR01.menu.95_bootloader.11_UART0_A1_LA3.build.console_select=-DSerial=Serial0
+tinyAVR01.menu.95_bootloader.11_UART0_A1_LA3.build.console_select=-DSerial=Serial0B
 tinyAVR01.menu.95_bootloader.11_UART0_A1_LA3=UART0 TX:PA1 RX:PA2 LED=PA3 (alternative)
 
 
@@ -1296,10 +1296,13 @@ tinyAVR012_noloader.menu.54_console_select.01_UART0_B2_LA7.build.led_pin=-DLED_B
 tinyAVR012_noloader.menu.54_console_select.01_UART0_B2_LA7=UART0 TX:PB2 RX:PB3 LED=PA7
 tinyAVR012_noloader.menu.54_console_select.02_UART0_A1_LA7.build.console_select=-DSerial=Serial0B
 tinyAVR012_noloader.menu.54_console_select.02_UART0_A1_LA7.build.led_pin=-DLED_BUILTIN=PIN_PA7
-tinyAVR012_noloader.menu.54_console_select.02_UART0_A1_LA7=UART0 TX:PA1 RX:PA2 LED=PA7 (tinyAVR-0/1)
+tinyAVR012_noloader.menu.54_console_select.02_UART0_A1_LA7=UART0 TX:PA1 RX:PA2 LED=PA7 (alternative)
 tinyAVR012_noloader.menu.54_console_select.03_UART1_A1_LA7.build.console_select=-DSerial=Serial1A
 tinyAVR012_noloader.menu.54_console_select.03_UART1_A1_LA7.build.led_pin=-DLED_BUILTIN=PIN_PA7
 tinyAVR012_noloader.menu.54_console_select.03_UART1_A1_LA7=UART1 TX:PA1 RX:PA2 LED=PA7 (tinyAVR-2)
+tinyAVR012_noloader.menu.54_console_select.04_UART1_C2_LA7.build.console_select=-DSerial=Serial1B
+tinyAVR012_noloader.menu.54_console_select.04_UART1_C2_LA7.build.led_pin=-DLED_BUILTIN=PIN_PA7
+tinyAVR012_noloader.menu.54_console_select.04_UART1_C2_LA7=UART1 TX:PC2 RX:PC1 LED=PA7 (tinyAVR-2 alt)
 tinyAVR012_noloader.menu.54_console_select.10=-
 tinyAVR012_noloader.menu.54_console_select.11_UART0_A6_LA3.build.console_select=-DSerial=Serial0A
 tinyAVR012_noloader.menu.54_console_select.11_UART0_A6_LA3.build.led_pin=-DLED_BUILTIN=PIN_PA3
