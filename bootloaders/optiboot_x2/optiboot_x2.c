@@ -85,7 +85,7 @@
 
 #if (!defined(__AVR_XMEGA__)) || (__AVR_ARCH__ != 103)
   #error CPU not supported by this version of Optiboot.
-  #include "BUILD_STOP"
+  #include BUILD_STOP
   // include a non-existent file to stop compilation
 #endif
 
@@ -301,6 +301,13 @@ int main (void) {
 
   watchdogConfig(WDTPERIOD);
 
+#if defined(BIGBOOT)
+  /* Clock control (Power On Reset) default settings; */
+  _PROTECTED_WRITE(CLKCTRL_MCLKCTRLA, 0);     // CLKCTRL_CLKSEL_OSCHF_gc
+  _PROTECTED_WRITE(CLKCTRL_MCLKCTRLB, 0);     // Prescaler Disable = Division 1x
+  _PROTECTED_WRITE(CLKCTRL_OSCHFCTRLA, 0x0C); // CLKCTRL_FREQSEL_4M_gc (4MHz)
+#endif
+
   // PORTMUX setting
 #if defined (MYUART_PMUX_VAL)
   MYPMUX_REG = MYUART_PMUX_VAL;     // alternate pinout to use
@@ -423,10 +430,13 @@ else {
       // byte addressed mode
       verifySpace();
     }
+#ifdef BIGBOOT
     else if (ch == STK_UNIVERSAL) {
+      // Not used because it is within 64KiB
       getNch(4);
-      putch(0x00);        // response '0'
+      putch(0x00);  // response '0'
     }
+#endif
     else if (ch == STK_PROG_PAGE) {
       /* Write up to 1 page of flash (or EEPROM, except that isn't supported due to space) */
 
@@ -441,17 +451,17 @@ else {
         address.word += MAPPED_EEPROM_START;
       }
 
+      /* Before complete wait. */
+      while (NVMCTRL_STATUS & (NVMCTRL_FBUSY_bm | NVMCTRL_EEBUSY_bm));
+
       /* Page buffer filling. */
       do *(address.bptr++) = getch(); while (--length.word);
-
-      /* Read command terminator, start reply */
-      verifySpace();
 
       /* Page Erase and Write. */
       _PROTECTED_WRITE_SPM(NVMCTRL_CTRLA, NVMCTRL_CMD_PAGEERASEWRITE_gc);
 
-      /* Complete wait. */
-      while (NVMCTRL.STATUS & (NVMCTRL_FBUSY_bm | NVMCTRL_EEBUSY_bm));
+      /* Read command terminator, start reply */
+      verifySpace();
     }
     else if (ch == STK_READ_PAGE) {
 
@@ -593,8 +603,8 @@ OPTFLASHSECT const char f_LED[] = "LED=" LED_NAME;
 OPT2FLASH(SUPPORT_EEPROM);
 #endif
 
-#ifdef RS485_XDIR
-OPT2FLASH(RS485_XDIR);
+#ifdef USART
+OPT2FLASH(USART);
 #endif
 
 #ifdef RS485
