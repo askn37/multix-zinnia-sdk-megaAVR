@@ -111,9 +111,11 @@ SDK種別と対象ブートローダー使用の有無をここで選ぶ。
   - AVR DA with Bootloader
   - AVR DD with Bootloader
   - AVR DD 14pin with Bootloader
+  - AVR EA with Bootloader
   - AVR DB w/o Bootloader
   - AVR DA w/o Bootloader
   - AVR DD w/o Bootloader
+  - AVR EA w/o Bootloader
 - __Multix Zinnia Product SDK [reduceAVR]__
   - ATtiny4/5/9/10
 
@@ -143,20 +145,16 @@ Arduino IDE でこのSDKを選択すると、
   - 1.8V -- 既定値
   - 2.6V
   - 4.3V
-- __FUSE PF6__ -- megaAVR/AVR DA/DB のリセット端子用途変更（FUSE設定）
+- __FUSE PF6__ -- megaAVR のリセット端子用途変更（FUSE設定）
   - PF6 pin=Reset -- 既定値
   - PF6 pin=GPIO -- 各個別データシート参照のこと
-- __FUSE UPDI__ -- tinyAVR/AVR DDの UPDIピン用途変更（FUSE設定）
+- __FUSE UPDI__ -- tinyAVRの UPDIピン用途変更（FUSE設定）
   - __原則、既定値からの変更禁止（復元にはHV対応書換器が必須）__
   - 各個別データシート参照のこと
 - __FUSE EEPROM__ -- EEPROM保護フラグ（FUSE設定）
   - Save guard "Retained" -- チップ消去時保護
   - Save guard "Erase" -- チップ消去時一括初期化
   - "Erase" and "Replace" -- ブートローダー/書込器でのEEPROM書換有効
-- __FUSE MVIO__ -- AVR DB/DD の復電圧機能種別（FUSE設定）
-  - MVIO "Dual" -- 有効（VDD2へ要外部電圧供給）
-  - MVIO "Single" -- 無効（VDD2へ内部固定電圧供給）
-  - 各個別データシート参照のこと
 - __Build Option__ -- DEBUGマクロ有無（任意選択）
   - Build Release -- 既定値（NDEBUG設定）
   - Build DEBUG=1
@@ -347,6 +345,11 @@ optiboot を原型とするが clone である。
 - 書込装置選択 -> __Xplained Mini/Nano (mEDBG: ATmega32u4)__ 必須
 
 その他の同種製品も同様に、適切なオプションの手動選択が必要。
+
+## 更新履歴
+
+- v0.2.0 (23/04/08)
+  - `modernAVR`で`AVR_EA`対応。これに伴う`MicroAPI`の修正反映。
 
 ## 許諾
 
