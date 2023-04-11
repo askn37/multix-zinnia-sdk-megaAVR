@@ -1,4 +1,4 @@
-# Multix Zinnia Product SDK [megaAVR]
+# MultiX Zinnia Product SDK [megaAVR]
 
 このソフトウェア開発キットは、主に新世代のAVRファミリ
 （Microchipブランド統合以降で発表されたもの）
@@ -35,7 +35,7 @@ avrdude を用いて対象MCUにアップロードするまでの作業フロー
 
 現在この SDK は複数の異なる対象アーキテクチャ向けにリポジトリを分けて提供される。
 
-- __Multix Zinnia Product SDK [megaAVR]__
+- __MultiX Zinnia Product SDK [megaAVR]__
   - （Atmelブランド世代）
   - megaAVR-0系統
     - ATmega808/1608/3208/4808
@@ -46,9 +46,9 @@ avrdude を用いて対象MCUにアップロードするまでの作業フロー
     - ATtiny212/412/214/414/814/1614/416/816/1616/417/817/1617
   - tinyAVR-2 系統
     - ATtiny424/824/1624/3224/426/826/1626/3226/427/827/1627/3227
-- __Multix Zinnia Product SDK [modernAVR]__
+- __MultiX Zinnia Product SDK [modernAVR]__
   - AVR DA/DB/DD 系統。（Microchipブランド世代）
-- __Multix Zinnia Product SDK [reduceAVR]__
+- __MultiX Zinnia Product SDK [reduceAVR]__
   - 旧世代AVRのうち TPI方式に対応した系統。（Atmelブランド世代）
 
 > この分割は NVM書換プロトコルおよび/すなわちブートローダーの相互共有性による。\
@@ -100,13 +100,13 @@ avrdude を用いて対象MCUにアップロードするまでの作業フロー
 
 SDK種別と対象ブートローダー使用の有無をここで選ぶ。
 
-- __Multix Zinnia Product SDK [megaAVR]__ <--
+- __MultiX Zinnia Product SDK [megaAVR]__ <--
   - megaAVR-0 with Bootloader
   - tinyAVR-0/1/2 with Bootloader
   - tinyAVR-0/1 8pin with Bootloader
   - megaAVR-0 w/o Bootloader
   - tinyAVR-0/1/2 w/o Bootloader
-- __Multix Zinnia Product SDK [modernAVR]__
+- __MultiX Zinnia Product SDK [modernAVR]__
   - AVR DB with Bootloader
   - AVR DA with Bootloader
   - AVR DD with Bootloader
@@ -116,7 +116,7 @@ SDK種別と対象ブートローダー使用の有無をここで選ぶ。
   - AVR DA w/o Bootloader
   - AVR DD w/o Bootloader
   - AVR EA w/o Bootloader
-- __Multix Zinnia Product SDK [reduceAVR]__
+- __MultiX Zinnia Product SDK [reduceAVR]__
   - ATtiny4/5/9/10
 
 ## ボード選択サブメニュー
@@ -325,7 +325,7 @@ optiboot を原型とするが clone である。
 
 この製品使用時のメニュー選択は次のように __しなければならない__；
 
-- ボードメニュー -> __Multix Zinnia SDK [megaAVR]__ -> __megaAVR-0 w/o Boootloader__ 必須
+- ボードメニュー -> __MultiX Zinnia SDK [megaAVR]__ -> __megaAVR-0 w/o Boootloader__ 必須
 - Variant -> __48pin ATmega4809 (48KiB+6KiB)__ 必須
 - FUSE EEPROM -> "Erase" and "Replace" __以外__
 - Console and LED -> __UART3 TX:PB4 RX:PB5 LED=PE2 (ATmega4809 Nano Every)__ 必須
@@ -339,7 +339,7 @@ optiboot を原型とするが clone である。
 
 この製品使用時のメニュー選択は次のようにしなければならない；
 
-- ボードメニュー -> __Multix Zinnia SDK [megaAVR]__ -> __megaAVR-0 w/o Boootloader__ 必須
+- ボードメニュー -> __MultiX Zinnia SDK [megaAVR]__ -> __megaAVR-0 w/o Boootloader__ 必須
 - Variant -> __48pin ATmega4809 (48KiB+6KiB)__ 必須
 - Console and LED -> __UART3 TX:PB4 RX:PB5 LED=PD6 (ATmega4809 UNO WiFi)__ 必須
 - 書込装置選択 -> __Xplained Mini/Nano (mEDBG: ATmega32u4)__ 必須
