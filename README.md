@@ -176,6 +176,7 @@ Arduino IDE でこのSDKを選択すると、
   - 38400 bps
   - 57600 bps
   - 115200 bps
+  - 230400 bps
   - 1000000 bps
   - 2400 bps -- OSC-LUP対応
 - __Bootloader__ -- ブートローダー選択
