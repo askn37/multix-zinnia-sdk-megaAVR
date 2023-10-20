@@ -84,7 +84,7 @@ FLASH消去/書換を行うのに使うことが出来る。
 - `MCUdude`版や`DxCore`版の同種の機能とは仕様が異なり、相互に互換性はない。
 
 > 実際の使用例は
-[[FlashNVM_sample]](https://github.com/askn37/MacroMicroAPI_lib/tree/main/examples/EEPROM%20and%20NVM/FlashNVM_sample)
+[[FlashNVM ツールリファレンス]](https://github.com/askn37/askn37.github.io/wiki/FlashNVM)
 を参照のこと。
 
 ## optibootバージョン
@@ -95,6 +95,8 @@ FLASH消去/書換を行うのに使うことが出来る。
 |----|----|---|
 |$01FE|OPTIBOOT_MINVER|0x02|
 |$01FF|OPTIBOOT_MAJVER|0x29|
+
+> このアドレスの格納値を適切な CRC-16 検証値に置き換えると、`SYSCFG0`の BOOT領域 CRC改竄検査を有効にすることができる。
 
 ## リビルド
 
@@ -107,7 +109,7 @@ FLASH消去/書換を行うのに使うことが出来る。
 optiboot_x2> sh makeall.megaAVR.sh
 ```
 
-> Windows環境での確認はされていない。（要makeコマンド）
+> Windows環境でのビルド確認はされていない。gmakeコマンドを別途用意し、各ファイル中のファイルパス指定他を Windows流儀に修正する必要がある。
 
 ## 著作表示
 
