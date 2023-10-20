@@ -44,6 +44,7 @@ avrdude を用いて対象MCUにアップロードするまでの作業フロー
     - ATtiny202/402/204/404/804/1604/406/806/1606/807/1607
   - tinyAVR-1 系統
     - ATtiny212/412/214/414/814/1614/416/816/1616/417/817/1617
+    - ATtiny416auto
   - tinyAVR-2 系統
     - ATtiny424/824/1624/3224/426/826/1626/3226/427/827/1627/3227
 - __MultiX Zinnia Product SDK [modernAVR]__
@@ -110,8 +111,10 @@ SDK種別と対象ブートローダー使用の有無をここで選ぶ。
   - AVR DB with Bootloader
   - AVR DA with Bootloader
   - AVR DD with Bootloader
-  - AVR DD 14pin with Bootloader
   - AVR EA with Bootloader
+  - AVR EB with Bootloader
+  - AVR DD 14pin with Bootloader
+  - AVR EB 14pin with Bootloader
   - AVR DB w/o Bootloader
   - AVR DA w/o Bootloader
   - AVR DD w/o Bootloader
