@@ -65,14 +65,15 @@ Licensing and redistribution are subject to the MIT License.
   #endif
 #endif /* not USART */
 
-/*
- * This section provides an auxiliary capability
- * for self-modifying the flash area.
- *
- * $0000 : Started Bootloader (POR)
- * $0002 : nvm_write function : magicnumber $C009
- * $0004 : nvm_ctrl  function : magicnumber $E99D, $BF94
- */
+/***
+  This section provides an auxiliary capability
+  for self-modifying the flash area.
+ 
+  $0000 : Started Bootloader (POR)
+  $0002 : nvm_write function : magicnumber $C009
+  $0004 : nvm_cmd   function : magicnumber $E99D, $BF94
+  $0200 : appcode
+***/
 
 __attribute__((naked))
 __attribute__((noreturn))
@@ -89,6 +90,7 @@ void vector_table (void) {
 
 /* This version of the SPM snippet consists of two functions.
    One is to simply write CMD to NVMCTRL and check STATUS. */
+
 __attribute__((used))
 __attribute__((noinline))
 __attribute__((section (".init1")))
@@ -119,7 +121,7 @@ __attribute__((noinline))
 uint8_t pullch (void) {
   /* Pull-Character blocks if buffer is empty.
      If nothing is received, WDT will eventually work. */
-  register uint8_t ch, er;
+  uint8_t ch, er;
   loop_until_bit_is_set(UART_BASE.STATUS, USART_RXCIF_bp);
   er = UART_BASE.RXDATAH;
   ch = UART_BASE.RXDATAL;
@@ -153,11 +155,11 @@ inline static
 void blink (void) {
   /* Makes the LED blink at a different rate than normal.
      This code uses about 10 bytes of extra space. */
-  register uint8_t count = LED_BLINK;
+  uint8_t count = LED_BLINK;
   do {
     LED_PORT.IN |= _BV(LED_PIN);
     /* delay assuming 3Mhz */
-    register uint16_t delay = 3000000U / 200;
+    uint16_t delay = 3000000U / 200;
     do {
       if (bit_is_set(UART_BASE.STATUS, USART_RXCIF_bp)) return;
     } while (--delay);
@@ -168,7 +170,6 @@ void blink (void) {
 
 /* main program starts here */
 __attribute__((OS_main))
-__attribute__((used))
 int main (void) {
   /* It is preferable that these variables be allocated directly to registers. */
   register addr16_t address;
@@ -353,13 +354,14 @@ else {
       }
 
       /* Before complete wait. */
-      while (NVMCTRL_STATUS & 3);
+      nvm_cmd(NVMCTRL_CMD_NONE_gc);
+      // while (NVMCTRL_STATUS & 3);
 
       /* Page buffer filling. */
       do *(address.bptr++) = pullch(); while (--length.word);
 
       /* Page Erase and Write. */
-      _PROTECTED_WRITE_SPM(NVMCTRL_CTRLA, NVMCTRL_CMD_PAGEERASEWRITE_gc);
+      nvm_cmd(NVMCTRL_CMD_PAGEERASEWRITE_gc);
       end_of_packet();
     }
     else if (ch == STK_READ_PAGE) {
