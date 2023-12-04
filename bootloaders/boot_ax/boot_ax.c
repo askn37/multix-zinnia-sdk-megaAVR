@@ -65,15 +65,16 @@ Licensing and redistribution are subject to the MIT License.
   #endif
 #endif /* not USART */
 
-/***
+/*
   This section provides an auxiliary capability
   for self-modifying the flash area.
- 
+
   $0000 : Started Bootloader (POR)
-  $0002 : nvm_write function : magicnumber $C009
-  $0004 : nvm_cmd   function : magicnumber $E99D, $BF94
+  $0002 : nvm_spm function : magicnumber $9201
+  $0004 : ret              :             $9508
+  $0006 : nvm_cmd function : magicnumber $E99D, $BF94
   $0200 : appcode
-***/
+ */
 
 __attribute__((naked))
 __attribute__((noreturn))
@@ -82,14 +83,17 @@ void vector_table (void) {
   __asm__ __volatile__ (
   R"#ASM#(
     RJMP  main
-    RJMP  nvm_write
+    ST    Z+, R0
+    RET
   )#ASM#"
   );
   /* next is nvm_cmd */
 }
 
-/* This version of the SPM snippet consists of two functions.
-   One is to simply write CMD to NVMCTRL and check STATUS. */
+/* This version has two snippets.
+   One is to write 1 byte to the specified address using the ST command.
+   Another is to simply write her CMD to her NVMCTRL and check the STATUS.
+   (This family has LPM instructions but no SPM+ instructions) */
 
 __attribute__((used))
 __attribute__((noinline))
@@ -98,16 +102,6 @@ void nvm_cmd (uint8_t _nvm_cmd) {
   /* This function occupies 18 bytes of space. */
   _PROTECTED_WRITE_SPM(NVMCTRL_CTRLA, _nvm_cmd);
   while (NVMCTRL.STATUS & 3);
-}
-
-/* The other just writes one byte to the pointer.
-   All that matters is that the PC is included in the BOOTCODE. */
-__attribute__((used))
-__attribute__((noinline))
-__attribute__((section (".init2")))
-void nvm_write (uint8_t* _address, uint8_t _data) {
-  /* This function occupies 6 bytes of space. */
-  *_address = _data;
 }
 
 __attribute__((noinline))
