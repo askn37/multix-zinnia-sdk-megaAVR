@@ -7,6 +7,9 @@
 ### megaAVR-0 28/32/40/48pin using USERT0.PA0 LED.PA7
 make atmega4809 BOOTNAME=boot_atmega_UART0 UART=A0 LED=A7
 
+### with Pull-Up RxD
+make atmega4809 BOOTNAME=boot_atmega_UART0_PU UART=A0 LED=A7 PULLUP_RX=1
+
 ### megaAVR-0 28/32/40/48pin using USERT0.PA4 LED.PA7
 make atmega4809 BOOTNAME=boot_atmega_UART0 UART=A4 LED=A7
 

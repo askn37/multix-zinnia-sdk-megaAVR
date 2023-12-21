@@ -138,7 +138,7 @@ boot_%.elf:	$(SOURCE) FORCE
 
 atmega%:
 	$(MAKE) -f $(MF) boot_atmega$*.hex
-	# $(MAKE) -f $(MF) boot_atmega$*.bin
+	$(OBJCOPY) -I ihex -O binary boot_atmega$*.hex boot_atmega$*.bin
 	@echo "******************************"
 	@echo "*** Output:"
 	# mv boot_atmega$*.lst ../hex/${BOOTNAME}_${UART}_${BAUD_RATE}_L${LED}.lst
@@ -147,7 +147,7 @@ atmega%:
 
 attiny%:
 	$(MAKE) -f $(MF) boot_attiny$*.hex
-	# $(MAKE) -f $(MF) boot_attiny$*.bin
+	$(OBJCOPY) -I ihex -O binary boot_attiny$*.hex boot_attiny$*.bin
 	@echo "******************************"
 	@echo "*** Output:"
 	# mv boot_attiny$*.lst ../hex/${BOOTNAME}_${UART}_${BAUD_RATE}_L${LED}.lst
