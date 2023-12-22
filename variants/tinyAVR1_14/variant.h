@@ -20,6 +20,8 @@
 #define AVR_TINYAVR
 #define AVR_TINYAVR1
 #define AVR_TINYAVR_14
+#define AVR_NVMCTRL   0
+#define AVR_EVSYS   101
 
 //// Pin name to PORT configuration
 ////   bit[765] PORTA-G index position

@@ -19,6 +19,8 @@
 #define AVR_MEGAAVR
 #define AVR_MEGAAVR0
 #define AVR_MEGAAVR_48
+#define AVR_NVMCTRL   0
+#define AVR_EVSYS   200
 
 //// Pin name to PORT configuration
 ////   bit[765] PORTA-G index position
