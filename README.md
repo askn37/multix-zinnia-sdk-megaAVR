@@ -63,9 +63,7 @@ avrdude を用いて対象MCUにアップロードするまでの作業フロー
 
 ## 対応するプログラムライタ
 
-完成品として販売されている製品以外の、
-工場出荷状態ではブートローダーが書き込まれていないため
-何らかの書込器準備は必要。
+完成品として販売されている製品以外の、工場出荷状態ではブートローダーが書き込まれていないため何らかの書込器準備は必要。
 
 - [__UPDI4AVR__](https://github.com/askn37/UPDI4AVR) -- このSDKでもメンテナンスされている。JTAG2UPDI上位互換。
   - __HV書込__ とUSB-USARTパススルーに対応可。（要外部回路）
@@ -73,10 +71,14 @@ avrdude を用いて対象MCUにアップロードするまでの作業フロー
 - __SerialUPDI__ -- 一般のUSB-UARTと簡易な回路による高速書込環境。
   - 準備にはいくらかの部品調達と配線が必要だが難易度は低い。HV書込は望めない。
   - 対象MCUの UART通信とは回路が排他で外部切替が必要。（自動切替は要外付制御回路）
+  - *avrdude 7.2* では AVR_DU/EA/EB には非対応。（AVR_EA/EB は 7.3以降、AVR_DU は 7.4以降で対応予定）
 - PICkit4 -- 公式のプログラム書込装置兼 __デバッグトレース__ 装置。
   - 使用開始前に MPLAB X によるFWアップデートが要求される。購入状態での対応範囲不明。
   - フルスペックの公式開発環境が別途必須なのでエンドユーザーのPC環境によっては難がある。\
     Arduino IDEの動作スペックより数倍大きなディスク空容量やハードウェア性能とIDE操作習熟が必要。
+- [__JTAG2UPDI(Clone)__](https://github.com/askn37/jtag2updi)
+  - __Arduino UNO__ やその派生バリアント製品を無改造で UPDI対応プログラムライターに転換するファームウェア。
+  - リンク先の "Clone" バリアントは、AVR_DA/DB/DDと、AVR_DU/EA/EB に暫定対応する。（__UPDI4AVR__ からのバックポート）
 - プログラムライタ内蔵完成市販品 -- これらはブートローダー書込不要。（あるいは対応不可）
   - Arduino UNO Wifi Rev.2 -- ATmega4809 + mEDBG
   - Arduino Nano Every -- ATmega4809 + JTAG2UPDI準拠（EEPROM書込非対応）
@@ -105,6 +107,7 @@ SDK種別と対象ブートローダー使用の有無をここで選ぶ。
   - megaAVR-0 with Bootloader
   - tinyAVR-0/1/2 with Bootloader
   - tinyAVR-0/1 8pin with Bootloader
+  - *(separator) 以下ブートローダーなし*
   - megaAVR-0 w/o Bootloader
   - tinyAVR-0/1/2 w/o Bootloader
 - __MultiX Zinnia Product SDK [modernAVR]__
@@ -119,7 +122,7 @@ Arduino IDE でこのSDKを選択すると、
 
 - __Variant__ -- 具体的な製品型番を選択。（必須）
   - 外囲器ピン数＋型番＋フラッシュメモリ量＋SRAM量別になっている。
-  - 例えば Arduino UNO Wifi Rev.2 と Arduino Nano Every なら -> 48pin ATmega4809 (48KiB+16KiB)
+  - 例えば Arduino UNO Wifi Rev.2 と Arduino Nano Every なら --> 48pin ATmega4809 (48KiB+16KiB)
 - __Clock__ -- 主装置動作基準周波数選択（F_CPUマクロ初期値） -- 既定値は定格内最高速度
   - F_CPUマクロを参照しないプログラムでは効果なし
   - __20MHz系列と16Mhz系列は FUSE書込依存で排他選択__
