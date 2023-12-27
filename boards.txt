@@ -935,7 +935,7 @@ megaAVR0_noloader.menu.54_console_select.21_UART3_B4_LD6=UART3 TX:PB4 RX:PB5 LED
 megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.build.console_select=-DSerial=Serial3B
 megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.build.led_pin=-DLED_BUILTIN=PIN_PE2
 megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.upload.tool=avrdude
-megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.upload.protocol=jtag2updi
+megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.upload.protocol=jtag2updi -e
 megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.upload.speed=115200
 megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.upload.use_1200bps_touch=true
 megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery=UART3 TX:PB4 RX:PB5 LED=PE2 (ATmega4809 Nano Every)
