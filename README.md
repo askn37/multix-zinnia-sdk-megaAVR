@@ -291,7 +291,7 @@ STK500 version 1 プロトコルに基づく Arduino互換ブートローダー�
 代表的な UART と LED の組み合わせについてはビルド済のバイナリが用意されている。
 
 > ブートローダーバイナリのリビルドは、makeコマンド（OS依存）が別途用意できれば本 SDKのみで行える。\
-> v0.2.9から独自のコードに変更された。
+> 0.2.9から独自のコードに変更された。
 
 ### その他注意事項
 
@@ -330,52 +330,52 @@ STK500 version 1 プロトコルに基づく Arduino互換ブートローダー�
 
 ## 更新履歴
 
-- v0.2.10 (23/12/20)
+- 0.2.10 (23/12/20)
   - `7.3.0-avr8-gnu-toolchain-231214`に更新。
     - __AVR64DU28/32__ に暫定対応。
   - __Core Modules__ の `<api/UarfUART.h>`を微修正。`AVR_EVSYS=201`修正。
   - __Core Libraries__ に `<ReadUART.h>`を追加。`AVR_EVSYS=201`修正。
 
-- v0.2.9 (23/12/11)
+- 0.2.9 (23/12/11)
   - megaVAR/modernAVRについて、同梱ブートローダー全体を独自のArduino上位互換動作コードに変更。（`Optiboot`由来ソースコードを除去）
   - 同、CRCSCAN機能用CRC16/32検査値付与。
   - `<api/btools.h>`に`crc16_ccitt_false`関数を追加。
 
-- v0.2.8 (23/11/24)
+- 0.2.8 (23/11/24)
   - `7.3.0-avr8-gnu-toolchain-231113`に更新。
 
-- v0.2.7 (23/10/18)
+- 0.2.7 (23/10/18)
   - `dryrun`を書込器選択に追加。
   - `avrdude.conf`参照ルールの変更。
     - `arduino`/`UPDI4VAR`/`TPI4AVR`/`dryrun`を書込器に指定した場合のみ、ローカルの特別な設定ファイルを参照する。それ以外は規定の（tools/avrdude/etc内の）`avrdude.conf`を参照する。
     - この変更により、AVR_EA系統のようにまだ他の書込器で未対応／未検証のパーツ設定が分離された。
 
-- v0.2.6 (23/10/16)
+- 0.2.6 (23/10/16)
   - `7.2-arduino.1`に更新。
   - `7.3.0-avr8-gnu-toolchain-231004`に更新。
     - `Atmel.ATautomotive_DFP.2.0.214.atpack (2022-03-03)`追加。`ATtiny416auto`対応。
 
-- v0.2.5 (23/10/09)
+- 0.2.5 (23/10/09)
   - *avrdude.conf.updi* 記述を avrdude 7.1 準拠に改正
 
-- v0.2.4 (23/09/09)
+- 0.2.4 (23/09/09)
   - `7.3.0-avr8-gnu-toolchain-230831`に更新。
     - `Atmel.ATmega_DFP.2.1.506 (2023-08-14)`対応。
   - `programmers.txt`を改正。
     - `SerialUPDI`の`-xrtsdtr=High`オプションを有効化。
 
-- v0.2.3 (23/07/09)
+- 0.2.3 (23/07/09)
   - `7.3.0-avr8-gnu-toolchain-230628`に更新。
 
-- v0.2.2 (23/05/23)
+- 0.2.2 (23/05/23)
   - `7.1-arduino.1`に更新。
 
-- v0.2.1 (23/05/08)
+- 0.2.1 (23/05/08)
   - `7.3.0-avr8-gnu-toolchain-230418`に更新。
   - 添付 *avrdude.conf* での`UPDI4AVR`規定速度を`460800`に制限。
     - 古いCH3xx用ドライバにて速度上限があるため。（現行最新では改善されている）
 
-- v0.2.0 (23/04/08)
+- 0.2.0 (23/04/08)
   - `modernAVR`で`AVR_EA`対応。これに伴う`MicroAPI`の修正反映。
 
 ## 許諾
@@ -393,6 +393,7 @@ STK500 version 1 プロトコルに基づく Arduino互換ブートローダー�
 ## 著作表示
 
 Twitter: [@askn37](https://twitter.com/askn37) \
+BlueSky Social: [@multix.jp](https://bsky.app/profile/multix.jp) \
 GitHub: [https://github.com/askn37/](https://github.com/askn37/) \
 Product: [https://askn37.github.io/](https://askn37.github.io/)
 
