@@ -13,9 +13,9 @@
 
 /*** Default vaules ***/
 
-#define BOOT_HW_VER 0   /* Make sure to match the NVMCTRL version. */
+#define BOOT_HW_VER '0' /* Make sure to match the NVMCTRL version. */
 #define BOOT_MAJVER 3
-#define BOOT_MINVER 7
+#define BOOT_MINVER 71
 
 #ifndef UART
 #define UART A0
