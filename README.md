@@ -332,6 +332,7 @@ STK500 version 1 プロトコルに基づく Arduino互換ブートローダー�
 
 - 0.2.10 (23/01/11)
   - `7.3.0-avr8-gnu-toolchain-231214`に更新。
+    - 動作確認済に __ATtiny1627__, __ATtiny416__ を追加。
   - __Core Modules__ の `<api/UarfUART.h>`を微修正。`AVR_EVSYS=201`修正。
   - __Core Libraries__ の修正／追加と応用記述の追加。
     - `<ReadUART.h>`
