@@ -45,7 +45,7 @@ make attiny804 BOOTNAME=boot_attiny_UART0 UART=B2 LED=A7 PULLUP_RX=1
 make attiny814 BOOTNAME=boot_attiny_UART0 UART=A1 LED=A7 PULLUP_RX=1
 
 ### tinyAVR-2 20/24pin using USERT1.C2 LED.PA7
-make attiny824 BOOTNAME=boot_attiny_UART1 UART=C2 LED=A7 PULLUP_RX=1
+make attiny826 BOOTNAME=boot_attiny_UART1 UART=C2 LED=A7 PULLUP_RX=1
 
 ###
 ### Cleanup
