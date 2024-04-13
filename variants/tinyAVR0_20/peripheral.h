@@ -28,8 +28,8 @@ extern HarfUART_Class Serial0B;   /* upload.port=UART0_A1 */
 /* Serial3x not implemented */
 
 /* struct UART_portmux_t in Portmux.h */
-#define _PORTMUX_USART0A {&PORTMUX_CTRLA, 1, 0, &PORTB, PIN2_bm, PIN3_bm, &PORTB_PIN3CTRL}
-#define _PORTMUX_USART0B {&PORTMUX_CTRLA, 1, 1, &PORTA, PIN1_bm, PIN2_bm, &PORTA_PIN2CTRL}
+#define _PORTMUX_USART0A {&PORTMUX_CTRLB, 1, 0, &PORTB, PIN2_bm, PIN3_bm, &PORTB_PIN3CTRL}
+#define _PORTMUX_USART0B {&PORTMUX_CTRLB, 1, 1, &PORTA, PIN1_bm, PIN2_bm, &PORTA_PIN2CTRL}
 
 /* TWIn in TWIM.h */
 #define Wire0 Wire0A
