@@ -325,8 +325,9 @@ else {
       end_of_packet();
       if (ch == PAR_SW_MINOR)
         ch = BOOT_MINVER;
-      else if (ch == PAR_SW_MAJOR)
-        ch = BOOT_MAJVER;
+      /* To save space, this value is not returned */
+      // else if (ch == PAR_SW_MAJOR)
+      //   ch = BOOT_MAJVER;
       else
         ch = BOOT_HW_VER;
       putch(ch);
