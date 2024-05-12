@@ -143,6 +143,7 @@ extern "C" {
 #endif
 
 inline void initVariant (void) {
+  _CLKCTRL_SETUP();
 
   // /* I want to write this, but the result is not good : 24 bytes */
   // PORTA.PIN0CTRL = PORT_ISC_INPUT_DISABLE_gc;
@@ -162,8 +163,6 @@ inline void initVariant (void) {
         "r" ((uint8_t)PORT_ISC_INPUT_DISABLE_gc)
       : "r25"
   );
-
-  _CLKCTRL_SETUP();
 }
 
 #ifdef __cplusplus
