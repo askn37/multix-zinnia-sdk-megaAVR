@@ -225,6 +225,8 @@ megaAVR0.menu.90_console_baud.05_115200bps.build.console_baud=-DCONSOLE_BAUD=115
 megaAVR0.menu.90_console_baud.05_115200bps=CONSOLE_BAUD=115200 bps
 megaAVR0.menu.90_console_baud.06_230400bps.build.console_baud=-DCONSOLE_BAUD=230400
 megaAVR0.menu.90_console_baud.06_230400bps=CONSOLE_BAUD=230400 bps
+megaAVR0.menu.90_console_baud.14_500000bps.build.console_baud=-DCONSOLE_BAUD=500000
+megaAVR0.menu.90_console_baud.14_500000bps=CONSOLE_BAUD=500000 bps
 megaAVR0.menu.90_console_baud.15_1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
 megaAVR0.menu.90_console_baud.15_1000000bps=CONSOLE_BAUD=1000000 bps
 megaAVR0.menu.90_console_baud.20=-
@@ -568,6 +570,8 @@ tinyAVR012.menu.90_console_baud.05_115200bps.build.console_baud=-DCONSOLE_BAUD=1
 tinyAVR012.menu.90_console_baud.05_115200bps=CONSOLE_BAUD=115200 bps
 tinyAVR012.menu.90_console_baud.06_230400bps.build.console_baud=-DCONSOLE_BAUD=230400
 tinyAVR012.menu.90_console_baud.06_230400bps=CONSOLE_BAUD=230400 bps
+tinyAVR012.menu.90_console_baud.14_500000bps.build.console_baud=-DCONSOLE_BAUD=500000
+tinyAVR012.menu.90_console_baud.14_500000bps=CONSOLE_BAUD=500000 bps
 tinyAVR012.menu.90_console_baud.15_1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
 tinyAVR012.menu.90_console_baud.15_1000000bps=CONSOLE_BAUD=1000000 bps
 tinyAVR012.menu.90_console_baud.20=-
@@ -723,6 +727,8 @@ tinyAVR01.menu.90_console_baud.05_115200bps.build.console_baud=-DCONSOLE_BAUD=11
 tinyAVR01.menu.90_console_baud.05_115200bps=CONSOLE_BAUD=115200 bps
 tinyAVR01.menu.90_console_baud.06_230400bps.build.console_baud=-DCONSOLE_BAUD=230400
 tinyAVR01.menu.90_console_baud.06_230400bps=CONSOLE_BAUD=230400 bps
+tinyAVR01.menu.90_console_baud.14_500000bps.build.console_baud=-DCONSOLE_BAUD=500000
+tinyAVR01.menu.90_console_baud.14_500000bps=CONSOLE_BAUD=500000 bps
 tinyAVR01.menu.90_console_baud.15_1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
 tinyAVR01.menu.90_console_baud.15_1000000bps=CONSOLE_BAUD=1000000 bps
 tinyAVR01.menu.90_console_baud.20=-
@@ -957,6 +963,8 @@ megaAVR0_noloader.menu.90_console_baud.05_115200bps.build.console_baud=-DCONSOLE
 megaAVR0_noloader.menu.90_console_baud.05_115200bps=CONSOLE_BAUD=115200 bps
 megaAVR0_noloader.menu.90_console_baud.06_230400bps.build.console_baud=-DCONSOLE_BAUD=230400
 megaAVR0_noloader.menu.90_console_baud.06_230400bps=CONSOLE_BAUD=230400 bps
+megaAVR0_noloader.menu.90_console_baud.14_500000bps.build.console_baud=-DCONSOLE_BAUD=500000
+megaAVR0_noloader.menu.90_console_baud.14_500000bps=CONSOLE_BAUD=500000 bps
 megaAVR0_noloader.menu.90_console_baud.15_1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
 megaAVR0_noloader.menu.90_console_baud.15_1000000bps=CONSOLE_BAUD=1000000 bps
 megaAVR0_noloader.menu.90_console_baud.20=-
@@ -1353,6 +1361,8 @@ tinyAVR012_noloader.menu.90_console_baud.05_115200bps.build.console_baud=-DCONSO
 tinyAVR012_noloader.menu.90_console_baud.05_115200bps=CONSOLE_BAUD=115200 bps
 tinyAVR012_noloader.menu.90_console_baud.06_230400bps.build.console_baud=-DCONSOLE_BAUD=230400
 tinyAVR012_noloader.menu.90_console_baud.06_230400bps=CONSOLE_BAUD=230400 bps
+tinyAVR012_noloader.menu.90_console_baud.14_500000bps.build.console_baud=-DCONSOLE_BAUD=500000
+tinyAVR012_noloader.menu.90_console_baud.14_500000bps=CONSOLE_BAUD=500000 bps
 tinyAVR012_noloader.menu.90_console_baud.15_1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
 tinyAVR012_noloader.menu.90_console_baud.15_1000000bps=CONSOLE_BAUD=1000000 bps
 tinyAVR012_noloader.menu.90_console_baud.20=-
