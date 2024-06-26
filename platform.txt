@@ -35,8 +35,6 @@ compiler.objcopy.eep.extra_flags= -R .nvmem -R .fuse -R .user_signatures -R .boo
 compiler.objcopy.eep.flags=-O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0
 compiler.objcopy.fuse.extra_flags= -R .nvmem -R .eeprom -R .user_signatures -R .boot_signatures
 compiler.objcopy.fuse.flags=-O ihex -j .fuse --set-section-flags=.fuse=alloc,load --no-change-warnings --change-section-lma .fuse=0
-compiler.objcopy.brow.extra_flags= -R .nvmem -R .eeprom -R .fuse -R .user_signatures
-compiler.objcopy.brow.flags=-O ihex -j .boot_signatures --set-section-flags=.boot_signatures=alloc,load --no-change-warnings --change-section-lma .boot_signatures=0
 compiler.objcopy.urow.extra_flags= -R .nvmem -R .eeprom -R .fuse -R .boot_signatures
 compiler.objcopy.urow.flags=-O ihex -j .user_signatures --set-section-flags=.user_signatures=alloc,load --no-change-warnings --change-section-lma .user_signatures=0
 compiler.objdump.cmd=avr-objdump
@@ -80,13 +78,9 @@ recipe.hooks.savehex.presavehex.5.pattern.macosx=cp "{build.path}/{build.project
 recipe.hooks.savehex.presavehex.5.pattern.windows=cmd /C copy "{build.path}\{build.project_name}.urow" "{sketch_path}"
 recipe.hooks.savehex.presavehex.6.pattern.linux=cp "{build.path}/{build.project_name}.urow" "{sketch_path}"
 recipe.hooks.savehex.presavehex.6.pattern.macosx=cp "{build.path}/{build.project_name}.urow" "{sketch_path}"
-recipe.hooks.savehex.presavehex.6.pattern.windows=cmd /C copy "{build.path}\{build.project_name}.brow" "{sketch_path}"
-recipe.hooks.savehex.presavehex.7.pattern.linux=cp "{build.path}/{build.project_name}.brow" "{sketch_path}"
-recipe.hooks.savehex.presavehex.7.pattern.macosx=cp "{build.path}/{build.project_name}.brow" "{sketch_path}"
 recipe.objcopy.eep.pattern="{compiler.path}{compiler.objcopy.cmd}" {compiler.objcopy.eep.flags} {compiler.objcopy.eep.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.eep"
 recipe.objcopy.hex.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.hex"
 recipe.objcopy.fuse.pattern="{compiler.path}{compiler.objcopy.cmd}" {compiler.objcopy.fuse.flags} {compiler.objcopy.fuse.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.fuse"
-recipe.objcopy.brow.pattern="{compiler.path}{compiler.objcopy.cmd}" {compiler.objcopy.brow.flags} {compiler.objcopy.brow.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.brow"
 recipe.objcopy.urow.pattern="{compiler.path}{compiler.objcopy.cmd}" {compiler.objcopy.urow.flags} {compiler.objcopy.urow.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.urow"
 recipe.output.save_file={build.project_name}.{build.mcu}_{build.f_cpu}.hex
 recipe.output.tmp_file={build.project_name}.hex
@@ -99,7 +93,6 @@ recipe.size.regex=^(?:\.text|\.data|\.rodata|\.bootloader)\s+([0-9]+).*
 
 
 tools.avrdude.bootloader.eeprom=-U "eeprom:w:{build.path}/{build.project_name}.eep:i"
-tools.avrdude.bootloader.bootrow=-U "bootrow:w:{build.path}/{build.project_name}.brow:i"
 tools.avrdude.bootloader.userrow=-U "userrow:w:{build.path}/{build.project_name}.urow:i"
 tools.avrdude.bootloader.fuses=-U "fuses:w:{build.path}/{build.project_name}.fuse:i"
 tools.avrdude.bootloader.fuse0=-U fuse0:w:{bootloader.WDTCFG}:m
@@ -128,6 +121,6 @@ tools.avrdude.program.verify=
 tools.avrdude.upload.params.noverify=-V
 tools.avrdude.upload.params.quiet=-q -q
 tools.avrdude.upload.params.verbose=-v
-tools.avrdude.upload.pattern="{cmd.path}" {upload.verbose} {upload.verify} -C "{config.path}" -p {build.mcu} -c {upload.protocol} -P {serial.port} {bootloader.eepupload} {bootloader.browupload} {bootloader.urowupload} -D -U "flash:w:{build.path}/{build.project_name}.hex:i"
+tools.avrdude.upload.pattern="{cmd.path}" {upload.verbose} {upload.verify} -C "{config.path}" -p {build.mcu} -c {upload.protocol} -P {serial.port} {bootloader.eepupload} {bootloader.urowupload} -D -U "flash:w:{build.path}/{build.project_name}.hex:i"
 tools.avrdude.upload.verify=
 tools.avrdude_remote.upload.pattern=/usr/bin/run-avrdude /tmp/sketch.hex {upload.verbose} -p{build.mcu}
