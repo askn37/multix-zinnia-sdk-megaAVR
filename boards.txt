@@ -944,7 +944,7 @@ megaAVR0_noloader.menu.26_userrow.03_upload.bootloader.urowupload={bootloader.us
 megaAVR0_noloader.menu.26_userrow.03_upload=Upload ".urow" file
 megaAVR0_noloader.menu.27_fusefile.01_menu=Specify in the MENU
 megaAVR0_noloader.menu.27_fusefile.03_upload.bootloader.fuseupload={bootloader.fusefile}
-megaAVR0_noloader.menu.27_fusefile.03_upload=Upload ".fuse" file
+megaAVR0_noloader.menu.27_fusefile.03_upload=Upload ".fuse" file (DANGER)
 megaAVR0_noloader.menu.51_buildopt.01_Release=Build Release (default)
 megaAVR0_noloader.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
 megaAVR0_noloader.menu.51_buildopt.02_Debug1=Build DEBUG=1
@@ -1342,7 +1342,7 @@ tinyAVR012_noloader.menu.26_userrow.03_upload.bootloader.urowupload={bootloader.
 tinyAVR012_noloader.menu.26_userrow.03_upload=Upload ".urow" file
 tinyAVR012_noloader.menu.27_fusefile.01_menu=Specify in the MENU
 tinyAVR012_noloader.menu.27_fusefile.03_upload.bootloader.fuseupload={bootloader.fusefile}
-tinyAVR012_noloader.menu.27_fusefile.03_upload=Upload ".fuse" file
+tinyAVR012_noloader.menu.27_fusefile.03_upload=Upload ".fuse" file (DANGER)
 tinyAVR012_noloader.menu.51_buildopt.01_Release=Build Release (default)
 tinyAVR012_noloader.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
 tinyAVR012_noloader.menu.51_buildopt.02_Debug1=Build DEBUG=1
