@@ -4,7 +4,8 @@ menu.11_BODMODE=BOD Mode
 menu.12_BODLVL=BOD Level
 menu.21_resetpin=FUSE PF6
 menu.22_updipin=FUSE UPDI
-menu.23_eeprom=FUSE EEPROM
+menu.24_eeprom=EEPROM
+menu.26_userrow=USERROW
 menu.51_buildopt=Build Option
 menu.52_macroapi=Build API
 menu.53_printf=Build "printf"
@@ -45,6 +46,7 @@ megaAVR0.bootloader.bod_lvl=000
 megaAVR0.bootloader.bod_mode=00
 megaAVR0.bootloader.bod_sample=0
 megaAVR0.bootloader.eepupload=
+megaAVR0.bootloader.urowupload=
 megaAVR0.bootloader.eesave_bit=1
 megaAVR0.bootloader.reset_bit=11
 megaAVR0.bootloader.tool=avrdude
@@ -193,13 +195,16 @@ megaAVR0.menu.21_resetpin.01_reset.bootloader.reset_bit=11
 megaAVR0.menu.21_resetpin.01_reset=PF6 pin=Reset
 megaAVR0.menu.21_resetpin.02_gpio.bootloader.reset_bit=01
 megaAVR0.menu.21_resetpin.02_gpio=PF6 pin=GPIO (input only)
-megaAVR0.menu.23_eeprom.01_keep.bootloader.eesave_bit=1
-megaAVR0.menu.23_eeprom.01_keep=Save guard "Retained"
-megaAVR0.menu.23_eeprom.02_erase.bootloader.eesave_bit=0
-megaAVR0.menu.23_eeprom.02_erase=Save guard "Erase"
-megaAVR0.menu.23_eeprom.03_replace.bootloader.eepupload={bootloader.eeprom}
-megaAVR0.menu.23_eeprom.03_replace.bootloader.eesave_bit=1
-megaAVR0.menu.23_eeprom.03_replace="Erase" and "Replace"
+megaAVR0.menu.24_eeprom.01_keep.bootloader.eesave_bit=1
+megaAVR0.menu.24_eeprom.01_keep=Save guard "Retained"
+megaAVR0.menu.24_eeprom.02_erase.bootloader.eesave_bit=0
+megaAVR0.menu.24_eeprom.02_erase=Save guard "Erase"
+megaAVR0.menu.24_eeprom.03_replace.bootloader.eepupload={bootloader.eeprom}
+megaAVR0.menu.24_eeprom.03_replace.bootloader.eesave_bit=1
+megaAVR0.menu.24_eeprom.03_replace="Erase" and "Replace"
+megaAVR0.menu.26_userrow.02_keep="Retained"
+megaAVR0.menu.26_userrow.03_replace.bootloader.urowupload={bootloader.userrow}
+megaAVR0.menu.26_userrow.03_replace="Replace"
 megaAVR0.menu.51_buildopt.01_Release=Build Release (default)
 megaAVR0.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
 megaAVR0.menu.51_buildopt.02_Debug1=Build DEBUG=1
@@ -261,6 +266,7 @@ tinyAVR012.bootloader.bod_lvl=000
 tinyAVR012.bootloader.bod_mode=00
 tinyAVR012.bootloader.bod_sample=0
 tinyAVR012.bootloader.eepupload=
+tinyAVR012.bootloader.urowupload=
 tinyAVR012.bootloader.eesave_bit=1
 tinyAVR012.bootloader.reset_bit=10
 tinyAVR012.bootloader.tool=avrdude
@@ -538,13 +544,16 @@ tinyAVR012.menu.22_updipin.11_reset.bootloader.reset_bit=10
 tinyAVR012.menu.22_updipin.11_reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
 tinyAVR012.menu.22_updipin.12_gpio.bootloader.reset_bit=00
 tinyAVR012.menu.22_updipin.12_gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
-tinyAVR012.menu.23_eeprom.01_keep.bootloader.eesave_bit=1
-tinyAVR012.menu.23_eeprom.01_keep=Save guard "Retained"
-tinyAVR012.menu.23_eeprom.02_erase.bootloader.eesave_bit=0
-tinyAVR012.menu.23_eeprom.02_erase=Save guard "Erase"
-tinyAVR012.menu.23_eeprom.03_replace.bootloader.eepupload={bootloader.eeprom}
-tinyAVR012.menu.23_eeprom.03_replace.bootloader.eesave_bit=1
-tinyAVR012.menu.23_eeprom.03_replace="Erase" and "Replace"
+tinyAVR012.menu.24_eeprom.01_keep.bootloader.eesave_bit=1
+tinyAVR012.menu.24_eeprom.01_keep=Save guard "Retained"
+tinyAVR012.menu.24_eeprom.02_erase.bootloader.eesave_bit=0
+tinyAVR012.menu.24_eeprom.02_erase=Save guard "Erase"
+tinyAVR012.menu.24_eeprom.03_replace.bootloader.eepupload={bootloader.eeprom}
+tinyAVR012.menu.24_eeprom.03_replace.bootloader.eesave_bit=1
+tinyAVR012.menu.24_eeprom.03_replace="Erase" and "Replace"
+tinyAVR012.menu.26_userrow.02_keep="Retained"
+tinyAVR012.menu.26_userrow.03_replace.bootloader.urowupload={bootloader.userrow}
+tinyAVR012.menu.26_userrow.03_replace="Replace"
 tinyAVR012.menu.51_buildopt.01_Release=Build Release (default)
 tinyAVR012.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
 tinyAVR012.menu.51_buildopt.02_Debug1=Build DEBUG=1
@@ -600,6 +609,7 @@ tinyAVR01.bootloader.bod_lvl=000
 tinyAVR01.bootloader.bod_mode=00
 tinyAVR01.bootloader.bod_sample=0
 tinyAVR01.bootloader.eepupload=
+tinyAVR01.bootloader.urowupload=
 tinyAVR01.bootloader.eesave_bit=1
 tinyAVR01.bootloader.reset_bit=10
 tinyAVR01.bootloader.tool=avrdude
@@ -695,13 +705,16 @@ tinyAVR01.menu.22_updipin.11_reset.bootloader.reset_bit=10
 tinyAVR01.menu.22_updipin.11_reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
 tinyAVR01.menu.22_updipin.12_gpio.bootloader.reset_bit=00
 tinyAVR01.menu.22_updipin.12_gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
-tinyAVR01.menu.23_eeprom.01_keep.bootloader.eesave_bit=1
-tinyAVR01.menu.23_eeprom.01_keep=Save guard "Retained"
-tinyAVR01.menu.23_eeprom.02_erase.bootloader.eesave_bit=0
-tinyAVR01.menu.23_eeprom.02_erase=Save guard "Erase"
-tinyAVR01.menu.23_eeprom.03_replace.bootloader.eepupload={bootloader.eeprom}
-tinyAVR01.menu.23_eeprom.03_replace.bootloader.eesave_bit=1
-tinyAVR01.menu.23_eeprom.03_replace="Erase" and "Replace"
+tinyAVR01.menu.24_eeprom.01_keep.bootloader.eesave_bit=1
+tinyAVR01.menu.24_eeprom.01_keep=Save guard "Retained"
+tinyAVR01.menu.24_eeprom.02_erase.bootloader.eesave_bit=0
+tinyAVR01.menu.24_eeprom.02_erase=Save guard "Erase"
+tinyAVR01.menu.24_eeprom.03_replace.bootloader.eepupload={bootloader.eeprom}
+tinyAVR01.menu.24_eeprom.03_replace.bootloader.eesave_bit=1
+tinyAVR01.menu.24_eeprom.03_replace="Erase" and "Replace"
+tinyAVR01.menu.26_userrow.02_keep="Retained"
+tinyAVR01.menu.26_userrow.03_replace.bootloader.urowupload={bootloader.userrow}
+tinyAVR01.menu.26_userrow.03_replace="Replace"
 tinyAVR01.menu.51_buildopt.01_Release=Build Release (default)
 tinyAVR01.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
 tinyAVR01.menu.51_buildopt.02_Debug1=Build DEBUG=1
@@ -753,6 +766,7 @@ megaAVR0_noloader.bootloader.bod_lvl=000
 megaAVR0_noloader.bootloader.bod_mode=00
 megaAVR0_noloader.bootloader.bod_sample=0
 megaAVR0_noloader.bootloader.eepupload=
+megaAVR0_noloader.bootloader.urowupload=
 megaAVR0_noloader.bootloader.eesave_bit=1
 megaAVR0_noloader.bootloader.reset_bit=11
 megaAVR0_noloader.bootloader.tool=avrdude
@@ -901,13 +915,16 @@ megaAVR0_noloader.menu.21_resetpin.01_reset.bootloader.reset_bit=11
 megaAVR0_noloader.menu.21_resetpin.01_reset=PF6 pin=Reset
 megaAVR0_noloader.menu.21_resetpin.02_gpio.bootloader.reset_bit=01
 megaAVR0_noloader.menu.21_resetpin.02_gpio=PF6 pin=GPIO (input only)
-megaAVR0_noloader.menu.23_eeprom.01_keep.bootloader.eesave_bit=1
-megaAVR0_noloader.menu.23_eeprom.01_keep=Save guard "Retained"
-megaAVR0_noloader.menu.23_eeprom.02_erase.bootloader.eesave_bit=0
-megaAVR0_noloader.menu.23_eeprom.02_erase=Save guard "Erase"
-megaAVR0_noloader.menu.23_eeprom.03_replace.bootloader.eepupload={bootloader.eeprom}
-megaAVR0_noloader.menu.23_eeprom.03_replace.bootloader.eesave_bit=1
-megaAVR0_noloader.menu.23_eeprom.03_replace="Erase" and "Replace"
+megaAVR0_noloader.menu.24_eeprom.01_keep.bootloader.eesave_bit=1
+megaAVR0_noloader.menu.24_eeprom.01_keep=Save guard "Retained"
+megaAVR0_noloader.menu.24_eeprom.02_erase.bootloader.eesave_bit=0
+megaAVR0_noloader.menu.24_eeprom.02_erase=Save guard "Erase"
+megaAVR0_noloader.menu.24_eeprom.03_replace.bootloader.eepupload={bootloader.eeprom}
+megaAVR0_noloader.menu.24_eeprom.03_replace.bootloader.eesave_bit=1
+megaAVR0_noloader.menu.24_eeprom.03_replace="Erase" and "Replace"
+megaAVR0_noloader.menu.26_userrow.02_keep="Retained"
+megaAVR0_noloader.menu.26_userrow.03_replace.bootloader.urowupload={bootloader.userrow}
+megaAVR0_noloader.menu.26_userrow.03_replace="Replace"
 megaAVR0_noloader.menu.51_buildopt.01_Release=Build Release (default)
 megaAVR0_noloader.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
 megaAVR0_noloader.menu.51_buildopt.02_Debug1=Build DEBUG=1
@@ -984,6 +1001,7 @@ tinyAVR012_noloader.bootloader.bod_lvl=000
 tinyAVR012_noloader.bootloader.bod_mode=00
 tinyAVR012_noloader.bootloader.bod_sample=0
 tinyAVR012_noloader.bootloader.eepupload=
+tinyAVR012_noloader.bootloader.urowupload=
 tinyAVR012_noloader.bootloader.eesave_bit=1
 tinyAVR012_noloader.bootloader.reset_bit=10
 tinyAVR012_noloader.bootloader.tool=avrdude
@@ -1291,13 +1309,16 @@ tinyAVR012_noloader.menu.22_updipin.11_reset.bootloader.reset_bit=10
 tinyAVR012_noloader.menu.22_updipin.11_reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
 tinyAVR012_noloader.menu.22_updipin.12_gpio.bootloader.reset_bit=00
 tinyAVR012_noloader.menu.22_updipin.12_gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
-tinyAVR012_noloader.menu.23_eeprom.01_keep.bootloader.eesave_bit=1
-tinyAVR012_noloader.menu.23_eeprom.01_keep=Save guard "Retained"
-tinyAVR012_noloader.menu.23_eeprom.02_erase.bootloader.eesave_bit=0
-tinyAVR012_noloader.menu.23_eeprom.02_erase=Save guard "Erase"
-tinyAVR012_noloader.menu.23_eeprom.03_replace.bootloader.eepupload={bootloader.eeprom}
-tinyAVR012_noloader.menu.23_eeprom.03_replace.bootloader.eesave_bit=1
-tinyAVR012_noloader.menu.23_eeprom.03_replace="Erase" and "Replace"
+tinyAVR012_noloader.menu.24_eeprom.01_keep.bootloader.eesave_bit=1
+tinyAVR012_noloader.menu.24_eeprom.01_keep=Save guard "Retained"
+tinyAVR012_noloader.menu.24_eeprom.02_erase.bootloader.eesave_bit=0
+tinyAVR012_noloader.menu.24_eeprom.02_erase=Save guard "Erase"
+tinyAVR012_noloader.menu.24_eeprom.03_replace.bootloader.eepupload={bootloader.eeprom}
+tinyAVR012_noloader.menu.24_eeprom.03_replace.bootloader.eesave_bit=1
+tinyAVR012_noloader.menu.24_eeprom.03_replace="Erase" and "Replace"
+tinyAVR012_noloader.menu.26_userrow.02_keep="Retained"
+tinyAVR012_noloader.menu.26_userrow.03_replace.bootloader.urowupload={bootloader.userrow}
+tinyAVR012_noloader.menu.26_userrow.03_replace="Replace"
 tinyAVR012_noloader.menu.51_buildopt.01_Release=Build Release (default)
 tinyAVR012_noloader.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
 tinyAVR012_noloader.menu.51_buildopt.02_Debug1=Build DEBUG=1
