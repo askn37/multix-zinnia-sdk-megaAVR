@@ -145,10 +145,16 @@ Arduino IDE でこのSDKを選択すると、
 - __FUSE UPDI__ -- tinyAVRの UPDIピン用途変更（FUSE設定）
   - __原則、既定値からの変更禁止（復元にはHV対応書換器が必須）__
   - 各個別データシート参照のこと
-- __FUSE EEPROM__ -- EEPROM保護フラグ（FUSE設定）
+- __EEPROM__ -- EEPROM保護フラグ（FUSE設定）
   - Save guard "Retained" -- チップ消去時保護
   - Save guard "Erase" -- チップ消去時一括初期化
-  - "Erase" and "Replace" -- ブートローダー/書込器でのEEPROM書換有効
+  - Upload ".eep" file -- ブートローダー/書込器でのEEPROMファイル書換有効
+- __USERROW__ -- USERROWの扱い
+  - Save guard "Retained" -- 何もしない
+  - Upload ".urow" file -- ブートローダー/書込器でのUSEROWファイル書換有効
+- __FUSE define__ -- FUSE全体の扱い：書込器モードのみ
+  - Specify in the MENU -- メニュー設定に従う
+  - Upload ".fuse" file (DANGER) -- FUSEファイルでの書換有効：危険な操作
 - __Build Option__ -- DEBUGマクロ有無（任意選択）
   - Build Release -- 既定値（NDEBUG設定）
   - Build DEBUG=1
@@ -210,7 +216,8 @@ Arduino IDE のシリアルコンソールを閉じる必要はない。
 
 EEPROM対応ブートローダーを使用しているならば以下の選択も可能。
 
-- FUSE EEPROM -> "Erase" and "Replace"
+- EEPROM -> Upload ".eep" file
+- USERROW -> Upload ".urow" file
 
 tinyAVR/megaAVR系統では Clock 選択と現在の真のFUSE設定が一致していないと
 UARTが正しく動作しない。
@@ -232,7 +239,8 @@ Arduino IDE のシリアルコンソールを閉じる必要はない。
 
 EEPROM対応書込器を使用しているなら以下も選択可能。
 
-- FUSE EEPROM -> "Erase" and "Replace"
+- EEPROM -> Upload ".eep" file
+- USERROW -> Upload ".urow" file
 
 tinyAVR/megaAVR系統では任意の Clock 選択が有効となる。
 
@@ -250,7 +258,9 @@ Arduino IDE のシリアルコンソールを閉じる必要はない。
 
 EEPROM対応書込器を使用しているなら以下も選択可能。__（Arduino Nano Everyは不可）__
 
-- FUSE EEPROM -> "Erase" and "Replace"
+- EEPROM -> Upload ".eep" file
+- USERROW -> Upload ".urow" file
+- FUSE define -> Upload ".fuse" file (DANGER)
 
 tinyAVR/megaAVR系統では任意の Clock 選択が有効となる。
 
@@ -279,7 +289,9 @@ FUSE変更以後は 20MHz / 16MHz 各系統内の選択のみが FUSE変更な�
 スケッチがビルドされた HEX ファイル、
 ブートローダーも一体に結合された HEX ファイル、
 逆アセンブルコードリスト、
-（IDE2.0では）EEPROM 初期化用 HEX ファイル
+EEPROM 初期化用 HEX ファイル
+USERROW 初期化用 HEX ファイル
+FUSE 初期化用 HEX ファイル（スケッチ内で設定内容を記述した場合）
 が出力される。
 
 > スケッチがビルドエラーになる場合は何も出力されない。\
@@ -336,9 +348,10 @@ UPDI端子の機能を無効化せずに（RESET起動式の）ブートロー�
 
 ## 更新履歴
 
-- 0.2.14 (24/06/20)
+- 0.2.14 (24/06/27)
   - 各ファイルの MITライセンスリンク対応
   - libraries から、TPI4AVR, UPDI4AVR submodule を除去（非標準化）
+  - EEPROM(.eep)、USERROW(.urow)、FUSE(.fuse) ファイルメニューを追加
 
 - 0.2.13 (24/05/12)
   - `7.3.0-avr8-gnu-toolchain-240510`に更新。
