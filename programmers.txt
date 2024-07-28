@@ -5,13 +5,6 @@
 01_updi4avr.program.tool=avrdude
 01_updi4avr.program.extra_params=-P {serial.port} -xrtsdtr=high -C "{runtime.platform.path}/avrdude.conf.UPDI4AVR"
 
-# 02_updi4avr_DS.name=UPDI4AVR over UART (High Speed)
-# 02_updi4avr_DS.communication=serial
-# 02_updi4avr_DS.protocol=updi4avr
-# 02_updi4avr_DS.program.protocol=jtagmkii_updi
-# 02_updi4avr_DS.program.tool=avrdude
-# 02_updi4avr_DS.program.extra_params=-P {serial.port} -xrtsdtr=high -b 500000 -C "{runtime.platform.path}/avrdude.conf.UPDI4AVR"
-
 03_updi4avr_HV.name=UPDI4AVR over UART (HV Enable)
 03_updi4avr_HV.communication=serial
 03_updi4avr_HV.protocol=updi4avr
