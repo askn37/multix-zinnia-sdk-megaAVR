@@ -213,15 +213,13 @@ megaAVR0.menu.51_buildopt.02_Debug1=Build DEBUG=1
 megaAVR0.menu.51_buildopt.03_Debug2.build.buildopt=-DDEBUG=2
 megaAVR0.menu.51_buildopt.03_Debug2=Build DEBUG=2
 megaAVR0.menu.52_macroapi.01_Enable=Macro API Enable (default)
-megaAVR0.menu.52_macroapi.02_Disable.build.macroapi=
-megaAVR0.menu.52_macroapi.02_Disable=Macro API Disable
-megaAVR0.menu.52_macroapi.03_AllDisable.build.macroapi=
-megaAVR0.menu.52_macroapi.03_AllDisable.compiler.ldflags=-nostartfiles -nostdlib
-megaAVR0.menu.52_macroapi.03_AllDisable=Standard Library All Disable
-megaAVR0.menu.52_macroapi.04_BareMetal.bootloader.fuseupload={bootloader.fuses_file}
-megaAVR0.menu.52_macroapi.04_BareMetal.build.macroapi=
-megaAVR0.menu.52_macroapi.04_BareMetal.compiler.ldflags=-nostartfiles -nostdlib
-megaAVR0.menu.52_macroapi.04_BareMetal=(DANGER) Bare-metal builds with .fuse files
+megaAVR0.menu.52_macroapi.02_Withoutboot.compiler.ldflags=-nostartfiles -DWOSFILES=1
+megaAVR0.menu.52_macroapi.02_Withoutboot=Macro API Enable without startup
+megaAVR0.menu.52_macroapi.03_Disable.build.macroapi=
+megaAVR0.menu.52_macroapi.03_Disable=Macro API Disable
+megaAVR0.menu.52_macroapi.04_AllDisable.build.macroapi=
+megaAVR0.menu.52_macroapi.04_AllDisable.compiler.ldflags=-nostartfiles -nostdlib -DWOSFILES=1 -DWOSTDLIB=1
+megaAVR0.menu.52_macroapi.04_AllDisable=Standard Library All Disable
 megaAVR0.menu.53_printf.01_default=default
 megaAVR0.menu.53_printf.02_full.build.printf=-DUSE_PRINTF_FLT
 megaAVR0.menu.53_printf.02_full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
@@ -567,15 +565,13 @@ tinyAVR012.menu.51_buildopt.02_Debug1=Build DEBUG=1
 tinyAVR012.menu.51_buildopt.03_Debug2.build.buildopt=-DDEBUG=2
 tinyAVR012.menu.51_buildopt.03_Debug2=Build DEBUG=2
 tinyAVR012.menu.52_macroapi.01_Enable=Macro API Enable (default)
-tinyAVR012.menu.52_macroapi.02_Disable.build.macroapi=
-tinyAVR012.menu.52_macroapi.02_Disable=Macro API Disable
-tinyAVR012.menu.52_macroapi.03_AllDisable.build.macroapi=
-tinyAVR012.menu.52_macroapi.03_AllDisable.compiler.ldflags=-nostartfiles -nostdlib
-tinyAVR012.menu.52_macroapi.03_AllDisable=Standard Library All Disable
-tinyAVR012.menu.52_macroapi.04_BareMetal.bootloader.fuseupload={bootloader.fuses_file}
-tinyAVR012.menu.52_macroapi.04_BareMetal.build.macroapi=
-tinyAVR012.menu.52_macroapi.04_BareMetal.compiler.ldflags=-nostartfiles -nostdlib
-tinyAVR012.menu.52_macroapi.04_BareMetal=(DANGER) Bare-metal builds with .fuse files
+tinyAVR012.menu.52_macroapi.02_Withoutboot.compiler.ldflags=-nostartfiles -DWOSFILES=1
+tinyAVR012.menu.52_macroapi.02_Withoutboot=Macro API Enable without startup
+tinyAVR012.menu.52_macroapi.03_Disable.build.macroapi=
+tinyAVR012.menu.52_macroapi.03_Disable=Macro API Disable
+tinyAVR012.menu.52_macroapi.04_AllDisable.build.macroapi=
+tinyAVR012.menu.52_macroapi.04_AllDisable.compiler.ldflags=-nostartfiles -nostdlib -DWOSFILES=1 -DWOSTDLIB=1
+tinyAVR012.menu.52_macroapi.04_AllDisable=Standard Library All Disable
 tinyAVR012.menu.53_printf.01_default=default
 tinyAVR012.menu.53_printf.02_full.build.printf=-DUSE_PRINTF_FLT
 tinyAVR012.menu.53_printf.02_full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
@@ -733,15 +729,13 @@ tinyAVR01.menu.51_buildopt.02_Debug1=Build DEBUG=1
 tinyAVR01.menu.51_buildopt.03_Debug2.build.buildopt=-DDEBUG=2
 tinyAVR01.menu.51_buildopt.03_Debug2=Build DEBUG=2
 tinyAVR01.menu.52_macroapi.01_Enable=Macro API Enable (default)
-tinyAVR01.menu.52_macroapi.02_Disable.build.macroapi=
-tinyAVR01.menu.52_macroapi.02_Disable=Macro API Disable
-tinyAVR01.menu.52_macroapi.03_AllDisable.build.macroapi=
-tinyAVR01.menu.52_macroapi.03_AllDisable.compiler.ldflags=-nostartfiles -nostdlib
-tinyAVR01.menu.52_macroapi.03_AllDisable=Standard Library All Disable
-tinyAVR01.menu.52_macroapi.04_BareMetal.bootloader.fuseupload={bootloader.fuses_file}
-tinyAVR01.menu.52_macroapi.04_BareMetal.build.macroapi=
-tinyAVR01.menu.52_macroapi.04_BareMetal.compiler.ldflags=-nostartfiles -nostdlib
-tinyAVR01.menu.52_macroapi.04_BareMetal=(DANGER) Bare-metal builds with .fuse files
+tinyAVR01.menu.52_macroapi.02_Withoutboot.compiler.ldflags=-nostartfiles -DWOSFILES=1
+tinyAVR01.menu.52_macroapi.02_Withoutboot=Macro API Enable without startup
+tinyAVR01.menu.52_macroapi.03_Disable.build.macroapi=
+tinyAVR01.menu.52_macroapi.03_Disable=Macro API Disable
+tinyAVR01.menu.52_macroapi.04_AllDisable.build.macroapi=
+tinyAVR01.menu.52_macroapi.04_AllDisable.compiler.ldflags=-nostartfiles -nostdlib -DWOSFILES=1 -DWOSTDLIB=1
+tinyAVR01.menu.52_macroapi.04_AllDisable=Standard Library All Disable
 tinyAVR01.menu.53_printf.01_default=default
 tinyAVR01.menu.53_printf.02_full.build.printf=-DUSE_PRINTF_FLT
 tinyAVR01.menu.53_printf.02_full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
@@ -951,11 +945,13 @@ megaAVR0_noloader.menu.51_buildopt.02_Debug1=Build DEBUG=1
 megaAVR0_noloader.menu.51_buildopt.03_Debug2.build.buildopt=-DDEBUG=2
 megaAVR0_noloader.menu.51_buildopt.03_Debug2=Build DEBUG=2
 megaAVR0_noloader.menu.52_macroapi.01_Enable=Macro API Enable (default)
-megaAVR0_noloader.menu.52_macroapi.02_Disable.build.macroapi=
-megaAVR0_noloader.menu.52_macroapi.02_Disable=Macro API Disable
-megaAVR0_noloader.menu.52_macroapi.03_AllDisable.build.macroapi=
-megaAVR0_noloader.menu.52_macroapi.03_AllDisable.compiler.ldflags=-nostartfiles -nostdlib
-megaAVR0_noloader.menu.52_macroapi.03_AllDisable=Standard Library All Disable
+megaAVR0_noloader.menu.52_macroapi.02_Withoutboot.compiler.ldflags=-nostartfiles -DWOSFILES=1
+megaAVR0_noloader.menu.52_macroapi.02_Withoutboot=Macro API Enable without startup
+megaAVR0_noloader.menu.52_macroapi.03_Disable.build.macroapi=
+megaAVR0_noloader.menu.52_macroapi.03_Disable=Macro API Disable
+megaAVR0_noloader.menu.52_macroapi.04_AllDisable.build.macroapi=
+megaAVR0_noloader.menu.52_macroapi.04_AllDisable.compiler.ldflags=-nostartfiles -nostdlib -DWOSFILES=1 -DWOSTDLIB=1
+megaAVR0_noloader.menu.52_macroapi.04_AllDisable=Standard Library All Disable
 megaAVR0_noloader.menu.53_printf.01_default=default
 megaAVR0_noloader.menu.53_printf.02_full.build.printf=-DUSE_PRINTF_FLT
 megaAVR0_noloader.menu.53_printf.02_full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
@@ -1349,11 +1345,13 @@ tinyAVR012_noloader.menu.51_buildopt.02_Debug1=Build DEBUG=1
 tinyAVR012_noloader.menu.51_buildopt.03_Debug2.build.buildopt=-DDEBUG=2
 tinyAVR012_noloader.menu.51_buildopt.03_Debug2=Build DEBUG=2
 tinyAVR012_noloader.menu.52_macroapi.01_Enable=Macro API Enable (default)
-tinyAVR012_noloader.menu.52_macroapi.02_Disable.build.macroapi=
-tinyAVR012_noloader.menu.52_macroapi.02_Disable=Macro API Disable
-tinyAVR012_noloader.menu.52_macroapi.03_AllDisable.build.macroapi=
-tinyAVR012_noloader.menu.52_macroapi.03_AllDisable.compiler.ldflags=-nostartfiles -nostdlib
-tinyAVR012_noloader.menu.52_macroapi.03_AllDisable=Standard Library All Disable
+tinyAVR012_noloader.menu.52_macroapi.02_Withoutboot.compiler.ldflags=-nostartfiles -DWOSFILES=1
+tinyAVR012_noloader.menu.52_macroapi.02_Withoutboot=Macro API Enable without startup
+tinyAVR012_noloader.menu.52_macroapi.03_Disable.build.macroapi=
+tinyAVR012_noloader.menu.52_macroapi.03_Disable=Macro API Disable
+tinyAVR012_noloader.menu.52_macroapi.04_AllDisable.build.macroapi=
+tinyAVR012_noloader.menu.52_macroapi.04_AllDisable.compiler.ldflags=-nostartfiles -nostdlib -DWOSFILES=1 -DWOSTDLIB=1
+tinyAVR012_noloader.menu.52_macroapi.04_AllDisable=Standard Library All Disable
 tinyAVR012_noloader.menu.53_printf.01_default=default
 tinyAVR012_noloader.menu.53_printf.02_full.build.printf=-DUSE_PRINTF_FLT
 tinyAVR012_noloader.menu.53_printf.02_full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
