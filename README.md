@@ -13,6 +13,7 @@ avrdude を用いて対象MCUにアップロードするまでの作業フロー
   - 原則として割込や計数器/計時器周辺機能を専有せず、利用者が自由に使える。
     - __協調的マルチタスク__ 支援ライブラリは RTC周辺機能を必要とする。\
       （任意選択：明示的インクルードで有効化）
+- AVRDUDE 8.0 同梱。（0.3.0以降）
 - 超低消費電力超低速駆動対応。
   - 32768Hzの超低消費電力動作を支援。（reduceAVR以外）
 - 安価なプログラムライタ（書込器）の利用を想定。
@@ -61,17 +62,21 @@ avrdude を用いて対象MCUにアップロードするまでの作業フロー
 - macOS (64bit)
 - Linux (主にintel系64bit)
 
-## 対応するプログラムライタ
+## 対応する主なプログラムライタ
 
 完成品として販売されている製品以外の、工場出荷状態ではブートローダーが書き込まれていないため何らかの書込器準備は必要。
 
-- [__UPDI4AVR__](https://github.com/askn37/UPDI4AVR) -- このSDKでもメンテナンスされている。JTAG2UPDI上位互換。
+- [__UPDI4AVR-USB__](https://askn37.github.io/product/UPDI4AVR-USB/) -- このSDKでもメンテナンスされている。PICKit4互換相当。
+  - 廉価な "AVR64DU32 CURIOSITY NANO" を UPDI/TPI/PDI 対応書込器に仕立てるソフトウェア。
+  - CMSIS-DAP/EDBGプロトコルによる、JTAG3UPDI/TPI/PDI 対応。
+  - 高速CDC/VCPシリアル通信機能付。
+  - UPDI/TPI の __HV書込__ 対応可。（要外部回路）
+- [__UPDI4AVR__](https://github.com/askn37/UPDI4AVR) -- このSDKでもメンテナンスされている。USBシリアル接続。JTAG2UPDI上位互換。
   - __HV書込__ とUSB-USARTパススルーに対応可。（要外部回路）
   - ゼロからこれを自作する場合は __卵と鶏__ の関係になるため注意。
 - __SerialUPDI__ -- 一般のUSB-UARTと簡易な回路による高速書込環境。
   - 準備にはいくらかの部品調達と配線が必要だが難易度は低い。HV書込は望めない。
   - 対象MCUの UART通信とは回路が排他で外部切替が必要。（自動切替は要外付制御回路）
-  - *avrdude 7.2* では AVR_DU/EA/EB には非対応。（AVR_EA/EB は 7.3以降、AVR_DU は 7.4以降で対応予定）
 - PICkit4 -- 公式のプログラム書込装置兼 __デバッグトレース__ 装置。
   - 使用開始前に MPLAB X によるFWアップデートが要求される。購入状態での対応範囲不明。
   - フルスペックの公式開発環境が別途必須なのでエンドユーザーのPC環境によっては難がある。\
@@ -161,6 +166,7 @@ Arduino IDE でこのSDKを選択すると、
   - Build DEBUG=2
 - __Build API__ -- API拡張（任意選択）
   - Macro API Enable -- 既定値
+  - Macro API Enable without startup -- 割込テーブルとLIBC初期設定スタートアップ無効
   - Macro API Disable -- 無効
     - Arduino互換APIの導入は要外部支援（本SDKサポート外）
   - Standard Library All Disable
@@ -185,8 +191,7 @@ Arduino IDE でこのSDKを選択すると、
 - __シリアルポート選択__
   - 環境依存
 - __書込装置選択__
-  - [UPDI4AVR over UART](https://askn37.github.io/product/UPDI4AVR/) (Standard)
-  - [UPDI4AVR over UART](https://askn37.github.io/product/UPDI4AVR/) (HV Enable) -- __HV書込対応__
+  - [UPDI4AVR-USB](https://github.com/askn37/UPDI4AVR-USB)
   - SerialUPDI over UART -- *avrdude 7.2* を使用
   - PICkit4 over USB (UPDI) -- ファームウェア更新が必要
   - Curiosity Nano (nEDBG: ATSAMD21E18)
@@ -313,15 +318,11 @@ UPDI端子の機能を無効化せずに（RESET起動式の）ブートロー�
 
 ### その他注意事項
 
-以下に上げる完成販売品は本来、それぞれ既定の開発環境があり
-この SDK が本来対応すべき範疇のものではないが、
-搭載された MCU は対応範囲内なので
-以下のようにすれば使用可能である。
+以下に上げる完成販売品は本来、それぞれ既定の開発環境がありこの SDK が本来対応すべき範疇のものではないが、搭載された MCU は対応範囲内なので以下のようにすれば使用可能である。
 
 ### Arduino Nano Every
 
-この製品には他の製品のような Atmel/Microchip書込装置ではなく、
-独自のオンボード専用書込器が使われている。
+この製品には他の製品のような Atmel/Microchip書込装置ではなく、独自のオンボード専用書込器が使われている。
 
 この製品使用時のメニュー選択は次のように __しなければならない__；
 
