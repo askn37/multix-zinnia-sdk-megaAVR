@@ -50,11 +50,17 @@ F_CPU_Scale = 1
 MF := $(MAKEFILE_LIST)
 LDSECTIONS = -Wl,-section-start=.text=0 -Wl,--section-start=.appcode=0x200
 
-AVRGCCROOT = ../../../../../tools/avr-gcc/7.3.0-avr8-gnu-toolchain/bin
-# AVRGCCROOT = ~/Library/Arduino15/packages/MultiX-Zinnia/tools/avr-gcc/7.3.0-avr8-gnu-toolchain/bin
+### basedir: ~/Library/Arduino15/packages/MultiX-Zinnia
+AVRGCCROOT = ../../../../../tools/avr8-gcc/7.3.0-avr8-gnu-toolchain/bin
+
+### basedir: ~/Library/Arduino15/packages/MultiX-Zinnia
+ATPACKSPEC = ../../../../../tools/atpack/20260521/gcc/dev/$*
+ATPACKROOT = ../../../../../tools/atpack/20260521/include
+
+GCC_EXEC_PREFIX=$(ATPACKSPEC)
 
 CC = $(AVRGCCROOT)/avr-gcc
-OPTIMIZE = -Os -fno-split-wide-types -mrelax
+OPTIMIZE = -std=gnu11 -Os -fno-split-wide-types -mrelax -B $(ATPACKSPEC) -I $(ATPACKROOT)
 JOINING  = -j .text -j .data -j --set-section-flags
 CFLAGS   = -g -Wall $(OPTIMIZE) -save-temps=obj
 LDFLAGS  = $(LDSECTIONS) -Wl,--relax -nostartfiles -nostdlib
@@ -122,7 +128,7 @@ endif
 ### make section
 
 boot_%.hex: boot_%.elf
-ifneq ($(PERL),'')
+ifneq ($(PERL),)
 	$(OBJCOPY) $(JOINING) -O binary $< boot_$*.tmp
 	$(PERL) $(GENCRC) $(GENCRCOPT) -i boot_$*.tmp -o $@
 else
@@ -134,7 +140,7 @@ endif
 
 boot_%.elf:	$(SOURCE) FORCE
 	@echo "******************************"
-	@echo "*** Options:" $(MCU_TARGET) \
+	@echo "*** Options:" $* \
 		BOOTNAME=$(PROGRAM) UART=$(UART) LED=$(LED) \
 		BAUD_RATE=$(BAUD_RATE) TIMEOUT=$(TIMEOUT)
 	$(CC) $(CFLAGS) $(OPTIONS) $(LDFLAGS) -o $@ $<
@@ -142,21 +148,21 @@ boot_%.elf:	$(SOURCE) FORCE
 
 atmega%:
 	$(MAKE) -f $(MF) boot_atmega$*.hex
-	$(OBJCOPY) -I ihex -O binary boot_atmega$*.hex boot_atmega$*.bin
+	@# $(OBJCOPY) -I ihex -O binary boot_atmega$*.hex boot_atmega$*.bin
 	@echo "******************************"
 	@echo "*** Output:"
-	# mv boot_atmega$*.lst ../hex/${BOOTNAME}_${UART}_${BAUD_RATE}_L${LED}.lst
+	@# mv boot_atmega$*.lst ../hex/${BOOTNAME}_${UART}_${BAUD_RATE}_L${LED}.lst
 	cp boot_atmega$*.hex ../hex/${BOOTNAME}_${UART}_${BAUD_RATE}_L${LED}.hex
-	cp boot_atmega$*.bin ../bin/${BOOTNAME}_${UART}_${BAUD_RATE}_L${LED}.bin
+	@# cp boot_atmega$*.bin ../bin/${BOOTNAME}_${UART}_${BAUD_RATE}_L${LED}.bin
 
 attiny%:
 	$(MAKE) -f $(MF) boot_attiny$*.hex
-	$(OBJCOPY) -I ihex -O binary boot_attiny$*.hex boot_attiny$*.bin
+	@# $(OBJCOPY) -I ihex -O binary boot_attiny$*.hex boot_attiny$*.bin
 	@echo "******************************"
 	@echo "*** Output:"
-	# mv boot_attiny$*.lst ../hex/${BOOTNAME}_${UART}_${BAUD_RATE}_L${LED}.lst
+	@# mv boot_attiny$*.lst ../hex/${BOOTNAME}_${UART}_${BAUD_RATE}_L${LED}.lst
 	cp boot_attiny$*.hex ../hex/${BOOTNAME}_${UART}_${BAUD_RATE}_L${LED}.hex
-	cp boot_attiny$*.bin ../bin/${BOOTNAME}_${UART}_${BAUD_RATE}_L${LED}.bin
+	@# cp boot_attiny$*.bin ../bin/${BOOTNAME}_${UART}_${BAUD_RATE}_L${LED}.bin
 
 all:
 	$(MAKE) -f $(MF) $(MCU_TARGET) BOOTNAME=$(PROGRAM)

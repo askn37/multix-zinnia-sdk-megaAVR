@@ -257,6 +257,10 @@ megaAVR0.menu.95_bootloader.11_UART3_B0_LA7=UART3 TX:PB0 RX:PB1 LED=PA7 (48pin o
 megaAVR0.menu.95_bootloader.12_UART2_F4_LA7.bootloader.file=hex/boot_atmega_UART2_F4_{upload.speed}_LA7.hex
 megaAVR0.menu.95_bootloader.12_UART2_F4_LA7.build.console_select=-DSerial=Serial2A
 megaAVR0.menu.95_bootloader.12_UART2_F4_LA7=UART2 TX:PF4 RX:PF5 LED=PA7 (32/48pin only)
+megaAVR0.menu.95_bootloader.31_UART3_B0_LF5_SF6_Curiosity.bootloader.file=hex/boot_atmega_UART3_B0_{upload.speed}_LF5.hex
+megaAVR0.menu.95_bootloader.31_UART3_B0_LF5_SF6_Curiosity.build.console_select=-DSerial=Serial3A
+megaAVR0.menu.95_bootloader.24_UART3_B0_LF5_SF6_Curiosity.build.led_pin=-DLED_BUILTIN=PIN_PF5 -DSW_BUILTIN=PIN_PF6
+megaAVR0.menu.95_bootloader.31_UART3_B0_LF5_SF6_Curiosity=UART3 TX:PB0 RX:PB1 LED=PF5 SW=PF6 (ATmega4809 Curiosity Nano)
 
 
 tinyAVR012.bootloader.BODCFG=0b{bootloader.bod_lvl}{bootloader.bod_sample}{bootloader.bod_mode}00
@@ -603,6 +607,14 @@ tinyAVR012.menu.95_bootloader.20_separator=-
 tinyAVR012.menu.95_bootloader.21_UART1_C2_LA7.bootloader.file=hex/boot_attiny_UART1_C2_{upload.speed}_LA7.hex
 tinyAVR012.menu.95_bootloader.21_UART1_C2_LA7.build.console_select=-DSerial=Serial1B
 tinyAVR012.menu.95_bootloader.21_UART1_C2_LA7=UART1 TX:PC2 RX:PC1 LED=PA7 (tinyAVR-2 20/24pin only)
+tinyAVR012.menu.95_bootloader.24_UART0_B2_LB2_SC4_Curiosity.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LB7.hex
+tinyAVR012.menu.95_bootloader.24_UART0_B2_LB2_SC4_Curiosity.build.console_select=-DSerial=Serial0A
+tinyAVR012.menu.95_bootloader.24_UART0_B2_LB2_SC4_Curiosity.build.led_pin=-DLED_BUILTIN=PIN_PB7 -DSW_BUILTIN=PIN_PC4
+tinyAVR012.menu.95_bootloader.24_UART0_B2_LB2_SC4_Curiosity=UART0 TX:PB2 RX:PB3 LED=PB7 SW=PC4 (ATtiny1607/1627 Curiosity Nano)
+tinyAVR012.menu.95_bootloader.25_UART0_B2_LA3_SB7_Curiosity.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LA3.hex
+tinyAVR012.menu.95_bootloader.25_UART0_B2_LA3_SB7_Curiosity.build.console_select=-DSerial=Serial0A
+tinyAVR012.menu.95_bootloader.25_UART0_B2_LA3_SB7_Curiosity.build.led_pin=-DLED_BUILTIN=PIN_PA3 -DSW_BUILTIN=PIN_PB7
+tinyAVR012.menu.95_bootloader.25_UART0_B2_LA3_SB7_Curiosity=UART0 TX:PB2 RX:PB3 LED=PA3 SW=PB7 (ATtiny3217 Curiosity Nano)
 
 
 tinyAVR01.bootloader.BODCFG=0b{bootloader.bod_lvl}{bootloader.bod_sample}{bootloader.bod_mode}00
@@ -1385,15 +1397,12 @@ tinyAVR012_noloader.menu.54_console_select.22_UART0_B2_LC0_SC5_XplainedMini=UART
 tinyAVR012_noloader.menu.54_console_select.23_UART0_B2_LC7_SB5_XplainedPro.build.console_select=-DSerial=Serial0A
 tinyAVR012_noloader.menu.54_console_select.23_UART0_B2_LC7_SB5_XplainedPro.build.led_pin=-DLED_BUILTIN=PIN_PC7 -DSW_BUILTIN=PIN_PB5
 tinyAVR012_noloader.menu.54_console_select.23_UART0_B2_LC7_SB5_XplainedPro=UART0 TX:PB2 RX:PB3 LED=PC7 SW=PB5 (ATtiny817/3217 Xplained Pro)
-tinyAVR012_noloader.menu.54_console_select.24_UART0_B2_LF5_SF6_Curiosity.build.console_select=-DSerial=Serial0A
-tinyAVR012_noloader.menu.54_console_select.24_UART0_B2_LF5_SF6_Curiosity.build.led_pin=-DLED_BUILTIN=PIN_PF5 -DSW_BUILTIN=PIN_PF6
-tinyAVR012_noloader.menu.54_console_select.24_UART0_B2_LF5_SF6_Curiosity=UART0 TX:PB2 RX:PB3 LED=PF5 SW=PF6 (ATtiny1607 Curiosity Nano)
+tinyAVR012_noloader.menu.54_console_select.24_UART0_B2_LB2_SC4_Curiosity.build.console_select=-DSerial=Serial0A
+tinyAVR012_noloader.menu.54_console_select.24_UART0_B2_LB2_SC4_Curiosity.build.led_pin=-DLED_BUILTIN=PIN_PB7 -DSW_BUILTIN=PIN_PC4
+tinyAVR012_noloader.menu.54_console_select.24_UART0_B2_LB2_SC4_Curiosity=UART0 TX:PB2 RX:PB3 LED=PB7 SW=PC4 (ATtiny1607/1627 Curiosity Nano)
 tinyAVR012_noloader.menu.54_console_select.25_UART0_B2_LA3_SB7_Curiosity.build.console_select=-DSerial=Serial0A
 tinyAVR012_noloader.menu.54_console_select.25_UART0_B2_LA3_SB7_Curiosity.build.led_pin=-DLED_BUILTIN=PIN_PA3 -DSW_BUILTIN=PIN_PB7
 tinyAVR012_noloader.menu.54_console_select.25_UART0_B2_LA3_SB7_Curiosity=UART0 TX:PB2 RX:PA3 LED=PA3 SW=PB7 (ATtiny3217 Curiosity Nano)
-tinyAVR012_noloader.menu.54_console_select.26_UART0_B2_LB7_SC4_Curiosity.build.console_select=-DSerial=Serial0A
-tinyAVR012_noloader.menu.54_console_select.26_UART0_B2_LB7_SC4_Curiosity.build.led_pin=-DLED_BUILTIN=PIN_PB7 -DSW_BUILTIN=PIN_PC4
-tinyAVR012_noloader.menu.54_console_select.26_UART0_B2_LB7_SC4_Curiosity=UART0 TX:PB2 RX:PB3 LED=PB7 SW=PC4 (ATtiny1627 Curiosity Nano)
 tinyAVR012_noloader.menu.90_console_baud.01_9600bps.build.console_baud=-DCONSOLE_BAUD=9600
 tinyAVR012_noloader.menu.90_console_baud.01_9600bps=CONSOLE_BAUD=9600 bps (default)
 tinyAVR012_noloader.menu.90_console_baud.03_38400bps.build.console_baud=-DCONSOLE_BAUD=38400

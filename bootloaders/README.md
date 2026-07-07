@@ -153,8 +153,12 @@ FW Version            : 48.72
 
 ## リビルド
 
-詳細は`make_all.sh`や `Makefile`を参照のこと。それぞれのカレントディレクトリで 次のようにすれば`hex/bin`フォルダが更新される。
+詳細は`make_all.sh`や `Makefile`を参照のこと。それぞれのカレントディレクトリで 次のようにすれば`hex`フォルダが更新される。
 使用する avr-gccツールチェインには、AVR_Dx/Exサポートパックがマージされていなければならない。
+
+avr-gcc-7.x を使用すること。__それ以降の avr-gcc は推奨されない。__
+
+> avr-gcc-15.x 等では 512byte を超える肥大したバイナリが出力され、それを回避する方法は発見されていない。
 
 ```c
 boot_ax> sh make_all.sh
@@ -173,7 +177,7 @@ boot_ex> sh make_all.sh
 - megaAVR、tinyAVR 系統用は CRC16 検査値が埋め込まれている。`FUSE_SYSCFG0`に`CRCSEL`ビットはない。
 - AVR_Dx系統用は CRC32 検査値が埋め込まれている。`FUSE_SYSCFG0`の`CRCSEL`ビットは`FUSE_CRCSEL_bp`をセットする。
 
-> AVR_Ex系統用は CRC32 検査値が埋め込まれているが、現行のシリコンでは Eratta により事実上使用できない。
+> AVR_Ex系統用は CRC32 検査値が埋め込まれているが、最初期のシリコンでは Eratta により事実上使用できない。
 
 ### ビルドオプション
 
