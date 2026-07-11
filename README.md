@@ -6,6 +6,8 @@
 AVR-GCC/AVR-LIBC を用いて書かれた C/C++/アセンブラ プログラムを
 avrdude を用いて対象MCUにアップロードするまでの作業フローを提供する。
 
+- より多くの情報は [[MultiX Zinnia Product : WiKi]](https://github.com/askn37/askn37.github.io/wiki)
+
 ## 概要
 
 - Arduino互換APIは提供されない。
