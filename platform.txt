@@ -1,11 +1,11 @@
 name=MultiX Zinnia Product SDK [megaAVR]
-version=0.4.2
+version=0.4.3
 
 archive_file_path={build.path}/{archive_file}
 bootloader.tool=avrdude
 bootloader.LOCKKEY=0xC5
 build.extra_flags=
-build.flags=-DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {build.buildopt} {build.console_baud} {build.console_select} {build.led_pin} {build.macroapi} {build.printf} -DUPLD_MAX_SIZE={upload.maximum_size} '-DSKETCH_PATH={build.source.path}' {build.extra_flags}
+build.flags=-DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {build.buildopt} {build.console_baud} {build.console_select} {build.macroapi} {build.printf} -DUPLD_MAX_SIZE={upload.maximum_size} '-DSKETCH_PATH={build.source.path}' {build.extra_flags}
 build.usb_flags=-DUSB_VID={build.vid} -DUSB_PID={build.pid} '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT={build.usb_product}'
 build.usb_manufacturer="Unknown"
 build.core=megaAVR
@@ -93,6 +93,9 @@ recipe.size.regex.eeprom=^(?:\.eeprom)\s+([0-9]+).*
 recipe.size.regex=^(?:\.text|\.data|\.rodata|\.bootloader)\s+([0-9]+).*
 
 
+tools.avrdude.path={runtime.tools.avrdude.path}
+tools.avrdude.cmd.path={path}/bin/avrdude
+tools.avrdude.config.path=
 tools.avrdude.bootloader.eeprom=-U "eeprom:w:{build.path}/{build.project_name}.eep:i"
 tools.avrdude.bootloader.userrow=-U "userrow:w:{build.path}/{build.project_name}.urow:i"
 tools.avrdude.bootloader.fusefile=-U "fuses:w:{build.path}/{build.project_name}.fuse:i"
@@ -109,13 +112,9 @@ tools.avrdude.bootloader.params.quiet=-q -q
 tools.avrdude.bootloader.params.verbose=-v
 tools.avrdude.bootloader.pattern="{cmd.path}" {bootloader.verbose} {bootloader.verify} -p {build.mcu} -c {protocol} {program.extra_params} {bootloader.fuses} -e -U "flash:w:{runtime.platform.path}/bootloaders/{bootloader.file}:i"
 tools.avrdude.bootloader.verify=
-tools.avrdude.cmd.path={path}/bin/avrdude
-tools.avrdude.config.path=
 tools.avrdude.erase.params.quiet=-q -q
 tools.avrdude.erase.params.verbose=-v
 tools.avrdude.erase.pattern=
-#tools.avrdude.path={runtime.platform.path}/../../../tools/avrdude/8.0-arduino.1
-tools.avrdude.path={runtime.tools.avrdude.path}
 tools.avrdude.program.params.noverify=-V
 tools.avrdude.program.params.quiet=-q -q
 tools.avrdude.program.params.verbose=-v

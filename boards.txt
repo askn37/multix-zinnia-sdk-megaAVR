@@ -57,11 +57,10 @@ megaAVR0.build.export_merged_output=true
 megaAVR0.build.text_section_start=.text=0x200
 megaAVR0.build.buildopt=-DNDEBUG
 megaAVR0.build.console_baud=-DCONSOLE_BAUD=9600
-megaAVR0.build.led_pin=-DLED_BUILTIN=PIN_PA7
 megaAVR0.build.macroapi=-DENABLE_MACRO_API
 megaAVR0.build.printf=
 megaAVR0.build.printflt=
-megaAVR0.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p128.x
+megaAVR0.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p128.x
 megaAVR0.upload.protocol=arduino
 megaAVR0.upload.speed=115200
 megaAVR0.upload.tool=avrdude
@@ -179,20 +178,20 @@ megaAVR0.menu.02_clock.21_2MHz=Internal 2 MHz
 megaAVR0.menu.02_clock.22_32768Hz.bootloader.bod_sample=1
 megaAVR0.menu.02_clock.22_32768Hz.build.f_cpu=32768
 megaAVR0.menu.02_clock.22_32768Hz=Internal 32.768 kHz (ULP)
-megaAVR0.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
-megaAVR0.menu.11_BODMODE.01_disabled=BOD Disabled
-megaAVR0.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
-megaAVR0.menu.11_BODMODE.02_enabled=BOD Enabled
-megaAVR0.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
-megaAVR0.menu.11_BODMODE.03_sampled=BOD Sampled
-megaAVR0.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
-megaAVR0.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
-megaAVR0.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
-megaAVR0.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
-megaAVR0.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
-megaAVR0.menu.12_BODLVL.BODLEVEL2=Level 2.6V
-megaAVR0.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
-megaAVR0.menu.12_BODLVL.BODLEVEL7=Level 4.3V
+# megaAVR0.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
+# megaAVR0.menu.11_BODMODE.01_disabled=BOD Disabled
+# megaAVR0.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
+# megaAVR0.menu.11_BODMODE.02_enabled=BOD Enabled
+# megaAVR0.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
+# megaAVR0.menu.11_BODMODE.03_sampled=BOD Sampled
+# megaAVR0.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
+# megaAVR0.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
+# megaAVR0.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
+# megaAVR0.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
+# megaAVR0.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
+# megaAVR0.menu.12_BODLVL.BODLEVEL2=Level 2.6V
+# megaAVR0.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
+# megaAVR0.menu.12_BODLVL.BODLEVEL7=Level 4.3V
 megaAVR0.menu.21_resetpin.01_reset.bootloader.reset_bit=11
 megaAVR0.menu.21_resetpin.01_reset=PF6 pin=Reset
 megaAVR0.menu.21_resetpin.02_gpio.bootloader.reset_bit=01
@@ -244,22 +243,22 @@ megaAVR0.menu.90_console_baud.21_2400bps=CONSOLE_BAUD=2400 bps (for ULP)
 megaAVR0.menu.95_bootloader.01_UART0_A0_LA7.bootloader.file=hex/boot_atmega_UART0_A0_{upload.speed}_LA7.hex
 megaAVR0.menu.95_bootloader.01_UART0_A0_LA7.build.console_select=-DSerial=Serial0A
 megaAVR0.menu.95_bootloader.01_UART0_A0_LA7=UART0 TX:PA0 RX:PA1 LED=PA7 (default)
-megaAVR0.menu.95_bootloader.02_UART1_C0_LA7.bootloader.file=hex/boot_atmega_UART1_C0_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.02_UART1_C0_LA7.build.console_select=-DSerial=Serial1A
-megaAVR0.menu.95_bootloader.02_UART1_C0_LA7=UART1 TX:PC0 RX:PC1 LED=PA7
-megaAVR0.menu.95_bootloader.03_UART2_F0_LA7.bootloader.file=hex/boot_atmega_UART2_F0_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.03_UART2_F0_LA7.build.console_select=-DSerial=Serial2A
-megaAVR0.menu.95_bootloader.03_UART2_F0_LA7=UART2 TX:PF0 RX:PF1 LED=PA7
 megaAVR0.menu.95_bootloader.10_separator=-
-megaAVR0.menu.95_bootloader.11_UART3_B0_LA7.bootloader.file=hex/boot_atmega_UART3_B0_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.11_UART3_B0_LA7.build.console_select=-DSerial=Serial3A
-megaAVR0.menu.95_bootloader.11_UART3_B0_LA7=UART3 TX:PB0 RX:PB1 LED=PA7 (48pin only)
-megaAVR0.menu.95_bootloader.12_UART2_F4_LA7.bootloader.file=hex/boot_atmega_UART2_F4_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.12_UART2_F4_LA7.build.console_select=-DSerial=Serial2A
-megaAVR0.menu.95_bootloader.12_UART2_F4_LA7=UART2 TX:PF4 RX:PF5 LED=PA7 (32/48pin only)
+megaAVR0.menu.95_bootloader.11_UART1_C0_LA7.bootloader.file=hex/boot_atmega_UART1_C0_{upload.speed}_LA7.hex
+megaAVR0.menu.95_bootloader.11_UART1_C0_LA7.build.console_select=-DSerial=Serial1A
+megaAVR0.menu.95_bootloader.11_UART1_C0_LA7=UART1 TX:PC0 RX:PC1 LED=PA7
+megaAVR0.menu.95_bootloader.12_UART2_F0_LA7.bootloader.file=hex/boot_atmega_UART2_F0_{upload.speed}_LA7.hex
+megaAVR0.menu.95_bootloader.12_UART2_F0_LA7.build.console_select=-DSerial=Serial2A
+megaAVR0.menu.95_bootloader.12_UART2_F0_LA7=UART2 TX:PF0 RX:PF1 LED=PA7
+megaAVR0.menu.95_bootloader.13_UART3_B0_LA7.bootloader.file=hex/boot_atmega_UART3_B0_{upload.speed}_LA7.hex
+megaAVR0.menu.95_bootloader.13_UART3_B0_LA7.build.console_select=-DSerial=Serial3A -DLED_BUILTIN=PIN_PA7
+megaAVR0.menu.95_bootloader.13_UART3_B0_LA7=UART3 TX:PB0 RX:PB1 LED=PA7 (48pin only)
+megaAVR0.menu.95_bootloader.14_UART2_F4_LA7.bootloader.file=hex/boot_atmega_UART2_F4_{upload.speed}_LA7.hex
+megaAVR0.menu.95_bootloader.14_UART2_F4_LA7.build.console_select=-DSerial=Serial2A -DLED_BUILTIN=PIN_PA7
+megaAVR0.menu.95_bootloader.14_UART2_F4_LA7=UART2 TX:PF4 RX:PF5 LED=PA7 (32/48pin only)
+megaAVR0.menu.95_bootloader.10_separator=-
 megaAVR0.menu.95_bootloader.31_UART3_B0_LF5_SF6_Curiosity.bootloader.file=hex/boot_atmega_UART3_B0_{upload.speed}_LF5.hex
-megaAVR0.menu.95_bootloader.31_UART3_B0_LF5_SF6_Curiosity.build.console_select=-DSerial=Serial3A
-megaAVR0.menu.95_bootloader.24_UART3_B0_LF5_SF6_Curiosity.build.led_pin=-DLED_BUILTIN=PIN_PF5 -DSW_BUILTIN=PIN_PF6
+megaAVR0.menu.95_bootloader.31_UART3_B0_LF5_SF6_Curiosity.build.console_select=-DSerial=Serial3A -DLED_BUILTIN=PIN_PF5 -DSW_BUILTIN=PIN_PF6
 megaAVR0.menu.95_bootloader.31_UART3_B0_LF5_SF6_Curiosity=UART3 TX:PB0 RX:PB1 LED=PF5 SW=PF6 (ATmega4809 Curiosity Nano)
 
 
@@ -277,25 +276,24 @@ tinyAVR012.bootloader.eepupload=
 tinyAVR012.bootloader.urowupload=
 tinyAVR012.bootloader.fuseupload={bootloader.fuses}
 tinyAVR012.bootloader.eesave_bit=1
-tinyAVR012.bootloader.reset_bit=10
+tinyAVR012.bootloader.reset_bit=01
 tinyAVR012.bootloader.tool=avrdude
 tinyAVR012.bootloader.programed_type=.with_bootloader
 tinyAVR012.build.export_merged_output=true
 tinyAVR012.build.text_section_start=.text=0x200
 tinyAVR012.build.buildopt=-DNDEBUG
 tinyAVR012.build.console_baud=-DCONSOLE_BAUD=9600
-tinyAVR012.build.led_pin=-DLED_BUILTIN=PIN_PA7
 tinyAVR012.build.macroapi=-DENABLE_MACRO_API
 tinyAVR012.build.printf=
 tinyAVR012.build.printflt=
-tinyAVR012.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p64.x
+tinyAVR012.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p64.x
 tinyAVR012.upload.protocol=arduino
 tinyAVR012.upload.speed=115200
 tinyAVR012.upload.tool=avrdude
 tinyAVR012.menu.01_variant.01_ATtiny3227.build.board=AVR_ATTINY3227
 tinyAVR012.menu.01_variant.01_ATtiny3227.build.mcu=attiny3227
 tinyAVR012.menu.01_variant.01_ATtiny3227.build.variant=tinyAVR2_24
-tinyAVR012.menu.01_variant.01_ATtiny3227.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p128.x
+tinyAVR012.menu.01_variant.01_ATtiny3227.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p128.x
 tinyAVR012.menu.01_variant.01_ATtiny3227.upload.maximum_data_size=3072
 tinyAVR012.menu.01_variant.01_ATtiny3227.upload.maximum_size=32768
 tinyAVR012.menu.01_variant.01_ATtiny3227=tinyAVR-2 24pin ATtiny3227 (32KiB+3KiB)
@@ -321,7 +319,7 @@ tinyAVR012.menu.01_variant.10_separator=-
 tinyAVR012.menu.01_variant.11_ATtiny3226.build.board=AVR_ATTINY3226
 tinyAVR012.menu.01_variant.11_ATtiny3226.build.mcu=attiny3226
 tinyAVR012.menu.01_variant.11_ATtiny3226.build.variant=tinyAVR2_20
-tinyAVR012.menu.01_variant.11_ATtiny3226.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p128.x
+tinyAVR012.menu.01_variant.11_ATtiny3226.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p128.x
 tinyAVR012.menu.01_variant.11_ATtiny3226.upload.maximum_data_size=3072
 tinyAVR012.menu.01_variant.11_ATtiny3226.upload.maximum_size=32768
 tinyAVR012.menu.01_variant.11_ATtiny3226=tinyAVR-2 20pin ATtiny3226 (32KiB+3KiB)
@@ -347,7 +345,7 @@ tinyAVR012.menu.01_variant.20_separator=-
 tinyAVR012.menu.01_variant.21_ATtiny3224.build.board=AVR_ATTINY3224
 tinyAVR012.menu.01_variant.21_ATtiny3224.build.mcu=attiny3224
 tinyAVR012.menu.01_variant.21_ATtiny3224.build.variant=tinyAVR2_14
-tinyAVR012.menu.01_variant.21_ATtiny3224.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p128.x
+tinyAVR012.menu.01_variant.21_ATtiny3224.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p128.x
 tinyAVR012.menu.01_variant.21_ATtiny3224.upload.maximum_data_size=3072
 tinyAVR012.menu.01_variant.21_ATtiny3224.upload.maximum_size=32768
 tinyAVR012.menu.01_variant.21_ATtiny3224=tinyAVR-2 14pin ATtiny3224 (32KiB+3KiB)
@@ -373,7 +371,7 @@ tinyAVR012.menu.01_variant.30_separator=-
 tinyAVR012.menu.01_variant.31_ATtiny3217.build.board=AVR_ATTINY3217
 tinyAVR012.menu.01_variant.31_ATtiny3217.build.mcu=attiny3217
 tinyAVR012.menu.01_variant.31_ATtiny3217.build.variant=tinyAVR1_24
-tinyAVR012.menu.01_variant.31_ATtiny3217.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p128.x
+tinyAVR012.menu.01_variant.31_ATtiny3217.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p128.x
 tinyAVR012.menu.01_variant.31_ATtiny3217.upload.maximum_data_size=2048
 tinyAVR012.menu.01_variant.31_ATtiny3217.upload.maximum_size=32768
 tinyAVR012.menu.01_variant.31_ATtiny3217=tinyAVR-1 24pin ATtiny3217 (32KiB+2KiB)
@@ -399,7 +397,7 @@ tinyAVR012.menu.01_variant.40_separator=-
 tinyAVR012.menu.01_variant.41_ATtiny3216.build.board=AVR_ATTINY3216
 tinyAVR012.menu.01_variant.41_ATtiny3216.build.mcu=attiny3216
 tinyAVR012.menu.01_variant.41_ATtiny3216.build.variant=tinyAVR1_20
-tinyAVR012.menu.01_variant.41_ATtiny3216.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p128.x
+tinyAVR012.menu.01_variant.41_ATtiny3216.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p128.x
 tinyAVR012.menu.01_variant.41_ATtiny3216.upload.maximum_data_size=2048
 tinyAVR012.menu.01_variant.41_ATtiny3216.upload.maximum_size=32768
 tinyAVR012.menu.01_variant.41_ATtiny3216=tinyAVR-1 20pin ATtiny3216 (32KiB+2KiB)
@@ -530,29 +528,29 @@ tinyAVR012.menu.02_clock.21_2MHz=Internal 2 MHz
 tinyAVR012.menu.02_clock.22_32768Hz.bootloader.bod_sample=1
 tinyAVR012.menu.02_clock.22_32768Hz.build.f_cpu=32768
 tinyAVR012.menu.02_clock.22_32768Hz=Internal 32.768 kHz (ULP)
-tinyAVR012.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
-tinyAVR012.menu.11_BODMODE.01_disabled=BOD Disabled
-tinyAVR012.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
-tinyAVR012.menu.11_BODMODE.02_enabled=BOD Enabled
-tinyAVR012.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
-tinyAVR012.menu.11_BODMODE.03_sampled=BOD Sampled
-tinyAVR012.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
-tinyAVR012.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
-tinyAVR012.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
-tinyAVR012.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
-tinyAVR012.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
-tinyAVR012.menu.12_BODLVL.BODLEVEL2=Level 2.6V
-tinyAVR012.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
-tinyAVR012.menu.12_BODLVL.BODLEVEL7=Level 4.3V
-tinyAVR012.menu.22_updipin.01_updi.bootloader.reset_bit=01
-tinyAVR012.menu.22_updipin.01_updi=PA0 pin=UPDI (default)
-tinyAVR012.menu.22_updipin.02_resetalt.bootloader.reset_bit=11
-tinyAVR012.menu.22_updipin.02_resetalt=PA0 pin=UPDI and PB4 pin=RESET (tinyAVR-2 20/24pin only)
-tinyAVR012.menu.22_updipin.10_separator=-
-tinyAVR012.menu.22_updipin.11_reset.bootloader.reset_bit=10
-tinyAVR012.menu.22_updipin.11_reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
-tinyAVR012.menu.22_updipin.12_gpio.bootloader.reset_bit=00
-tinyAVR012.menu.22_updipin.12_gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
+# tinyAVR012.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
+# tinyAVR012.menu.11_BODMODE.01_disabled=BOD Disabled
+# tinyAVR012.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
+# tinyAVR012.menu.11_BODMODE.02_enabled=BOD Enabled
+# tinyAVR012.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
+# tinyAVR012.menu.11_BODMODE.03_sampled=BOD Sampled
+# tinyAVR012.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
+# tinyAVR012.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
+# tinyAVR012.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
+# tinyAVR012.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
+# tinyAVR012.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
+# tinyAVR012.menu.12_BODLVL.BODLEVEL2=Level 2.6V
+# tinyAVR012.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
+# tinyAVR012.menu.12_BODLVL.BODLEVEL7=Level 4.3V
+# tinyAVR012.menu.22_updipin.01_updi.bootloader.reset_bit=01
+# tinyAVR012.menu.22_updipin.01_updi=PA0 pin=UPDI (default)
+# tinyAVR012.menu.22_updipin.02_resetalt.bootloader.reset_bit=11
+# tinyAVR012.menu.22_updipin.02_resetalt=PA0 pin=UPDI and PB4 pin=RESET (tinyAVR-2 20/24pin only)
+# tinyAVR012.menu.22_updipin.10_separator=-
+# tinyAVR012.menu.22_updipin.11_reset.bootloader.reset_bit=10
+# tinyAVR012.menu.22_updipin.11_reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
+# tinyAVR012.menu.22_updipin.12_gpio.bootloader.reset_bit=00
+# tinyAVR012.menu.22_updipin.12_gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
 tinyAVR012.menu.24_eeprom.01_keep.bootloader.eesave_bit=1
 tinyAVR012.menu.24_eeprom.01_keep=Save guard "Retained"
 tinyAVR012.menu.24_eeprom.02_erase.bootloader.eesave_bit=0
@@ -598,23 +596,22 @@ tinyAVR012.menu.90_console_baud.20_separator=-
 tinyAVR012.menu.90_console_baud.21_2400bps.build.console_baud=-DCONSOLE_BAUD=2400
 tinyAVR012.menu.90_console_baud.21_2400bps=CONSOLE_BAUD=2400 bps (for ULP)
 tinyAVR012.menu.95_bootloader.01_UART0_B2_LA7.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LA7.hex
-tinyAVR012.menu.95_bootloader.01_UART0_B2_LA7.build.console_select=-DSerial=Serial0A
+tinyAVR012.menu.95_bootloader.01_UART0_B2_LA7.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA7
 tinyAVR012.menu.95_bootloader.01_UART0_B2_LA7=UART0 TX:PB2 RX:PB3 LED=PA7 (default)
+tinyAVR012.menu.95_bootloader.10_separator=-
 tinyAVR012.menu.95_bootloader.11_UART0_A1_LA7_.bootloader.file=hex/boot_attiny_UART0_A1_{upload.speed}_LA7.hex
-tinyAVR012.menu.95_bootloader.11_UART0_A1_LA7_.build.console_select=-DSerial=Serial1A
+tinyAVR012.menu.95_bootloader.11_UART0_A1_LA7_.build.console_select=-DSerial=Serial1A -DLED_BUILTIN=PIN_PA7
 tinyAVR012.menu.95_bootloader.11_UART0_A1_LA7_=UART0 TX:PA1 RX:PA2 LED=PA7 (alternative)
+tinyAVR012.menu.95_bootloader.12_UART1_C2_LA7.bootloader.file=hex/boot_attiny_UART1_C2_{upload.speed}_LA7.hex
+tinyAVR012.menu.95_bootloader.12_UART1_C2_LA7.build.console_select=-DSerial=Serial1B -DLED_BUILTIN=PIN_PA7
+tinyAVR012.menu.95_bootloader.12_UART1_C2_LA7=UART1 TX:PC2 RX:PC1 LED=PA7 (tinyAVR-2 20/24pin only)
+tinyAVR012.menu.95_bootloader.13_UART0_B2_LB2_SC4_Curiosity.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LB7.hex
+tinyAVR012.menu.95_bootloader.13_UART0_B2_LB2_SC4_Curiosity.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PB7 -DSW_BUILTIN=PIN_PC4
+tinyAVR012.menu.95_bootloader.13_UART0_B2_LB2_SC4_Curiosity=UART0 TX:PB2 RX:PB3 LED=PB7 SW=PC4 (ATtiny1607/1627 Curiosity Nano)
 tinyAVR012.menu.95_bootloader.20_separator=-
-tinyAVR012.menu.95_bootloader.21_UART1_C2_LA7.bootloader.file=hex/boot_attiny_UART1_C2_{upload.speed}_LA7.hex
-tinyAVR012.menu.95_bootloader.21_UART1_C2_LA7.build.console_select=-DSerial=Serial1B
-tinyAVR012.menu.95_bootloader.21_UART1_C2_LA7=UART1 TX:PC2 RX:PC1 LED=PA7 (tinyAVR-2 20/24pin only)
-tinyAVR012.menu.95_bootloader.24_UART0_B2_LB2_SC4_Curiosity.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LB7.hex
-tinyAVR012.menu.95_bootloader.24_UART0_B2_LB2_SC4_Curiosity.build.console_select=-DSerial=Serial0A
-tinyAVR012.menu.95_bootloader.24_UART0_B2_LB2_SC4_Curiosity.build.led_pin=-DLED_BUILTIN=PIN_PB7 -DSW_BUILTIN=PIN_PC4
-tinyAVR012.menu.95_bootloader.24_UART0_B2_LB2_SC4_Curiosity=UART0 TX:PB2 RX:PB3 LED=PB7 SW=PC4 (ATtiny1607/1627 Curiosity Nano)
-tinyAVR012.menu.95_bootloader.25_UART0_B2_LA3_SB7_Curiosity.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LA3.hex
-tinyAVR012.menu.95_bootloader.25_UART0_B2_LA3_SB7_Curiosity.build.console_select=-DSerial=Serial0A
-tinyAVR012.menu.95_bootloader.25_UART0_B2_LA3_SB7_Curiosity.build.led_pin=-DLED_BUILTIN=PIN_PA3 -DSW_BUILTIN=PIN_PB7
-tinyAVR012.menu.95_bootloader.25_UART0_B2_LA3_SB7_Curiosity=UART0 TX:PB2 RX:PB3 LED=PA3 SW=PB7 (ATtiny3217 Curiosity Nano)
+tinyAVR012.menu.95_bootloader.21_UART0_B2_LA3_SB7_Curiosity.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LA3.hex
+tinyAVR012.menu.95_bootloader.21_UART0_B2_LA3_SB7_Curiosity.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA3 -DSW_BUILTIN=PIN_PB7
+tinyAVR012.menu.95_bootloader.21_UART0_B2_LA3_SB7_Curiosity=UART0 TX:PB2 RX:PB3 LED=PA3 SW=PB7 (ATtiny3217 Curiosity Nano)
 
 
 tinyAVR01.bootloader.BODCFG=0b{bootloader.bod_lvl}{bootloader.bod_sample}{bootloader.bod_mode}00
@@ -631,18 +628,17 @@ tinyAVR01.bootloader.eepupload=
 tinyAVR01.bootloader.urowupload=
 tinyAVR01.bootloader.fuseupload={bootloader.fuses}
 tinyAVR01.bootloader.eesave_bit=1
-tinyAVR01.bootloader.reset_bit=10
+tinyAVR01.bootloader.reset_bit=01
 tinyAVR01.bootloader.tool=avrdude
 tinyAVR01.bootloader.programed_type=.with_bootloader
 tinyAVR01.build.export_merged_output=true
 tinyAVR01.build.text_section_start=.text=0x200
 tinyAVR01.build.buildopt=-DNDEBUG
 tinyAVR01.build.console_baud=-DCONSOLE_BAUD=9600
-tinyAVR01.build.led_pin=-DLED_BUILTIN=PIN_PA3
 tinyAVR01.build.macroapi=-DENABLE_MACRO_API
 tinyAVR01.build.printf=
 tinyAVR01.build.printflt=
-tinyAVR01.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p64.x
+tinyAVR01.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p64.x
 tinyAVR01.upload.protocol=arduino
 tinyAVR01.upload.speed=115200
 tinyAVR01.upload.tool=avrdude
@@ -704,27 +700,27 @@ tinyAVR01.menu.02_clock.21_2MHz=Internal 2 MHz
 tinyAVR01.menu.02_clock.22_32768Hz.bootloader.bod_sample=1
 tinyAVR01.menu.02_clock.22_32768Hz.build.f_cpu=32768
 tinyAVR01.menu.02_clock.22_32768Hz=Internal 32.768 kHz (ULP)
-tinyAVR01.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
-tinyAVR01.menu.11_BODMODE.01_disabled=BOD Disabled
-tinyAVR01.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
-tinyAVR01.menu.11_BODMODE.02_enabled=BOD Enabled
-tinyAVR01.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
-tinyAVR01.menu.11_BODMODE.03_sampled=BOD Sampled
-tinyAVR01.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
-tinyAVR01.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
-tinyAVR01.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
-tinyAVR01.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
-tinyAVR01.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
-tinyAVR01.menu.12_BODLVL.BODLEVEL2=Level 2.6V
-tinyAVR01.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
-tinyAVR01.menu.12_BODLVL.BODLEVEL7=Level 4.3V
-tinyAVR01.menu.22_updipin.01_updi.bootloader.reset_bit=01
-tinyAVR01.menu.22_updipin.01_updi=PA0 pin=UPDI (default)
-tinyAVR01.menu.22_updipin.10_separator=-
-tinyAVR01.menu.22_updipin.11_reset.bootloader.reset_bit=10
-tinyAVR01.menu.22_updipin.11_reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
-tinyAVR01.menu.22_updipin.12_gpio.bootloader.reset_bit=00
-tinyAVR01.menu.22_updipin.12_gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
+# tinyAVR01.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
+# tinyAVR01.menu.11_BODMODE.01_disabled=BOD Disabled
+# tinyAVR01.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
+# tinyAVR01.menu.11_BODMODE.02_enabled=BOD Enabled
+# tinyAVR01.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
+# tinyAVR01.menu.11_BODMODE.03_sampled=BOD Sampled
+# tinyAVR01.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
+# tinyAVR01.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
+# tinyAVR01.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
+# tinyAVR01.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
+# tinyAVR01.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
+# tinyAVR01.menu.12_BODLVL.BODLEVEL2=Level 2.6V
+# tinyAVR01.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
+# tinyAVR01.menu.12_BODLVL.BODLEVEL7=Level 4.3V
+# tinyAVR01.menu.22_updipin.01_updi.bootloader.reset_bit=01
+# tinyAVR01.menu.22_updipin.01_updi=PA0 pin=UPDI (default)
+# tinyAVR01.menu.22_updipin.10_separator=-
+# tinyAVR01.menu.22_updipin.11_reset.bootloader.reset_bit=10
+# tinyAVR01.menu.22_updipin.11_reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
+# tinyAVR01.menu.22_updipin.12_gpio.bootloader.reset_bit=00
+# tinyAVR01.menu.22_updipin.12_gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
 tinyAVR01.menu.24_eeprom.01_keep.bootloader.eesave_bit=1
 tinyAVR01.menu.24_eeprom.01_keep=Save guard "Retained"
 tinyAVR01.menu.24_eeprom.02_erase.bootloader.eesave_bit=0
@@ -770,10 +766,11 @@ tinyAVR01.menu.90_console_baud.20_separator=-
 tinyAVR01.menu.90_console_baud.21_2400bps.build.console_baud=-DCONSOLE_BAUD=2400
 tinyAVR01.menu.90_console_baud.21_2400bps=CONSOLE_BAUD=2400 bps (for ULP)
 tinyAVR01.menu.95_bootloader.01_UART0_A6_LA3.bootloader.file=hex/boot_attiny_UART0_A6_{upload.speed}_LA3.hex
-tinyAVR01.menu.95_bootloader.01_UART0_A6_LA3.build.console_select=-DSerial=Serial0A
+tinyAVR01.menu.95_bootloader.01_UART0_A6_LA3.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA3
 tinyAVR01.menu.95_bootloader.01_UART0_A6_LA3=UART0 TX:PA6 RX:PA7 LED=PA3 (default)
+tinyAVR01.menu.95_bootloader.10_separator=-
 tinyAVR01.menu.95_bootloader.11_UART0_A1_LA3.bootloader.file=hex/boot_attiny_UART0_A1_{upload.speed}_LA3.hex
-tinyAVR01.menu.95_bootloader.11_UART0_A1_LA3.build.console_select=-DSerial=Serial0B
+tinyAVR01.menu.95_bootloader.11_UART0_A1_LA3.build.console_select=-DSerial=Serial0B -DLED_BUILTIN=PIN_PA3
 tinyAVR01.menu.95_bootloader.11_UART0_A1_LA3=UART0 TX:PA1 RX:PA2 LED=PA3 (alternative)
 
 
@@ -800,11 +797,10 @@ megaAVR0_noloader.build.export_merged_output=false
 megaAVR0_noloader.build.text_section_start=.text=0x0
 megaAVR0_noloader.build.buildopt=-DNDEBUG
 megaAVR0_noloader.build.console_baud=-DCONSOLE_BAUD=9600
-megaAVR0_noloader.build.led_pin=
 megaAVR0_noloader.build.macroapi=-DENABLE_MACRO_API
 megaAVR0_noloader.build.printf=
 megaAVR0_noloader.build.printflt=
-megaAVR0_noloader.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p128.x
+megaAVR0_noloader.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p128.x
 megaAVR0_noloader.upload.tool=
 megaAVR0_noloader.menu.01_variant.01_ATmega4809_48P.build.board=AVR_ATMEGA4809
 megaAVR0_noloader.menu.01_variant.01_ATmega4809_48P.build.mcu=atmega4809
@@ -920,20 +916,20 @@ megaAVR0_noloader.menu.02_clock.21_2MHz=Internal 2 MHz
 megaAVR0_noloader.menu.02_clock.22_32768Hz.bootloader.bod_sample=1
 megaAVR0_noloader.menu.02_clock.22_32768Hz.build.f_cpu=32768
 megaAVR0_noloader.menu.02_clock.22_32768Hz=Internal 32.768 kHz (ULP)
-megaAVR0_noloader.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
-megaAVR0_noloader.menu.11_BODMODE.01_disabled=BOD Disabled
-megaAVR0_noloader.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
-megaAVR0_noloader.menu.11_BODMODE.02_enabled=BOD Enabled
-megaAVR0_noloader.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
-megaAVR0_noloader.menu.11_BODMODE.03_sampled=BOD Sampled
-megaAVR0_noloader.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
-megaAVR0_noloader.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
-megaAVR0_noloader.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
-megaAVR0_noloader.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
-megaAVR0_noloader.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
-megaAVR0_noloader.menu.12_BODLVL.BODLEVEL2=Level 2.6V
-megaAVR0_noloader.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
-megaAVR0_noloader.menu.12_BODLVL.BODLEVEL7=Level 4.3V
+# megaAVR0_noloader.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
+# megaAVR0_noloader.menu.11_BODMODE.01_disabled=BOD Disabled
+# megaAVR0_noloader.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
+# megaAVR0_noloader.menu.11_BODMODE.02_enabled=BOD Enabled
+# megaAVR0_noloader.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
+# megaAVR0_noloader.menu.11_BODMODE.03_sampled=BOD Sampled
+# megaAVR0_noloader.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
+# megaAVR0_noloader.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
+# megaAVR0_noloader.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
+# megaAVR0_noloader.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
+# megaAVR0_noloader.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
+# megaAVR0_noloader.menu.12_BODLVL.BODLEVEL2=Level 2.6V
+# megaAVR0_noloader.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
+# megaAVR0_noloader.menu.12_BODLVL.BODLEVEL7=Level 4.3V
 megaAVR0_noloader.menu.21_resetpin.01_reset.bootloader.reset_bit=11
 megaAVR0_noloader.menu.21_resetpin.01_reset=PF6 pin=Reset
 megaAVR0_noloader.menu.21_resetpin.02_gpio.bootloader.reset_bit=01
@@ -950,7 +946,7 @@ megaAVR0_noloader.menu.26_userrow.03_upload.bootloader.urowupload={bootloader.us
 megaAVR0_noloader.menu.26_userrow.03_upload=Upload ".urow" file
 megaAVR0_noloader.menu.27_fusefile.01_menu=Specify in the MENU
 megaAVR0_noloader.menu.27_fusefile.03_upload.bootloader.fuseupload={bootloader.fusefile}
-megaAVR0_noloader.menu.27_fusefile.03_upload=Upload ".fuse" file (DANGER)
+megaAVR0_noloader.menu.27_fusefile.03_upload=Upload ".fuse" file (Use with caution)
 megaAVR0_noloader.menu.51_buildopt.01_Release=Build Release (default)
 megaAVR0_noloader.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
 megaAVR0_noloader.menu.51_buildopt.02_Debug1=Build DEBUG=1
@@ -968,35 +964,27 @@ megaAVR0_noloader.menu.53_printf.01_default=default
 megaAVR0_noloader.menu.53_printf.02_full.build.printf=-DUSE_PRINTF_FLT
 megaAVR0_noloader.menu.53_printf.02_full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
 megaAVR0_noloader.menu.53_printf.02_full=Float Support
-megaAVR0_noloader.menu.54_console_select.01_UART0_A0_LA7.build.console_select=-DSerial=Serial0A
-megaAVR0_noloader.menu.54_console_select.01_UART0_A0_LA7.build.led_pin=-DLED_BUILTIN=PIN_PA7
+megaAVR0_noloader.menu.54_console_select.01_UART0_A0_LA7.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA7
 megaAVR0_noloader.menu.54_console_select.01_UART0_A0_LA7=UART0 TX:PA0 RX:PA1 LED=PA7
-megaAVR0_noloader.menu.54_console_select.02_UART1_C0_LA7.build.console_select=-DSerial=Serial1A
-megaAVR0_noloader.menu.54_console_select.02_UART1_C0_LA7.build.led_pin=-DLED_BUILTIN=PIN_PA7
-megaAVR0_noloader.menu.54_console_select.02_UART1_C0_LA7=UART1 TX:PC0 RX:PC1 LED=PA7
-megaAVR0_noloader.menu.54_console_select.03_UART2_F0_LA7.build.console_select=-DSerial=Serial2A
-megaAVR0_noloader.menu.54_console_select.03_UART2_F0_LA7.build.led_pin=-DLED_BUILTIN=PIN_PA7
-megaAVR0_noloader.menu.54_console_select.03_UART2_F0_LA7=UART2 TX:PF0 RX:PF1 LED=PA7
 megaAVR0_noloader.menu.54_console_select.10_separator=-
-megaAVR0_noloader.menu.54_console_select.11_UART2_F4_LA7.build.console_select=-DSerial=Serial2B
-megaAVR0_noloader.menu.54_console_select.11_UART2_F4_LA7.build.led_pin=-DLED_BUILTIN=PIN_PA7
-megaAVR0_noloader.menu.54_console_select.11_UART2_F4_LA7=UART2 TX:PF4 RX:PF5 LED=PA7 (32/48pin)
+megaAVR0_noloader.menu.54_console_select.11_UART1_C0_LA7.build.console_select=-DSerial=Serial1A -DLED_BUILTIN=PIN_PA7
+megaAVR0_noloader.menu.54_console_select.11_UART1_C0_LA7=UART1 TX:PC0 RX:PC1 LED=PA7
+megaAVR0_noloader.menu.54_console_select.12_UART2_F0_LA7.build.console_select=-DSerial=Serial2A -DLED_BUILTIN=PIN_PA7
+megaAVR0_noloader.menu.54_console_select.12_UART2_F0_LA7=UART2 TX:PF0 RX:PF1 LED=PA7
+megaAVR0_noloader.menu.54_console_select.13_UART2_F4_LA7.build.console_select=-DSerial=Serial2B -DLED_BUILTIN=PIN_PA7
+megaAVR0_noloader.menu.54_console_select.13_UART2_F4_LA7=UART2 TX:PF4 RX:PF5 LED=PA7 (32/48pin)
 megaAVR0_noloader.menu.54_console_select.20_separator=-
-megaAVR0_noloader.menu.54_console_select.21_UART3_B4_LD6.build.console_select=-DSerial=Serial3B
-megaAVR0_noloader.menu.54_console_select.21_UART3_B4_LD6.build.led_pin=-DLED_BUILTIN=PIN_PD6
+megaAVR0_noloader.menu.54_console_select.21_UART3_B4_LD6.build.console_select=-DSerial=Serial3B -DLED_BUILTIN=PIN_PD6
 megaAVR0_noloader.menu.54_console_select.21_UART3_B4_LD6=UART3 TX:PB4 RX:PB5 LED=PD6 (ATmega4809 UNO WiFi)
-megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.build.console_select=-DSerial=Serial3B
-megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.build.led_pin=-DLED_BUILTIN=PIN_PE2
+megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.build.console_select=-DSerial=Serial3B -DLED_BUILTIN=PIN_PE2
 megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.upload.tool=avrdude
 megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.upload.protocol=jtag2updi -e
 megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.upload.speed=115200
 megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.upload.use_1200bps_touch=true
 megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery=UART3 TX:PB4 RX:PB5 LED=PE2 (ATmega4809 Nano Every)
-megaAVR0_noloader.menu.54_console_select.23_UART1_C9_LC7_SB2_XplainedPro.build.console_select=-DSerial=Serial1A
-megaAVR0_noloader.menu.54_console_select.23_UART1_C9_LC7_SB2_XplainedPro.build.led_pin=-DLED_BUILTIN=PIN_PC7 -DSW_BUILTIN=PIN_PB2
+megaAVR0_noloader.menu.54_console_select.23_UART1_C9_LC7_SB2_XplainedPro.build.console_select=-DSerial=Serial1A -DLED_BUILTIN=PIN_PC7 -DSW_BUILTIN=PIN_PB2
 megaAVR0_noloader.menu.54_console_select.23_UART1_C9_LC7_SB2_XplainedPro=UART1 TX:PC0 RX:PC1 LED=PC7 SW=PB2 (ATmega4809 Xplained PRO)
-megaAVR0_noloader.menu.54_console_select.24_UART3_B0_LF5_SF6_Curiosity.build.console_select=-DSerial=Serial3A
-megaAVR0_noloader.menu.54_console_select.24_UART3_B0_LF5_SF6_Curiosity.build.led_pin=-DLED_BUILTIN=PIN_PF5 -DSW_BUILTIN=PIN_PF6
+megaAVR0_noloader.menu.54_console_select.24_UART3_B0_LF5_SF6_Curiosity.build.console_select=-DSerial=Serial3A -DLED_BUILTIN=PIN_PF5 -DSW_BUILTIN=PIN_PF6
 megaAVR0_noloader.menu.54_console_select.24_UART3_B0_LF5_SF6_Curiosity=UART3 TX:PB0 RX:PB1 LED=PF5 SW=PF6 (ATmega4809 Curiosity Nano)
 megaAVR0_noloader.menu.90_console_baud.01_9600bps.build.console_baud=-DCONSOLE_BAUD=9600
 megaAVR0_noloader.menu.90_console_baud.01_9600bps=CONSOLE_BAUD=9600 bps (default)
@@ -1015,7 +1003,7 @@ megaAVR0_noloader.menu.90_console_baud.15_1000000bps=CONSOLE_BAUD=1000000 bps
 megaAVR0_noloader.menu.90_console_baud.20_separator=-
 megaAVR0_noloader.menu.90_console_baud.21_2400bps.build.console_baud=-DCONSOLE_BAUD=2400
 megaAVR0_noloader.menu.90_console_baud.21_2400bps=CONSOLE_BAUD=2400 bps (for ULP)
-megaAVR0_noloader.menu.95_bootloader.01_woBootloader=without Bootloader
+# megaAVR0_noloader.menu.95_bootloader.01_woBootloader=without Bootloader
 
 
 tinyAVR012_noloader.bootloader.BODCFG=0b{bootloader.bod_lvl}{bootloader.bod_sample}{bootloader.bod_mode}00
@@ -1032,7 +1020,7 @@ tinyAVR012_noloader.bootloader.eepupload=
 tinyAVR012_noloader.bootloader.urowupload=
 tinyAVR012_noloader.bootloader.fuseupload={bootloader.fuses}
 tinyAVR012_noloader.bootloader.eesave_bit=1
-tinyAVR012_noloader.bootloader.reset_bit=10
+tinyAVR012_noloader.bootloader.reset_bit=01
 tinyAVR012_noloader.bootloader.tool=avrdude
 tinyAVR012_noloader.bootloader.file=empty/empty.hex
 tinyAVR012_noloader.bootloader.programed_type=
@@ -1041,16 +1029,15 @@ tinyAVR012_noloader.build.export_merged_output=false
 tinyAVR012_noloader.build.text_section_start=.text=0x0
 tinyAVR012_noloader.build.buildopt=-DNDEBUG
 tinyAVR012_noloader.build.console_baud=-DCONSOLE_BAUD=9600
-tinyAVR012_noloader.build.led_pin=-DLED_BUILTIN=PIN_PA7
 tinyAVR012_noloader.build.macroapi=-DENABLE_MACRO_API
 tinyAVR012_noloader.build.printf=
 tinyAVR012_noloader.build.printflt=
-tinyAVR012_noloader.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p64.x
+tinyAVR012_noloader.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p64.x
 tinyAVR012_noloader.upload.tool=
 tinyAVR012_noloader.menu.01_variant.01_ATtiny3227.build.board=AVR_ATTINY3227
 tinyAVR012_noloader.menu.01_variant.01_ATtiny3227.build.mcu=attiny3227
 tinyAVR012_noloader.menu.01_variant.01_ATtiny3227.build.variant=tinyAVR2_24
-tinyAVR012_noloader.menu.01_variant.01_ATtiny3227.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p128.x
+tinyAVR012_noloader.menu.01_variant.01_ATtiny3227.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p128.x
 tinyAVR012_noloader.menu.01_variant.01_ATtiny3227.upload.maximum_data_size=3072
 tinyAVR012_noloader.menu.01_variant.01_ATtiny3227.upload.maximum_size=32768
 tinyAVR012_noloader.menu.01_variant.01_ATtiny3227=tinyAVR-2 24pin ATtiny3227 (32KiB+3KiB)
@@ -1076,7 +1063,7 @@ tinyAVR012_noloader.menu.01_variant.10_separator=-
 tinyAVR012_noloader.menu.01_variant.11_ATtiny3226.build.board=AVR_ATTINY3226
 tinyAVR012_noloader.menu.01_variant.11_ATtiny3226.build.mcu=attiny3226
 tinyAVR012_noloader.menu.01_variant.11_ATtiny3226.build.variant=tinyAVR2_20
-tinyAVR012_noloader.menu.01_variant.11_ATtiny3226.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p128.x
+tinyAVR012_noloader.menu.01_variant.11_ATtiny3226.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p128.x
 tinyAVR012_noloader.menu.01_variant.11_ATtiny3226.upload.maximum_data_size=3072
 tinyAVR012_noloader.menu.01_variant.11_ATtiny3226.upload.maximum_size=32768
 tinyAVR012_noloader.menu.01_variant.11_ATtiny3226=tinyAVR-2 20pin ATtiny3226 (32KiB+3KiB)
@@ -1102,7 +1089,7 @@ tinyAVR012_noloader.menu.01_variant.20_separator=-
 tinyAVR012_noloader.menu.01_variant.21_ATtiny3224.build.board=AVR_ATTINY3224
 tinyAVR012_noloader.menu.01_variant.21_ATtiny3224.build.mcu=attiny3224
 tinyAVR012_noloader.menu.01_variant.21_ATtiny3224.build.variant=tinyAVR2_14
-tinyAVR012_noloader.menu.01_variant.21_ATtiny3224.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p128.x
+tinyAVR012_noloader.menu.01_variant.21_ATtiny3224.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p128.x
 tinyAVR012_noloader.menu.01_variant.21_ATtiny3224.upload.maximum_data_size=3072
 tinyAVR012_noloader.menu.01_variant.21_ATtiny3224.upload.maximum_size=32768
 tinyAVR012_noloader.menu.01_variant.21_ATtiny3224=tinyAVR-2 14pin ATtiny3224 (32KiB+3KiB)
@@ -1128,7 +1115,7 @@ tinyAVR012_noloader.menu.01_variant.30_separator=-
 tinyAVR012_noloader.menu.01_variant.31_ATtiny3217.build.board=AVR_ATTINY3217
 tinyAVR012_noloader.menu.01_variant.31_ATtiny3217.build.mcu=attiny3217
 tinyAVR012_noloader.menu.01_variant.31_ATtiny3217.build.variant=tinyAVR1_24
-tinyAVR012_noloader.menu.01_variant.31_ATtiny3217.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p128.x
+tinyAVR012_noloader.menu.01_variant.31_ATtiny3217.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p128.x
 tinyAVR012_noloader.menu.01_variant.31_ATtiny3217.upload.maximum_data_size=2048
 tinyAVR012_noloader.menu.01_variant.31_ATtiny3217.upload.maximum_size=32768
 tinyAVR012_noloader.menu.01_variant.31_ATtiny3217=tinyAVR-1 24pin ATtiny3217 (32KiB+2KiB)
@@ -1154,7 +1141,7 @@ tinyAVR012_noloader.menu.01_variant.40_separator=-
 tinyAVR012_noloader.menu.01_variant.41_ATtiny3216.build.board=AVR_ATTINY3216
 tinyAVR012_noloader.menu.01_variant.41_ATtiny3216.build.mcu=attiny3216
 tinyAVR012_noloader.menu.01_variant.41_ATtiny3216.build.variant=tinyAVR1_20
-tinyAVR012_noloader.menu.01_variant.41_ATtiny3216.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/avrxmega3_p128.x
+tinyAVR012_noloader.menu.01_variant.41_ATtiny3216.compiler.c.elf.extra_flags=-Wl,-T{runtime.platform.path}/variants//avrxmega3_p128.x
 tinyAVR012_noloader.menu.01_variant.41_ATtiny3216.upload.maximum_data_size=2048
 tinyAVR012_noloader.menu.01_variant.41_ATtiny3216.upload.maximum_size=32768
 tinyAVR012_noloader.menu.01_variant.41_ATtiny3216=tinyAVR-1 20pin ATtiny3216 (32KiB+2KiB)
@@ -1203,14 +1190,12 @@ tinyAVR012_noloader.menu.01_variant.53_ATtiny414.upload.maximum_size=4096
 tinyAVR012_noloader.menu.01_variant.53_ATtiny414=tinyAVR-1 14pin ATtiny414 (4KiB+256B)
 tinyAVR012_noloader.menu.01_variant.60_separator=-
 tinyAVR012_noloader.menu.01_variant.61_ATtiny412.build.board=AVR_ATTINY412
-tinyAVR012_noloader.menu.01_variant.61_ATtiny412.build.led_pin=-DLED_BUILTIN=PIN_PA3
 tinyAVR012_noloader.menu.01_variant.61_ATtiny412.build.mcu=attiny412
 tinyAVR012_noloader.menu.01_variant.61_ATtiny412.build.variant=tinyAVR1_8
 tinyAVR012_noloader.menu.01_variant.61_ATtiny412.upload.maximum_data_size=256
 tinyAVR012_noloader.menu.01_variant.61_ATtiny412.upload.maximum_size=4096
 tinyAVR012_noloader.menu.01_variant.61_ATtiny412=tinyAVR-1 8pin ATtiny412 (4KiB+256B)
 tinyAVR012_noloader.menu.01_variant.62_ATtiny212.build.board=AVR_ATTINY212
-tinyAVR012_noloader.menu.01_variant.62_ATtiny212.build.led_pin=-DLED_BUILTIN=PIN_PA3
 tinyAVR012_noloader.menu.01_variant.62_ATtiny212.build.mcu=attiny212
 tinyAVR012_noloader.menu.01_variant.62_ATtiny212.build.variant=tinyAVR1_8
 tinyAVR012_noloader.menu.01_variant.62_ATtiny212.upload.maximum_data_size=128
@@ -1269,14 +1254,12 @@ tinyAVR012_noloader.menu.01_variant.93_ATtiny404.upload.maximum_size=4096
 tinyAVR012_noloader.menu.01_variant.93_ATtiny404=tinyAVR-0 14pin ATtiny404 (4KiB+256B)
 tinyAVR012_noloader.menu.01_variant.A0_separator=-
 tinyAVR012_noloader.menu.01_variant.A1_ATtiny402.build.board=AVR_ATTINY402
-tinyAVR012_noloader.menu.01_variant.A1_ATtiny402.build.led_pin=-DLED_BUILTIN=PIN_PA3
 tinyAVR012_noloader.menu.01_variant.A1_ATtiny402.build.mcu=attiny402
 tinyAVR012_noloader.menu.01_variant.A1_ATtiny402.build.variant=tinyAVR0_8
 tinyAVR012_noloader.menu.01_variant.A1_ATtiny402.upload.maximum_data_size=256
 tinyAVR012_noloader.menu.01_variant.A1_ATtiny402.upload.maximum_size=4096
 tinyAVR012_noloader.menu.01_variant.A1_ATtiny402=tinyAVR-0 8pin ATtiny402 (4KiB+256B)
 tinyAVR012_noloader.menu.01_variant.A2_ATtiny202.build.board=AVR_ATTINY202
-tinyAVR012_noloader.menu.01_variant.A2_ATtiny202.build.led_pin=-DLED_BUILTIN=PIN_PA3
 tinyAVR012_noloader.menu.01_variant.A2_ATtiny202.build.mcu=attiny202
 tinyAVR012_noloader.menu.01_variant.A2_ATtiny202.build.variant=tinyAVR0_8
 tinyAVR012_noloader.menu.01_variant.A2_ATtiny202.upload.maximum_data_size=128
@@ -1315,29 +1298,29 @@ tinyAVR012_noloader.menu.02_clock.21_2MHz=Internal 2 MHz
 tinyAVR012_noloader.menu.02_clock.22_32768Hz.bootloader.bod_sample=1
 tinyAVR012_noloader.menu.02_clock.22_32768Hz.build.f_cpu=32768
 tinyAVR012_noloader.menu.02_clock.22_32768Hz=Internal 32.768 kHz (ULP)
-tinyAVR012_noloader.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
-tinyAVR012_noloader.menu.11_BODMODE.01_disabled=BOD Disabled
-tinyAVR012_noloader.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
-tinyAVR012_noloader.menu.11_BODMODE.02_enabled=BOD Enabled
-tinyAVR012_noloader.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
-tinyAVR012_noloader.menu.11_BODMODE.03_sampled=BOD Sampled
-tinyAVR012_noloader.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
-tinyAVR012_noloader.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
-tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
-tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
-tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
-tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL2=Level 2.6V
-tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
-tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL7=Level 4.3V
-tinyAVR012_noloader.menu.22_updipin.01_updi.bootloader.reset_bit=01
-tinyAVR012_noloader.menu.22_updipin.01_updi=PA0 pin=UPDI (default)
-tinyAVR012_noloader.menu.22_updipin.02_resetalt.bootloader.reset_bit=11
-tinyAVR012_noloader.menu.22_updipin.02_resetalt=PA0 pin=UPDI and PB4 pin=RESET (tinyAVR-2 20/24pin only)
-tinyAVR012_noloader.menu.22_updipin.10_separator=-
-tinyAVR012_noloader.menu.22_updipin.11_reset.bootloader.reset_bit=10
-tinyAVR012_noloader.menu.22_updipin.11_reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
-tinyAVR012_noloader.menu.22_updipin.12_gpio.bootloader.reset_bit=00
-tinyAVR012_noloader.menu.22_updipin.12_gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
+# tinyAVR012_noloader.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
+# tinyAVR012_noloader.menu.11_BODMODE.01_disabled=BOD Disabled
+# tinyAVR012_noloader.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
+# tinyAVR012_noloader.menu.11_BODMODE.02_enabled=BOD Enabled
+# tinyAVR012_noloader.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
+# tinyAVR012_noloader.menu.11_BODMODE.03_sampled=BOD Sampled
+# tinyAVR012_noloader.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
+# tinyAVR012_noloader.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
+# tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
+# tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
+# tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
+# tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL2=Level 2.6V
+# tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
+# tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL7=Level 4.3V
+# tinyAVR012_noloader.menu.22_updipin.01_updi.bootloader.reset_bit=01
+# tinyAVR012_noloader.menu.22_updipin.01_updi=PA0 pin=UPDI (default)
+# tinyAVR012_noloader.menu.22_updipin.02_resetalt.bootloader.reset_bit=11
+# tinyAVR012_noloader.menu.22_updipin.02_resetalt=PA0 pin=UPDI and PB4 pin=RESET (tinyAVR-2 20/24pin only)
+# tinyAVR012_noloader.menu.22_updipin.10_separator=-
+# tinyAVR012_noloader.menu.22_updipin.11_reset.bootloader.reset_bit=10
+# tinyAVR012_noloader.menu.22_updipin.11_reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
+# tinyAVR012_noloader.menu.22_updipin.12_gpio.bootloader.reset_bit=00
+# tinyAVR012_noloader.menu.22_updipin.12_gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
 tinyAVR012_noloader.menu.24_eeprom.01_keep.bootloader.eesave_bit=1
 tinyAVR012_noloader.menu.24_eeprom.01_keep=Save guard "Retained"
 tinyAVR012_noloader.menu.24_eeprom.02_erase.bootloader.eesave_bit=0
@@ -1350,7 +1333,7 @@ tinyAVR012_noloader.menu.26_userrow.03_upload.bootloader.urowupload={bootloader.
 tinyAVR012_noloader.menu.26_userrow.03_upload=Upload ".urow" file
 tinyAVR012_noloader.menu.27_fusefile.01_menu=Specify in the MENU
 tinyAVR012_noloader.menu.27_fusefile.03_upload.bootloader.fuseupload={bootloader.fusefile}
-tinyAVR012_noloader.menu.27_fusefile.03_upload=Upload ".fuse" file (DANGER)
+tinyAVR012_noloader.menu.27_fusefile.03_upload=Upload ".fuse" file (Use with caution)
 tinyAVR012_noloader.menu.51_buildopt.01_Release=Build Release (default)
 tinyAVR012_noloader.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
 tinyAVR012_noloader.menu.51_buildopt.02_Debug1=Build DEBUG=1
@@ -1368,40 +1351,29 @@ tinyAVR012_noloader.menu.53_printf.01_default=default
 tinyAVR012_noloader.menu.53_printf.02_full.build.printf=-DUSE_PRINTF_FLT
 tinyAVR012_noloader.menu.53_printf.02_full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
 tinyAVR012_noloader.menu.53_printf.02_full=Float Support
-tinyAVR012_noloader.menu.54_console_select.01_UART0_B2_LA7.build.console_select=-DSerial=Serial0A
-tinyAVR012_noloader.menu.54_console_select.01_UART0_B2_LA7.build.led_pin=-DLED_BUILTIN=PIN_PA7
+tinyAVR012_noloader.menu.54_console_select.01_UART0_B2_LA7.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA7
 tinyAVR012_noloader.menu.54_console_select.01_UART0_B2_LA7=UART0 TX:PB2 RX:PB3 LED=PA7
-tinyAVR012_noloader.menu.54_console_select.02_UART0_A1_LA7.build.console_select=-DSerial=Serial0B
-tinyAVR012_noloader.menu.54_console_select.02_UART0_A1_LA7.build.led_pin=-DLED_BUILTIN=PIN_PA7
+tinyAVR012_noloader.menu.54_console_select.02_UART0_A1_LA7.build.console_select=-DSerial=Serial0B -DLED_BUILTIN=PIN_PA7
 tinyAVR012_noloader.menu.54_console_select.02_UART0_A1_LA7=UART0 TX:PA1 RX:PA2 LED=PA7 (alternative)
-tinyAVR012_noloader.menu.54_console_select.03_UART1_A1_LA7.build.console_select=-DSerial=Serial1A
-tinyAVR012_noloader.menu.54_console_select.03_UART1_A1_LA7.build.led_pin=-DLED_BUILTIN=PIN_PA7
+tinyAVR012_noloader.menu.54_console_select.03_UART1_A1_LA7.build.console_select=-DSerial=Serial1A -DLED_BUILTIN=PIN_PA7
 tinyAVR012_noloader.menu.54_console_select.03_UART1_A1_LA7=UART1 TX:PA1 RX:PA2 LED=PA7 (tinyAVR-2)
-tinyAVR012_noloader.menu.54_console_select.04_UART1_C2_LA7.build.console_select=-DSerial=Serial1B
-tinyAVR012_noloader.menu.54_console_select.04_UART1_C2_LA7.build.led_pin=-DLED_BUILTIN=PIN_PA7
+tinyAVR012_noloader.menu.54_console_select.04_UART1_C2_LA7.build.console_select=-DSerial=Serial1B -DLED_BUILTIN=PIN_PA7
 tinyAVR012_noloader.menu.54_console_select.04_UART1_C2_LA7=UART1 TX:PC2 RX:PC1 LED=PA7 (tinyAVR-2 alt)
 tinyAVR012_noloader.menu.54_console_select.10_separator=-
-tinyAVR012_noloader.menu.54_console_select.11_UART0_A6_LA3.build.console_select=-DSerial=Serial0A
-tinyAVR012_noloader.menu.54_console_select.11_UART0_A6_LA3.build.led_pin=-DLED_BUILTIN=PIN_PA3
+tinyAVR012_noloader.menu.54_console_select.11_UART0_A6_LA3.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA3
 tinyAVR012_noloader.menu.54_console_select.11_UART0_A6_LA3=UART0 TX:PA6 RX:PA7 LED=PA3 (8pin)
-tinyAVR012_noloader.menu.54_console_select.12_UART0_A1_LA3.build.console_select=-DSerial=Serial0B
-tinyAVR012_noloader.menu.54_console_select.12_UART0_A1_LA3.build.led_pin=-DLED_BUILTIN=PIN_PA3
+tinyAVR012_noloader.menu.54_console_select.12_UART0_A1_LA3.build.console_select=-DSerial=Serial0B -DLED_BUILTIN=PIN_PA3
 tinyAVR012_noloader.menu.54_console_select.12_UART0_A1_LA3=UART0 TX:PA1 RX:PA2 LED=PA3 (8pin)
 tinyAVR012_noloader.menu.54_console_select.20_separator=-
-tinyAVR012_noloader.menu.54_console_select.21_UART0_A1_LB5_SB4_XplainedNano.build.console_select=-DSerial=Serial0B
-tinyAVR012_noloader.menu.54_console_select.21_UART0_A1_LB5_SB4_XplainedNano.build.led_pin=-DLED_BUILTIN=PIN_PB5 -DSW_BUILTIN=PIN_PB4
+tinyAVR012_noloader.menu.54_console_select.21_UART0_A1_LB5_SB4_XplainedNano.build.console_select=-DSerial=Serial0B -DLED_BUILTIN=PIN_PB5 -DSW_BUILTIN=PIN_PB4
 tinyAVR012_noloader.menu.54_console_select.21_UART0_A1_LB5_SB4_XplainedNano=UART0 TX:PA1 RX:PA2 LED=PB5 SW=PB4 (ATtiny416 Xplained Nano)
-tinyAVR012_noloader.menu.54_console_select.22_UART0_B2_LC0_SC5_XplainedMini.build.console_select=-DSerial=Serial0A
-tinyAVR012_noloader.menu.54_console_select.22_UART0_B2_LC0_SC5_XplainedMini.build.led_pin=-DLED_BUILTIN=PIN_PC0 -DSW_BUILTIN=PIN_PC5
+tinyAVR012_noloader.menu.54_console_select.22_UART0_B2_LC0_SC5_XplainedMini.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PC0 -DSW_BUILTIN=PIN_PC5
 tinyAVR012_noloader.menu.54_console_select.22_UART0_B2_LC0_SC5_XplainedMini=UART0 TX:PB2 RX:PB3 LED=PC0 SW=PC5 (ATtiny817 Xplained Mini)
-tinyAVR012_noloader.menu.54_console_select.23_UART0_B2_LC7_SB5_XplainedPro.build.console_select=-DSerial=Serial0A
-tinyAVR012_noloader.menu.54_console_select.23_UART0_B2_LC7_SB5_XplainedPro.build.led_pin=-DLED_BUILTIN=PIN_PC7 -DSW_BUILTIN=PIN_PB5
+tinyAVR012_noloader.menu.54_console_select.23_UART0_B2_LC7_SB5_XplainedPro.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PC7 -DSW_BUILTIN=PIN_PB5
 tinyAVR012_noloader.menu.54_console_select.23_UART0_B2_LC7_SB5_XplainedPro=UART0 TX:PB2 RX:PB3 LED=PC7 SW=PB5 (ATtiny817/3217 Xplained Pro)
-tinyAVR012_noloader.menu.54_console_select.24_UART0_B2_LB2_SC4_Curiosity.build.console_select=-DSerial=Serial0A
-tinyAVR012_noloader.menu.54_console_select.24_UART0_B2_LB2_SC4_Curiosity.build.led_pin=-DLED_BUILTIN=PIN_PB7 -DSW_BUILTIN=PIN_PC4
+tinyAVR012_noloader.menu.54_console_select.24_UART0_B2_LB2_SC4_Curiosity.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PB7 -DSW_BUILTIN=PIN_PC4
 tinyAVR012_noloader.menu.54_console_select.24_UART0_B2_LB2_SC4_Curiosity=UART0 TX:PB2 RX:PB3 LED=PB7 SW=PC4 (ATtiny1607/1627 Curiosity Nano)
-tinyAVR012_noloader.menu.54_console_select.25_UART0_B2_LA3_SB7_Curiosity.build.console_select=-DSerial=Serial0A
-tinyAVR012_noloader.menu.54_console_select.25_UART0_B2_LA3_SB7_Curiosity.build.led_pin=-DLED_BUILTIN=PIN_PA3 -DSW_BUILTIN=PIN_PB7
+tinyAVR012_noloader.menu.54_console_select.25_UART0_B2_LA3_SB7_Curiosity.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA3 -DSW_BUILTIN=PIN_PB7
 tinyAVR012_noloader.menu.54_console_select.25_UART0_B2_LA3_SB7_Curiosity=UART0 TX:PB2 RX:PA3 LED=PA3 SW=PB7 (ATtiny3217 Curiosity Nano)
 tinyAVR012_noloader.menu.90_console_baud.01_9600bps.build.console_baud=-DCONSOLE_BAUD=9600
 tinyAVR012_noloader.menu.90_console_baud.01_9600bps=CONSOLE_BAUD=9600 bps (default)
@@ -1420,6 +1392,6 @@ tinyAVR012_noloader.menu.90_console_baud.15_1000000bps=CONSOLE_BAUD=1000000 bps
 tinyAVR012_noloader.menu.90_console_baud.20_separator=-
 tinyAVR012_noloader.menu.90_console_baud.21_2400bps.build.console_baud=-DCONSOLE_BAUD=2400
 tinyAVR012_noloader.menu.90_console_baud.21_2400bps=CONSOLE_BAUD=2400 bps (for ULP)
-tinyAVR012_noloader.menu.95_bootloader.01_woBootloader=without Bootloader
+# tinyAVR012_noloader.menu.95_bootloader.01_woBootloader=without Bootloader
 
 
