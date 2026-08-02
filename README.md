@@ -137,19 +137,19 @@ Arduino IDE でこのSDKを選択すると、
   - 高周波内蔵発振器による 16MHz/8MHz/4MHz/1MHz -- 16MHz系列用
   - 高周波内蔵発振器による 2MHz -- FUSE設定非依存
   - 超低消費電力発振器による 32.768kHz (OSC-ULP) -- FUSE設定非依存
-- __BOD Mode__ -- Brown Out Detect（FUSE設定）
+- __BOD Mode__ -- Brown Out Detect（FUSE設定）*非表示*
   - BOD Disabled -- 無効 -- 既定値
   - BOD Enabled -- 有効
   - BOD Sampled -- 各個別データシート参照のこと
   - BOD Enabled hold wakeup -- 各個別データシート参照のこと
-- __BOD Level__ -- BOD監視電圧レベル（FUSE設定）
+- __BOD Level__ -- BOD監視電圧レベル（FUSE設定）*非表示*
   - 1.8V -- 既定値
   - 2.6V
   - 4.3V
 - __FUSE PF6__ -- megaAVR のリセット端子用途変更（FUSE設定）
   - PF6 pin=Reset -- 既定値
   - PF6 pin=GPIO -- 各個別データシート参照のこと
-- __FUSE UPDI__ -- tinyAVRの UPDIピン用途変更（FUSE設定）
+- __FUSE UPDI__ -- tinyAVRの UPDIピン用途変更（FUSE設定）*非表示*
   - __原則、既定値からの変更禁止（復元にはHV対応書換器が必須）__
   - 各個別データシート参照のこと
 - __EEPROM__ -- EEPROM保護フラグ（FUSE設定）
@@ -159,7 +159,7 @@ Arduino IDE でこのSDKを選択すると、
 - __USERROW__ -- USERROWの扱い
   - Save guard "Retained" -- 何もしない
   - Upload ".urow" file -- ブートローダー/書込器でのUSEROWファイル書換有効
-- __FUSE define__ -- FUSE全体の扱い：書込器モードのみ
+- __FUSE define__ -- FUSE全体の扱い *w/o bootloader のみ*
   - Specify in the MENU -- メニュー設定に従う
   - Upload ".fuse" file (DANGER) -- FUSEファイルでの書換有効：危険な操作
 - __Build Option__ -- DEBUGマクロ有無（任意選択）
@@ -189,7 +189,7 @@ Arduino IDE でこのSDKを選択すると、
   - 2400 bps -- OSC-LUP対応
 - __Bootloader__ -- ブートローダー選択
   - 選択肢は系統選択に依存
-  - w/o Bootloader 選択時は変更不可
+  - w/o Bootloader 選択時は変更不可 *非表示*
 - __シリアルポート選択__
   - 環境依存
 - __書込装置選択__
@@ -350,6 +350,11 @@ UPDI端子の機能を無効化せずに（RESET起動式の）ブートロー�
 その他の同種製品も同様に、適切なオプションの手動選択が必要。
 
 ## 更新履歴
+
+- 0.4.3 (26/07/30)
+  - AVRDUDEを`8.2-avrdude`に更新
+  - メニューからBODとUPDI関係を非表示に変更（`.fuse`ファイルでの設定を推奨）
+  - カスタムリンカスクリプトを`variants`へ移動
 
 - 0.4.2 (26/07/12)
   - `MacroMicroAPI_core` と `MacroMicroAPI_lib` の更新に追従
