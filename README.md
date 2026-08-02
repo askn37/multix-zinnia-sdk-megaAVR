@@ -385,65 +385,8 @@ UPDI端子の機能を無効化せずに（RESET起動式の）ブートロー�
 
 - 0.2.13 (24/05/12)
   - `7.3.0-avr8-gnu-toolchain-240510`に更新。
+
   *これ以下は公開終了*
-
-- 0.2.12 (24/04/29)
-  - `boot_ax`を 3.72 に更新
-
-- 0.2.11 (24/04/13)
-  - tinyAVR-0/1 の `<peripheral.h>` 定義ミスを修正
-
-- 0.2.10 (24/01/11)
-  - `7.3.0-avr8-gnu-toolchain-231214`に更新。
-    - 動作確認済に __ATtiny1627__, __ATtiny416__ を追加。
-  - __Core Modules__ の `<api/UarfUART.h>`を微修正。`AVR_EVSYS=201`修正。
-  - __Core Libraries__ の修正／追加と応用記述の追加。
-    - `<ReadUART.h>`
-    - `<UrowNVM.h>`
-    - `<FlashNVM.h>`（BOOTROW 対応を追加）
-  - Bootloader を FWV=3.71 に更新。
-
-- 0.2.9 (23/12/11)
-  - megaVAR/modernAVRについて、同梱ブートローダー全体を独自のArduino上位互換動作コードに変更。（`Optiboot`由来ソースコードを除去）
-  - 同、CRCSCAN機能用CRC16/32検査値付与。
-  - `<api/btools.h>`に`crc16_ccitt_false`関数を追加。
-
-- 0.2.8 (23/11/24)
-  - `7.3.0-avr8-gnu-toolchain-231113`に更新。
-
-- 0.2.7 (23/10/18)
-  - `dryrun`を書込器選択に追加。
-  - `avrdude.conf`参照ルールの変更。
-    - `arduino`/`UPDI4VAR`/`TPI4AVR`/`dryrun`を書込器に指定した場合のみ、ローカルの特別な設定ファイルを参照する。それ以外は規定の（tools/avrdude/etc内の）`avrdude.conf`を参照する。
-    - この変更により、AVR_EA系統のようにまだ他の書込器で未対応／未検証のパーツ設定が分離された。
-
-- 0.2.6 (23/10/16)
-  - `7.2-arduino.1`に更新。
-  - `7.3.0-avr8-gnu-toolchain-231004`に更新。
-    - `Atmel.ATautomotive_DFP.2.0.214.atpack (2022-03-03)`追加。`ATtiny416auto`対応。
-
-- 0.2.5 (23/10/09)
-  - *avrdude.conf.updi* 記述を avrdude 7.1 準拠に改正
-
-- 0.2.4 (23/09/09)
-  - `7.3.0-avr8-gnu-toolchain-230831`に更新。
-    - `Atmel.ATmega_DFP.2.1.506 (2023-08-14)`対応。
-  - `programmers.txt`を改正。
-    - `SerialUPDI`の`-xrtsdtr=High`オプションを有効化。
-
-- 0.2.3 (23/07/09)
-  - `7.3.0-avr8-gnu-toolchain-230628`に更新。
-
-- 0.2.2 (23/05/23)
-  - `7.1-arduino.1`に更新。
-
-- 0.2.1 (23/05/08)
-  - `7.3.0-avr8-gnu-toolchain-230418`に更新。
-  - 添付 *avrdude.conf* での`UPDI4AVR`規定速度を`460800`に制限。
-    - 古いCH3xx用ドライバにて速度上限があるため。（現行最新では改善されている）
-
-- 0.2.0 (23/04/08)
-  - `modernAVR`で`AVR_EA`対応。これに伴う`MicroAPI`の修正反映。
 
 ## 許諾
 
