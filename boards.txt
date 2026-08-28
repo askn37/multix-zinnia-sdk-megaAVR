@@ -36,6 +36,13 @@ tinyAVR012_noloader.build.board=AVR_ATTINY1617
 tinyAVR012_noloader.build.core=megaAVR
 
 
+megaAVR0.programmer.default=21_pickit4_updi
+tinyAVR012.programmer.default=21_pickit4_updi
+tinyAVR01.programmer.default=21_pickit4_updi
+megaAVR0_noloader.programmer.default=23_pkobn_updi
+tinyAVR012_noloader.programmer.default=23_pkobn_updi
+
+
 megaAVR0.bootloader.BODCFG=0b{bootloader.bod_lvl}{bootloader.bod_sample}{bootloader.bod_mode}00
 megaAVR0.bootloader.BOOTSIZE=0x02
 megaAVR0.bootloader.CODESIZE=0x00
