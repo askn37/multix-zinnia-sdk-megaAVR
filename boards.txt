@@ -10,7 +10,7 @@ menu.27_fusefile=FUSE define
 menu.51_buildopt=Build Option
 menu.52_macroapi=Build API
 menu.53_printf=Build "printf"
-menu.54_console_select=Console and LED
+menu.54_console_select=UART and LED
 menu.90_console_baud=Console
 menu.95_bootloader=Bootloader
 
@@ -36,20 +36,20 @@ tinyAVR012_noloader.build.board=AVR_ATTINY1617
 tinyAVR012_noloader.build.core=megaAVR
 
 
-megaAVR0.programmer.default=21_pickit4_updi
-tinyAVR012.programmer.default=21_pickit4_updi
-tinyAVR01.programmer.default=21_pickit4_updi
-megaAVR0_noloader.programmer.default=23_pkobn_updi
-tinyAVR012_noloader.programmer.default=23_pkobn_updi
+megaAVR0.programmer.default=pickit4_updi
+tinyAVR012.programmer.default=pickit4_updi
+tinyAVR01.programmer.default=pickit4_updi
+megaAVR0_noloader.programmer.default=pkobn_updi
+tinyAVR012_noloader.programmer.default=pkobn_updi
 
 
 megaAVR0.bootloader.BODCFG=0b{bootloader.bod_lvl}{bootloader.bod_sample}{bootloader.bod_mode}00
 megaAVR0.bootloader.BOOTSIZE=0x02
 megaAVR0.bootloader.CODESIZE=0x00
-megaAVR0.bootloader.OSCCFG=0b01111110
+megaAVR0.bootloader.OSCCFG=0x7E
 megaAVR0.bootloader.SYSCFG0=0b1101{bootloader.reset_bit}1{bootloader.eesave_bit}
-megaAVR0.bootloader.SYSCFG1=0b11111111
-megaAVR0.bootloader.WDTCFG=0b00000000
+megaAVR0.bootloader.SYSCFG1=0xFF
+megaAVR0.bootloader.WDTCFG=0x00
 megaAVR0.bootloader.bod_lvl=000
 megaAVR0.bootloader.bod_mode=00
 megaAVR0.bootloader.bod_sample=0
@@ -71,211 +71,274 @@ megaAVR0.build.linker_script=avrxmega3_p128.x
 megaAVR0.upload.protocol=arduino
 megaAVR0.upload.speed=115200
 megaAVR0.upload.tool=avrdude
-megaAVR0.menu.01_variant.01_ATmega4809_48P.build.board=AVR_ATMEGA4809
-megaAVR0.menu.01_variant.01_ATmega4809_48P.build.mcu=atmega4809
-megaAVR0.menu.01_variant.01_ATmega4809_48P.build.variant=megaAVR0_48
-megaAVR0.menu.01_variant.01_ATmega4809_48P.upload.maximum_data_size=6144
-megaAVR0.menu.01_variant.01_ATmega4809_48P.upload.maximum_size=48640
-megaAVR0.menu.01_variant.01_ATmega4809_48P=48pin ATmega4809 (48KiB+6KiB)
-megaAVR0.menu.01_variant.02_ATmega3209_48P.build.board=AVR_ATMEGA3209
-megaAVR0.menu.01_variant.02_ATmega3209_48P.build.mcu=atmega3209
-megaAVR0.menu.01_variant.02_ATmega3209_48P.build.variant=megaAVR0_48
-megaAVR0.menu.01_variant.02_ATmega3209_48P.upload.maximum_data_size=4096
-megaAVR0.menu.01_variant.02_ATmega3209_48P.upload.maximum_size=32256
-megaAVR0.menu.01_variant.02_ATmega3209_48P=48pin ATmega3209 (32KiB+4KiB)
-megaAVR0.menu.01_variant.03_ATmega1609_48P.build.board=AVR_ATMEGA1609
-megaAVR0.menu.01_variant.03_ATmega1609_48P.build.mcu=atmega1609
-megaAVR0.menu.01_variant.03_ATmega1609_48P.build.variant=megaAVR0_48
-megaAVR0.menu.01_variant.03_ATmega1609_48P.upload.maximum_data_size=2048
-megaAVR0.menu.01_variant.03_ATmega1609_48P.upload.maximum_size=15872
-megaAVR0.menu.01_variant.03_ATmega1609_48P=48pin ATmega1609 (16KiB+2KiB)
-megaAVR0.menu.01_variant.04_ATmega809_48P.build.board=AVR_ATMEGA809
-megaAVR0.menu.01_variant.04_ATmega809_48P.build.mcu=atmega809
-megaAVR0.menu.01_variant.04_ATmega809_48P.build.variant=megaAVR0_48
-megaAVR0.menu.01_variant.04_ATmega809_48P.upload.maximum_data_size=1024
-megaAVR0.menu.01_variant.04_ATmega809_48P.upload.maximum_size=7680
-megaAVR0.menu.01_variant.04_ATmega809_48P=48pin ATmega809 (8KiB+1KiB)
-megaAVR0.menu.01_variant.10_separator=-
-megaAVR0.menu.01_variant.11_ATmega4809_40P.build.board=AVR_ATMEGA4809
-megaAVR0.menu.01_variant.11_ATmega4809_40P.build.mcu=atmega4809
-megaAVR0.menu.01_variant.11_ATmega4809_40P.build.variant=megaAVR0_40
-megaAVR0.menu.01_variant.11_ATmega4809_40P.upload.maximum_data_size=6144
-megaAVR0.menu.01_variant.11_ATmega4809_40P.upload.maximum_size=48640
-megaAVR0.menu.01_variant.11_ATmega4809_40P=40pin ATmega4809 (48KiB+6KiB)
-megaAVR0.menu.01_variant.20_separator=-
-megaAVR0.menu.01_variant.21_ATmega4808_32P.build.board=AVR_ATMEGA4808
-megaAVR0.menu.01_variant.21_ATmega4808_32P.build.mcu=atmega4808
-megaAVR0.menu.01_variant.21_ATmega4808_32P.build.variant=megaAVR0_32
-megaAVR0.menu.01_variant.21_ATmega4808_32P.upload.maximum_data_size=6144
-megaAVR0.menu.01_variant.21_ATmega4808_32P.upload.maximum_size=48640
-megaAVR0.menu.01_variant.21_ATmega4808_32P=32pin ATmega4808 (48KiB+6KiB)
-megaAVR0.menu.01_variant.22_ATmega3208_32P.build.board=AVR_ATMEGA3208
-megaAVR0.menu.01_variant.22_ATmega3208_32P.build.mcu=atmega3208
-megaAVR0.menu.01_variant.22_ATmega3208_32P.build.variant=megaAVR0_32
-megaAVR0.menu.01_variant.22_ATmega3208_32P.upload.maximum_data_size=4096
-megaAVR0.menu.01_variant.22_ATmega3208_32P.upload.maximum_size=32256
-megaAVR0.menu.01_variant.22_ATmega3208_32P=32pin ATmega3208 (32KiB+4KiB)
-megaAVR0.menu.01_variant.23_ATmega1608_32P.build.board=AVR_ATMEGA1608
-megaAVR0.menu.01_variant.23_ATmega1608_32P.build.mcu=atmega1608
-megaAVR0.menu.01_variant.23_ATmega1608_32P.build.variant=megaAVR0_32
-megaAVR0.menu.01_variant.23_ATmega1608_32P.upload.maximum_data_size=2048
-megaAVR0.menu.01_variant.23_ATmega1608_32P.upload.maximum_size=15872
-megaAVR0.menu.01_variant.23_ATmega1608_32P=32pin ATmega1608 (16KiB+2KiB)
-megaAVR0.menu.01_variant.24_ATmega808_32P.build.board=AVR_ATMEGA808
-megaAVR0.menu.01_variant.24_ATmega808_32P.build.mcu=atmega808
-megaAVR0.menu.01_variant.24_ATmega808_32P.build.variant=megaAVR0_32
-megaAVR0.menu.01_variant.24_ATmega808_32P.upload.maximum_data_size=1024
-megaAVR0.menu.01_variant.24_ATmega808_32P.upload.maximum_size=7680
-megaAVR0.menu.01_variant.24_ATmega808_32P=32pin ATmega808 (8KiB+1KiB)
-megaAVR0.menu.01_variant.30_separator=-
-megaAVR0.menu.01_variant.31_ATmega4808_28P.build.board=AVR_ATMEGA4808
-megaAVR0.menu.01_variant.31_ATmega4808_28P.build.mcu=atmega4808
-megaAVR0.menu.01_variant.31_ATmega4808_28P.build.variant=megaAVR0_28
-megaAVR0.menu.01_variant.31_ATmega4808_28P.upload.maximum_data_size=6144
-megaAVR0.menu.01_variant.31_ATmega4808_28P.upload.maximum_size=48640
-megaAVR0.menu.01_variant.31_ATmega4808_28P=28pin ATmega4808 (48KiB+6KiB)
-megaAVR0.menu.01_variant.32_ATmega3208_28P.build.board=AVR_ATMEGA3208
-megaAVR0.menu.01_variant.32_ATmega3208_28P.build.mcu=atmega3208
-megaAVR0.menu.01_variant.32_ATmega3208_28P.build.variant=megaAVR0_28
-megaAVR0.menu.01_variant.32_ATmega3208_28P.upload.maximum_data_size=4096
-megaAVR0.menu.01_variant.32_ATmega3208_28P.upload.maximum_size=32256
-megaAVR0.menu.01_variant.32_ATmega3208_28P=28pin ATmega3208 (32KiB+4KiB)
-megaAVR0.menu.01_variant.33_ATmega1608_28P.build.board=AVR_ATMEGA1608
-megaAVR0.menu.01_variant.33_ATmega1608_28P.build.mcu=atmega1608
-megaAVR0.menu.01_variant.33_ATmega1608_28P.build.variant=megaAVR0_28
-megaAVR0.menu.01_variant.33_ATmega1608_28P.upload.maximum_data_size=2048
-megaAVR0.menu.01_variant.33_ATmega1608_28P.upload.maximum_size=15872
-megaAVR0.menu.01_variant.33_ATmega1608_28P=28pin ATmega1608 (16KiB+2KiB)
-megaAVR0.menu.01_variant.34_ATmega808_28P.build.board=AVR_ATMEGA808
-megaAVR0.menu.01_variant.34_ATmega808_28P.build.mcu=atmega808
-megaAVR0.menu.01_variant.34_ATmega808_28P.build.variant=megaAVR0_28
-megaAVR0.menu.01_variant.34_ATmega808_28P.upload.maximum_data_size=1024
-megaAVR0.menu.01_variant.34_ATmega808_28P.upload.maximum_size=7680
-megaAVR0.menu.01_variant.34_ATmega808_28P=28pin ATmega808 (8KiB+1KiB)
-megaAVR0.menu.02_clock.01_20MHz.bootloader.bod_sample=0
-megaAVR0.menu.02_clock.01_20MHz.build.f_cpu=20000000L
-megaAVR0.menu.02_clock.01_20MHz=Internal 20 MHz
-megaAVR0.menu.02_clock.02_10MHz.bootloader.bod_sample=0
-megaAVR0.menu.02_clock.02_10MHz.build.f_cpu=10000000L
-megaAVR0.menu.02_clock.02_10MHz=Internal 10 MHz
-megaAVR0.menu.02_clock.03_5MHz.bootloader.bod_sample=0
-megaAVR0.menu.02_clock.03_5MHz.build.f_cpu=5000000L
-megaAVR0.menu.02_clock.03_5MHz=Internal 5 MHz
-megaAVR0.menu.02_clock.10_separator=-
-megaAVR0.menu.02_clock.11_16MHz.bootloader.OSCCFG=0b00000001
-megaAVR0.menu.02_clock.11_16MHz.bootloader.bod_sample=0
-megaAVR0.menu.02_clock.11_16MHz.build.f_cpu=16000000L
-megaAVR0.menu.02_clock.11_16MHz=Internal 16 MHz
-megaAVR0.menu.02_clock.12_8MHz.bootloader.OSCCFG=0b00000001
-megaAVR0.menu.02_clock.12_8MHz.bootloader.bod_sample=0
-megaAVR0.menu.02_clock.12_8MHz.build.f_cpu=8000000L
-megaAVR0.menu.02_clock.12_8MHz=Internal 8 MHz
-megaAVR0.menu.02_clock.13_4MHz.bootloader.OSCCFG=0b00000001
-megaAVR0.menu.02_clock.13_4MHz.bootloader.bod_sample=0
-megaAVR0.menu.02_clock.13_4MHz.build.f_cpu=4000000L
-megaAVR0.menu.02_clock.13_4MHz=Internal 4 MHz
-megaAVR0.menu.02_clock.15_1MHz.bootloader.OSCCFG=0b00000001
-megaAVR0.menu.02_clock.15_1MHz.bootloader.bod_sample=0
-megaAVR0.menu.02_clock.15_1MHz.build.f_cpu=1000000L
-megaAVR0.menu.02_clock.15_1MHz=Internal 1 MHz
-megaAVR0.menu.02_clock.20_separator=-
-megaAVR0.menu.02_clock.21_2MHz.bootloader.bod_sample=0
-megaAVR0.menu.02_clock.21_2MHz.build.f_cpu=2000000L
-megaAVR0.menu.02_clock.21_2MHz=Internal 2 MHz
-megaAVR0.menu.02_clock.22_32768Hz.bootloader.bod_sample=1
-megaAVR0.menu.02_clock.22_32768Hz.build.f_cpu=32768
-megaAVR0.menu.02_clock.22_32768Hz=Internal 32.768 kHz (ULP)
-# megaAVR0.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
-# megaAVR0.menu.11_BODMODE.01_disabled=BOD Disabled
-# megaAVR0.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
-# megaAVR0.menu.11_BODMODE.02_enabled=BOD Enabled
-# megaAVR0.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
-# megaAVR0.menu.11_BODMODE.03_sampled=BOD Sampled
-# megaAVR0.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
-# megaAVR0.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
-# megaAVR0.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
+
+megaAVR0.menu.01_variant.ATmega4809_48P=48pin ATmega4809 (48KiB+6KiB)
+megaAVR0.menu.01_variant.ATmega4809_48P.build.board=AVR_ATMEGA4809
+megaAVR0.menu.01_variant.ATmega4809_48P.build.mcu=atmega4809
+megaAVR0.menu.01_variant.ATmega4809_48P.build.variant=megaAVR0_48
+megaAVR0.menu.01_variant.ATmega4809_48P.upload.maximum_data_size=6144
+megaAVR0.menu.01_variant.ATmega4809_48P.upload.maximum_size=48640
+
+megaAVR0.menu.01_variant.ATmega3209_48P=48pin ATmega3209 (32KiB+4KiB)
+megaAVR0.menu.01_variant.ATmega3209_48P.build.board=AVR_ATMEGA3209
+megaAVR0.menu.01_variant.ATmega3209_48P.build.mcu=atmega3209
+megaAVR0.menu.01_variant.ATmega3209_48P.build.variant=megaAVR0_48
+megaAVR0.menu.01_variant.ATmega3209_48P.upload.maximum_data_size=4096
+megaAVR0.menu.01_variant.ATmega3209_48P.upload.maximum_size=32256
+
+megaAVR0.menu.01_variant.ATmega1609_48P=48pin ATmega1609 (16KiB+2KiB)
+megaAVR0.menu.01_variant.ATmega1609_48P.build.board=AVR_ATMEGA1609
+megaAVR0.menu.01_variant.ATmega1609_48P.build.mcu=atmega1609
+megaAVR0.menu.01_variant.ATmega1609_48P.build.variant=megaAVR0_48
+megaAVR0.menu.01_variant.ATmega1609_48P.upload.maximum_data_size=2048
+megaAVR0.menu.01_variant.ATmega1609_48P.upload.maximum_size=15872
+
+megaAVR0.menu.01_variant.ATmega809_48P=48pin ATmega809 (8KiB+1KiB)
+megaAVR0.menu.01_variant.ATmega809_48P.build.board=AVR_ATMEGA809
+megaAVR0.menu.01_variant.ATmega809_48P.build.mcu=atmega809
+megaAVR0.menu.01_variant.ATmega809_48P.build.variant=megaAVR0_48
+megaAVR0.menu.01_variant.ATmega809_48P.upload.maximum_data_size=1024
+megaAVR0.menu.01_variant.ATmega809_48P.upload.maximum_size=7680
+
+megaAVR0.menu.01_variant.separator1=-
+
+megaAVR0.menu.01_variant.ATmega4809_40P=40pin ATmega4809 (48KiB+6KiB)
+megaAVR0.menu.01_variant.ATmega4809_40P.build.board=AVR_ATMEGA4809
+megaAVR0.menu.01_variant.ATmega4809_40P.build.mcu=atmega4809
+megaAVR0.menu.01_variant.ATmega4809_40P.build.variant=megaAVR0_40
+megaAVR0.menu.01_variant.ATmega4809_40P.upload.maximum_data_size=6144
+megaAVR0.menu.01_variant.ATmega4809_40P.upload.maximum_size=48640
+
+megaAVR0.menu.01_variant.separator2=-
+
+megaAVR0.menu.01_variant.ATmega4808_32P=32pin ATmega4808 (48KiB+6KiB)
+megaAVR0.menu.01_variant.ATmega4808_32P.build.board=AVR_ATMEGA4808
+megaAVR0.menu.01_variant.ATmega4808_32P.build.mcu=atmega4808
+megaAVR0.menu.01_variant.ATmega4808_32P.build.variant=megaAVR0_32
+megaAVR0.menu.01_variant.ATmega4808_32P.upload.maximum_data_size=6144
+megaAVR0.menu.01_variant.ATmega4808_32P.upload.maximum_size=48640
+
+megaAVR0.menu.01_variant.ATmega3208_32P=32pin ATmega3208 (32KiB+4KiB)
+megaAVR0.menu.01_variant.ATmega3208_32P.build.board=AVR_ATMEGA3208
+megaAVR0.menu.01_variant.ATmega3208_32P.build.mcu=atmega3208
+megaAVR0.menu.01_variant.ATmega3208_32P.build.variant=megaAVR0_32
+megaAVR0.menu.01_variant.ATmega3208_32P.upload.maximum_data_size=4096
+megaAVR0.menu.01_variant.ATmega3208_32P.upload.maximum_size=32256
+
+megaAVR0.menu.01_variant.ATmega1608_32P=32pin ATmega1608 (16KiB+2KiB)
+megaAVR0.menu.01_variant.ATmega1608_32P.build.board=AVR_ATMEGA1608
+megaAVR0.menu.01_variant.ATmega1608_32P.build.mcu=atmega1608
+megaAVR0.menu.01_variant.ATmega1608_32P.build.variant=megaAVR0_32
+megaAVR0.menu.01_variant.ATmega1608_32P.upload.maximum_data_size=2048
+megaAVR0.menu.01_variant.ATmega1608_32P.upload.maximum_size=15872
+
+megaAVR0.menu.01_variant.ATmega808_32P=32pin ATmega808 (8KiB+1KiB)
+megaAVR0.menu.01_variant.ATmega808_32P.build.board=AVR_ATMEGA808
+megaAVR0.menu.01_variant.ATmega808_32P.build.mcu=atmega808
+megaAVR0.menu.01_variant.ATmega808_32P.build.variant=megaAVR0_32
+megaAVR0.menu.01_variant.ATmega808_32P.upload.maximum_data_size=1024
+megaAVR0.menu.01_variant.ATmega808_32P.upload.maximum_size=7680
+
+megaAVR0.menu.01_variant.separator3=-
+
+megaAVR0.menu.01_variant.ATmega4808_28P=28pin ATmega4808 (48KiB+6KiB)
+megaAVR0.menu.01_variant.ATmega4808_28P.build.board=AVR_ATMEGA4808
+megaAVR0.menu.01_variant.ATmega4808_28P.build.mcu=atmega4808
+megaAVR0.menu.01_variant.ATmega4808_28P.build.variant=megaAVR0_28
+megaAVR0.menu.01_variant.ATmega4808_28P.upload.maximum_data_size=6144
+megaAVR0.menu.01_variant.ATmega4808_28P.upload.maximum_size=48640
+
+megaAVR0.menu.01_variant.ATmega3208_28P=28pin ATmega3208 (32KiB+4KiB)
+megaAVR0.menu.01_variant.ATmega3208_28P.build.board=AVR_ATMEGA3208
+megaAVR0.menu.01_variant.ATmega3208_28P.build.mcu=atmega3208
+megaAVR0.menu.01_variant.ATmega3208_28P.build.variant=megaAVR0_28
+megaAVR0.menu.01_variant.ATmega3208_28P.upload.maximum_data_size=4096
+megaAVR0.menu.01_variant.ATmega3208_28P.upload.maximum_size=32256
+
+megaAVR0.menu.01_variant.ATmega1608_28P=28pin ATmega1608 (16KiB+2KiB)
+megaAVR0.menu.01_variant.ATmega1608_28P.build.board=AVR_ATMEGA1608
+megaAVR0.menu.01_variant.ATmega1608_28P.build.mcu=atmega1608
+megaAVR0.menu.01_variant.ATmega1608_28P.build.variant=megaAVR0_28
+megaAVR0.menu.01_variant.ATmega1608_28P.upload.maximum_data_size=2048
+megaAVR0.menu.01_variant.ATmega1608_28P.upload.maximum_size=15872
+
+megaAVR0.menu.01_variant.ATmega808_28P=28pin ATmega808 (8KiB+1KiB)
+megaAVR0.menu.01_variant.ATmega808_28P.build.board=AVR_ATMEGA808
+megaAVR0.menu.01_variant.ATmega808_28P.build.mcu=atmega808
+megaAVR0.menu.01_variant.ATmega808_28P.build.variant=megaAVR0_28
+megaAVR0.menu.01_variant.ATmega808_28P.upload.maximum_data_size=1024
+megaAVR0.menu.01_variant.ATmega808_28P.upload.maximum_size=7680
+
+megaAVR0.menu.02_clock.20MHz=Internal 20 MHz
+megaAVR0.menu.02_clock.20MHz.bootloader.bod_sample=0
+megaAVR0.menu.02_clock.20MHz.build.f_cpu=20000000L
+
+megaAVR0.menu.02_clock.10MHz=Internal 10 MHz
+megaAVR0.menu.02_clock.10MHz.bootloader.bod_sample=0
+megaAVR0.menu.02_clock.10MHz.build.f_cpu=10000000L
+
+megaAVR0.menu.02_clock.5MHz=Internal 5 MHz
+megaAVR0.menu.02_clock.5MHz.bootloader.bod_sample=0
+megaAVR0.menu.02_clock.5MHz.build.f_cpu=5000000L
+
+megaAVR0.menu.02_clock.separator1=-
+
+megaAVR0.menu.02_clock.16MHz=Internal 16 MHz
+megaAVR0.menu.02_clock.16MHz.bootloader.OSCCFG=0x7D
+megaAVR0.menu.02_clock.16MHz.bootloader.bod_sample=0
+megaAVR0.menu.02_clock.16MHz.build.f_cpu=16000000L
+
+megaAVR0.menu.02_clock.8MHz=Internal 8 MHz
+megaAVR0.menu.02_clock.8MHz.bootloader.OSCCFG=0x7D
+megaAVR0.menu.02_clock.8MHz.bootloader.bod_sample=0
+megaAVR0.menu.02_clock.8MHz.build.f_cpu=8000000L
+
+megaAVR0.menu.02_clock.4MHz=Internal 4 MHz
+megaAVR0.menu.02_clock.4MHz.bootloader.OSCCFG=0x7D
+megaAVR0.menu.02_clock.4MHz.bootloader.bod_sample=0
+megaAVR0.menu.02_clock.4MHz.build.f_cpu=4000000L
+
+megaAVR0.menu.02_clock.1MHz=Internal 1 MHz
+megaAVR0.menu.02_clock.1MHz.bootloader.OSCCFG=0x7D
+megaAVR0.menu.02_clock.1MHz.bootloader.bod_sample=0
+megaAVR0.menu.02_clock.1MHz.build.f_cpu=1000000L
+
+megaAVR0.menu.02_clock.separator2=-
+
+megaAVR0.menu.02_clock.2MHz=Internal 2 MHz
+megaAVR0.menu.02_clock.2MHz.bootloader.bod_sample=0
+megaAVR0.menu.02_clock.2MHz.build.f_cpu=2000000L
+
+megaAVR0.menu.02_clock.32768Hz=Internal 32.768 kHz (ULP)
+megaAVR0.menu.02_clock.32768Hz.bootloader.bod_sample=1
+megaAVR0.menu.02_clock.32768Hz.build.f_cpu=32768
+
+# megaAVR0.menu.11_BODMODE.Disabled=BOD Disabled
+# megaAVR0.menu.11_BODMODE.Disabled.bootloader.bod_mode=00
+# megaAVR0.menu.11_BODMODE.Enabled=BOD Enabled
+# megaAVR0.menu.11_BODMODE.Enabled.bootloader.bod_mode=01
+# megaAVR0.menu.11_BODMODE.Sampled=BOD Sampled
+# megaAVR0.menu.11_BODMODE.Sampled.bootloader.bod_mode=10
+# megaAVR0.menu.11_BODMODE.Enablewait=BOD Enabled hold wakeup
+# megaAVR0.menu.11_BODMODE.Enablewait.bootloader.bod_mode=11
+
 # megaAVR0.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
-# megaAVR0.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
+# megaAVR0.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
 # megaAVR0.menu.12_BODLVL.BODLEVEL2=Level 2.6V
-# megaAVR0.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
+# megaAVR0.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
 # megaAVR0.menu.12_BODLVL.BODLEVEL7=Level 4.3V
-megaAVR0.menu.21_resetpin.01_reset.bootloader.reset_bit=11
-megaAVR0.menu.21_resetpin.01_reset=Reset
-megaAVR0.menu.21_resetpin.02_gpio.bootloader.reset_bit=01
-megaAVR0.menu.21_resetpin.02_gpio=GPIO (input only)
-megaAVR0.menu.24_eeprom.01_keep.bootloader.eesave_bit=1
-megaAVR0.menu.24_eeprom.01_keep=Save guard "Retained"
-megaAVR0.menu.24_eeprom.02_erase.bootloader.eesave_bit=0
-megaAVR0.menu.24_eeprom.02_erase=Save guard "Erase"
-megaAVR0.menu.24_eeprom.03_upload.bootloader.eepupload={bootloader.eeprom}
-megaAVR0.menu.24_eeprom.03_upload.bootloader.eesave_bit=1
-megaAVR0.menu.24_eeprom.03_upload="Erase" and "Replace"
-megaAVR0.menu.26_userrow.02_keep=Save guard "Retained"
-megaAVR0.menu.26_userrow.03_upload.bootloader.urowupload={bootloader.userrow}
-megaAVR0.menu.26_userrow.03_upload=Upload ".urow" file
-megaAVR0.menu.51_buildopt.01_Release=Build Release (default)
-megaAVR0.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
-megaAVR0.menu.51_buildopt.02_Debug1=Build DEBUG=1
-megaAVR0.menu.51_buildopt.03_Debug2.build.buildopt=-DDEBUG=2
-megaAVR0.menu.51_buildopt.03_Debug2=Build DEBUG=2
-megaAVR0.menu.52_macroapi.01_Enable=Macro API Enable (default)
-megaAVR0.menu.52_macroapi.02_Withoutboot.compiler.ldflags=-nostartfiles -DWOSFILES=1
-megaAVR0.menu.52_macroapi.02_Withoutboot=Macro API Enable without startup
-megaAVR0.menu.52_macroapi.03_Disable.build.macroapi=
-megaAVR0.menu.52_macroapi.03_Disable=Macro API Disable
-megaAVR0.menu.52_macroapi.04_AllDisable.build.macroapi=
-megaAVR0.menu.52_macroapi.04_AllDisable.compiler.ldflags=-nostartfiles -nostdlib -DWOSFILES=1 -DWOSTDLIB=1
-megaAVR0.menu.52_macroapi.04_AllDisable=Standard Library All Disable
-megaAVR0.menu.53_printf.01_default=default
-megaAVR0.menu.53_printf.02_full.build.printf=-DUSE_PRINTF_FLT
-megaAVR0.menu.53_printf.02_full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
-megaAVR0.menu.53_printf.02_full=Float Support
-megaAVR0.menu.90_console_baud.01_9600bps.build.console_baud=-DCONSOLE_BAUD=9600
-megaAVR0.menu.90_console_baud.01_9600bps=CONSOLE_BAUD=9600 bps (default)
-megaAVR0.menu.90_console_baud.03_38400bps.build.console_baud=-DCONSOLE_BAUD=38400
-megaAVR0.menu.90_console_baud.03_38400bps=CONSOLE_BAUD=38400 bps
-megaAVR0.menu.90_console_baud.04_57600bps.build.console_baud=-DCONSOLE_BAUD=57600
-megaAVR0.menu.90_console_baud.04_57600bps=CONSOLE_BAUD=57600 bps
-megaAVR0.menu.90_console_baud.05_115200bps.build.console_baud=-DCONSOLE_BAUD=115200
-megaAVR0.menu.90_console_baud.05_115200bps=CONSOLE_BAUD=115200 bps
-megaAVR0.menu.90_console_baud.06_230400bps.build.console_baud=-DCONSOLE_BAUD=230400
-megaAVR0.menu.90_console_baud.06_230400bps=CONSOLE_BAUD=230400 bps
-megaAVR0.menu.90_console_baud.14_500000bps.build.console_baud=-DCONSOLE_BAUD=500000
-megaAVR0.menu.90_console_baud.14_500000bps=CONSOLE_BAUD=500000 bps
-megaAVR0.menu.90_console_baud.15_1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
-megaAVR0.menu.90_console_baud.15_1000000bps=CONSOLE_BAUD=1000000 bps
-megaAVR0.menu.90_console_baud.20_separator=-
-megaAVR0.menu.90_console_baud.21_2400bps.build.console_baud=-DCONSOLE_BAUD=2400
-megaAVR0.menu.90_console_baud.21_2400bps=CONSOLE_BAUD=2400 bps (for ULP)
-megaAVR0.menu.95_bootloader.01_UART0_A0_LA7.bootloader.file=hex/boot_atmega_UART0_A0_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.01_UART0_A0_LA7.build.console_select=-DSerial=Serial0A
-megaAVR0.menu.95_bootloader.01_UART0_A0_LA7=UART0 TX:PA0 RX:PA1 LED=PA7 (default)
-megaAVR0.menu.95_bootloader.10_separator=-
-megaAVR0.menu.95_bootloader.11_UART1_C0_LA7.bootloader.file=hex/boot_atmega_UART1_C0_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.11_UART1_C0_LA7.build.console_select=-DSerial=Serial1A
-megaAVR0.menu.95_bootloader.11_UART1_C0_LA7=UART1 TX:PC0 RX:PC1 LED=PA7
-megaAVR0.menu.95_bootloader.12_UART2_F0_LA7.bootloader.file=hex/boot_atmega_UART2_F0_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.12_UART2_F0_LA7.build.console_select=-DSerial=Serial2A
-megaAVR0.menu.95_bootloader.12_UART2_F0_LA7=UART2 TX:PF0 RX:PF1 LED=PA7
-megaAVR0.menu.95_bootloader.13_UART3_B0_LA7.bootloader.file=hex/boot_atmega_UART3_B0_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.13_UART3_B0_LA7.build.console_select=-DSerial=Serial3A -DLED_BUILTIN=PIN_PA7
-megaAVR0.menu.95_bootloader.13_UART3_B0_LA7=UART3 TX:PB0 RX:PB1 LED=PA7 (48pin only)
-megaAVR0.menu.95_bootloader.14_UART2_F4_LA7.bootloader.file=hex/boot_atmega_UART2_F4_{upload.speed}_LA7.hex
-megaAVR0.menu.95_bootloader.14_UART2_F4_LA7.build.console_select=-DSerial=Serial2A -DLED_BUILTIN=PIN_PA7
-megaAVR0.menu.95_bootloader.14_UART2_F4_LA7=UART2 TX:PF4 RX:PF5 LED=PA7 (32/48pin only)
-megaAVR0.menu.95_bootloader.10_separator=-
-megaAVR0.menu.95_bootloader.31_UART3_B0_LF5_SF6_Curiosity.bootloader.file=hex/boot_atmega_UART3_B0_{upload.speed}_LF5.hex
-megaAVR0.menu.95_bootloader.31_UART3_B0_LF5_SF6_Curiosity.build.console_select=-DSerial=Serial3A -DLED_BUILTIN=PIN_PF5 -DSW_BUILTIN=PIN_PF6
-megaAVR0.menu.95_bootloader.31_UART3_B0_LF5_SF6_Curiosity=UART3 TX:PB0 RX:PB1 LED=PF5 SW=PF6 (ATmega4809 Curiosity Nano)
+# megaAVR0.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
+
+megaAVR0.menu.21_resetpin.Reset=Reset
+megaAVR0.menu.21_resetpin.Reset.bootloader.reset_bit=11
+
+megaAVR0.menu.21_resetpin.Gpio=GPIO (input only)
+megaAVR0.menu.21_resetpin.Gpio.bootloader.reset_bit=01
+
+megaAVR0.menu.24_eeprom.Retained=Save guard "Retained"
+megaAVR0.menu.24_eeprom.Retained.bootloader.eesave_bit=1
+
+megaAVR0.menu.24_eeprom.Erase=Save guard "Erase"
+megaAVR0.menu.24_eeprom.Erase.bootloader.eesave_bit=0
+
+megaAVR0.menu.24_eeprom.Upload="Erase" and "Replace"
+megaAVR0.menu.24_eeprom.Upload.bootloader.eepupload={bootloader.eeprom}
+megaAVR0.menu.24_eeprom.Upload.bootloader.eesave_bit=1
+
+megaAVR0.menu.26_userrow.Keep=Save guard "Retained"
+
+megaAVR0.menu.26_userrow.Upload=Upload ".urow" file
+megaAVR0.menu.26_userrow.Upload.bootloader.urowupload={bootloader.userrow}
+
+megaAVR0.menu.51_buildopt.Release=Release (default)
+
+megaAVR0.menu.51_buildopt.Debug1=DEBUG=1
+megaAVR0.menu.51_buildopt.Debug1.build.buildopt=-DDEBUG=1
+
+megaAVR0.menu.51_buildopt.Debug2=DEBUG=2
+megaAVR0.menu.51_buildopt.Debug2.build.buildopt=-DDEBUG=2
+
+megaAVR0.menu.52_macroapi.Enable=Macro API Enable (default)
+
+megaAVR0.menu.52_macroapi.WoStartup=Macro API Enable without startup
+megaAVR0.menu.52_macroapi.WoStartup.build.macroapi=-DENABLE_MACRO_API -DWOSFILES=1
+megaAVR0.menu.52_macroapi.WoStartup.compiler.ldflags=-nostartfiles
+
+megaAVR0.menu.52_macroapi.Disable=Macro API Disable
+megaAVR0.menu.52_macroapi.Disable.build.macroapi=
+
+megaAVR0.menu.52_macroapi.AllDisable=Standard Library All Disable
+megaAVR0.menu.52_macroapi.AllDisable.build.macroapi=-DWOSFILES=1 -DWOSTDLIB=1
+megaAVR0.menu.52_macroapi.AllDisable.compiler.ldflags=-nostartfiles -nostdlib
+
+megaAVR0.menu.53_printf.Default=Integer Only
+
+megaAVR0.menu.53_printf.Full=Float Support
+megaAVR0.menu.53_printf.Full.build.printf=-DUSE_PRINTF_FLT
+megaAVR0.menu.53_printf.Full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
+
+megaAVR0.menu.90_console_baud.9600bps=9600 bps (default)
+megaAVR0.menu.90_console_baud.9600bps.build.console_baud=-DCONSOLE_BAUD=9600
+
+megaAVR0.menu.90_console_baud.38400bps=38400 bps
+megaAVR0.menu.90_console_baud.38400bps.build.console_baud=-DCONSOLE_BAUD=38400
+
+megaAVR0.menu.90_console_baud.57600bps.build.console_baud=-DCONSOLE_BAUD=57600
+megaAVR0.menu.90_console_baud.57600bps=57600 bps
+
+megaAVR0.menu.90_console_baud.115200bps=115200 bps
+megaAVR0.menu.90_console_baud.115200bps.build.console_baud=-DCONSOLE_BAUD=115200
+
+megaAVR0.menu.90_console_baud.230400bps=230400 bps
+megaAVR0.menu.90_console_baud.230400bps.build.console_baud=-DCONSOLE_BAUD=230400
+
+megaAVR0.menu.90_console_baud.500000bps=500000 bps
+megaAVR0.menu.90_console_baud.500000bps.build.console_baud=-DCONSOLE_BAUD=500000
+
+megaAVR0.menu.90_console_baud.1000000bps=1000000 bps
+megaAVR0.menu.90_console_baud.1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
+
+megaAVR0.menu.90_console_baud.separator1=-
+
+megaAVR0.menu.90_console_baud.2400bps=2400 bps (for ULP)
+megaAVR0.menu.90_console_baud.2400bps.build.console_baud=-DCONSOLE_BAUD=2400
+
+megaAVR0.menu.95_bootloader.UART0_A0_LA7=UART0 TX:PA0 RX:PA1 LED=PA7 (default)
+megaAVR0.menu.95_bootloader.UART0_A0_LA7.bootloader.file=hex/boot_atmega_UART0_A0_{upload.speed}_LA7.hex
+megaAVR0.menu.95_bootloader.UART0_A0_LA7.build.console_select=-DSerial=Serial0A
+
+megaAVR0.menu.95_bootloader.separator1=-
+
+megaAVR0.menu.95_bootloader.UART1_C0_LA7=UART1 TX:PC0 RX:PC1 LED=PA7
+megaAVR0.menu.95_bootloader.UART1_C0_LA7.bootloader.file=hex/boot_atmega_UART1_C0_{upload.speed}_LA7.hex
+megaAVR0.menu.95_bootloader.UART1_C0_LA7.build.console_select=-DSerial=Serial1A
+
+megaAVR0.menu.95_bootloader.UART2_F0_LA7=UART2 TX:PF0 RX:PF1 LED=PA7
+megaAVR0.menu.95_bootloader.UART2_F0_LA7.bootloader.file=hex/boot_atmega_UART2_F0_{upload.speed}_LA7.hex
+megaAVR0.menu.95_bootloader.UART2_F0_LA7.build.console_select=-DSerial=Serial2A
+
+megaAVR0.menu.95_bootloader.UART3_B0_LA7=UART3 TX:PB0 RX:PB1 LED=PA7 (48pin only)
+megaAVR0.menu.95_bootloader.UART3_B0_LA7.bootloader.file=hex/boot_atmega_UART3_B0_{upload.speed}_LA7.hex
+megaAVR0.menu.95_bootloader.UART3_B0_LA7.build.console_select=-DSerial=Serial3A -DLED_BUILTIN=PIN_PA7
+
+megaAVR0.menu.95_bootloader.UART2_F4_LA7=UART2 TX:PF4 RX:PF5 LED=PA7 (32/48pin only)
+megaAVR0.menu.95_bootloader.UART2_F4_LA7.bootloader.file=hex/boot_atmega_UART2_F4_{upload.speed}_LA7.hex
+megaAVR0.menu.95_bootloader.UART2_F4_LA7.build.console_select=-DSerial=Serial2A -DLED_BUILTIN=PIN_PA7
+
+megaAVR0.menu.95_bootloader.separator2=-
+
+megaAVR0.menu.95_bootloader.UART3_B0_LF5_SF6_Curiosity=UART3 TX:PB0 RX:PB1 LED=PF5 SW=PF6 (ATmega4809 Curiosity Nano)
+megaAVR0.menu.95_bootloader.UART3_B0_LF5_SF6_Curiosity.bootloader.file=hex/boot_atmega_UART3_B0_{upload.speed}_LF5.hex
+megaAVR0.menu.95_bootloader.UART3_B0_LF5_SF6_Curiosity.build.console_select=-DSerial=Serial3A -DLED_BUILTIN=PIN_PF5 -DSW_BUILTIN=PIN_PF6
 
 
 tinyAVR012.bootloader.BODCFG=0b{bootloader.bod_lvl}{bootloader.bod_sample}{bootloader.bod_mode}00
 tinyAVR012.bootloader.BOOTSIZE=0x02
 tinyAVR012.bootloader.CODESIZE=0x00
-tinyAVR012.bootloader.OSCCFG=0b01111110
+tinyAVR012.bootloader.OSCCFG=0x7E
 tinyAVR012.bootloader.SYSCFG0=0b1101{bootloader.reset_bit}1{bootloader.eesave_bit}
-tinyAVR012.bootloader.SYSCFG1=0b11111111
-tinyAVR012.bootloader.WDTCFG=0b00000000
+tinyAVR012.bootloader.SYSCFG1=0xFF
+tinyAVR012.bootloader.WDTCFG=0x00
 tinyAVR012.bootloader.bod_lvl=000
 tinyAVR012.bootloader.bod_mode=00
 tinyAVR012.bootloader.bod_sample=0
@@ -297,337 +360,422 @@ tinyAVR012.build.linker_script=avrxmega3_p64.x
 tinyAVR012.upload.protocol=arduino
 tinyAVR012.upload.speed=115200
 tinyAVR012.upload.tool=avrdude
-tinyAVR012.menu.01_variant.01_ATtiny3227.build.board=AVR_ATTINY3227
-tinyAVR012.menu.01_variant.01_ATtiny3227.build.mcu=attiny3227
-tinyAVR012.menu.01_variant.01_ATtiny3227.build.variant=tinyAVR2_24
-tinyAVR012.menu.01_variant.01_ATtiny3227.build.linker_script=avrxmega3_p128.x
-tinyAVR012.menu.01_variant.01_ATtiny3227.upload.maximum_data_size=3072
-tinyAVR012.menu.01_variant.01_ATtiny3227.upload.maximum_size=32768
-tinyAVR012.menu.01_variant.01_ATtiny3227=tinyAVR-2 24pin ATtiny3227 (32KiB+3KiB)
-tinyAVR012.menu.01_variant.02_ATtiny1627.build.board=AVR_ATTINY1627
-tinyAVR012.menu.01_variant.02_ATtiny1627.build.mcu=attiny1627
-tinyAVR012.menu.01_variant.02_ATtiny1627.build.variant=tinyAVR2_24
-tinyAVR012.menu.01_variant.02_ATtiny1627.upload.maximum_data_size=2048
-tinyAVR012.menu.01_variant.02_ATtiny1627.upload.maximum_size=15872
-tinyAVR012.menu.01_variant.02_ATtiny1627=tinyAVR-2 24pin ATtiny1627 (16KiB+2KiB)
-tinyAVR012.menu.01_variant.03_ATtiny827.build.board=AVR_ATTINY827
-tinyAVR012.menu.01_variant.03_ATtiny827.build.mcu=attiny827
-tinyAVR012.menu.01_variant.03_ATtiny827.build.variant=tinyAVR2_24
-tinyAVR012.menu.01_variant.03_ATtiny827.upload.maximum_data_size=1024
-tinyAVR012.menu.01_variant.03_ATtiny827.upload.maximum_size=7680
-tinyAVR012.menu.01_variant.03_ATtiny827=tinyAVR-2 24pin ATtiny827 (8KiB+1KiB)
-tinyAVR012.menu.01_variant.04_ATtiny427.build.board=AVR_ATTINY427
-tinyAVR012.menu.01_variant.04_ATtiny427.build.mcu=attiny427
-tinyAVR012.menu.01_variant.04_ATtiny427.build.variant=tinyAVR2_24
-tinyAVR012.menu.01_variant.04_ATtiny427.upload.maximum_data_size=512
-tinyAVR012.menu.01_variant.04_ATtiny427.upload.maximum_size=3584
-tinyAVR012.menu.01_variant.04_ATtiny427=tinyAVR-2 24pin ATtiny427 (4KiB+512B)
-tinyAVR012.menu.01_variant.10_separator=-
-tinyAVR012.menu.01_variant.11_ATtiny3226.build.board=AVR_ATTINY3226
-tinyAVR012.menu.01_variant.11_ATtiny3226.build.mcu=attiny3226
-tinyAVR012.menu.01_variant.11_ATtiny3226.build.variant=tinyAVR2_20
-tinyAVR012.menu.01_variant.11_ATtiny3226.build.linker_script=avrxmega3_p128.x
-tinyAVR012.menu.01_variant.11_ATtiny3226.upload.maximum_data_size=3072
-tinyAVR012.menu.01_variant.11_ATtiny3226.upload.maximum_size=32768
-tinyAVR012.menu.01_variant.11_ATtiny3226=tinyAVR-2 20pin ATtiny3226 (32KiB+3KiB)
-tinyAVR012.menu.01_variant.12_ATtiny1626.build.board=AVR_ATTINY1626
-tinyAVR012.menu.01_variant.12_ATtiny1626.build.mcu=attiny1626
-tinyAVR012.menu.01_variant.12_ATtiny1626.build.variant=tinyAVR2_20
-tinyAVR012.menu.01_variant.12_ATtiny1626.upload.maximum_data_size=2048
-tinyAVR012.menu.01_variant.12_ATtiny1626.upload.maximum_size=15872
-tinyAVR012.menu.01_variant.12_ATtiny1626=tinyAVR-2 20pin ATtiny1626 (16KiB+2KiB)
-tinyAVR012.menu.01_variant.13_ATtiny826.build.board=AVR_ATTINY826
-tinyAVR012.menu.01_variant.13_ATtiny826.build.mcu=attiny826
-tinyAVR012.menu.01_variant.13_ATtiny826.build.variant=tinyAVR2_20
-tinyAVR012.menu.01_variant.13_ATtiny826.upload.maximum_data_size=1024
-tinyAVR012.menu.01_variant.13_ATtiny826.upload.maximum_size=7680
-tinyAVR012.menu.01_variant.13_ATtiny826=tinyAVR-2 20pin ATtiny826 (8KiB+1KiB)
-tinyAVR012.menu.01_variant.14_ATtiny426.build.board=AVR_ATTINY426
-tinyAVR012.menu.01_variant.14_ATtiny426.build.mcu=attiny426
-tinyAVR012.menu.01_variant.14_ATtiny426.build.variant=tinyAVR2_20
-tinyAVR012.menu.01_variant.14_ATtiny426.upload.maximum_data_size=512
-tinyAVR012.menu.01_variant.14_ATtiny426.upload.maximum_size=3584
-tinyAVR012.menu.01_variant.14_ATtiny426=tinyAVR-2 20pin ATtiny426 (4KiB+512B)
-tinyAVR012.menu.01_variant.20_separator=-
-tinyAVR012.menu.01_variant.21_ATtiny3224.build.board=AVR_ATTINY3224
-tinyAVR012.menu.01_variant.21_ATtiny3224.build.mcu=attiny3224
-tinyAVR012.menu.01_variant.21_ATtiny3224.build.variant=tinyAVR2_14
-tinyAVR012.menu.01_variant.21_ATtiny3224.build.linker_script=avrxmega3_p128.x
-tinyAVR012.menu.01_variant.21_ATtiny3224.upload.maximum_data_size=3072
-tinyAVR012.menu.01_variant.21_ATtiny3224.upload.maximum_size=32768
-tinyAVR012.menu.01_variant.21_ATtiny3224=tinyAVR-2 14pin ATtiny3224 (32KiB+3KiB)
-tinyAVR012.menu.01_variant.22_ATtiny1624.build.board=AVR_ATTINY1624
-tinyAVR012.menu.01_variant.22_ATtiny1624.build.mcu=attiny1624
-tinyAVR012.menu.01_variant.22_ATtiny1624.build.variant=tinyAVR2_14
-tinyAVR012.menu.01_variant.22_ATtiny1624.upload.maximum_data_size=2048
-tinyAVR012.menu.01_variant.22_ATtiny1624.upload.maximum_size=15872
-tinyAVR012.menu.01_variant.22_ATtiny1624=tinyAVR-2 14pin ATtiny1624 (16KiB+2KiB)
-tinyAVR012.menu.01_variant.23_ATtiny824.build.board=AVR_ATTINY824
-tinyAVR012.menu.01_variant.23_ATtiny824.build.mcu=attiny824
-tinyAVR012.menu.01_variant.23_ATtiny824.build.variant=tinyAVR2_14
-tinyAVR012.menu.01_variant.23_ATtiny824.upload.maximum_data_size=1024
-tinyAVR012.menu.01_variant.23_ATtiny824.upload.maximum_size=7680
-tinyAVR012.menu.01_variant.23_ATtiny824=tinyAVR-2 14pin ATtiny824 (8KiB+1KiB)
-tinyAVR012.menu.01_variant.24_ATtiny824.build.board=AVR_ATTINY424
-tinyAVR012.menu.01_variant.24_ATtiny824.build.mcu=attiny424
-tinyAVR012.menu.01_variant.24_ATtiny824.build.variant=tinyAVR2_14
-tinyAVR012.menu.01_variant.24_ATtiny824.upload.maximum_data_size=512
-tinyAVR012.menu.01_variant.24_ATtiny824.upload.maximum_size=3584
-tinyAVR012.menu.01_variant.24_ATtiny824=tinyAVR-2 14pin ATtiny424 (4KiB+512B)
-tinyAVR012.menu.01_variant.30_separator=-
-tinyAVR012.menu.01_variant.31_ATtiny3217.build.board=AVR_ATTINY3217
-tinyAVR012.menu.01_variant.31_ATtiny3217.build.mcu=attiny3217
-tinyAVR012.menu.01_variant.31_ATtiny3217.build.variant=tinyAVR1_24
-tinyAVR012.menu.01_variant.31_ATtiny3217.build.linker_script=avrxmega3_p128.x
-tinyAVR012.menu.01_variant.31_ATtiny3217.upload.maximum_data_size=2048
-tinyAVR012.menu.01_variant.31_ATtiny3217.upload.maximum_size=32768
-tinyAVR012.menu.01_variant.31_ATtiny3217=tinyAVR-1 24pin ATtiny3217 (32KiB+2KiB)
-tinyAVR012.menu.01_variant.32_ATtiny1617.build.board=AVR_ATTINY1617
-tinyAVR012.menu.01_variant.32_ATtiny1617.build.mcu=attiny1617
-tinyAVR012.menu.01_variant.32_ATtiny1617.build.variant=tinyAVR1_24
-tinyAVR012.menu.01_variant.32_ATtiny1617.upload.maximum_data_size=2048
-tinyAVR012.menu.01_variant.32_ATtiny1617.upload.maximum_size=15872
-tinyAVR012.menu.01_variant.32_ATtiny1617=tinyAVR-1 24pin ATtiny1617 (16KiB+2KiB)
-tinyAVR012.menu.01_variant.33_ATtiny817.build.board=AVR_ATTINY817
-tinyAVR012.menu.01_variant.33_ATtiny817.build.mcu=attiny817
-tinyAVR012.menu.01_variant.33_ATtiny817.build.variant=tinyAVR1_24
-tinyAVR012.menu.01_variant.33_ATtiny817.upload.maximum_data_size=512
-tinyAVR012.menu.01_variant.33_ATtiny817.upload.maximum_size=7680
-tinyAVR012.menu.01_variant.33_ATtiny817=tinyAVR-1 24pin ATtiny817 (8KiB+512B)
-tinyAVR012.menu.01_variant.34_ATtiny417.build.board=AVR_ATTINY417
-tinyAVR012.menu.01_variant.34_ATtiny417.build.mcu=attiny417
-tinyAVR012.menu.01_variant.34_ATtiny417.build.variant=tinyAVR1_24
-tinyAVR012.menu.01_variant.34_ATtiny417.upload.maximum_data_size=256
-tinyAVR012.menu.01_variant.34_ATtiny417.upload.maximum_size=3584
-tinyAVR012.menu.01_variant.34_ATtiny417=tinyAVR-1 24pin ATtiny417 (4KiB+256B)
-tinyAVR012.menu.01_variant.40_separator=-
-tinyAVR012.menu.01_variant.41_ATtiny3216.build.board=AVR_ATTINY3216
-tinyAVR012.menu.01_variant.41_ATtiny3216.build.mcu=attiny3216
-tinyAVR012.menu.01_variant.41_ATtiny3216.build.variant=tinyAVR1_20
-tinyAVR012.menu.01_variant.41_ATtiny3216.build.linker_script=avrxmega3_p128.x
-tinyAVR012.menu.01_variant.41_ATtiny3216.upload.maximum_data_size=2048
-tinyAVR012.menu.01_variant.41_ATtiny3216.upload.maximum_size=32768
-tinyAVR012.menu.01_variant.41_ATtiny3216=tinyAVR-1 20pin ATtiny3216 (32KiB+2KiB)
-tinyAVR012.menu.01_variant.42_ATtiny1616.build.board=AVR_ATTINY1616
-tinyAVR012.menu.01_variant.42_ATtiny1616.build.mcu=attiny1616
-tinyAVR012.menu.01_variant.42_ATtiny1616.build.variant=tinyAVR1_20
-tinyAVR012.menu.01_variant.42_ATtiny1616.upload.maximum_data_size=2048
-tinyAVR012.menu.01_variant.42_ATtiny1616.upload.maximum_size=15872
-tinyAVR012.menu.01_variant.42_ATtiny1616=tinyAVR-1 20pin ATtiny1616 (16KiB+2KiB)
-tinyAVR012.menu.01_variant.43_ATtiny816.build.board=AVR_ATTINY816
-tinyAVR012.menu.01_variant.43_ATtiny816.build.mcu=attiny816
-tinyAVR012.menu.01_variant.43_ATtiny816.build.variant=tinyAVR1_20
-tinyAVR012.menu.01_variant.43_ATtiny816.upload.maximum_data_size=512
-tinyAVR012.menu.01_variant.43_ATtiny816.upload.maximum_size=7680
-tinyAVR012.menu.01_variant.43_ATtiny816=tinyAVR-1 20pin ATtiny816 (8KiB+512B)
-tinyAVR012.menu.01_variant.44_ATtiny416.build.board=AVR_ATTINY416
-tinyAVR012.menu.01_variant.44_ATtiny416.build.mcu=attiny416
-tinyAVR012.menu.01_variant.44_ATtiny416.build.variant=tinyAVR1_20
-tinyAVR012.menu.01_variant.44_ATtiny416.upload.maximum_data_size=256
-tinyAVR012.menu.01_variant.44_ATtiny416.upload.maximum_size=3584
-tinyAVR012.menu.01_variant.44_ATtiny416=tinyAVR-1 20pin ATtiny416 (4KiB+256B)
-tinyAVR012.menu.01_variant.45_ATtiny416auto.build.board=AVR_ATTINY416
-tinyAVR012.menu.01_variant.45_ATtiny416auto.build.mcu=attiny416auto
-tinyAVR012.menu.01_variant.45_ATtiny416auto.build.variant=tinyAVR1_20
-tinyAVR012.menu.01_variant.45_ATtiny416auto.upload.maximum_data_size=256
-tinyAVR012.menu.01_variant.45_ATtiny416auto.upload.maximum_size=3584
-tinyAVR012.menu.01_variant.45_ATtiny416auto=tinyAVR-1 20pin ATtiny416auto (4KiB+256B)
-tinyAVR012.menu.01_variant.50_separator=-
-tinyAVR012.menu.01_variant.51_ATtiny1614.build.board=AVR_ATTINY1614
-tinyAVR012.menu.01_variant.51_ATtiny1614.build.mcu=attiny1614
-tinyAVR012.menu.01_variant.51_ATtiny1614.build.variant=tinyAVR1_14
-tinyAVR012.menu.01_variant.51_ATtiny1614.upload.maximum_data_size=2048
-tinyAVR012.menu.01_variant.51_ATtiny1614.upload.maximum_size=15872
-tinyAVR012.menu.01_variant.51_ATtiny1614=tinyAVR-1 14pin ATtiny1614 (16KiB+2KiB)
-tinyAVR012.menu.01_variant.52_ATtiny814.build.board=AVR_ATTINY814
-tinyAVR012.menu.01_variant.52_ATtiny814.build.mcu=attiny814
-tinyAVR012.menu.01_variant.52_ATtiny814.build.variant=tinyAVR1_14
-tinyAVR012.menu.01_variant.52_ATtiny814.upload.maximum_data_size=512
-tinyAVR012.menu.01_variant.52_ATtiny814.upload.maximum_size=7680
-tinyAVR012.menu.01_variant.52_ATtiny814=tinyAVR-1 14pin ATtiny814 (8KiB+512B)
-tinyAVR012.menu.01_variant.53_ATtiny414.build.board=AVR_ATTINY414
-tinyAVR012.menu.01_variant.53_ATtiny414.build.mcu=attiny414
-tinyAVR012.menu.01_variant.53_ATtiny414.build.variant=tinyAVR1_14
-tinyAVR012.menu.01_variant.53_ATtiny414.upload.maximum_data_size=256
-tinyAVR012.menu.01_variant.53_ATtiny414.upload.maximum_size=3584
-tinyAVR012.menu.01_variant.53_ATtiny414=tinyAVR-1 14pin ATtiny414 (4KiB+256B)
-tinyAVR012.menu.01_variant.70_separator=-
-tinyAVR012.menu.01_variant.71_ATtiny1607.build.board=AVR_ATTINY1607
-tinyAVR012.menu.01_variant.71_ATtiny1607.build.mcu=attiny1607
-tinyAVR012.menu.01_variant.71_ATtiny1607.build.variant=tinyAVR0_24
-tinyAVR012.menu.01_variant.71_ATtiny1607.upload.maximum_data_size=1024
-tinyAVR012.menu.01_variant.71_ATtiny1607.upload.maximum_size=15872
-tinyAVR012.menu.01_variant.71_ATtiny1607=tinyAVR-0 24pin ATtiny1607 (16KiB+1KiB)
-tinyAVR012.menu.01_variant.72_ATtiny807.build.board=AVR_ATTINY807
-tinyAVR012.menu.01_variant.72_ATtiny807.build.mcu=attiny807
-tinyAVR012.menu.01_variant.72_ATtiny807.build.variant=tinyAVR0_24
-tinyAVR012.menu.01_variant.72_ATtiny807.upload.maximum_data_size=512
-tinyAVR012.menu.01_variant.72_ATtiny807.upload.maximum_size=7680
-tinyAVR012.menu.01_variant.72_ATtiny807=tinyAVR-0 24pin ATtiny807 (8KiB+512B)
-tinyAVR012.menu.01_variant.80_separator=-
-tinyAVR012.menu.01_variant.81_ATtiny1606.build.board=AVR_ATTINY1606
-tinyAVR012.menu.01_variant.81_ATtiny1606.build.mcu=attiny1606
-tinyAVR012.menu.01_variant.81_ATtiny1606.build.variant=tinyAVR0_20
-tinyAVR012.menu.01_variant.81_ATtiny1606.upload.maximum_data_size=1024
-tinyAVR012.menu.01_variant.81_ATtiny1606.upload.maximum_size=15872
-tinyAVR012.menu.01_variant.81_ATtiny1606=tinyAVR-0 20pin ATtiny1606 (16KiB+1KiB)
-tinyAVR012.menu.01_variant.82_ATtiny806.build.board=AVR_ATTINY806
-tinyAVR012.menu.01_variant.82_ATtiny806.build.mcu=attiny806
-tinyAVR012.menu.01_variant.82_ATtiny806.build.variant=tinyAVR0_20
-tinyAVR012.menu.01_variant.82_ATtiny806.upload.maximum_data_size=512
-tinyAVR012.menu.01_variant.82_ATtiny806.upload.maximum_size=7680
-tinyAVR012.menu.01_variant.82_ATtiny806=tinyAVR-0 20pin ATtiny806 (8KiB+512B)
-tinyAVR012.menu.01_variant.83_ATtiny406.build.board=AVR_ATTINY406
-tinyAVR012.menu.01_variant.83_ATtiny406.build.mcu=attiny406
-tinyAVR012.menu.01_variant.83_ATtiny406.build.variant=tinyAVR0_20
-tinyAVR012.menu.01_variant.83_ATtiny406.upload.maximum_data_size=256
-tinyAVR012.menu.01_variant.83_ATtiny406.upload.maximum_size=3584
-tinyAVR012.menu.01_variant.83_ATtiny406=tinyAVR-0 20pin ATtiny406 (4KiB+256B)
-tinyAVR012.menu.01_variant.90_separator=-
-tinyAVR012.menu.01_variant.91_ATtiny1604.build.board=AVR_ATTINY1604
-tinyAVR012.menu.01_variant.91_ATtiny1604.build.mcu=attiny1604
-tinyAVR012.menu.01_variant.91_ATtiny1604.build.variant=tinyAVR0_14
-tinyAVR012.menu.01_variant.91_ATtiny1604.upload.maximum_data_size=1024
-tinyAVR012.menu.01_variant.91_ATtiny1604.upload.maximum_size=15872
-tinyAVR012.menu.01_variant.91_ATtiny1604=tinyAVR-0 14pin ATtiny1604 (16KiB+1KiB)
-tinyAVR012.menu.01_variant.92_ATtiny804.build.board=AVR_ATTINY804
-tinyAVR012.menu.01_variant.92_ATtiny804.build.mcu=attiny804
-tinyAVR012.menu.01_variant.92_ATtiny804.build.variant=tinyAVR0_14
-tinyAVR012.menu.01_variant.92_ATtiny804.upload.maximum_data_size=512
-tinyAVR012.menu.01_variant.92_ATtiny804.upload.maximum_size=7680
-tinyAVR012.menu.01_variant.92_ATtiny804=tinyAVR-0 14pin ATtiny804 (8KiB+512B)
-tinyAVR012.menu.01_variant.93_ATtiny404.build.board=AVR_ATTINY404
-tinyAVR012.menu.01_variant.93_ATtiny404.build.mcu=attiny404
-tinyAVR012.menu.01_variant.93_ATtiny404.build.variant=tinyAVR0_14
-tinyAVR012.menu.01_variant.93_ATtiny404.upload.maximum_data_size=256
-tinyAVR012.menu.01_variant.93_ATtiny404.upload.maximum_size=3584
-tinyAVR012.menu.01_variant.93_ATtiny404=tinyAVR-0 14pin ATtiny404 (4KiB+256B)
-tinyAVR012.menu.02_clock.01_20MHz.bootloader.bod_sample=0
-tinyAVR012.menu.02_clock.01_20MHz.build.f_cpu=20000000L
-tinyAVR012.menu.02_clock.01_20MHz=Internal 20 MHz
-tinyAVR012.menu.02_clock.02_10MHz.bootloader.bod_sample=0
-tinyAVR012.menu.02_clock.02_10MHz.build.f_cpu=10000000L
-tinyAVR012.menu.02_clock.02_10MHz=Internal 10 MHz
-tinyAVR012.menu.02_clock.03_5MHz.bootloader.bod_sample=0
-tinyAVR012.menu.02_clock.03_5MHz.build.f_cpu=5000000L
-tinyAVR012.menu.02_clock.03_5MHz=Internal 5 MHz
-tinyAVR012.menu.02_clock.10_separator=-
-tinyAVR012.menu.02_clock.11_16MHz.bootloader.OSCCFG=0b00000001
-tinyAVR012.menu.02_clock.11_16MHz.bootloader.bod_sample=0
-tinyAVR012.menu.02_clock.11_16MHz.build.f_cpu=16000000L
-tinyAVR012.menu.02_clock.11_16MHz=Internal 16 MHz
-tinyAVR012.menu.02_clock.12_8MHz.bootloader.OSCCFG=0b00000001
-tinyAVR012.menu.02_clock.12_8MHz.bootloader.bod_sample=0
-tinyAVR012.menu.02_clock.12_8MHz.build.f_cpu=8000000L
-tinyAVR012.menu.02_clock.12_8MHz=Internal 8 MHz
-tinyAVR012.menu.02_clock.13_4MHz.bootloader.OSCCFG=0b00000001
-tinyAVR012.menu.02_clock.13_4MHz.bootloader.bod_sample=0
-tinyAVR012.menu.02_clock.13_4MHz.build.f_cpu=4000000L
-tinyAVR012.menu.02_clock.13_4MHz=Internal 4 MHz
-tinyAVR012.menu.02_clock.15_1MHz.bootloader.OSCCFG=0b00000001
-tinyAVR012.menu.02_clock.15_1MHz.bootloader.bod_sample=0
-tinyAVR012.menu.02_clock.15_1MHz.build.f_cpu=1000000L
-tinyAVR012.menu.02_clock.15_1MHz=Internal 1 MHz
-tinyAVR012.menu.02_clock.20_separator=-
-tinyAVR012.menu.02_clock.21_2MHz.bootloader.bod_sample=0
-tinyAVR012.menu.02_clock.21_2MHz.build.f_cpu=2000000L
-tinyAVR012.menu.02_clock.21_2MHz=Internal 2 MHz
-tinyAVR012.menu.02_clock.22_32768Hz.bootloader.bod_sample=1
-tinyAVR012.menu.02_clock.22_32768Hz.build.f_cpu=32768
-tinyAVR012.menu.02_clock.22_32768Hz=Internal 32.768 kHz (ULP)
-# tinyAVR012.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
-# tinyAVR012.menu.11_BODMODE.01_disabled=BOD Disabled
-# tinyAVR012.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
-# tinyAVR012.menu.11_BODMODE.02_enabled=BOD Enabled
-# tinyAVR012.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
-# tinyAVR012.menu.11_BODMODE.03_sampled=BOD Sampled
-# tinyAVR012.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
-# tinyAVR012.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
+
+tinyAVR012.menu.01_variant.ATtiny3227.build.board=AVR_ATTINY3227
+tinyAVR012.menu.01_variant.ATtiny3227.build.mcu=attiny3227
+tinyAVR012.menu.01_variant.ATtiny3227.build.variant=tinyAVR2_24
+tinyAVR012.menu.01_variant.ATtiny3227.build.linker_script=avrxmega3_p128.x
+tinyAVR012.menu.01_variant.ATtiny3227.upload.maximum_data_size=3072
+tinyAVR012.menu.01_variant.ATtiny3227.upload.maximum_size=32768
+tinyAVR012.menu.01_variant.ATtiny3227=tinyAVR-2 24pin ATtiny3227 (32KiB+3KiB)
+
+tinyAVR012.menu.01_variant.ATtiny1627.build.board=AVR_ATTINY1627
+tinyAVR012.menu.01_variant.ATtiny1627.build.mcu=attiny1627
+tinyAVR012.menu.01_variant.ATtiny1627.build.variant=tinyAVR2_24
+tinyAVR012.menu.01_variant.ATtiny1627.upload.maximum_data_size=2048
+tinyAVR012.menu.01_variant.ATtiny1627.upload.maximum_size=15872
+tinyAVR012.menu.01_variant.ATtiny1627=tinyAVR-2 24pin ATtiny1627 (16KiB+2KiB)
+
+tinyAVR012.menu.01_variant.ATtiny827.build.board=AVR_ATTINY827
+tinyAVR012.menu.01_variant.ATtiny827.build.mcu=attiny827
+tinyAVR012.menu.01_variant.ATtiny827.build.variant=tinyAVR2_24
+tinyAVR012.menu.01_variant.ATtiny827.upload.maximum_data_size=1024
+tinyAVR012.menu.01_variant.ATtiny827.upload.maximum_size=7680
+tinyAVR012.menu.01_variant.ATtiny827=tinyAVR-2 24pin ATtiny827 (8KiB+1KiB)
+
+tinyAVR012.menu.01_variant.ATtiny427.build.board=AVR_ATTINY427
+tinyAVR012.menu.01_variant.ATtiny427.build.mcu=attiny427
+tinyAVR012.menu.01_variant.ATtiny427.build.variant=tinyAVR2_24
+tinyAVR012.menu.01_variant.ATtiny427.upload.maximum_data_size=512
+tinyAVR012.menu.01_variant.ATtiny427.upload.maximum_size=3584
+tinyAVR012.menu.01_variant.ATtiny427=tinyAVR-2 24pin ATtiny427 (4KiB+512B)
+
+tinyAVR012.menu.01_variant.separator1=-
+
+tinyAVR012.menu.01_variant.ATtiny3226.build.board=AVR_ATTINY3226
+tinyAVR012.menu.01_variant.ATtiny3226.build.mcu=attiny3226
+tinyAVR012.menu.01_variant.ATtiny3226.build.variant=tinyAVR2_20
+tinyAVR012.menu.01_variant.ATtiny3226.build.linker_script=avrxmega3_p128.x
+tinyAVR012.menu.01_variant.ATtiny3226.upload.maximum_data_size=3072
+tinyAVR012.menu.01_variant.ATtiny3226.upload.maximum_size=32768
+tinyAVR012.menu.01_variant.ATtiny3226=tinyAVR-2 20pin ATtiny3226 (32KiB+3KiB)
+
+tinyAVR012.menu.01_variant.ATtiny1626.build.board=AVR_ATTINY1626
+tinyAVR012.menu.01_variant.ATtiny1626.build.mcu=attiny1626
+tinyAVR012.menu.01_variant.ATtiny1626.build.variant=tinyAVR2_20
+tinyAVR012.menu.01_variant.ATtiny1626.upload.maximum_data_size=2048
+tinyAVR012.menu.01_variant.ATtiny1626.upload.maximum_size=15872
+tinyAVR012.menu.01_variant.ATtiny1626=tinyAVR-2 20pin ATtiny1626 (16KiB+2KiB)
+
+tinyAVR012.menu.01_variant.ATtiny826.build.board=AVR_ATTINY826
+tinyAVR012.menu.01_variant.ATtiny826.build.mcu=attiny826
+tinyAVR012.menu.01_variant.ATtiny826.build.variant=tinyAVR2_20
+tinyAVR012.menu.01_variant.ATtiny826.upload.maximum_data_size=1024
+tinyAVR012.menu.01_variant.ATtiny826.upload.maximum_size=7680
+tinyAVR012.menu.01_variant.ATtiny826=tinyAVR-2 20pin ATtiny826 (8KiB+1KiB)
+
+tinyAVR012.menu.01_variant.ATtiny426.build.board=AVR_ATTINY426
+tinyAVR012.menu.01_variant.ATtiny426.build.mcu=attiny426
+tinyAVR012.menu.01_variant.ATtiny426.build.variant=tinyAVR2_20
+tinyAVR012.menu.01_variant.ATtiny426.upload.maximum_data_size=512
+tinyAVR012.menu.01_variant.ATtiny426.upload.maximum_size=3584
+tinyAVR012.menu.01_variant.ATtiny426=tinyAVR-2 20pin ATtiny426 (4KiB+512B)
+
+tinyAVR012.menu.01_variant.separator2=-
+
+tinyAVR012.menu.01_variant.ATtiny3224.build.board=AVR_ATTINY3224
+tinyAVR012.menu.01_variant.ATtiny3224.build.mcu=attiny3224
+tinyAVR012.menu.01_variant.ATtiny3224.build.variant=tinyAVR2_14
+tinyAVR012.menu.01_variant.ATtiny3224.build.linker_script=avrxmega3_p128.x
+tinyAVR012.menu.01_variant.ATtiny3224.upload.maximum_data_size=3072
+tinyAVR012.menu.01_variant.ATtiny3224.upload.maximum_size=32768
+tinyAVR012.menu.01_variant.ATtiny3224=tinyAVR-2 14pin ATtiny3224 (32KiB+3KiB)
+
+tinyAVR012.menu.01_variant.ATtiny1624.build.board=AVR_ATTINY1624
+tinyAVR012.menu.01_variant.ATtiny1624.build.mcu=attiny1624
+tinyAVR012.menu.01_variant.ATtiny1624.build.variant=tinyAVR2_14
+tinyAVR012.menu.01_variant.ATtiny1624.upload.maximum_data_size=2048
+tinyAVR012.menu.01_variant.ATtiny1624.upload.maximum_size=15872
+tinyAVR012.menu.01_variant.ATtiny1624=tinyAVR-2 14pin ATtiny1624 (16KiB+2KiB)
+
+tinyAVR012.menu.01_variant.ATtiny824.build.board=AVR_ATTINY824
+tinyAVR012.menu.01_variant.ATtiny824.build.mcu=attiny824
+tinyAVR012.menu.01_variant.ATtiny824.build.variant=tinyAVR2_14
+tinyAVR012.menu.01_variant.ATtiny824.upload.maximum_data_size=1024
+tinyAVR012.menu.01_variant.ATtiny824.upload.maximum_size=7680
+tinyAVR012.menu.01_variant.ATtiny824=tinyAVR-2 14pin ATtiny824 (8KiB+1KiB)
+
+tinyAVR012.menu.01_variant.ATtiny424.build.board=AVR_ATTINY424
+tinyAVR012.menu.01_variant.ATtiny424.build.mcu=attiny424
+tinyAVR012.menu.01_variant.ATtiny424.build.variant=tinyAVR2_14
+tinyAVR012.menu.01_variant.ATtiny424.upload.maximum_data_size=512
+tinyAVR012.menu.01_variant.ATtiny424.upload.maximum_size=3584
+tinyAVR012.menu.01_variant.ATtiny424=tinyAVR-2 14pin ATtiny424 (4KiB+512B)
+
+tinyAVR012.menu.01_variant.separator3=-
+
+tinyAVR012.menu.01_variant.ATtiny3217.build.board=AVR_ATTINY3217
+tinyAVR012.menu.01_variant.ATtiny3217.build.mcu=attiny3217
+tinyAVR012.menu.01_variant.ATtiny3217.build.variant=tinyAVR1_24
+tinyAVR012.menu.01_variant.ATtiny3217.build.linker_script=avrxmega3_p128.x
+tinyAVR012.menu.01_variant.ATtiny3217.upload.maximum_data_size=2048
+tinyAVR012.menu.01_variant.ATtiny3217.upload.maximum_size=32768
+tinyAVR012.menu.01_variant.ATtiny3217=tinyAVR-1 24pin ATtiny3217 (32KiB+2KiB)
+
+tinyAVR012.menu.01_variant.ATtiny1617.build.board=AVR_ATTINY1617
+tinyAVR012.menu.01_variant.ATtiny1617.build.mcu=attiny1617
+tinyAVR012.menu.01_variant.ATtiny1617.build.variant=tinyAVR1_24
+tinyAVR012.menu.01_variant.ATtiny1617.upload.maximum_data_size=2048
+tinyAVR012.menu.01_variant.ATtiny1617.upload.maximum_size=15872
+tinyAVR012.menu.01_variant.ATtiny1617=tinyAVR-1 24pin ATtiny1617 (16KiB+2KiB)
+
+tinyAVR012.menu.01_variant.ATtiny817.build.board=AVR_ATTINY817
+tinyAVR012.menu.01_variant.ATtiny817.build.mcu=attiny817
+tinyAVR012.menu.01_variant.ATtiny817.build.variant=tinyAVR1_24
+tinyAVR012.menu.01_variant.ATtiny817.upload.maximum_data_size=512
+tinyAVR012.menu.01_variant.ATtiny817.upload.maximum_size=7680
+tinyAVR012.menu.01_variant.ATtiny817=tinyAVR-1 24pin ATtiny817 (8KiB+512B)
+
+tinyAVR012.menu.01_variant.ATtiny417.build.board=AVR_ATTINY417
+tinyAVR012.menu.01_variant.ATtiny417.build.mcu=attiny417
+tinyAVR012.menu.01_variant.ATtiny417.build.variant=tinyAVR1_24
+tinyAVR012.menu.01_variant.ATtiny417.upload.maximum_data_size=256
+tinyAVR012.menu.01_variant.ATtiny417.upload.maximum_size=3584
+tinyAVR012.menu.01_variant.ATtiny417=tinyAVR-1 24pin ATtiny417 (4KiB+256B)
+
+tinyAVR012.menu.01_variant.separator4=-
+
+tinyAVR012.menu.01_variant.ATtiny3216.build.board=AVR_ATTINY3216
+tinyAVR012.menu.01_variant.ATtiny3216.build.mcu=attiny3216
+tinyAVR012.menu.01_variant.ATtiny3216.build.variant=tinyAVR1_20
+tinyAVR012.menu.01_variant.ATtiny3216.build.linker_script=avrxmega3_p128.x
+tinyAVR012.menu.01_variant.ATtiny3216.upload.maximum_data_size=2048
+tinyAVR012.menu.01_variant.ATtiny3216.upload.maximum_size=32768
+tinyAVR012.menu.01_variant.ATtiny3216=tinyAVR-1 20pin ATtiny3216 (32KiB+2KiB)
+
+tinyAVR012.menu.01_variant.ATtiny1616.build.board=AVR_ATTINY1616
+tinyAVR012.menu.01_variant.ATtiny1616.build.mcu=attiny1616
+tinyAVR012.menu.01_variant.ATtiny1616.build.variant=tinyAVR1_20
+tinyAVR012.menu.01_variant.ATtiny1616.upload.maximum_data_size=2048
+tinyAVR012.menu.01_variant.ATtiny1616.upload.maximum_size=15872
+tinyAVR012.menu.01_variant.ATtiny1616=tinyAVR-1 20pin ATtiny1616 (16KiB+2KiB)
+
+tinyAVR012.menu.01_variant.ATtiny816.build.board=AVR_ATTINY816
+tinyAVR012.menu.01_variant.ATtiny816.build.mcu=attiny816
+tinyAVR012.menu.01_variant.ATtiny816.build.variant=tinyAVR1_20
+tinyAVR012.menu.01_variant.ATtiny816.upload.maximum_data_size=512
+tinyAVR012.menu.01_variant.ATtiny816.upload.maximum_size=7680
+tinyAVR012.menu.01_variant.ATtiny816=tinyAVR-1 20pin ATtiny816 (8KiB+512B)
+
+tinyAVR012.menu.01_variant.ATtiny416.build.board=AVR_ATTINY416
+tinyAVR012.menu.01_variant.ATtiny416.build.mcu=attiny416
+tinyAVR012.menu.01_variant.ATtiny416.build.variant=tinyAVR1_20
+tinyAVR012.menu.01_variant.ATtiny416.upload.maximum_data_size=256
+tinyAVR012.menu.01_variant.ATtiny416.upload.maximum_size=3584
+tinyAVR012.menu.01_variant.ATtiny416=tinyAVR-1 20pin ATtiny416 (4KiB+256B)
+
+tinyAVR012.menu.01_variant.ATtiny416auto.build.board=AVR_ATTINY416
+tinyAVR012.menu.01_variant.ATtiny416auto.build.mcu=attiny416auto
+tinyAVR012.menu.01_variant.ATtiny416auto.build.variant=tinyAVR1_20
+tinyAVR012.menu.01_variant.ATtiny416auto.upload.maximum_data_size=256
+tinyAVR012.menu.01_variant.ATtiny416auto.upload.maximum_size=3584
+tinyAVR012.menu.01_variant.ATtiny416auto=tinyAVR-1 20pin ATtiny416auto (4KiB+256B)
+
+tinyAVR012.menu.01_variant.separator5=-
+
+tinyAVR012.menu.01_variant.ATtiny1614.build.board=AVR_ATTINY1614
+tinyAVR012.menu.01_variant.ATtiny1614.build.mcu=attiny1614
+tinyAVR012.menu.01_variant.ATtiny1614.build.variant=tinyAVR1_14
+tinyAVR012.menu.01_variant.ATtiny1614.upload.maximum_data_size=2048
+tinyAVR012.menu.01_variant.ATtiny1614.upload.maximum_size=15872
+tinyAVR012.menu.01_variant.ATtiny1614=tinyAVR-1 14pin ATtiny1614 (16KiB+2KiB)
+
+tinyAVR012.menu.01_variant.ATtiny814.build.board=AVR_ATTINY814
+tinyAVR012.menu.01_variant.ATtiny814.build.mcu=attiny814
+tinyAVR012.menu.01_variant.ATtiny814.build.variant=tinyAVR1_14
+tinyAVR012.menu.01_variant.ATtiny814.upload.maximum_data_size=512
+tinyAVR012.menu.01_variant.ATtiny814.upload.maximum_size=7680
+tinyAVR012.menu.01_variant.ATtiny814=tinyAVR-1 14pin ATtiny814 (8KiB+512B)
+
+tinyAVR012.menu.01_variant.ATtiny414.build.board=AVR_ATTINY414
+tinyAVR012.menu.01_variant.ATtiny414.build.mcu=attiny414
+tinyAVR012.menu.01_variant.ATtiny414.build.variant=tinyAVR1_14
+tinyAVR012.menu.01_variant.ATtiny414.upload.maximum_data_size=256
+tinyAVR012.menu.01_variant.ATtiny414.upload.maximum_size=3584
+tinyAVR012.menu.01_variant.ATtiny414=tinyAVR-1 14pin ATtiny414 (4KiB+256B)
+
+tinyAVR012.menu.01_variant.separator6=-
+
+tinyAVR012.menu.01_variant.ATtiny1607.build.board=AVR_ATTINY1607
+tinyAVR012.menu.01_variant.ATtiny1607.build.mcu=attiny1607
+tinyAVR012.menu.01_variant.ATtiny1607.build.variant=tinyAVR0_24
+tinyAVR012.menu.01_variant.ATtiny1607.upload.maximum_data_size=1024
+tinyAVR012.menu.01_variant.ATtiny1607.upload.maximum_size=15872
+tinyAVR012.menu.01_variant.ATtiny1607=tinyAVR-0 24pin ATtiny1607 (16KiB+1KiB)
+
+tinyAVR012.menu.01_variant.ATtiny807.build.board=AVR_ATTINY807
+tinyAVR012.menu.01_variant.ATtiny807.build.mcu=attiny807
+tinyAVR012.menu.01_variant.ATtiny807.build.variant=tinyAVR0_24
+tinyAVR012.menu.01_variant.ATtiny807.upload.maximum_data_size=512
+tinyAVR012.menu.01_variant.ATtiny807.upload.maximum_size=7680
+tinyAVR012.menu.01_variant.ATtiny807=tinyAVR-0 24pin ATtiny807 (8KiB+512B)
+
+tinyAVR012.menu.01_variant.separator7=-
+
+tinyAVR012.menu.01_variant.ATtiny1606.build.board=AVR_ATTINY1606
+tinyAVR012.menu.01_variant.ATtiny1606.build.mcu=attiny1606
+tinyAVR012.menu.01_variant.ATtiny1606.build.variant=tinyAVR0_20
+tinyAVR012.menu.01_variant.ATtiny1606.upload.maximum_data_size=1024
+tinyAVR012.menu.01_variant.ATtiny1606.upload.maximum_size=15872
+tinyAVR012.menu.01_variant.ATtiny1606=tinyAVR-0 20pin ATtiny1606 (16KiB+1KiB)
+
+tinyAVR012.menu.01_variant.ATtiny806.build.board=AVR_ATTINY806
+tinyAVR012.menu.01_variant.ATtiny806.build.mcu=attiny806
+tinyAVR012.menu.01_variant.ATtiny806.build.variant=tinyAVR0_20
+tinyAVR012.menu.01_variant.ATtiny806.upload.maximum_data_size=512
+tinyAVR012.menu.01_variant.ATtiny806.upload.maximum_size=7680
+tinyAVR012.menu.01_variant.ATtiny806=tinyAVR-0 20pin ATtiny806 (8KiB+512B)
+
+tinyAVR012.menu.01_variant.ATtiny406.build.board=AVR_ATTINY406
+tinyAVR012.menu.01_variant.ATtiny406.build.mcu=attiny406
+tinyAVR012.menu.01_variant.ATtiny406.build.variant=tinyAVR0_20
+tinyAVR012.menu.01_variant.ATtiny406.upload.maximum_data_size=256
+tinyAVR012.menu.01_variant.ATtiny406.upload.maximum_size=3584
+tinyAVR012.menu.01_variant.ATtiny406=tinyAVR-0 20pin ATtiny406 (4KiB+256B)
+
+tinyAVR012.menu.01_variant.separator8=-
+
+tinyAVR012.menu.01_variant.ATtiny1604.build.board=AVR_ATTINY1604
+tinyAVR012.menu.01_variant.ATtiny1604.build.mcu=attiny1604
+tinyAVR012.menu.01_variant.ATtiny1604.build.variant=tinyAVR0_14
+tinyAVR012.menu.01_variant.ATtiny1604.upload.maximum_data_size=1024
+tinyAVR012.menu.01_variant.ATtiny1604.upload.maximum_size=15872
+tinyAVR012.menu.01_variant.ATtiny1604=tinyAVR-0 14pin ATtiny1604 (16KiB+1KiB)
+
+tinyAVR012.menu.01_variant.ATtiny804.build.board=AVR_ATTINY804
+tinyAVR012.menu.01_variant.ATtiny804.build.mcu=attiny804
+tinyAVR012.menu.01_variant.ATtiny804.build.variant=tinyAVR0_14
+tinyAVR012.menu.01_variant.ATtiny804.upload.maximum_data_size=512
+tinyAVR012.menu.01_variant.ATtiny804.upload.maximum_size=7680
+tinyAVR012.menu.01_variant.ATtiny804=tinyAVR-0 14pin ATtiny804 (8KiB+512B)
+
+tinyAVR012.menu.01_variant.ATtiny404.build.board=AVR_ATTINY404
+tinyAVR012.menu.01_variant.ATtiny404.build.mcu=attiny404
+tinyAVR012.menu.01_variant.ATtiny404.build.variant=tinyAVR0_14
+tinyAVR012.menu.01_variant.ATtiny404.upload.maximum_data_size=256
+tinyAVR012.menu.01_variant.ATtiny404.upload.maximum_size=3584
+tinyAVR012.menu.01_variant.ATtiny404=tinyAVR-0 14pin ATtiny404 (4KiB+256B)
+
+tinyAVR012.menu.02_clock.20MHz.bootloader.bod_sample=0
+tinyAVR012.menu.02_clock.20MHz.build.f_cpu=20000000L
+tinyAVR012.menu.02_clock.20MHz=Internal 20 MHz
+
+tinyAVR012.menu.02_clock.10MHz.bootloader.bod_sample=0
+tinyAVR012.menu.02_clock.10MHz.build.f_cpu=10000000L
+tinyAVR012.menu.02_clock.10MHz=Internal 10 MHz
+
+tinyAVR012.menu.02_clock.5MHz.bootloader.bod_sample=0
+tinyAVR012.menu.02_clock.5MHz.build.f_cpu=5000000L
+tinyAVR012.menu.02_clock.5MHz=Internal 5 MHz
+
+tinyAVR012.menu.02_clock.separator1=-
+
+tinyAVR012.menu.02_clock.16MHz.bootloader.OSCCFG=0x7D
+tinyAVR012.menu.02_clock.16MHz.bootloader.bod_sample=0
+tinyAVR012.menu.02_clock.16MHz.build.f_cpu=16000000L
+tinyAVR012.menu.02_clock.16MHz=Internal 16 MHz
+
+tinyAVR012.menu.02_clock.8MHz.bootloader.OSCCFG=0x7D
+tinyAVR012.menu.02_clock.8MHz.bootloader.bod_sample=0
+tinyAVR012.menu.02_clock.8MHz.build.f_cpu=8000000L
+tinyAVR012.menu.02_clock.8MHz=Internal 8 MHz
+
+tinyAVR012.menu.02_clock.4MHz.bootloader.OSCCFG=0x7D
+tinyAVR012.menu.02_clock.4MHz.bootloader.bod_sample=0
+tinyAVR012.menu.02_clock.4MHz.build.f_cpu=4000000L
+tinyAVR012.menu.02_clock.4MHz=Internal 4 MHz
+
+tinyAVR012.menu.02_clock.1MHz.bootloader.OSCCFG=0x7D
+tinyAVR012.menu.02_clock.1MHz.bootloader.bod_sample=0
+tinyAVR012.menu.02_clock.1MHz.build.f_cpu=1000000L
+tinyAVR012.menu.02_clock.1MHz=Internal 1 MHz
+
+tinyAVR012.menu.02_clock.separator2=-
+
+tinyAVR012.menu.02_clock.2MHz.bootloader.bod_sample=0
+tinyAVR012.menu.02_clock.2MHz.build.f_cpu=2000000L
+tinyAVR012.menu.02_clock.2MHz=Internal 2 MHz
+
+tinyAVR012.menu.02_clock.32768Hz.bootloader.bod_sample=1
+tinyAVR012.menu.02_clock.32768Hz.build.f_cpu=32768
+tinyAVR012.menu.02_clock.32768Hz=Internal 32.768 kHz (ULP)
+
+# tinyAVR012.menu.11_BODMODE.Disabled.bootloader.bod_mode=00
+# tinyAVR012.menu.11_BODMODE.Disabled=BOD Disabled
+# tinyAVR012.menu.11_BODMODE.Enabled.bootloader.bod_mode=01
+# tinyAVR012.menu.11_BODMODE.Enabled=BOD Enabled
+# tinyAVR012.menu.11_BODMODE.Sampled.bootloader.bod_mode=10
+# tinyAVR012.menu.11_BODMODE.Sampled=BOD Sampled
+# tinyAVR012.menu.11_BODMODE.Enablewait.bootloader.bod_mode=11
+# tinyAVR012.menu.11_BODMODE.Enablewait=BOD Enabled hold wakeup
+
 # tinyAVR012.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
 # tinyAVR012.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
 # tinyAVR012.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
 # tinyAVR012.menu.12_BODLVL.BODLEVEL2=Level 2.6V
 # tinyAVR012.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
 # tinyAVR012.menu.12_BODLVL.BODLEVEL7=Level 4.3V
-# tinyAVR012.menu.22_updipin.01_updi.bootloader.reset_bit=01
-# tinyAVR012.menu.22_updipin.01_updi=PA0 pin=UPDI (default)
-# tinyAVR012.menu.22_updipin.02_resetalt.bootloader.reset_bit=11
-# tinyAVR012.menu.22_updipin.02_resetalt=PA0 pin=UPDI and PB4 pin=RESET (tinyAVR-2 20/24pin only)
-# tinyAVR012.menu.22_updipin.10_separator=-
-# tinyAVR012.menu.22_updipin.11_reset.bootloader.reset_bit=10
-# tinyAVR012.menu.22_updipin.11_reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
-# tinyAVR012.menu.22_updipin.12_gpio.bootloader.reset_bit=00
-# tinyAVR012.menu.22_updipin.12_gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
-tinyAVR012.menu.24_eeprom.01_keep.bootloader.eesave_bit=1
-tinyAVR012.menu.24_eeprom.01_keep=Save guard "Retained"
-tinyAVR012.menu.24_eeprom.02_erase.bootloader.eesave_bit=0
-tinyAVR012.menu.24_eeprom.02_erase=Save guard "Erase"
-tinyAVR012.menu.24_eeprom.03_upload.bootloader.eepupload={bootloader.eeprom}
-tinyAVR012.menu.24_eeprom.03_upload.bootloader.eesave_bit=1
-tinyAVR012.menu.24_eeprom.03_upload="Erase" and "Replace"
-tinyAVR012.menu.26_userrow.02_keep=Save guard "Retained"
-tinyAVR012.menu.26_userrow.03_upload.bootloader.urowupload={bootloader.userrow}
-tinyAVR012.menu.26_userrow.03_upload=Upload ".urow" file
-tinyAVR012.menu.51_buildopt.01_Release=Build Release (default)
-tinyAVR012.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
-tinyAVR012.menu.51_buildopt.02_Debug1=Build DEBUG=1
-tinyAVR012.menu.51_buildopt.03_Debug2.build.buildopt=-DDEBUG=2
-tinyAVR012.menu.51_buildopt.03_Debug2=Build DEBUG=2
-tinyAVR012.menu.52_macroapi.01_Enable=Macro API Enable (default)
-tinyAVR012.menu.52_macroapi.02_Withoutboot.compiler.ldflags=-nostartfiles -DWOSFILES=1
-tinyAVR012.menu.52_macroapi.02_Withoutboot=Macro API Enable without startup
-tinyAVR012.menu.52_macroapi.03_Disable.build.macroapi=
-tinyAVR012.menu.52_macroapi.03_Disable=Macro API Disable
-tinyAVR012.menu.52_macroapi.04_AllDisable.build.macroapi=
-tinyAVR012.menu.52_macroapi.04_AllDisable.compiler.ldflags=-nostartfiles -nostdlib -DWOSFILES=1 -DWOSTDLIB=1
-tinyAVR012.menu.52_macroapi.04_AllDisable=Standard Library All Disable
-tinyAVR012.menu.53_printf.01_default=default
-tinyAVR012.menu.53_printf.02_full.build.printf=-DUSE_PRINTF_FLT
-tinyAVR012.menu.53_printf.02_full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
-tinyAVR012.menu.53_printf.02_full=Float Support
-tinyAVR012.menu.90_console_baud.01_9600bps.build.console_baud=-DCONSOLE_BAUD=9600
-tinyAVR012.menu.90_console_baud.01_9600bps=CONSOLE_BAUD=9600 bps (default)
-tinyAVR012.menu.90_console_baud.03_38400bps.build.console_baud=-DCONSOLE_BAUD=38400
-tinyAVR012.menu.90_console_baud.03_38400bps=CONSOLE_BAUD=38400 bps
-tinyAVR012.menu.90_console_baud.04_57600bps.build.console_baud=-DCONSOLE_BAUD=57600
-tinyAVR012.menu.90_console_baud.04_57600bps=CONSOLE_BAUD=57600 bps
-tinyAVR012.menu.90_console_baud.05_115200bps.build.console_baud=-DCONSOLE_BAUD=115200
-tinyAVR012.menu.90_console_baud.05_115200bps=CONSOLE_BAUD=115200 bps
-tinyAVR012.menu.90_console_baud.06_230400bps.build.console_baud=-DCONSOLE_BAUD=230400
-tinyAVR012.menu.90_console_baud.06_230400bps=CONSOLE_BAUD=230400 bps
-tinyAVR012.menu.90_console_baud.14_500000bps.build.console_baud=-DCONSOLE_BAUD=500000
-tinyAVR012.menu.90_console_baud.14_500000bps=CONSOLE_BAUD=500000 bps
-tinyAVR012.menu.90_console_baud.15_1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
-tinyAVR012.menu.90_console_baud.15_1000000bps=CONSOLE_BAUD=1000000 bps
-tinyAVR012.menu.90_console_baud.20_separator=-
-tinyAVR012.menu.90_console_baud.21_2400bps.build.console_baud=-DCONSOLE_BAUD=2400
-tinyAVR012.menu.90_console_baud.21_2400bps=CONSOLE_BAUD=2400 bps (for ULP)
-tinyAVR012.menu.95_bootloader.01_UART0_B2_LA7.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LA7.hex
-tinyAVR012.menu.95_bootloader.01_UART0_B2_LA7.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA7
-tinyAVR012.menu.95_bootloader.01_UART0_B2_LA7=UART0 TX:PB2 RX:PB3 LED=PA7 (default)
-tinyAVR012.menu.95_bootloader.10_separator=-
-tinyAVR012.menu.95_bootloader.11_UART0_A1_LA7_.bootloader.file=hex/boot_attiny_UART0_A1_{upload.speed}_LA7.hex
-tinyAVR012.menu.95_bootloader.11_UART0_A1_LA7_.build.console_select=-DSerial=Serial1A -DLED_BUILTIN=PIN_PA7
-tinyAVR012.menu.95_bootloader.11_UART0_A1_LA7_=UART0 TX:PA1 RX:PA2 LED=PA7 (alternative)
-tinyAVR012.menu.95_bootloader.12_UART1_C2_LA7.bootloader.file=hex/boot_attiny_UART1_C2_{upload.speed}_LA7.hex
-tinyAVR012.menu.95_bootloader.12_UART1_C2_LA7.build.console_select=-DSerial=Serial1B -DLED_BUILTIN=PIN_PA7
-tinyAVR012.menu.95_bootloader.12_UART1_C2_LA7=UART1 TX:PC2 RX:PC1 LED=PA7 (tinyAVR-2 20/24pin only)
-tinyAVR012.menu.95_bootloader.13_UART0_B2_LB2_SC4_Curiosity.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LB7.hex
-tinyAVR012.menu.95_bootloader.13_UART0_B2_LB2_SC4_Curiosity.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PB7 -DSW_BUILTIN=PIN_PC4
-tinyAVR012.menu.95_bootloader.13_UART0_B2_LB2_SC4_Curiosity=UART0 TX:PB2 RX:PB3 LED=PB7 SW=PC4 (ATtiny1607/1627 Curiosity Nano)
-tinyAVR012.menu.95_bootloader.20_separator=-
-tinyAVR012.menu.95_bootloader.21_UART0_B2_LA3_SB7_Curiosity.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LA3.hex
-tinyAVR012.menu.95_bootloader.21_UART0_B2_LA3_SB7_Curiosity.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA3 -DSW_BUILTIN=PIN_PB7
-tinyAVR012.menu.95_bootloader.21_UART0_B2_LA3_SB7_Curiosity=UART0 TX:PB2 RX:PB3 LED=PA3 SW=PB7 (ATtiny3217 Curiosity Nano)
+
+# tinyAVR012.menu.22_updipin.Updi.bootloader.reset_bit=01
+# tinyAVR012.menu.22_updipin.Updi=PA0 pin=UPDI (default)
+# tinyAVR012.menu.22_updipin.ResetAlt.bootloader.reset_bit=11
+# tinyAVR012.menu.22_updipin.ResetAlt=PA0 pin=UPDI and PB4 pin=RESET (tinyAVR-2 20/24pin only)
+# tinyAVR012.menu.22_updipin.separator1=-
+# tinyAVR012.menu.22_updipin.Reset.bootloader.reset_bit=10
+# tinyAVR012.menu.22_updipin.Reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
+# tinyAVR012.menu.22_updipin.Gpio.bootloader.reset_bit=00
+# tinyAVR012.menu.22_updipin.Gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
+
+tinyAVR012.menu.24_eeprom.Retained.bootloader.eesave_bit=1
+tinyAVR012.menu.24_eeprom.Retained=Save guard "Retained"
+
+tinyAVR012.menu.24_eeprom.Erase.bootloader.eesave_bit=0
+tinyAVR012.menu.24_eeprom.Erase=Save guard "Erase"
+
+tinyAVR012.menu.24_eeprom.Upload.bootloader.eepupload={bootloader.eeprom}
+tinyAVR012.menu.24_eeprom.Upload.bootloader.eesave_bit=1
+tinyAVR012.menu.24_eeprom.Upload="Erase" and "Replace"
+
+tinyAVR012.menu.26_userrow.Keep=Save guard "Retained"
+
+tinyAVR012.menu.26_userrow.Upload.bootloader.urowupload={bootloader.userrow}
+tinyAVR012.menu.26_userrow.Upload=Upload ".urow" file
+
+tinyAVR012.menu.51_buildopt.Release=Release (default)
+
+tinyAVR012.menu.51_buildopt.Debug1.build.buildopt=-DDEBUG=1
+tinyAVR012.menu.51_buildopt.Debug1=DEBUG=1
+
+tinyAVR012.menu.51_buildopt.Debug2.build.buildopt=-DDEBUG=2
+tinyAVR012.menu.51_buildopt.Debug2=DEBUG=2
+
+tinyAVR012.menu.52_macroapi.Enable=Macro API Enable (default)
+
+tinyAVR012.menu.52_macroapi.WoStartup.build.macroapi=-DENABLE_MACRO_API -DWOSFILES=1
+tinyAVR012.menu.52_macroapi.WoStartup.compiler.ldflags=-nostartfiles
+tinyAVR012.menu.52_macroapi.WoStartup=Macro API Enable without startup
+
+tinyAVR012.menu.52_macroapi.Disable.build.macroapi=
+tinyAVR012.menu.52_macroapi.Disable=Macro API Disable
+
+tinyAVR012.menu.52_macroapi.AllDisable.build.macroapi=-DWOSFILES=1 -DWOSTDLIB=1
+tinyAVR012.menu.52_macroapi.AllDisable.compiler.ldflags=-nostartfiles -nostdlib
+tinyAVR012.menu.52_macroapi.AllDisable=Standard Library All Disable
+
+tinyAVR012.menu.53_printf.Default=Integer Only
+
+tinyAVR012.menu.53_printf.Full.build.printf=-DUSE_PRINTF_FLT
+tinyAVR012.menu.53_printf.Full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
+tinyAVR012.menu.53_printf.Full=Float Support
+
+tinyAVR012.menu.90_console_baud.9600bps.build.console_baud=-DCONSOLE_BAUD=9600
+tinyAVR012.menu.90_console_baud.9600bps=9600 bps (default)
+
+tinyAVR012.menu.90_console_baud.38400bps.build.console_baud=-DCONSOLE_BAUD=38400
+tinyAVR012.menu.90_console_baud.38400bps=38400 bps
+
+tinyAVR012.menu.90_console_baud.57600bps.build.console_baud=-DCONSOLE_BAUD=57600
+tinyAVR012.menu.90_console_baud.57600bps=57600 bps
+
+tinyAVR012.menu.90_console_baud.115200bps.build.console_baud=-DCONSOLE_BAUD=115200
+tinyAVR012.menu.90_console_baud.115200bps=115200 bps
+
+tinyAVR012.menu.90_console_baud.230400bps.build.console_baud=-DCONSOLE_BAUD=230400
+tinyAVR012.menu.90_console_baud.230400bps=230400 bps
+
+tinyAVR012.menu.90_console_baud.500000bps.build.console_baud=-DCONSOLE_BAUD=500000
+tinyAVR012.menu.90_console_baud.500000bps=500000 bps
+
+tinyAVR012.menu.90_console_baud.1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
+tinyAVR012.menu.90_console_baud.1000000bps=1000000 bps
+
+tinyAVR012.menu.90_console_baud.separator1=-
+
+tinyAVR012.menu.90_console_baud.2400bps.build.console_baud=-DCONSOLE_BAUD=2400
+tinyAVR012.menu.90_console_baud.2400bps=2400 bps (for ULP)
+
+tinyAVR012.menu.95_bootloader.UART0_B2_LA7.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LA7.hex
+tinyAVR012.menu.95_bootloader.UART0_B2_LA7.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA7
+tinyAVR012.menu.95_bootloader.UART0_B2_LA7=UART0 TX:PB2 RX:PB3 LED=PA7 (default)
+
+tinyAVR012.menu.95_bootloader.separator1=-
+
+tinyAVR012.menu.95_bootloader.UART0_A1_LA7_.bootloader.file=hex/boot_attiny_UART0_A1_{upload.speed}_LA7.hex
+tinyAVR012.menu.95_bootloader.UART0_A1_LA7_.build.console_select=-DSerial=Serial1A -DLED_BUILTIN=PIN_PA7
+tinyAVR012.menu.95_bootloader.UART0_A1_LA7_=UART0 TX:PA1 RX:PA2 LED=PA7 (alternative)
+
+tinyAVR012.menu.95_bootloader.UART1_C2_LA7.bootloader.file=hex/boot_attiny_UART1_C2_{upload.speed}_LA7.hex
+tinyAVR012.menu.95_bootloader.UART1_C2_LA7.build.console_select=-DSerial=Serial1B -DLED_BUILTIN=PIN_PA7
+tinyAVR012.menu.95_bootloader.UART1_C2_LA7=UART1 TX:PC2 RX:PC1 LED=PA7 (tinyAVR-2 20/24pin only)
+
+tinyAVR012.menu.95_bootloader.UART0_B2_LB2_SC4_Curiosity.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LB7.hex
+tinyAVR012.menu.95_bootloader.UART0_B2_LB2_SC4_Curiosity.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PB7 -DSW_BUILTIN=PIN_PC4
+tinyAVR012.menu.95_bootloader.UART0_B2_LB2_SC4_Curiosity=UART0 TX:PB2 RX:PB3 LED=PB7 SW=PC4 (ATtiny1607/1627 Curiosity Nano)
+
+tinyAVR012.menu.95_bootloader.separator2=-
+
+tinyAVR012.menu.95_bootloader.UART0_B2_LA3_SB7_Curiosity.bootloader.file=hex/boot_attiny_UART0_B2_{upload.speed}_LA3.hex
+tinyAVR012.menu.95_bootloader.UART0_B2_LA3_SB7_Curiosity.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA3 -DSW_BUILTIN=PIN_PB7
+tinyAVR012.menu.95_bootloader.UART0_B2_LA3_SB7_Curiosity=UART0 TX:PB2 RX:PB3 LED=PA3 SW=PB7 (ATtiny3217 Curiosity Nano)
 
 
 tinyAVR01.bootloader.BODCFG=0b{bootloader.bod_lvl}{bootloader.bod_sample}{bootloader.bod_mode}00
 tinyAVR01.bootloader.BOOTSIZE=0x02
 tinyAVR01.bootloader.CODESIZE=0x00
-tinyAVR01.bootloader.OSCCFG=0b01111110
+tinyAVR01.bootloader.OSCCFG=0x7E
 tinyAVR01.bootloader.SYSCFG0=0b1101{bootloader.reset_bit}1{bootloader.eesave_bit}
-tinyAVR01.bootloader.SYSCFG1=0b11111111
-tinyAVR01.bootloader.WDTCFG=0b00000000
+tinyAVR01.bootloader.SYSCFG1=0xFF
+tinyAVR01.bootloader.WDTCFG=0x00
 tinyAVR01.bootloader.bod_lvl=000
 tinyAVR01.bootloader.bod_mode=00
 tinyAVR01.bootloader.bod_sample=0
@@ -649,145 +797,188 @@ tinyAVR01.build.linker_script=avrxmega3_p64.x
 tinyAVR01.upload.protocol=arduino
 tinyAVR01.upload.speed=115200
 tinyAVR01.upload.tool=avrdude
-tinyAVR01.menu.01_variant.61_ATtiny412.build.board=AVR_ATTINY412
-tinyAVR01.menu.01_variant.61_ATtiny412.build.mcu=attiny412
-tinyAVR01.menu.01_variant.61_ATtiny412.build.variant=tinyAVR1_8
-tinyAVR01.menu.01_variant.61_ATtiny412.upload.maximum_data_size=256
-tinyAVR01.menu.01_variant.61_ATtiny412.upload.maximum_size=3584
-tinyAVR01.menu.01_variant.61_ATtiny412=tinyAVR-1 8pin ATtiny412 (4KiB+256B)
-tinyAVR01.menu.01_variant.62_ATtiny212.build.board=AVR_ATTINY212
-tinyAVR01.menu.01_variant.62_ATtiny212.build.mcu=attiny212
-tinyAVR01.menu.01_variant.62_ATtiny212.build.variant=tinyAVR1_8
-tinyAVR01.menu.01_variant.62_ATtiny212.upload.maximum_data_size=128
-tinyAVR01.menu.01_variant.62_ATtiny212.upload.maximum_size=1536
-tinyAVR01.menu.01_variant.62_ATtiny212=tinyAVR-1 8pin ATtiny212 (2KiB+128B)
-tinyAVR01.menu.01_variant.A0_separator=-
-tinyAVR01.menu.01_variant.A1_ATtiny402.build.board=AVR_ATTINY402
-tinyAVR01.menu.01_variant.A1_ATtiny402.build.mcu=attiny402
-tinyAVR01.menu.01_variant.A1_ATtiny402.build.variant=tinyAVR0_8
-tinyAVR01.menu.01_variant.A1_ATtiny402.upload.maximum_data_size=256
-tinyAVR01.menu.01_variant.A1_ATtiny402.upload.maximum_size=3584
-tinyAVR01.menu.01_variant.A1_ATtiny402=tinyAVR-0 8pin ATtiny402 (4KiB+256B)
-tinyAVR01.menu.01_variant.A2_ATtiny202.build.board=AVR_ATTINY202
-tinyAVR01.menu.01_variant.A2_ATtiny202.build.mcu=attiny202
-tinyAVR01.menu.01_variant.A2_ATtiny202.build.variant=tinyAVR0_8
-tinyAVR01.menu.01_variant.A2_ATtiny202.upload.maximum_data_size=128
-tinyAVR01.menu.01_variant.A2_ATtiny202.upload.maximum_size=1536
-tinyAVR01.menu.01_variant.A2_ATtiny202=tinyAVR-0 8pin ATtiny202 (2KiB+128B)
-tinyAVR01.menu.02_clock.01_20MHz.bootloader.bod_sample=0
-tinyAVR01.menu.02_clock.01_20MHz.build.f_cpu=20000000L
-tinyAVR01.menu.02_clock.01_20MHz=Internal 20 MHz
-tinyAVR01.menu.02_clock.02_10MHz.bootloader.bod_sample=0
-tinyAVR01.menu.02_clock.02_10MHz.build.f_cpu=10000000L
-tinyAVR01.menu.02_clock.02_10MHz=Internal 10 MHz
-tinyAVR01.menu.02_clock.03_5MHz.bootloader.bod_sample=0
-tinyAVR01.menu.02_clock.03_5MHz.build.f_cpu=5000000L
-tinyAVR01.menu.02_clock.03_5MHz=Internal 5 MHz
-tinyAVR01.menu.02_clock.10_separator=-
-tinyAVR01.menu.02_clock.11_16MHz.bootloader.OSCCFG=0b00000001
-tinyAVR01.menu.02_clock.11_16MHz.bootloader.bod_sample=0
-tinyAVR01.menu.02_clock.11_16MHz.build.f_cpu=16000000L
-tinyAVR01.menu.02_clock.11_16MHz=Internal 16 MHz
-tinyAVR01.menu.02_clock.12_8MHz.bootloader.OSCCFG=0b00000001
-tinyAVR01.menu.02_clock.12_8MHz.bootloader.bod_sample=0
-tinyAVR01.menu.02_clock.12_8MHz.build.f_cpu=8000000L
-tinyAVR01.menu.02_clock.12_8MHz=Internal 8 MHz
-tinyAVR01.menu.02_clock.13_4MHz.bootloader.OSCCFG=0b00000001
-tinyAVR01.menu.02_clock.13_4MHz.bootloader.bod_sample=0
-tinyAVR01.menu.02_clock.13_4MHz.build.f_cpu=4000000L
-tinyAVR01.menu.02_clock.13_4MHz=Internal 4 MHz
-tinyAVR01.menu.02_clock.15_1MHz.bootloader.OSCCFG=0b00000001
-tinyAVR01.menu.02_clock.15_1MHz.bootloader.bod_sample=0
-tinyAVR01.menu.02_clock.15_1MHz.build.f_cpu=1000000L
-tinyAVR01.menu.02_clock.15_1MHz=Internal 1 MHz
-tinyAVR01.menu.02_clock.20_separator=-
-tinyAVR01.menu.02_clock.21_2MHz.bootloader.bod_sample=0
-tinyAVR01.menu.02_clock.21_2MHz.build.f_cpu=2000000L
-tinyAVR01.menu.02_clock.21_2MHz=Internal 2 MHz
-tinyAVR01.menu.02_clock.22_32768Hz.bootloader.bod_sample=1
-tinyAVR01.menu.02_clock.22_32768Hz.build.f_cpu=32768
-tinyAVR01.menu.02_clock.22_32768Hz=Internal 32.768 kHz (ULP)
-# tinyAVR01.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
-# tinyAVR01.menu.11_BODMODE.01_disabled=BOD Disabled
-# tinyAVR01.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
-# tinyAVR01.menu.11_BODMODE.02_enabled=BOD Enabled
-# tinyAVR01.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
-# tinyAVR01.menu.11_BODMODE.03_sampled=BOD Sampled
-# tinyAVR01.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
-# tinyAVR01.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
+
+tinyAVR01.menu.01_variant.ATtiny412.build.board=AVR_ATTINY412
+tinyAVR01.menu.01_variant.ATtiny412.build.mcu=attiny412
+tinyAVR01.menu.01_variant.ATtiny412.build.variant=tinyAVR1_8
+tinyAVR01.menu.01_variant.ATtiny412.upload.maximum_data_size=256
+tinyAVR01.menu.01_variant.ATtiny412.upload.maximum_size=3584
+tinyAVR01.menu.01_variant.ATtiny412=tinyAVR-1 8pin ATtiny412 (4KiB+256B)
+
+tinyAVR01.menu.01_variant.ATtiny212.build.board=AVR_ATTINY212
+tinyAVR01.menu.01_variant.ATtiny212.build.mcu=attiny212
+tinyAVR01.menu.01_variant.ATtiny212.build.variant=tinyAVR1_8
+tinyAVR01.menu.01_variant.ATtiny212.upload.maximum_data_size=128
+tinyAVR01.menu.01_variant.ATtiny212.upload.maximum_size=1536
+tinyAVR01.menu.01_variant.ATtiny212=tinyAVR-1 8pin ATtiny212 (2KiB+128B)
+
+tinyAVR01.menu.01_variant.separator1=-
+
+tinyAVR01.menu.01_variant.ATtiny402.build.board=AVR_ATTINY402
+tinyAVR01.menu.01_variant.ATtiny402.build.mcu=attiny402
+tinyAVR01.menu.01_variant.ATtiny402.build.variant=tinyAVR0_8
+tinyAVR01.menu.01_variant.ATtiny402.upload.maximum_data_size=256
+tinyAVR01.menu.01_variant.ATtiny402.upload.maximum_size=3584
+tinyAVR01.menu.01_variant.ATtiny402=tinyAVR-0 8pin ATtiny402 (4KiB+256B)
+
+tinyAVR01.menu.01_variant.ATtiny202.build.board=AVR_ATTINY202
+tinyAVR01.menu.01_variant.ATtiny202.build.mcu=attiny202
+tinyAVR01.menu.01_variant.ATtiny202.build.variant=tinyAVR0_8
+tinyAVR01.menu.01_variant.ATtiny202.upload.maximum_data_size=128
+tinyAVR01.menu.01_variant.ATtiny202.upload.maximum_size=1536
+tinyAVR01.menu.01_variant.ATtiny202=tinyAVR-0 8pin ATtiny202 (2KiB+128B)
+
+tinyAVR01.menu.02_clock.20MHz.bootloader.bod_sample=0
+tinyAVR01.menu.02_clock.20MHz.build.f_cpu=20000000L
+tinyAVR01.menu.02_clock.20MHz=Internal 20 MHz
+
+tinyAVR01.menu.02_clock.10MHz.bootloader.bod_sample=0
+tinyAVR01.menu.02_clock.10MHz.build.f_cpu=10000000L
+tinyAVR01.menu.02_clock.10MHz=Internal 10 MHz
+
+tinyAVR01.menu.02_clock.5MHz.bootloader.bod_sample=0
+tinyAVR01.menu.02_clock.5MHz.build.f_cpu=5000000L
+tinyAVR01.menu.02_clock.5MHz=Internal 5 MHz
+
+tinyAVR01.menu.02_clock.separator1=-
+
+tinyAVR01.menu.02_clock.16MHz.bootloader.OSCCFG=0x7D
+tinyAVR01.menu.02_clock.16MHz.bootloader.bod_sample=0
+tinyAVR01.menu.02_clock.16MHz.build.f_cpu=16000000L
+tinyAVR01.menu.02_clock.16MHz=Internal 16 MHz
+
+tinyAVR01.menu.02_clock.8MHz.bootloader.OSCCFG=0x7D
+tinyAVR01.menu.02_clock.8MHz.bootloader.bod_sample=0
+tinyAVR01.menu.02_clock.8MHz.build.f_cpu=8000000L
+tinyAVR01.menu.02_clock.8MHz=Internal 8 MHz
+
+tinyAVR01.menu.02_clock.4MHz.bootloader.OSCCFG=0x7D
+tinyAVR01.menu.02_clock.4MHz.bootloader.bod_sample=0
+tinyAVR01.menu.02_clock.4MHz.build.f_cpu=4000000L
+tinyAVR01.menu.02_clock.4MHz=Internal 4 MHz
+
+tinyAVR01.menu.02_clock.1MHz.bootloader.OSCCFG=0x7D
+tinyAVR01.menu.02_clock.1MHz.bootloader.bod_sample=0
+tinyAVR01.menu.02_clock.1MHz.build.f_cpu=1000000L
+tinyAVR01.menu.02_clock.1MHz=Internal 1 MHz
+
+tinyAVR01.menu.02_clock.separator2=-
+
+tinyAVR01.menu.02_clock.2MHz.bootloader.bod_sample=0
+tinyAVR01.menu.02_clock.2MHz.build.f_cpu=2000000L
+tinyAVR01.menu.02_clock.2MHz=Internal 2 MHz
+
+tinyAVR01.menu.02_clock.32768Hz.bootloader.bod_sample=1
+tinyAVR01.menu.02_clock.32768Hz.build.f_cpu=32768
+tinyAVR01.menu.02_clock.32768Hz=Internal 32.768 kHz (ULP)
+
+# tinyAVR01.menu.11_BODMODE.Disabled.bootloader.bod_mode=00
+# tinyAVR01.menu.11_BODMODE.Disabled=BOD Disabled
+# tinyAVR01.menu.11_BODMODE.Enabled.bootloader.bod_mode=01
+# tinyAVR01.menu.11_BODMODE.Enabled=BOD Enabled
+# tinyAVR01.menu.11_BODMODE.Sampled.bootloader.bod_mode=10
+# tinyAVR01.menu.11_BODMODE.Sampled=BOD Sampled
+# tinyAVR01.menu.11_BODMODE.Enablewait.bootloader.bod_mode=11
+# tinyAVR01.menu.11_BODMODE.Enablewait=BOD Enabled hold wakeup
+
 # tinyAVR01.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
 # tinyAVR01.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
 # tinyAVR01.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
 # tinyAVR01.menu.12_BODLVL.BODLEVEL2=Level 2.6V
 # tinyAVR01.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
 # tinyAVR01.menu.12_BODLVL.BODLEVEL7=Level 4.3V
-# tinyAVR01.menu.22_updipin.01_updi.bootloader.reset_bit=01
-# tinyAVR01.menu.22_updipin.01_updi=PA0 pin=UPDI (default)
-# tinyAVR01.menu.22_updipin.10_separator=-
-# tinyAVR01.menu.22_updipin.11_reset.bootloader.reset_bit=10
-# tinyAVR01.menu.22_updipin.11_reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
-# tinyAVR01.menu.22_updipin.12_gpio.bootloader.reset_bit=00
-# tinyAVR01.menu.22_updipin.12_gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
-tinyAVR01.menu.24_eeprom.01_keep.bootloader.eesave_bit=1
-tinyAVR01.menu.24_eeprom.01_keep=Save guard "Retained"
-tinyAVR01.menu.24_eeprom.02_erase.bootloader.eesave_bit=0
-tinyAVR01.menu.24_eeprom.02_erase=Save guard "Erase"
-tinyAVR01.menu.24_eeprom.03_upload.bootloader.eepupload={bootloader.eeprom}
-tinyAVR01.menu.24_eeprom.03_upload.bootloader.eesave_bit=1
-tinyAVR01.menu.24_eeprom.03_upload="Erase" and "Replace"
-tinyAVR01.menu.26_userrow.02_keep=Save guard "Retained"
-tinyAVR01.menu.26_userrow.03_upload.bootloader.urowupload={bootloader.userrow}
-tinyAVR01.menu.26_userrow.03_upload=Upload ".urow" file
-tinyAVR01.menu.51_buildopt.01_Release=Build Release (default)
-tinyAVR01.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
-tinyAVR01.menu.51_buildopt.02_Debug1=Build DEBUG=1
-tinyAVR01.menu.51_buildopt.03_Debug2.build.buildopt=-DDEBUG=2
-tinyAVR01.menu.51_buildopt.03_Debug2=Build DEBUG=2
-tinyAVR01.menu.52_macroapi.01_Enable=Macro API Enable (default)
-tinyAVR01.menu.52_macroapi.02_Withoutboot.compiler.ldflags=-nostartfiles -DWOSFILES=1
-tinyAVR01.menu.52_macroapi.02_Withoutboot=Macro API Enable without startup
-tinyAVR01.menu.52_macroapi.03_Disable.build.macroapi=
-tinyAVR01.menu.52_macroapi.03_Disable=Macro API Disable
-tinyAVR01.menu.52_macroapi.04_AllDisable.build.macroapi=
-tinyAVR01.menu.52_macroapi.04_AllDisable.compiler.ldflags=-nostartfiles -nostdlib -DWOSFILES=1 -DWOSTDLIB=1
-tinyAVR01.menu.52_macroapi.04_AllDisable=Standard Library All Disable
-tinyAVR01.menu.53_printf.01_default=default
-tinyAVR01.menu.53_printf.02_full.build.printf=-DUSE_PRINTF_FLT
-tinyAVR01.menu.53_printf.02_full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
-tinyAVR01.menu.53_printf.02_full=Float Support
-tinyAVR01.menu.90_console_baud.01_9600bps.build.console_baud=-DCONSOLE_BAUD=9600
-tinyAVR01.menu.90_console_baud.01_9600bps=CONSOLE_BAUD=9600 bps (default)
-tinyAVR01.menu.90_console_baud.03_38400bps.build.console_baud=-DCONSOLE_BAUD=38400
-tinyAVR01.menu.90_console_baud.03_38400bps=CONSOLE_BAUD=38400 bps
-tinyAVR01.menu.90_console_baud.04_57600bps.build.console_baud=-DCONSOLE_BAUD=57600
-tinyAVR01.menu.90_console_baud.04_57600bps=CONSOLE_BAUD=57600 bps
-tinyAVR01.menu.90_console_baud.05_115200bps.build.console_baud=-DCONSOLE_BAUD=115200
-tinyAVR01.menu.90_console_baud.05_115200bps=CONSOLE_BAUD=115200 bps
-tinyAVR01.menu.90_console_baud.06_230400bps.build.console_baud=-DCONSOLE_BAUD=230400
-tinyAVR01.menu.90_console_baud.06_230400bps=CONSOLE_BAUD=230400 bps
-tinyAVR01.menu.90_console_baud.14_500000bps.build.console_baud=-DCONSOLE_BAUD=500000
-tinyAVR01.menu.90_console_baud.14_500000bps=CONSOLE_BAUD=500000 bps
-tinyAVR01.menu.90_console_baud.15_1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
-tinyAVR01.menu.90_console_baud.15_1000000bps=CONSOLE_BAUD=1000000 bps
-tinyAVR01.menu.90_console_baud.20_separator=-
-tinyAVR01.menu.90_console_baud.21_2400bps.build.console_baud=-DCONSOLE_BAUD=2400
-tinyAVR01.menu.90_console_baud.21_2400bps=CONSOLE_BAUD=2400 bps (for ULP)
-tinyAVR01.menu.95_bootloader.01_UART0_A6_LA3.bootloader.file=hex/boot_attiny_UART0_A6_{upload.speed}_LA3.hex
-tinyAVR01.menu.95_bootloader.01_UART0_A6_LA3.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA3
-tinyAVR01.menu.95_bootloader.01_UART0_A6_LA3=UART0 TX:PA6 RX:PA7 LED=PA3 (default)
-tinyAVR01.menu.95_bootloader.10_separator=-
-tinyAVR01.menu.95_bootloader.11_UART0_A1_LA3.bootloader.file=hex/boot_attiny_UART0_A1_{upload.speed}_LA3.hex
-tinyAVR01.menu.95_bootloader.11_UART0_A1_LA3.build.console_select=-DSerial=Serial0B -DLED_BUILTIN=PIN_PA3
-tinyAVR01.menu.95_bootloader.11_UART0_A1_LA3=UART0 TX:PA1 RX:PA2 LED=PA3 (alternative)
+
+# tinyAVR01.menu.22_updipin.Updi.bootloader.reset_bit=01
+# tinyAVR01.menu.22_updipin.Updi=PA0 pin=UPDI (default)
+# tinyAVR01.menu.22_updipin.separator1=-
+# tinyAVR01.menu.22_updipin.Reset.bootloader.reset_bit=10
+# tinyAVR01.menu.22_updipin.Reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
+# tinyAVR01.menu.22_updipin.Gpio.bootloader.reset_bit=00
+# tinyAVR01.menu.22_updipin.Gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
+
+tinyAVR01.menu.24_eeprom.Retained.bootloader.eesave_bit=1
+tinyAVR01.menu.24_eeprom.Retained=Save guard "Retained"
+tinyAVR01.menu.24_eeprom.Erase.bootloader.eesave_bit=0
+tinyAVR01.menu.24_eeprom.Erase=Save guard "Erase"
+tinyAVR01.menu.24_eeprom.Upload.bootloader.eepupload={bootloader.eeprom}
+tinyAVR01.menu.24_eeprom.Upload.bootloader.eesave_bit=1
+tinyAVR01.menu.24_eeprom.Upload="Erase" and "Replace"
+
+tinyAVR01.menu.26_userrow.Keep=Save guard "Retained"
+tinyAVR01.menu.26_userrow.Upload.bootloader.urowupload={bootloader.userrow}
+tinyAVR01.menu.26_userrow.Upload=Upload ".urow" file
+
+tinyAVR01.menu.51_buildopt.Release=Release (default)
+
+tinyAVR01.menu.51_buildopt.Debug1.build.buildopt=-DDEBUG=1
+tinyAVR01.menu.51_buildopt.Debug1=DEBUG=1
+
+tinyAVR01.menu.51_buildopt.Debug2.build.buildopt=-DDEBUG=2
+tinyAVR01.menu.51_buildopt.Debug2=DEBUG=2
+
+tinyAVR01.menu.52_macroapi.Enable=Macro API Enable (default)
+
+tinyAVR01.menu.52_macroapi.WoStartup.build.macroapi=-DENABLE_MACRO_API -DWOSFILES=1
+tinyAVR01.menu.52_macroapi.WoStartup.compiler.ldflags=-nostartfiles
+tinyAVR01.menu.52_macroapi.WoStartup=Macro API Enable without startup
+
+tinyAVR01.menu.52_macroapi.Disable.build.macroapi=
+tinyAVR01.menu.52_macroapi.Disable=Macro API Disable
+
+tinyAVR01.menu.52_macroapi.AllDisable.build.macroapi=-DWOSFILES=1 -DWOSTDLIB=1
+tinyAVR01.menu.52_macroapi.AllDisable.compiler.ldflags=-nostartfiles -nostdlib
+tinyAVR01.menu.52_macroapi.AllDisable=Standard Library All Disable
+
+tinyAVR01.menu.53_printf.Default=Integer Only
+
+tinyAVR01.menu.53_printf.Full.build.printf=-DUSE_PRINTF_FLT
+tinyAVR01.menu.53_printf.Full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
+tinyAVR01.menu.53_printf.Full=Float Support
+
+tinyAVR01.menu.90_console_baud.9600bps.build.console_baud=-DCONSOLE_BAUD=9600
+tinyAVR01.menu.90_console_baud.9600bps=9600 bps (default)
+
+tinyAVR01.menu.90_console_baud.38400bps.build.console_baud=-DCONSOLE_BAUD=38400
+tinyAVR01.menu.90_console_baud.38400bps=38400 bps
+
+tinyAVR01.menu.90_console_baud.57600bps.build.console_baud=-DCONSOLE_BAUD=57600
+tinyAVR01.menu.90_console_baud.57600bps=57600 bps
+
+tinyAVR01.menu.90_console_baud.115200bps.build.console_baud=-DCONSOLE_BAUD=115200
+tinyAVR01.menu.90_console_baud.115200bps=115200 bps
+
+tinyAVR01.menu.90_console_baud.230400bps.build.console_baud=-DCONSOLE_BAUD=230400
+tinyAVR01.menu.90_console_baud.230400bps=230400 bps
+
+tinyAVR01.menu.90_console_baud.500000bps.build.console_baud=-DCONSOLE_BAUD=500000
+tinyAVR01.menu.90_console_baud.500000bps=500000 bps
+
+tinyAVR01.menu.90_console_baud.1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
+tinyAVR01.menu.90_console_baud.1000000bps=1000000 bps
+
+tinyAVR01.menu.90_console_baud.separator1=-
+
+tinyAVR01.menu.90_console_baud.2400bps.build.console_baud=-DCONSOLE_BAUD=2400
+tinyAVR01.menu.90_console_baud.2400bps=2400 bps (for ULP)
+
+tinyAVR01.menu.95_bootloader.UART0_A6_LA3.bootloader.file=hex/boot_attiny_UART0_A6_{upload.speed}_LA3.hex
+tinyAVR01.menu.95_bootloader.UART0_A6_LA3.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA3
+tinyAVR01.menu.95_bootloader.UART0_A6_LA3=UART0 TX:PA6 RX:PA7 LED=PA3 (default)
+
+tinyAVR01.menu.95_bootloader.separator1=-
+
+tinyAVR01.menu.95_bootloader.UART0_A1_LA3.bootloader.file=hex/boot_attiny_UART0_A1_{upload.speed}_LA3.hex
+tinyAVR01.menu.95_bootloader.UART0_A1_LA3.build.console_select=-DSerial=Serial0B -DLED_BUILTIN=PIN_PA3
+tinyAVR01.menu.95_bootloader.UART0_A1_LA3=UART0 TX:PA1 RX:PA2 LED=PA3 (alternative)
 
 
 megaAVR0_noloader.bootloader.BODCFG=0b{bootloader.bod_lvl}{bootloader.bod_sample}{bootloader.bod_mode}00
 megaAVR0_noloader.bootloader.BOOTSIZE=0x00
 megaAVR0_noloader.bootloader.CODESIZE=0x00
-megaAVR0_noloader.bootloader.OSCCFG=0b01111110
+megaAVR0_noloader.bootloader.OSCCFG=0x7E
 megaAVR0_noloader.bootloader.SYSCFG0=0b1101{bootloader.reset_bit}1{bootloader.eesave_bit}
-megaAVR0_noloader.bootloader.SYSCFG1=0b11111111
-megaAVR0_noloader.bootloader.WDTCFG=0b00000000
+megaAVR0_noloader.bootloader.SYSCFG1=0xFF
+megaAVR0_noloader.bootloader.WDTCFG=0x00
 megaAVR0_noloader.bootloader.bod_lvl=000
 megaAVR0_noloader.bootloader.bod_mode=00
 megaAVR0_noloader.bootloader.bod_sample=0
@@ -809,217 +1000,281 @@ megaAVR0_noloader.build.printf=
 megaAVR0_noloader.build.printflt=
 megaAVR0_noloader.build.linker_script=avrxmega3_p128.x
 megaAVR0_noloader.upload.tool=
-megaAVR0_noloader.menu.01_variant.01_ATmega4809_48P.build.board=AVR_ATMEGA4809
-megaAVR0_noloader.menu.01_variant.01_ATmega4809_48P.build.mcu=atmega4809
-megaAVR0_noloader.menu.01_variant.01_ATmega4809_48P.build.variant=megaAVR0_48
-megaAVR0_noloader.menu.01_variant.01_ATmega4809_48P.upload.maximum_data_size=6144
-megaAVR0_noloader.menu.01_variant.01_ATmega4809_48P.upload.maximum_size=49152
-megaAVR0_noloader.menu.01_variant.01_ATmega4809_48P=48pin ATmega4809 (48KiB+6KiB)
-megaAVR0_noloader.menu.01_variant.02_ATmega3209_48P.build.board=AVR_ATMEGA3209
-megaAVR0_noloader.menu.01_variant.02_ATmega3209_48P.build.mcu=atmega3209
-megaAVR0_noloader.menu.01_variant.02_ATmega3209_48P.build.variant=megaAVR0_48
-megaAVR0_noloader.menu.01_variant.02_ATmega3209_48P.upload.maximum_data_size=4096
-megaAVR0_noloader.menu.01_variant.02_ATmega3209_48P.upload.maximum_size=32768
-megaAVR0_noloader.menu.01_variant.02_ATmega3209_48P=48pin ATmega3209 (32KiB+4KiB)
-megaAVR0_noloader.menu.01_variant.03_ATmega1609_48P.build.board=AVR_ATMEGA1609
-megaAVR0_noloader.menu.01_variant.03_ATmega1609_48P.build.mcu=atmega1609
-megaAVR0_noloader.menu.01_variant.03_ATmega1609_48P.build.variant=megaAVR0_48
-megaAVR0_noloader.menu.01_variant.03_ATmega1609_48P.upload.maximum_data_size=2048
-megaAVR0_noloader.menu.01_variant.03_ATmega1609_48P.upload.maximum_size=16384
-megaAVR0_noloader.menu.01_variant.03_ATmega1609_48P=48pin ATmega1609 (16KiB+2KiB)
-megaAVR0_noloader.menu.01_variant.04_ATmega809_48P.build.board=AVR_ATMEGA809
-megaAVR0_noloader.menu.01_variant.04_ATmega809_48P.build.mcu=atmega809
-megaAVR0_noloader.menu.01_variant.04_ATmega809_48P.build.variant=megaAVR0_48
-megaAVR0_noloader.menu.01_variant.04_ATmega809_48P.upload.maximum_data_size=1024
-megaAVR0_noloader.menu.01_variant.04_ATmega809_48P.upload.maximum_size=8192
-megaAVR0_noloader.menu.01_variant.04_ATmega809_48P=48pin ATmega809 (8KiB+1KiB)
-megaAVR0_noloader.menu.01_variant.10_separator=-
-megaAVR0_noloader.menu.01_variant.11_ATmega4809_40P.build.board=AVR_ATMEGA4809
-megaAVR0_noloader.menu.01_variant.11_ATmega4809_40P.build.mcu=atmega4809
-megaAVR0_noloader.menu.01_variant.11_ATmega4809_40P.build.variant=megaAVR0_40
-megaAVR0_noloader.menu.01_variant.11_ATmega4809_40P.upload.maximum_data_size=6144
-megaAVR0_noloader.menu.01_variant.11_ATmega4809_40P.upload.maximum_size=49152
-megaAVR0_noloader.menu.01_variant.11_ATmega4809_40P=40pin ATmega4809 (48KiB+6KiB)
-megaAVR0_noloader.menu.01_variant.20_separator=-
-megaAVR0_noloader.menu.01_variant.21_ATmega4808_32P.build.board=AVR_ATMEGA4808
-megaAVR0_noloader.menu.01_variant.21_ATmega4808_32P.build.mcu=atmega4808
-megaAVR0_noloader.menu.01_variant.21_ATmega4808_32P.build.variant=megaAVR0_32
-megaAVR0_noloader.menu.01_variant.21_ATmega4808_32P.upload.maximum_data_size=6144
-megaAVR0_noloader.menu.01_variant.21_ATmega4808_32P.upload.maximum_size=49152
-megaAVR0_noloader.menu.01_variant.21_ATmega4808_32P=32pin ATmega4808 (48KiB+6KiB)
-megaAVR0_noloader.menu.01_variant.22_ATmega3208_32P.build.board=AVR_ATMEGA3208
-megaAVR0_noloader.menu.01_variant.22_ATmega3208_32P.build.mcu=atmega3208
-megaAVR0_noloader.menu.01_variant.22_ATmega3208_32P.build.variant=megaAVR0_32
-megaAVR0_noloader.menu.01_variant.22_ATmega3208_32P.upload.maximum_data_size=4096
-megaAVR0_noloader.menu.01_variant.22_ATmega3208_32P.upload.maximum_size=32768
-megaAVR0_noloader.menu.01_variant.22_ATmega3208_32P=32pin ATmega3208 (32KiB+4KiB)
-megaAVR0_noloader.menu.01_variant.23_ATmega1608_32P.build.board=AVR_ATMEGA1608
-megaAVR0_noloader.menu.01_variant.23_ATmega1608_32P.build.mcu=atmega1608
-megaAVR0_noloader.menu.01_variant.23_ATmega1608_32P.build.variant=megaAVR0_32
-megaAVR0_noloader.menu.01_variant.23_ATmega1608_32P.upload.maximum_data_size=2048
-megaAVR0_noloader.menu.01_variant.23_ATmega1608_32P.upload.maximum_size=16384
-megaAVR0_noloader.menu.01_variant.23_ATmega1608_32P=32pin ATmega1608 (16KiB+2KiB)
-megaAVR0_noloader.menu.01_variant.24_ATmega808_32P.build.board=AVR_ATMEGA808
-megaAVR0_noloader.menu.01_variant.24_ATmega808_32P.build.mcu=atmega808
-megaAVR0_noloader.menu.01_variant.24_ATmega808_32P.build.variant=megaAVR0_32
-megaAVR0_noloader.menu.01_variant.24_ATmega808_32P.upload.maximum_data_size=1024
-megaAVR0_noloader.menu.01_variant.24_ATmega808_32P.upload.maximum_size=8192
-megaAVR0_noloader.menu.01_variant.24_ATmega808_32P=32pin ATmega808 (8KiB+1KiB)
-megaAVR0_noloader.menu.01_variant.30_separator=-
-megaAVR0_noloader.menu.01_variant.31_ATmega4808_28P.build.board=AVR_ATMEGA4808
-megaAVR0_noloader.menu.01_variant.31_ATmega4808_28P.build.mcu=atmega4808
-megaAVR0_noloader.menu.01_variant.31_ATmega4808_28P.build.variant=megaAVR0_28
-megaAVR0_noloader.menu.01_variant.31_ATmega4808_28P.upload.maximum_data_size=6144
-megaAVR0_noloader.menu.01_variant.31_ATmega4808_28P.upload.maximum_size=49152
-megaAVR0_noloader.menu.01_variant.31_ATmega4808_28P=28pin ATmega4808 (48KiB+6KiB)
-megaAVR0_noloader.menu.01_variant.32_ATmega3208_28P.build.board=AVR_ATMEGA3208
-megaAVR0_noloader.menu.01_variant.32_ATmega3208_28P.build.mcu=atmega3208
-megaAVR0_noloader.menu.01_variant.32_ATmega3208_28P.build.variant=megaAVR0_28
-megaAVR0_noloader.menu.01_variant.32_ATmega3208_28P.upload.maximum_data_size=4096
-megaAVR0_noloader.menu.01_variant.32_ATmega3208_28P.upload.maximum_size=32768
-megaAVR0_noloader.menu.01_variant.32_ATmega3208_28P=28pin ATmega3208 (32KiB+4KiB)
-megaAVR0_noloader.menu.01_variant.33_ATmega1608_28P.build.board=AVR_ATMEGA1608
-megaAVR0_noloader.menu.01_variant.33_ATmega1608_28P.build.mcu=atmega1608
-megaAVR0_noloader.menu.01_variant.33_ATmega1608_28P.build.variant=megaAVR0_28
-megaAVR0_noloader.menu.01_variant.33_ATmega1608_28P.upload.maximum_data_size=2048
-megaAVR0_noloader.menu.01_variant.33_ATmega1608_28P.upload.maximum_size=16384
-megaAVR0_noloader.menu.01_variant.33_ATmega1608_28P=28pin ATmega1608 (16KiB+2KiB)
-megaAVR0_noloader.menu.01_variant.34_ATmega808_28P.build.board=AVR_ATMEGA808
-megaAVR0_noloader.menu.01_variant.34_ATmega808_28P.build.mcu=atmega808
-megaAVR0_noloader.menu.01_variant.34_ATmega808_28P.build.variant=megaAVR0_28
-megaAVR0_noloader.menu.01_variant.34_ATmega808_28P.upload.maximum_data_size=1024
-megaAVR0_noloader.menu.01_variant.34_ATmega808_28P.upload.maximum_size=8192
-megaAVR0_noloader.menu.01_variant.34_ATmega808_28P=28pin ATmega808 (8KiB+1KiB)
-megaAVR0_noloader.menu.02_clock.01_20MHz.bootloader.bod_sample=0
-megaAVR0_noloader.menu.02_clock.01_20MHz.build.f_cpu=20000000L
-megaAVR0_noloader.menu.02_clock.01_20MHz=Internal 20 MHz
-megaAVR0_noloader.menu.02_clock.02_10MHz.bootloader.bod_sample=0
-megaAVR0_noloader.menu.02_clock.02_10MHz.build.f_cpu=10000000L
-megaAVR0_noloader.menu.02_clock.02_10MHz=Internal 10 MHz
-megaAVR0_noloader.menu.02_clock.03_5MHz.bootloader.bod_sample=0
-megaAVR0_noloader.menu.02_clock.03_5MHz.build.f_cpu=5000000L
-megaAVR0_noloader.menu.02_clock.03_5MHz=Internal 5 MHz
-megaAVR0_noloader.menu.02_clock.10_separator=-
-megaAVR0_noloader.menu.02_clock.11_16MHz.bootloader.OSCCFG=0b00000001
-megaAVR0_noloader.menu.02_clock.11_16MHz.bootloader.bod_sample=0
-megaAVR0_noloader.menu.02_clock.11_16MHz.build.f_cpu=16000000L
-megaAVR0_noloader.menu.02_clock.11_16MHz=Internal 16 MHz
-megaAVR0_noloader.menu.02_clock.12_8MHz.bootloader.OSCCFG=0b00000001
-megaAVR0_noloader.menu.02_clock.12_8MHz.bootloader.bod_sample=0
-megaAVR0_noloader.menu.02_clock.12_8MHz.build.f_cpu=8000000L
-megaAVR0_noloader.menu.02_clock.12_8MHz=Internal 8 MHz
-megaAVR0_noloader.menu.02_clock.13_4MHz.bootloader.OSCCFG=0b00000001
-megaAVR0_noloader.menu.02_clock.13_4MHz.bootloader.bod_sample=0
-megaAVR0_noloader.menu.02_clock.13_4MHz.build.f_cpu=4000000L
-megaAVR0_noloader.menu.02_clock.13_4MHz=Internal 4 MHz
-megaAVR0_noloader.menu.02_clock.15_1MHz.bootloader.OSCCFG=0b00000001
-megaAVR0_noloader.menu.02_clock.15_1MHz.bootloader.bod_sample=0
-megaAVR0_noloader.menu.02_clock.15_1MHz.build.f_cpu=1000000L
-megaAVR0_noloader.menu.02_clock.15_1MHz=Internal 1 MHz
-megaAVR0_noloader.menu.02_clock.20_separator=-
-megaAVR0_noloader.menu.02_clock.21_2MHz.bootloader.bod_sample=0
-megaAVR0_noloader.menu.02_clock.21_2MHz.build.f_cpu=2000000L
-megaAVR0_noloader.menu.02_clock.21_2MHz=Internal 2 MHz
-megaAVR0_noloader.menu.02_clock.22_32768Hz.bootloader.bod_sample=1
-megaAVR0_noloader.menu.02_clock.22_32768Hz.build.f_cpu=32768
-megaAVR0_noloader.menu.02_clock.22_32768Hz=Internal 32.768 kHz (ULP)
-# megaAVR0_noloader.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
-# megaAVR0_noloader.menu.11_BODMODE.01_disabled=BOD Disabled
-# megaAVR0_noloader.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
-# megaAVR0_noloader.menu.11_BODMODE.02_enabled=BOD Enabled
-# megaAVR0_noloader.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
-# megaAVR0_noloader.menu.11_BODMODE.03_sampled=BOD Sampled
-# megaAVR0_noloader.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
-# megaAVR0_noloader.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
+
+megaAVR0_noloader.menu.01_variant.ATmega4809_48P.build.board=AVR_ATMEGA4809
+megaAVR0_noloader.menu.01_variant.ATmega4809_48P.build.mcu=atmega4809
+megaAVR0_noloader.menu.01_variant.ATmega4809_48P.build.variant=megaAVR0_48
+megaAVR0_noloader.menu.01_variant.ATmega4809_48P.upload.maximum_data_size=6144
+megaAVR0_noloader.menu.01_variant.ATmega4809_48P.upload.maximum_size=49152
+megaAVR0_noloader.menu.01_variant.ATmega4809_48P=48pin ATmega4809 (48KiB+6KiB)
+
+megaAVR0_noloader.menu.01_variant.ATmega3209_48P.build.board=AVR_ATMEGA3209
+megaAVR0_noloader.menu.01_variant.ATmega3209_48P.build.mcu=atmega3209
+megaAVR0_noloader.menu.01_variant.ATmega3209_48P.build.variant=megaAVR0_48
+megaAVR0_noloader.menu.01_variant.ATmega3209_48P.upload.maximum_data_size=4096
+megaAVR0_noloader.menu.01_variant.ATmega3209_48P.upload.maximum_size=32768
+megaAVR0_noloader.menu.01_variant.ATmega3209_48P=48pin ATmega3209 (32KiB+4KiB)
+
+megaAVR0_noloader.menu.01_variant.ATmega1609_48P.build.board=AVR_ATMEGA1609
+megaAVR0_noloader.menu.01_variant.ATmega1609_48P.build.mcu=atmega1609
+megaAVR0_noloader.menu.01_variant.ATmega1609_48P.build.variant=megaAVR0_48
+megaAVR0_noloader.menu.01_variant.ATmega1609_48P.upload.maximum_data_size=2048
+megaAVR0_noloader.menu.01_variant.ATmega1609_48P.upload.maximum_size=16384
+megaAVR0_noloader.menu.01_variant.ATmega1609_48P=48pin ATmega1609 (16KiB+2KiB)
+
+megaAVR0_noloader.menu.01_variant.ATmega809_48P.build.board=AVR_ATMEGA809
+megaAVR0_noloader.menu.01_variant.ATmega809_48P.build.mcu=atmega809
+megaAVR0_noloader.menu.01_variant.ATmega809_48P.build.variant=megaAVR0_48
+megaAVR0_noloader.menu.01_variant.ATmega809_48P.upload.maximum_data_size=1024
+megaAVR0_noloader.menu.01_variant.ATmega809_48P.upload.maximum_size=8192
+megaAVR0_noloader.menu.01_variant.ATmega809_48P=48pin ATmega809 (8KiB+1KiB)
+
+megaAVR0_noloader.menu.01_variant.separator1=-
+
+megaAVR0_noloader.menu.01_variant.ATmega4809_40P.build.board=AVR_ATMEGA4809
+megaAVR0_noloader.menu.01_variant.ATmega4809_40P.build.mcu=atmega4809
+megaAVR0_noloader.menu.01_variant.ATmega4809_40P.build.variant=megaAVR0_40
+megaAVR0_noloader.menu.01_variant.ATmega4809_40P.upload.maximum_data_size=6144
+megaAVR0_noloader.menu.01_variant.ATmega4809_40P.upload.maximum_size=49152
+megaAVR0_noloader.menu.01_variant.ATmega4809_40P=40pin ATmega4809 (48KiB+6KiB)
+
+megaAVR0_noloader.menu.01_variant.separator2=-
+
+megaAVR0_noloader.menu.01_variant.ATmega4808_32P.build.board=AVR_ATMEGA4808
+megaAVR0_noloader.menu.01_variant.ATmega4808_32P.build.mcu=atmega4808
+megaAVR0_noloader.menu.01_variant.ATmega4808_32P.build.variant=megaAVR0_32
+megaAVR0_noloader.menu.01_variant.ATmega4808_32P.upload.maximum_data_size=6144
+megaAVR0_noloader.menu.01_variant.ATmega4808_32P.upload.maximum_size=49152
+megaAVR0_noloader.menu.01_variant.ATmega4808_32P=32pin ATmega4808 (48KiB+6KiB)
+
+megaAVR0_noloader.menu.01_variant.ATmega3208_32P.build.board=AVR_ATMEGA3208
+megaAVR0_noloader.menu.01_variant.ATmega3208_32P.build.mcu=atmega3208
+megaAVR0_noloader.menu.01_variant.ATmega3208_32P.build.variant=megaAVR0_32
+megaAVR0_noloader.menu.01_variant.ATmega3208_32P.upload.maximum_data_size=4096
+megaAVR0_noloader.menu.01_variant.ATmega3208_32P.upload.maximum_size=32768
+megaAVR0_noloader.menu.01_variant.ATmega3208_32P=32pin ATmega3208 (32KiB+4KiB)
+
+megaAVR0_noloader.menu.01_variant.ATmega1608_32P.build.board=AVR_ATMEGA1608
+megaAVR0_noloader.menu.01_variant.ATmega1608_32P.build.mcu=atmega1608
+megaAVR0_noloader.menu.01_variant.ATmega1608_32P.build.variant=megaAVR0_32
+megaAVR0_noloader.menu.01_variant.ATmega1608_32P.upload.maximum_data_size=2048
+megaAVR0_noloader.menu.01_variant.ATmega1608_32P.upload.maximum_size=16384
+megaAVR0_noloader.menu.01_variant.ATmega1608_32P=32pin ATmega1608 (16KiB+2KiB)
+
+megaAVR0_noloader.menu.01_variant.ATmega808_32P.build.board=AVR_ATMEGA808
+megaAVR0_noloader.menu.01_variant.ATmega808_32P.build.mcu=atmega808
+megaAVR0_noloader.menu.01_variant.ATmega808_32P.build.variant=megaAVR0_32
+megaAVR0_noloader.menu.01_variant.ATmega808_32P.upload.maximum_data_size=1024
+megaAVR0_noloader.menu.01_variant.ATmega808_32P.upload.maximum_size=8192
+megaAVR0_noloader.menu.01_variant.ATmega808_32P=32pin ATmega808 (8KiB+1KiB)
+
+megaAVR0_noloader.menu.01_variant.separator3=-
+
+megaAVR0_noloader.menu.01_variant.ATmega4808_28P.build.board=AVR_ATMEGA4808
+megaAVR0_noloader.menu.01_variant.ATmega4808_28P.build.mcu=atmega4808
+megaAVR0_noloader.menu.01_variant.ATmega4808_28P.build.variant=megaAVR0_28
+megaAVR0_noloader.menu.01_variant.ATmega4808_28P.upload.maximum_data_size=6144
+megaAVR0_noloader.menu.01_variant.ATmega4808_28P.upload.maximum_size=49152
+megaAVR0_noloader.menu.01_variant.ATmega4808_28P=28pin ATmega4808 (48KiB+6KiB)
+
+megaAVR0_noloader.menu.01_variant.ATmega3208_28P.build.board=AVR_ATMEGA3208
+megaAVR0_noloader.menu.01_variant.ATmega3208_28P.build.mcu=atmega3208
+megaAVR0_noloader.menu.01_variant.ATmega3208_28P.build.variant=megaAVR0_28
+megaAVR0_noloader.menu.01_variant.ATmega3208_28P.upload.maximum_data_size=4096
+megaAVR0_noloader.menu.01_variant.ATmega3208_28P.upload.maximum_size=32768
+megaAVR0_noloader.menu.01_variant.ATmega3208_28P=28pin ATmega3208 (32KiB+4KiB)
+
+megaAVR0_noloader.menu.01_variant.ATmega1608_28P.build.board=AVR_ATMEGA1608
+megaAVR0_noloader.menu.01_variant.ATmega1608_28P.build.mcu=atmega1608
+megaAVR0_noloader.menu.01_variant.ATmega1608_28P.build.variant=megaAVR0_28
+megaAVR0_noloader.menu.01_variant.ATmega1608_28P.upload.maximum_data_size=2048
+megaAVR0_noloader.menu.01_variant.ATmega1608_28P.upload.maximum_size=16384
+megaAVR0_noloader.menu.01_variant.ATmega1608_28P=28pin ATmega1608 (16KiB+2KiB)
+
+megaAVR0_noloader.menu.01_variant.ATmega808_28P.build.board=AVR_ATMEGA808
+megaAVR0_noloader.menu.01_variant.ATmega808_28P.build.mcu=atmega808
+megaAVR0_noloader.menu.01_variant.ATmega808_28P.build.variant=megaAVR0_28
+megaAVR0_noloader.menu.01_variant.ATmega808_28P.upload.maximum_data_size=1024
+megaAVR0_noloader.menu.01_variant.ATmega808_28P.upload.maximum_size=8192
+megaAVR0_noloader.menu.01_variant.ATmega808_28P=28pin ATmega808 (8KiB+1KiB)
+
+megaAVR0_noloader.menu.02_clock.20MHz.bootloader.bod_sample=0
+megaAVR0_noloader.menu.02_clock.20MHz.build.f_cpu=20000000L
+megaAVR0_noloader.menu.02_clock.20MHz=Internal 20 MHz
+megaAVR0_noloader.menu.02_clock.10MHz.bootloader.bod_sample=0
+megaAVR0_noloader.menu.02_clock.10MHz.build.f_cpu=10000000L
+megaAVR0_noloader.menu.02_clock.10MHz=Internal 10 MHz
+megaAVR0_noloader.menu.02_clock.5MHz.bootloader.bod_sample=0
+megaAVR0_noloader.menu.02_clock.5MHz.build.f_cpu=5000000L
+megaAVR0_noloader.menu.02_clock.5MHz=Internal 5 MHz
+
+megaAVR0_noloader.menu.02_clock.separator1=-
+
+megaAVR0_noloader.menu.02_clock.16MHz.bootloader.OSCCFG=0x7D
+megaAVR0_noloader.menu.02_clock.16MHz.bootloader.bod_sample=0
+megaAVR0_noloader.menu.02_clock.16MHz.build.f_cpu=16000000L
+megaAVR0_noloader.menu.02_clock.16MHz=Internal 16 MHz
+
+megaAVR0_noloader.menu.02_clock.8MHz.bootloader.OSCCFG=0x7D
+megaAVR0_noloader.menu.02_clock.8MHz.bootloader.bod_sample=0
+megaAVR0_noloader.menu.02_clock.8MHz.build.f_cpu=8000000L
+megaAVR0_noloader.menu.02_clock.8MHz=Internal 8 MHz
+
+megaAVR0_noloader.menu.02_clock.4MHz.bootloader.OSCCFG=0x7D
+megaAVR0_noloader.menu.02_clock.4MHz.bootloader.bod_sample=0
+megaAVR0_noloader.menu.02_clock.4MHz.build.f_cpu=4000000L
+megaAVR0_noloader.menu.02_clock.4MHz=Internal 4 MHz
+
+megaAVR0_noloader.menu.02_clock.1MHz.bootloader.OSCCFG=0x7D
+megaAVR0_noloader.menu.02_clock.1MHz.bootloader.bod_sample=0
+megaAVR0_noloader.menu.02_clock.1MHz.build.f_cpu=1000000L
+megaAVR0_noloader.menu.02_clock.1MHz=Internal 1 MHz
+
+megaAVR0_noloader.menu.02_clock.separator2=-
+
+megaAVR0_noloader.menu.02_clock.2MHz.bootloader.bod_sample=0
+megaAVR0_noloader.menu.02_clock.2MHz.build.f_cpu=2000000L
+megaAVR0_noloader.menu.02_clock.2MHz=Internal 2 MHz
+
+megaAVR0_noloader.menu.02_clock.32768Hz.bootloader.bod_sample=1
+megaAVR0_noloader.menu.02_clock.32768Hz.build.f_cpu=32768
+megaAVR0_noloader.menu.02_clock.32768Hz=Internal 32.768 kHz (ULP)
+
+# megaAVR0_noloader.menu.11_BODMODE.Disabled.bootloader.bod_mode=00
+# megaAVR0_noloader.menu.11_BODMODE.Disabled=BOD Disabled
+# megaAVR0_noloader.menu.11_BODMODE.Enabled.bootloader.bod_mode=01
+# megaAVR0_noloader.menu.11_BODMODE.Enabled=BOD Enabled
+# megaAVR0_noloader.menu.11_BODMODE.Sampled.bootloader.bod_mode=10
+# megaAVR0_noloader.menu.11_BODMODE.Sampled=BOD Sampled
+# megaAVR0_noloader.menu.11_BODMODE.Enablewait.bootloader.bod_mode=11
+# megaAVR0_noloader.menu.11_BODMODE.Enablewait=BOD Enabled hold wakeup
+
 # megaAVR0_noloader.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
 # megaAVR0_noloader.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
 # megaAVR0_noloader.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
 # megaAVR0_noloader.menu.12_BODLVL.BODLEVEL2=Level 2.6V
 # megaAVR0_noloader.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
 # megaAVR0_noloader.menu.12_BODLVL.BODLEVEL7=Level 4.3V
-megaAVR0_noloader.menu.21_resetpin.01_reset.bootloader.reset_bit=11
-megaAVR0_noloader.menu.21_resetpin.01_reset=Reset
-megaAVR0_noloader.menu.21_resetpin.02_gpio.bootloader.reset_bit=01
-megaAVR0_noloader.menu.21_resetpin.02_gpio=GPIO (input only)
-megaAVR0_noloader.menu.24_eeprom.01_keep.bootloader.eesave_bit=1
-megaAVR0_noloader.menu.24_eeprom.01_keep=Save guard "Retained"
-megaAVR0_noloader.menu.24_eeprom.02_erase.bootloader.eesave_bit=0
-megaAVR0_noloader.menu.24_eeprom.02_erase=Save guard "Erase"
-megaAVR0_noloader.menu.24_eeprom.03_upload.bootloader.eepupload={bootloader.eeprom}
-megaAVR0_noloader.menu.24_eeprom.03_upload.bootloader.eesave_bit=1
-megaAVR0_noloader.menu.24_eeprom.03_upload=Upload ".eep" file
-megaAVR0_noloader.menu.26_userrow.02_keep=Save guard "Retained"
-megaAVR0_noloader.menu.26_userrow.03_upload.bootloader.urowupload={bootloader.userrow}
-megaAVR0_noloader.menu.26_userrow.03_upload=Upload ".urow" file
-megaAVR0_noloader.menu.27_fusefile.01_menu=Specify in the MENU
-megaAVR0_noloader.menu.27_fusefile.03_upload.bootloader.fuseupload={bootloader.fusefile}
-megaAVR0_noloader.menu.27_fusefile.03_upload=Upload ".fuse" file (Use with caution)
-megaAVR0_noloader.menu.51_buildopt.01_Release=Build Release (default)
-megaAVR0_noloader.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
-megaAVR0_noloader.menu.51_buildopt.02_Debug1=Build DEBUG=1
-megaAVR0_noloader.menu.51_buildopt.03_Debug2.build.buildopt=-DDEBUG=2
-megaAVR0_noloader.menu.51_buildopt.03_Debug2=Build DEBUG=2
-megaAVR0_noloader.menu.52_macroapi.01_Enable=Macro API Enable (default)
-megaAVR0_noloader.menu.52_macroapi.02_Withoutboot.compiler.ldflags=-nostartfiles -DWOSFILES=1
-megaAVR0_noloader.menu.52_macroapi.02_Withoutboot=Macro API Enable without startup
-megaAVR0_noloader.menu.52_macroapi.03_Disable.build.macroapi=
-megaAVR0_noloader.menu.52_macroapi.03_Disable=Macro API Disable
-megaAVR0_noloader.menu.52_macroapi.04_AllDisable.build.macroapi=
-megaAVR0_noloader.menu.52_macroapi.04_AllDisable.compiler.ldflags=-nostartfiles -nostdlib -DWOSFILES=1 -DWOSTDLIB=1
-megaAVR0_noloader.menu.52_macroapi.04_AllDisable=Standard Library All Disable
-megaAVR0_noloader.menu.53_printf.01_default=default
-megaAVR0_noloader.menu.53_printf.02_full.build.printf=-DUSE_PRINTF_FLT
-megaAVR0_noloader.menu.53_printf.02_full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
-megaAVR0_noloader.menu.53_printf.02_full=Float Support
-megaAVR0_noloader.menu.54_console_select.01_UART0_A0_LA7.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA7
-megaAVR0_noloader.menu.54_console_select.01_UART0_A0_LA7=UART0 TX:PA0 RX:PA1 LED=PA7
-megaAVR0_noloader.menu.54_console_select.10_separator=-
-megaAVR0_noloader.menu.54_console_select.11_UART1_C0_LA7.build.console_select=-DSerial=Serial1A -DLED_BUILTIN=PIN_PA7
-megaAVR0_noloader.menu.54_console_select.11_UART1_C0_LA7=UART1 TX:PC0 RX:PC1 LED=PA7
-megaAVR0_noloader.menu.54_console_select.12_UART2_F0_LA7.build.console_select=-DSerial=Serial2A -DLED_BUILTIN=PIN_PA7
-megaAVR0_noloader.menu.54_console_select.12_UART2_F0_LA7=UART2 TX:PF0 RX:PF1 LED=PA7
-megaAVR0_noloader.menu.54_console_select.13_UART2_F4_LA7.build.console_select=-DSerial=Serial2B -DLED_BUILTIN=PIN_PA7
-megaAVR0_noloader.menu.54_console_select.13_UART2_F4_LA7=UART2 TX:PF4 RX:PF5 LED=PA7 (32/48pin)
-megaAVR0_noloader.menu.54_console_select.20_separator=-
-megaAVR0_noloader.menu.54_console_select.21_UART3_B4_LD6.build.console_select=-DSerial=Serial3B -DLED_BUILTIN=PIN_PD6
-megaAVR0_noloader.menu.54_console_select.21_UART3_B4_LD6=UART3 TX:PB4 RX:PB5 LED=PD6 (ATmega4809 UNO WiFi)
-megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.build.console_select=-DSerial=Serial3B -DLED_BUILTIN=PIN_PE2
-megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.upload.tool=avrdude
-megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.upload.protocol=jtag2updi -e
-megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.upload.speed=115200
-megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery.upload.use_1200bps_touch=true
-megaAVR0_noloader.menu.54_console_select.22_UART3_B4_LE2_NanoEvery=UART3 TX:PB4 RX:PB5 LED=PE2 (ATmega4809 Nano Every)
-megaAVR0_noloader.menu.54_console_select.23_UART1_C9_LC7_SB2_XplainedPro.build.console_select=-DSerial=Serial1A -DLED_BUILTIN=PIN_PC7 -DSW_BUILTIN=PIN_PB2
-megaAVR0_noloader.menu.54_console_select.23_UART1_C9_LC7_SB2_XplainedPro=UART1 TX:PC0 RX:PC1 LED=PC7 SW=PB2 (ATmega4809 Xplained PRO)
-megaAVR0_noloader.menu.54_console_select.24_UART3_B0_LF5_SF6_Curiosity.build.console_select=-DSerial=Serial3A -DLED_BUILTIN=PIN_PF5 -DSW_BUILTIN=PIN_PF6
-megaAVR0_noloader.menu.54_console_select.24_UART3_B0_LF5_SF6_Curiosity=UART3 TX:PB0 RX:PB1 LED=PF5 SW=PF6 (ATmega4809 Curiosity Nano)
-megaAVR0_noloader.menu.90_console_baud.01_9600bps.build.console_baud=-DCONSOLE_BAUD=9600
-megaAVR0_noloader.menu.90_console_baud.01_9600bps=CONSOLE_BAUD=9600 bps (default)
-megaAVR0_noloader.menu.90_console_baud.03_38400bps.build.console_baud=-DCONSOLE_BAUD=38400
-megaAVR0_noloader.menu.90_console_baud.03_38400bps=CONSOLE_BAUD=38400 bps
-megaAVR0_noloader.menu.90_console_baud.04_57600bps.build.console_baud=-DCONSOLE_BAUD=57600
-megaAVR0_noloader.menu.90_console_baud.04_57600bps=CONSOLE_BAUD=57600 bps
-megaAVR0_noloader.menu.90_console_baud.05_115200bps.build.console_baud=-DCONSOLE_BAUD=115200
-megaAVR0_noloader.menu.90_console_baud.05_115200bps=CONSOLE_BAUD=115200 bps
-megaAVR0_noloader.menu.90_console_baud.06_230400bps.build.console_baud=-DCONSOLE_BAUD=230400
-megaAVR0_noloader.menu.90_console_baud.06_230400bps=CONSOLE_BAUD=230400 bps
-megaAVR0_noloader.menu.90_console_baud.14_500000bps.build.console_baud=-DCONSOLE_BAUD=500000
-megaAVR0_noloader.menu.90_console_baud.14_500000bps=CONSOLE_BAUD=500000 bps
-megaAVR0_noloader.menu.90_console_baud.15_1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
-megaAVR0_noloader.menu.90_console_baud.15_1000000bps=CONSOLE_BAUD=1000000 bps
-megaAVR0_noloader.menu.90_console_baud.20_separator=-
-megaAVR0_noloader.menu.90_console_baud.21_2400bps.build.console_baud=-DCONSOLE_BAUD=2400
-megaAVR0_noloader.menu.90_console_baud.21_2400bps=CONSOLE_BAUD=2400 bps (for ULP)
-# megaAVR0_noloader.menu.95_bootloader.01_woBootloader=without Bootloader
+
+megaAVR0_noloader.menu.21_resetpin.Reset.bootloader.reset_bit=11
+megaAVR0_noloader.menu.21_resetpin.Reset=Reset
+
+megaAVR0_noloader.menu.21_resetpin.Gpio.bootloader.reset_bit=01
+megaAVR0_noloader.menu.21_resetpin.Gpio=GPIO (input only)
+
+megaAVR0_noloader.menu.24_eeprom.Retained.bootloader.eesave_bit=1
+megaAVR0_noloader.menu.24_eeprom.Retained=Save guard "Retained"
+
+megaAVR0_noloader.menu.24_eeprom.Erase.bootloader.eesave_bit=0
+megaAVR0_noloader.menu.24_eeprom.Erase=Save guard "Erase"
+
+megaAVR0_noloader.menu.24_eeprom.Upload.bootloader.eepupload={bootloader.eeprom}
+megaAVR0_noloader.menu.24_eeprom.Upload.bootloader.eesave_bit=1
+megaAVR0_noloader.menu.24_eeprom.Upload=Upload ".eep" file
+
+megaAVR0_noloader.menu.26_userrow.Keep=Save guard "Retained"
+
+megaAVR0_noloader.menu.26_userrow.Upload.bootloader.urowupload={bootloader.userrow}
+megaAVR0_noloader.menu.26_userrow.Upload=Upload ".urow" file
+
+megaAVR0_noloader.menu.27_fusefile.Menu=Specify in the MENU
+
+megaAVR0_noloader.menu.27_fusefile.Upload.bootloader.fuseupload={bootloader.fusefile}
+megaAVR0_noloader.menu.27_fusefile.Upload=Upload ".fuse" file (Use with caution)
+
+megaAVR0_noloader.menu.51_buildopt.Release=Release (default)
+
+megaAVR0_noloader.menu.51_buildopt.Debug1.build.buildopt=-DDEBUG=1
+megaAVR0_noloader.menu.51_buildopt.Debug1=DEBUG=1
+
+megaAVR0_noloader.menu.51_buildopt.Debug2.build.buildopt=-DDEBUG=2
+megaAVR0_noloader.menu.51_buildopt.Debug2=DEBUG=2
+
+megaAVR0_noloader.menu.52_macroapi.Enable=Macro API Enable (default)
+
+megaAVR0_noloader.menu.52_macroapi.WoStartup.build.macroapi=-DENABLE_MACRO_API -DWOSFILES=1
+megaAVR0_noloader.menu.52_macroapi.WoStartup.compiler.ldflags=-nostartfiles
+megaAVR0_noloader.menu.52_macroapi.WoStartup=Macro API Enable without startup
+
+megaAVR0_noloader.menu.52_macroapi.Disable.build.macroapi=
+megaAVR0_noloader.menu.52_macroapi.Disable=Macro API Disable
+
+megaAVR0_noloader.menu.52_macroapi.AllDisable.build.macroapi=-DWOSFILES=1 -DWOSTDLIB=1
+megaAVR0_noloader.menu.52_macroapi.AllDisable.compiler.ldflags=-nostartfiles -nostdlib
+megaAVR0_noloader.menu.52_macroapi.AllDisable=Standard Library All Disable
+
+megaAVR0_noloader.menu.53_printf.Default=Integer Only
+
+megaAVR0_noloader.menu.53_printf.Full.build.printf=-DUSE_PRINTF_FLT
+megaAVR0_noloader.menu.53_printf.Full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
+megaAVR0_noloader.menu.53_printf.Full=Float Support
+
+megaAVR0_noloader.menu.54_console_select.UART0_A0_LA7.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA7
+megaAVR0_noloader.menu.54_console_select.UART0_A0_LA7=UART0 TX:PA0 RX:PA1 LED=PA7
+
+megaAVR0_noloader.menu.54_console_select.separator1=-
+
+megaAVR0_noloader.menu.54_console_select.UART1_C0_LA7.build.console_select=-DSerial=Serial1A -DLED_BUILTIN=PIN_PA7
+megaAVR0_noloader.menu.54_console_select.UART1_C0_LA7=UART1 TX:PC0 RX:PC1 LED=PA7
+
+megaAVR0_noloader.menu.54_console_select.UART2_F0_LA7.build.console_select=-DSerial=Serial2A -DLED_BUILTIN=PIN_PA7
+megaAVR0_noloader.menu.54_console_select.UART2_F0_LA7=UART2 TX:PF0 RX:PF1 LED=PA7
+
+megaAVR0_noloader.menu.54_console_select.UART2_F4_LA7.build.console_select=-DSerial=Serial2B -DLED_BUILTIN=PIN_PA7
+megaAVR0_noloader.menu.54_console_select.UART2_F4_LA7=UART2 TX:PF4 RX:PF5 LED=PA7 (32/48pin)
+
+megaAVR0_noloader.menu.54_console_select.separator2=-
+
+megaAVR0_noloader.menu.54_console_select.UART3_B4_LD6.build.console_select=-DSerial=Serial3B -DLED_BUILTIN=PIN_PD6
+megaAVR0_noloader.menu.54_console_select.UART3_B4_LD6=UART3 TX:PB4 RX:PB5 LED=PD6 (ATmega4809 UNO WiFi)
+
+megaAVR0_noloader.menu.54_console_select.UART3_B4_LE2_NanoEvery.build.console_select=-DSerial=Serial3B -DLED_BUILTIN=PIN_PE2
+megaAVR0_noloader.menu.54_console_select.UART3_B4_LE2_NanoEvery.upload.tool=avrdude
+megaAVR0_noloader.menu.54_console_select.UART3_B4_LE2_NanoEvery.upload.protocol=jtag2updi -e
+megaAVR0_noloader.menu.54_console_select.UART3_B4_LE2_NanoEvery.upload.speed=115200
+megaAVR0_noloader.menu.54_console_select.UART3_B4_LE2_NanoEvery.upload.use_1200bps_touch=true
+megaAVR0_noloader.menu.54_console_select.UART3_B4_LE2_NanoEvery=UART3 TX:PB4 RX:PB5 LED=PE2 (ATmega4809 Nano Every)
+
+megaAVR0_noloader.menu.54_console_select.UART1_C9_LC7_SB2_XplainedPro.build.console_select=-DSerial=Serial1A -DLED_BUILTIN=PIN_PC7 -DSW_BUILTIN=PIN_PB2
+megaAVR0_noloader.menu.54_console_select.UART1_C9_LC7_SB2_XplainedPro=UART1 TX:PC0 RX:PC1 LED=PC7 SW=PB2 (ATmega4809 Xplained PRO)
+
+megaAVR0_noloader.menu.54_console_select.UART3_B0_LF5_SF6_Curiosity.build.console_select=-DSerial=Serial3A -DLED_BUILTIN=PIN_PF5 -DSW_BUILTIN=PIN_PF6
+megaAVR0_noloader.menu.54_console_select.UART3_B0_LF5_SF6_Curiosity=UART3 TX:PB0 RX:PB1 LED=PF5 SW=PF6 (ATmega4809 Curiosity Nano)
+
+megaAVR0_noloader.menu.90_console_baud.9600bps.build.console_baud=-DCONSOLE_BAUD=9600
+megaAVR0_noloader.menu.90_console_baud.9600bps=9600 bps (default)
+
+megaAVR0_noloader.menu.90_console_baud.38400bps.build.console_baud=-DCONSOLE_BAUD=38400
+megaAVR0_noloader.menu.90_console_baud.38400bps=38400 bps
+
+megaAVR0_noloader.menu.90_console_baud.57600bps.build.console_baud=-DCONSOLE_BAUD=57600
+megaAVR0_noloader.menu.90_console_baud.57600bps=57600 bps
+
+megaAVR0_noloader.menu.90_console_baud.115200bps.build.console_baud=-DCONSOLE_BAUD=115200
+megaAVR0_noloader.menu.90_console_baud.115200bps=115200 bps
+
+megaAVR0_noloader.menu.90_console_baud.230400bps.build.console_baud=-DCONSOLE_BAUD=230400
+megaAVR0_noloader.menu.90_console_baud.230400bps=230400 bps
+
+megaAVR0_noloader.menu.90_console_baud.500000bps.build.console_baud=-DCONSOLE_BAUD=500000
+megaAVR0_noloader.menu.90_console_baud.500000bps=500000 bps
+
+megaAVR0_noloader.menu.90_console_baud.1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
+megaAVR0_noloader.menu.90_console_baud.1000000bps=1000000 bps
+
+megaAVR0_noloader.menu.90_console_baud.separator1=-
+
+megaAVR0_noloader.menu.90_console_baud.2400bps.build.console_baud=-DCONSOLE_BAUD=2400
+megaAVR0_noloader.menu.90_console_baud.2400bps=2400 bps (for ULP)
 
 
 tinyAVR012_noloader.bootloader.BODCFG=0b{bootloader.bod_lvl}{bootloader.bod_sample}{bootloader.bod_mode}00
 tinyAVR012_noloader.bootloader.BOOTSIZE=0x00
 tinyAVR012_noloader.bootloader.CODESIZE=0x00
-tinyAVR012_noloader.bootloader.OSCCFG=0b01111110
+tinyAVR012_noloader.bootloader.OSCCFG=0x7E
 tinyAVR012_noloader.bootloader.SYSCFG0=0b1101{bootloader.reset_bit}1{bootloader.eesave_bit}
-tinyAVR012_noloader.bootloader.SYSCFG1=0b11111111
-tinyAVR012_noloader.bootloader.WDTCFG=0b00000000
+tinyAVR012_noloader.bootloader.SYSCFG1=0xFF
+tinyAVR012_noloader.bootloader.WDTCFG=0x00
 tinyAVR012_noloader.bootloader.bod_lvl=000
 tinyAVR012_noloader.bootloader.bod_mode=00
 tinyAVR012_noloader.bootloader.bod_sample=0
@@ -1041,364 +1296,460 @@ tinyAVR012_noloader.build.printf=
 tinyAVR012_noloader.build.printflt=
 tinyAVR012_noloader.build.linker_script=avrxmega3_p64.x
 tinyAVR012_noloader.upload.tool=
-tinyAVR012_noloader.menu.01_variant.01_ATtiny3227.build.board=AVR_ATTINY3227
-tinyAVR012_noloader.menu.01_variant.01_ATtiny3227.build.mcu=attiny3227
-tinyAVR012_noloader.menu.01_variant.01_ATtiny3227.build.variant=tinyAVR2_24
-tinyAVR012_noloader.menu.01_variant.01_ATtiny3227.build.linker_script=avrxmega3_p128.x
-tinyAVR012_noloader.menu.01_variant.01_ATtiny3227.upload.maximum_data_size=3072
-tinyAVR012_noloader.menu.01_variant.01_ATtiny3227.upload.maximum_size=32768
-tinyAVR012_noloader.menu.01_variant.01_ATtiny3227=tinyAVR-2 24pin ATtiny3227 (32KiB+3KiB)
-tinyAVR012_noloader.menu.01_variant.02_ATtiny1627.build.board=AVR_ATTINY1627
-tinyAVR012_noloader.menu.01_variant.02_ATtiny1627.build.mcu=attiny1627
-tinyAVR012_noloader.menu.01_variant.02_ATtiny1627.build.variant=tinyAVR2_24
-tinyAVR012_noloader.menu.01_variant.02_ATtiny1627.upload.maximum_data_size=2048
-tinyAVR012_noloader.menu.01_variant.02_ATtiny1627.upload.maximum_size=16384
-tinyAVR012_noloader.menu.01_variant.02_ATtiny1627=tinyAVR-2 24pin ATtiny1627 (16KiB+2KiB)
-tinyAVR012_noloader.menu.01_variant.03_ATtiny827.build.board=AVR_ATTINY827
-tinyAVR012_noloader.menu.01_variant.03_ATtiny827.build.mcu=attiny827
-tinyAVR012_noloader.menu.01_variant.03_ATtiny827.build.variant=tinyAVR2_24
-tinyAVR012_noloader.menu.01_variant.03_ATtiny827.upload.maximum_data_size=1024
-tinyAVR012_noloader.menu.01_variant.03_ATtiny827.upload.maximum_size=8192
-tinyAVR012_noloader.menu.01_variant.03_ATtiny827=tinyAVR-2 24pin ATtiny827 (8KiB+1KiB)
-tinyAVR012_noloader.menu.01_variant.04_ATtiny427.build.board=AVR_ATTINY427
-tinyAVR012_noloader.menu.01_variant.04_ATtiny427.build.mcu=attiny427
-tinyAVR012_noloader.menu.01_variant.04_ATtiny427.build.variant=tinyAVR2_24
-tinyAVR012_noloader.menu.01_variant.04_ATtiny427.upload.maximum_data_size=512
-tinyAVR012_noloader.menu.01_variant.04_ATtiny427.upload.maximum_size=4096
-tinyAVR012_noloader.menu.01_variant.04_ATtiny427=tinyAVR-2 24pin ATtiny427 (4KiB+512B)
-tinyAVR012_noloader.menu.01_variant.10_separator=-
-tinyAVR012_noloader.menu.01_variant.11_ATtiny3226.build.board=AVR_ATTINY3226
-tinyAVR012_noloader.menu.01_variant.11_ATtiny3226.build.mcu=attiny3226
-tinyAVR012_noloader.menu.01_variant.11_ATtiny3226.build.variant=tinyAVR2_20
-tinyAVR012_noloader.menu.01_variant.11_ATtiny3226.build.linker_script=avrxmega3_p128.x
-tinyAVR012_noloader.menu.01_variant.11_ATtiny3226.upload.maximum_data_size=3072
-tinyAVR012_noloader.menu.01_variant.11_ATtiny3226.upload.maximum_size=32768
-tinyAVR012_noloader.menu.01_variant.11_ATtiny3226=tinyAVR-2 20pin ATtiny3226 (32KiB+3KiB)
-tinyAVR012_noloader.menu.01_variant.12_ATtiny1626.build.board=AVR_ATTINY1626
-tinyAVR012_noloader.menu.01_variant.12_ATtiny1626.build.mcu=attiny1626
-tinyAVR012_noloader.menu.01_variant.12_ATtiny1626.build.variant=tinyAVR2_20
-tinyAVR012_noloader.menu.01_variant.12_ATtiny1626.upload.maximum_data_size=2048
-tinyAVR012_noloader.menu.01_variant.12_ATtiny1626.upload.maximum_size=16384
-tinyAVR012_noloader.menu.01_variant.12_ATtiny1626=tinyAVR-2 20pin ATtiny1626 (16KiB+2KiB)
-tinyAVR012_noloader.menu.01_variant.13_ATtiny826.build.board=AVR_ATTINY826
-tinyAVR012_noloader.menu.01_variant.13_ATtiny826.build.mcu=attiny826
-tinyAVR012_noloader.menu.01_variant.13_ATtiny826.build.variant=tinyAVR2_20
-tinyAVR012_noloader.menu.01_variant.13_ATtiny826.upload.maximum_data_size=1024
-tinyAVR012_noloader.menu.01_variant.13_ATtiny826.upload.maximum_size=8192
-tinyAVR012_noloader.menu.01_variant.13_ATtiny826=tinyAVR-2 20pin ATtiny826 (8KiB+1KiB)
-tinyAVR012_noloader.menu.01_variant.14_ATtiny426.build.board=AVR_ATTINY426
-tinyAVR012_noloader.menu.01_variant.14_ATtiny426.build.mcu=attiny426
-tinyAVR012_noloader.menu.01_variant.14_ATtiny426.build.variant=tinyAVR2_20
-tinyAVR012_noloader.menu.01_variant.14_ATtiny426.upload.maximum_data_size=512
-tinyAVR012_noloader.menu.01_variant.14_ATtiny426.upload.maximum_size=4096
-tinyAVR012_noloader.menu.01_variant.14_ATtiny426=tinyAVR-2 20pin ATtiny426 (4KiB+512B)
-tinyAVR012_noloader.menu.01_variant.20_separator=-
-tinyAVR012_noloader.menu.01_variant.21_ATtiny3224.build.board=AVR_ATTINY3224
-tinyAVR012_noloader.menu.01_variant.21_ATtiny3224.build.mcu=attiny3224
-tinyAVR012_noloader.menu.01_variant.21_ATtiny3224.build.variant=tinyAVR2_14
-tinyAVR012_noloader.menu.01_variant.21_ATtiny3224.build.linker_script=avrxmega3_p128.x
-tinyAVR012_noloader.menu.01_variant.21_ATtiny3224.upload.maximum_data_size=3072
-tinyAVR012_noloader.menu.01_variant.21_ATtiny3224.upload.maximum_size=32768
-tinyAVR012_noloader.menu.01_variant.21_ATtiny3224=tinyAVR-2 14pin ATtiny3224 (32KiB+3KiB)
-tinyAVR012_noloader.menu.01_variant.22_ATtiny1624.build.board=AVR_ATTINY1624
-tinyAVR012_noloader.menu.01_variant.22_ATtiny1624.build.mcu=attiny1624
-tinyAVR012_noloader.menu.01_variant.22_ATtiny1624.build.variant=tinyAVR2_14
-tinyAVR012_noloader.menu.01_variant.22_ATtiny1624.upload.maximum_data_size=2048
-tinyAVR012_noloader.menu.01_variant.22_ATtiny1624.upload.maximum_size=16384
-tinyAVR012_noloader.menu.01_variant.22_ATtiny1624=tinyAVR-2 14pin ATtiny1624 (16KiB+2KiB)
-tinyAVR012_noloader.menu.01_variant.23_ATtiny824.build.board=AVR_ATTINY824
-tinyAVR012_noloader.menu.01_variant.23_ATtiny824.build.mcu=attiny824
-tinyAVR012_noloader.menu.01_variant.23_ATtiny824.build.variant=tinyAVR2_14
-tinyAVR012_noloader.menu.01_variant.23_ATtiny824.upload.maximum_data_size=1024
-tinyAVR012_noloader.menu.01_variant.23_ATtiny824.upload.maximum_size=8192
-tinyAVR012_noloader.menu.01_variant.23_ATtiny824=tinyAVR-2 14pin ATtiny824 (8KiB+1KiB)
-tinyAVR012_noloader.menu.01_variant.24_ATtiny424.build.board=AVR_ATTINY424
-tinyAVR012_noloader.menu.01_variant.24_ATtiny424.build.mcu=attiny424
-tinyAVR012_noloader.menu.01_variant.24_ATtiny424.build.variant=tinyAVR2_14
-tinyAVR012_noloader.menu.01_variant.24_ATtiny424.upload.maximum_data_size=512
-tinyAVR012_noloader.menu.01_variant.24_ATtiny424.upload.maximum_size=4096
-tinyAVR012_noloader.menu.01_variant.24_ATtiny424=tinyAVR-2 14pin ATtiny424 (4KiB+512B)
-tinyAVR012_noloader.menu.01_variant.30_separator=-
-tinyAVR012_noloader.menu.01_variant.31_ATtiny3217.build.board=AVR_ATTINY3217
-tinyAVR012_noloader.menu.01_variant.31_ATtiny3217.build.mcu=attiny3217
-tinyAVR012_noloader.menu.01_variant.31_ATtiny3217.build.variant=tinyAVR1_24
-tinyAVR012_noloader.menu.01_variant.31_ATtiny3217.build.linker_script=avrxmega3_p128.x
-tinyAVR012_noloader.menu.01_variant.31_ATtiny3217.upload.maximum_data_size=2048
-tinyAVR012_noloader.menu.01_variant.31_ATtiny3217.upload.maximum_size=32768
-tinyAVR012_noloader.menu.01_variant.31_ATtiny3217=tinyAVR-1 24pin ATtiny3217 (32KiB+2KiB)
-tinyAVR012_noloader.menu.01_variant.32_ATtiny1617.build.board=AVR_ATTINY1617
-tinyAVR012_noloader.menu.01_variant.32_ATtiny1617.build.mcu=attiny1617
-tinyAVR012_noloader.menu.01_variant.32_ATtiny1617.build.variant=tinyAVR1_24
-tinyAVR012_noloader.menu.01_variant.32_ATtiny1617.upload.maximum_data_size=2048
-tinyAVR012_noloader.menu.01_variant.32_ATtiny1617.upload.maximum_size=16384
-tinyAVR012_noloader.menu.01_variant.32_ATtiny1617=tinyAVR-1 24pin ATtiny1617 (16KiB+2KiB)
-tinyAVR012_noloader.menu.01_variant.33_ATtiny817.build.board=AVR_ATTINY817
-tinyAVR012_noloader.menu.01_variant.33_ATtiny817.build.mcu=attiny817
-tinyAVR012_noloader.menu.01_variant.33_ATtiny817.build.variant=tinyAVR1_24
-tinyAVR012_noloader.menu.01_variant.33_ATtiny817.upload.maximum_data_size=512
-tinyAVR012_noloader.menu.01_variant.33_ATtiny817.upload.maximum_size=8192
-tinyAVR012_noloader.menu.01_variant.33_ATtiny817=tinyAVR-1 24pin ATtiny817 (8KiB+512B)
-tinyAVR012_noloader.menu.01_variant.34_ATtiny417.build.board=AVR_ATTINY417
-tinyAVR012_noloader.menu.01_variant.34_ATtiny417.build.mcu=attiny417
-tinyAVR012_noloader.menu.01_variant.34_ATtiny417.build.variant=tinyAVR1_24
-tinyAVR012_noloader.menu.01_variant.34_ATtiny417.upload.maximum_data_size=256
-tinyAVR012_noloader.menu.01_variant.34_ATtiny417.upload.maximum_size=4096
-tinyAVR012_noloader.menu.01_variant.34_ATtiny417=tinyAVR-1 24pin ATtiny417 (4KiB+256B)
-tinyAVR012_noloader.menu.01_variant.40_separator=-
-tinyAVR012_noloader.menu.01_variant.41_ATtiny3216.build.board=AVR_ATTINY3216
-tinyAVR012_noloader.menu.01_variant.41_ATtiny3216.build.mcu=attiny3216
-tinyAVR012_noloader.menu.01_variant.41_ATtiny3216.build.variant=tinyAVR1_20
-tinyAVR012_noloader.menu.01_variant.41_ATtiny3216.build.linker_script=avrxmega3_p128.x
-tinyAVR012_noloader.menu.01_variant.41_ATtiny3216.upload.maximum_data_size=2048
-tinyAVR012_noloader.menu.01_variant.41_ATtiny3216.upload.maximum_size=32768
-tinyAVR012_noloader.menu.01_variant.41_ATtiny3216=tinyAVR-1 20pin ATtiny3216 (32KiB+2KiB)
-tinyAVR012_noloader.menu.01_variant.42_ATtiny1616.build.board=AVR_ATTINY1616
-tinyAVR012_noloader.menu.01_variant.42_ATtiny1616.build.mcu=attiny1616
-tinyAVR012_noloader.menu.01_variant.42_ATtiny1616.build.variant=tinyAVR1_20
-tinyAVR012_noloader.menu.01_variant.42_ATtiny1616.upload.maximum_data_size=2048
-tinyAVR012_noloader.menu.01_variant.42_ATtiny1616.upload.maximum_size=16384
-tinyAVR012_noloader.menu.01_variant.42_ATtiny1616=tinyAVR-1 20pin ATtiny1616 (16KiB+2KiB)
-tinyAVR012_noloader.menu.01_variant.43_ATtiny816.build.board=AVR_ATTINY816
-tinyAVR012_noloader.menu.01_variant.43_ATtiny816.build.mcu=attiny816
-tinyAVR012_noloader.menu.01_variant.43_ATtiny816.build.variant=tinyAVR1_20
-tinyAVR012_noloader.menu.01_variant.43_ATtiny816.upload.maximum_data_size=512
-tinyAVR012_noloader.menu.01_variant.43_ATtiny816.upload.maximum_size=8192
-tinyAVR012_noloader.menu.01_variant.43_ATtiny816=tinyAVR-1 20pin ATtiny816 (8KiB+512B)
-tinyAVR012_noloader.menu.01_variant.44_ATtiny416.build.board=AVR_ATTINY416
-tinyAVR012_noloader.menu.01_variant.44_ATtiny416.build.mcu=attiny416
-tinyAVR012_noloader.menu.01_variant.44_ATtiny416.build.variant=tinyAVR1_20
-tinyAVR012_noloader.menu.01_variant.44_ATtiny416.upload.maximum_data_size=256
-tinyAVR012_noloader.menu.01_variant.44_ATtiny416.upload.maximum_size=4096
-tinyAVR012_noloader.menu.01_variant.44_ATtiny416=tinyAVR-1 20pin ATtiny416 (4KiB+256B)
-tinyAVR012_noloader.menu.01_variant.45_ATtiny416auto.build.board=AVR_ATTINY416
-tinyAVR012_noloader.menu.01_variant.45_ATtiny416auto.build.mcu=attiny416auto
-tinyAVR012_noloader.menu.01_variant.45_ATtiny416auto.build.variant=tinyAVR1_20
-tinyAVR012_noloader.menu.01_variant.45_ATtiny416auto.upload.maximum_data_size=256
-tinyAVR012_noloader.menu.01_variant.45_ATtiny416auto.upload.maximum_size=3584
-tinyAVR012_noloader.menu.01_variant.45_ATtiny416auto=tinyAVR-1 20pin ATtiny416auto (4KiB+256B)
-tinyAVR012_noloader.menu.01_variant.50_separator=-
-tinyAVR012_noloader.menu.01_variant.51_ATtiny1614.build.board=AVR_ATTINY1614
-tinyAVR012_noloader.menu.01_variant.51_ATtiny1614.build.mcu=attiny1614
-tinyAVR012_noloader.menu.01_variant.51_ATtiny1614.build.variant=tinyAVR1_14
-tinyAVR012_noloader.menu.01_variant.51_ATtiny1614.upload.maximum_data_size=2048
-tinyAVR012_noloader.menu.01_variant.51_ATtiny1614.upload.maximum_size=16384
-tinyAVR012_noloader.menu.01_variant.51_ATtiny1614=tinyAVR-1 14pin ATtiny1614 (16KiB+2KiB)
-tinyAVR012_noloader.menu.01_variant.52_ATtiny814.build.board=AVR_ATTINY814
-tinyAVR012_noloader.menu.01_variant.52_ATtiny814.build.mcu=attiny814
-tinyAVR012_noloader.menu.01_variant.52_ATtiny814.build.variant=tinyAVR1_14
-tinyAVR012_noloader.menu.01_variant.52_ATtiny814.upload.maximum_data_size=512
-tinyAVR012_noloader.menu.01_variant.52_ATtiny814.upload.maximum_size=8192
-tinyAVR012_noloader.menu.01_variant.52_ATtiny814=tinyAVR-1 14pin ATtiny814 (8KiB+512B)
-tinyAVR012_noloader.menu.01_variant.53_ATtiny414.build.board=AVR_ATTINY414
-tinyAVR012_noloader.menu.01_variant.53_ATtiny414.build.mcu=attiny414
-tinyAVR012_noloader.menu.01_variant.53_ATtiny414.build.variant=tinyAVR1_14
-tinyAVR012_noloader.menu.01_variant.53_ATtiny414.upload.maximum_data_size=256
-tinyAVR012_noloader.menu.01_variant.53_ATtiny414.upload.maximum_size=4096
-tinyAVR012_noloader.menu.01_variant.53_ATtiny414=tinyAVR-1 14pin ATtiny414 (4KiB+256B)
-tinyAVR012_noloader.menu.01_variant.60_separator=-
-tinyAVR012_noloader.menu.01_variant.61_ATtiny412.build.board=AVR_ATTINY412
-tinyAVR012_noloader.menu.01_variant.61_ATtiny412.build.mcu=attiny412
-tinyAVR012_noloader.menu.01_variant.61_ATtiny412.build.variant=tinyAVR1_8
-tinyAVR012_noloader.menu.01_variant.61_ATtiny412.upload.maximum_data_size=256
-tinyAVR012_noloader.menu.01_variant.61_ATtiny412.upload.maximum_size=4096
-tinyAVR012_noloader.menu.01_variant.61_ATtiny412=tinyAVR-1 8pin ATtiny412 (4KiB+256B)
-tinyAVR012_noloader.menu.01_variant.62_ATtiny212.build.board=AVR_ATTINY212
-tinyAVR012_noloader.menu.01_variant.62_ATtiny212.build.mcu=attiny212
-tinyAVR012_noloader.menu.01_variant.62_ATtiny212.build.variant=tinyAVR1_8
-tinyAVR012_noloader.menu.01_variant.62_ATtiny212.upload.maximum_data_size=128
-tinyAVR012_noloader.menu.01_variant.62_ATtiny212.upload.maximum_size=2048
-tinyAVR012_noloader.menu.01_variant.62_ATtiny212=tinyAVR-1 8pin ATtiny212 (2KiB+128B)
-tinyAVR012_noloader.menu.01_variant.70_separator=-
-tinyAVR012_noloader.menu.01_variant.71_ATtiny1607.build.board=AVR_ATTINY1607
-tinyAVR012_noloader.menu.01_variant.71_ATtiny1607.build.mcu=attiny1607
-tinyAVR012_noloader.menu.01_variant.71_ATtiny1607.build.variant=tinyAVR0_24
-tinyAVR012_noloader.menu.01_variant.71_ATtiny1607.upload.maximum_data_size=1024
-tinyAVR012_noloader.menu.01_variant.71_ATtiny1607.upload.maximum_size=16384
-tinyAVR012_noloader.menu.01_variant.71_ATtiny1607=tinyAVR-0 24pin ATtiny1607 (16KiB+1KiB)
-tinyAVR012_noloader.menu.01_variant.72_ATtiny807.build.board=AVR_ATTINY807
-tinyAVR012_noloader.menu.01_variant.72_ATtiny807.build.mcu=attiny807
-tinyAVR012_noloader.menu.01_variant.72_ATtiny807.build.variant=tinyAVR0_24
-tinyAVR012_noloader.menu.01_variant.72_ATtiny807.upload.maximum_data_size=512
-tinyAVR012_noloader.menu.01_variant.72_ATtiny807.upload.maximum_size=8192
-tinyAVR012_noloader.menu.01_variant.72_ATtiny807=tinyAVR-0 24pin ATtiny807 (8KiB+512B)
-tinyAVR012_noloader.menu.01_variant.80_separator=-
-tinyAVR012_noloader.menu.01_variant.81_ATtiny1606.build.board=AVR_ATTINY1606
-tinyAVR012_noloader.menu.01_variant.81_ATtiny1606.build.mcu=attiny1606
-tinyAVR012_noloader.menu.01_variant.81_ATtiny1606.build.variant=tinyAVR0_20
-tinyAVR012_noloader.menu.01_variant.81_ATtiny1606.upload.maximum_data_size=1024
-tinyAVR012_noloader.menu.01_variant.81_ATtiny1606.upload.maximum_size=16384
-tinyAVR012_noloader.menu.01_variant.81_ATtiny1606=tinyAVR-0 20pin ATtiny1606 (16KiB+1KiB)
-tinyAVR012_noloader.menu.01_variant.82_ATtiny806.build.board=AVR_ATTINY806
-tinyAVR012_noloader.menu.01_variant.82_ATtiny806.build.mcu=attiny806
-tinyAVR012_noloader.menu.01_variant.82_ATtiny806.build.variant=tinyAVR0_20
-tinyAVR012_noloader.menu.01_variant.82_ATtiny806.upload.maximum_data_size=512
-tinyAVR012_noloader.menu.01_variant.82_ATtiny806.upload.maximum_size=8192
-tinyAVR012_noloader.menu.01_variant.82_ATtiny806=tinyAVR-0 20pin ATtiny806 (8KiB+512B)
-tinyAVR012_noloader.menu.01_variant.83_ATtiny406.build.board=AVR_ATTINY406
-tinyAVR012_noloader.menu.01_variant.83_ATtiny406.build.mcu=attiny406
-tinyAVR012_noloader.menu.01_variant.83_ATtiny406.build.variant=tinyAVR0_20
-tinyAVR012_noloader.menu.01_variant.83_ATtiny406.upload.maximum_data_size=256
-tinyAVR012_noloader.menu.01_variant.83_ATtiny406.upload.maximum_size=4096
-tinyAVR012_noloader.menu.01_variant.83_ATtiny406=tinyAVR-0 20pin ATtiny406 (4KiB+256B)
-tinyAVR012_noloader.menu.01_variant.90_separator=-
-tinyAVR012_noloader.menu.01_variant.91_ATtiny1604.build.board=AVR_ATTINY1604
-tinyAVR012_noloader.menu.01_variant.91_ATtiny1604.build.mcu=attiny1604
-tinyAVR012_noloader.menu.01_variant.91_ATtiny1604.build.variant=tinyAVR0_14
-tinyAVR012_noloader.menu.01_variant.91_ATtiny1604.upload.maximum_data_size=1024
-tinyAVR012_noloader.menu.01_variant.91_ATtiny1604.upload.maximum_size=16384
-tinyAVR012_noloader.menu.01_variant.91_ATtiny1604=tinyAVR-0 14pin ATtiny1604 (16KiB+1KiB)
-tinyAVR012_noloader.menu.01_variant.92_ATtiny804.build.board=AVR_ATTINY804
-tinyAVR012_noloader.menu.01_variant.92_ATtiny804.build.mcu=attiny804
-tinyAVR012_noloader.menu.01_variant.92_ATtiny804.build.variant=tinyAVR0_14
-tinyAVR012_noloader.menu.01_variant.92_ATtiny804.upload.maximum_data_size=512
-tinyAVR012_noloader.menu.01_variant.92_ATtiny804.upload.maximum_size=8192
-tinyAVR012_noloader.menu.01_variant.92_ATtiny804=tinyAVR-0 14pin ATtiny804 (8KiB+512B)
-tinyAVR012_noloader.menu.01_variant.93_ATtiny404.build.board=AVR_ATTINY404
-tinyAVR012_noloader.menu.01_variant.93_ATtiny404.build.mcu=attiny404
-tinyAVR012_noloader.menu.01_variant.93_ATtiny404.build.variant=tinyAVR0_14
-tinyAVR012_noloader.menu.01_variant.93_ATtiny404.upload.maximum_data_size=256
-tinyAVR012_noloader.menu.01_variant.93_ATtiny404.upload.maximum_size=4096
-tinyAVR012_noloader.menu.01_variant.93_ATtiny404=tinyAVR-0 14pin ATtiny404 (4KiB+256B)
-tinyAVR012_noloader.menu.01_variant.A0_separator=-
-tinyAVR012_noloader.menu.01_variant.A1_ATtiny402.build.board=AVR_ATTINY402
-tinyAVR012_noloader.menu.01_variant.A1_ATtiny402.build.mcu=attiny402
-tinyAVR012_noloader.menu.01_variant.A1_ATtiny402.build.variant=tinyAVR0_8
-tinyAVR012_noloader.menu.01_variant.A1_ATtiny402.upload.maximum_data_size=256
-tinyAVR012_noloader.menu.01_variant.A1_ATtiny402.upload.maximum_size=4096
-tinyAVR012_noloader.menu.01_variant.A1_ATtiny402=tinyAVR-0 8pin ATtiny402 (4KiB+256B)
-tinyAVR012_noloader.menu.01_variant.A2_ATtiny202.build.board=AVR_ATTINY202
-tinyAVR012_noloader.menu.01_variant.A2_ATtiny202.build.mcu=attiny202
-tinyAVR012_noloader.menu.01_variant.A2_ATtiny202.build.variant=tinyAVR0_8
-tinyAVR012_noloader.menu.01_variant.A2_ATtiny202.upload.maximum_data_size=128
-tinyAVR012_noloader.menu.01_variant.A2_ATtiny202.upload.maximum_size=1536
-tinyAVR012_noloader.menu.01_variant.A2_ATtiny202=tinyAVR-0 8pin ATtiny202 (2KiB+128B)
-tinyAVR012_noloader.menu.02_clock.01_20MHz.bootloader.bod_sample=0
-tinyAVR012_noloader.menu.02_clock.01_20MHz.build.f_cpu=20000000L
-tinyAVR012_noloader.menu.02_clock.01_20MHz=Internal 20 MHz
-tinyAVR012_noloader.menu.02_clock.02_10MHz.bootloader.bod_sample=0
-tinyAVR012_noloader.menu.02_clock.02_10MHz.build.f_cpu=10000000L
-tinyAVR012_noloader.menu.02_clock.02_10MHz=Internal 10 MHz
-tinyAVR012_noloader.menu.02_clock.03_5MHz.bootloader.bod_sample=0
-tinyAVR012_noloader.menu.02_clock.03_5MHz.build.f_cpu=5000000L
-tinyAVR012_noloader.menu.02_clock.03_5MHz=Internal 5 MHz
-tinyAVR012_noloader.menu.02_clock.10_separator=-
-tinyAVR012_noloader.menu.02_clock.11_16MHz.bootloader.OSCCFG=0b00000001
-tinyAVR012_noloader.menu.02_clock.11_16MHz.bootloader.bod_sample=0
-tinyAVR012_noloader.menu.02_clock.11_16MHz.build.f_cpu=16000000L
-tinyAVR012_noloader.menu.02_clock.11_16MHz=Internal 16 MHz
-tinyAVR012_noloader.menu.02_clock.12_8MHz.bootloader.OSCCFG=0b00000001
-tinyAVR012_noloader.menu.02_clock.12_8MHz.bootloader.bod_sample=0
-tinyAVR012_noloader.menu.02_clock.12_8MHz.build.f_cpu=8000000L
-tinyAVR012_noloader.menu.02_clock.12_8MHz=Internal 8 MHz
-tinyAVR012_noloader.menu.02_clock.13_4MHz.bootloader.OSCCFG=0b00000001
-tinyAVR012_noloader.menu.02_clock.13_4MHz.bootloader.bod_sample=0
-tinyAVR012_noloader.menu.02_clock.13_4MHz.build.f_cpu=4000000L
-tinyAVR012_noloader.menu.02_clock.13_4MHz=Internal 4 MHz
-tinyAVR012_noloader.menu.02_clock.15_1MHz.bootloader.OSCCFG=0b00000001
-tinyAVR012_noloader.menu.02_clock.15_1MHz.bootloader.bod_sample=0
-tinyAVR012_noloader.menu.02_clock.15_1MHz.build.f_cpu=1000000L
-tinyAVR012_noloader.menu.02_clock.15_1MHz=Internal 1 MHz
-tinyAVR012_noloader.menu.02_clock.20_separator=-
-tinyAVR012_noloader.menu.02_clock.21_2MHz.bootloader.bod_sample=0
-tinyAVR012_noloader.menu.02_clock.21_2MHz.build.f_cpu=2000000L
-tinyAVR012_noloader.menu.02_clock.21_2MHz=Internal 2 MHz
-tinyAVR012_noloader.menu.02_clock.22_32768Hz.bootloader.bod_sample=1
-tinyAVR012_noloader.menu.02_clock.22_32768Hz.build.f_cpu=32768
-tinyAVR012_noloader.menu.02_clock.22_32768Hz=Internal 32.768 kHz (ULP)
-# tinyAVR012_noloader.menu.11_BODMODE.01_disabled.bootloader.bod_mode=00
-# tinyAVR012_noloader.menu.11_BODMODE.01_disabled=BOD Disabled
-# tinyAVR012_noloader.menu.11_BODMODE.02_enabled.bootloader.bod_mode=01
-# tinyAVR012_noloader.menu.11_BODMODE.02_enabled=BOD Enabled
-# tinyAVR012_noloader.menu.11_BODMODE.03_sampled.bootloader.bod_mode=10
-# tinyAVR012_noloader.menu.11_BODMODE.03_sampled=BOD Sampled
-# tinyAVR012_noloader.menu.11_BODMODE.04_enablewait.bootloader.bod_mode=11
-# tinyAVR012_noloader.menu.11_BODMODE.04_enablewait=BOD Enabled hold wakeup
+
+tinyAVR012_noloader.menu.01_variant.ATtiny3227.build.board=AVR_ATTINY3227
+tinyAVR012_noloader.menu.01_variant.ATtiny3227.build.mcu=attiny3227
+tinyAVR012_noloader.menu.01_variant.ATtiny3227.build.variant=tinyAVR2_24
+tinyAVR012_noloader.menu.01_variant.ATtiny3227.build.linker_script=avrxmega3_p128.x
+tinyAVR012_noloader.menu.01_variant.ATtiny3227.upload.maximum_data_size=3072
+tinyAVR012_noloader.menu.01_variant.ATtiny3227.upload.maximum_size=32768
+tinyAVR012_noloader.menu.01_variant.ATtiny3227=tinyAVR-2 24pin ATtiny3227 (32KiB+3KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny1627.build.board=AVR_ATTINY1627
+tinyAVR012_noloader.menu.01_variant.ATtiny1627.build.mcu=attiny1627
+tinyAVR012_noloader.menu.01_variant.ATtiny1627.build.variant=tinyAVR2_24
+tinyAVR012_noloader.menu.01_variant.ATtiny1627.upload.maximum_data_size=2048
+tinyAVR012_noloader.menu.01_variant.ATtiny1627.upload.maximum_size=16384
+tinyAVR012_noloader.menu.01_variant.ATtiny1627=tinyAVR-2 24pin ATtiny1627 (16KiB+2KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny827.build.board=AVR_ATTINY827
+tinyAVR012_noloader.menu.01_variant.ATtiny827.build.mcu=attiny827
+tinyAVR012_noloader.menu.01_variant.ATtiny827.build.variant=tinyAVR2_24
+tinyAVR012_noloader.menu.01_variant.ATtiny827.upload.maximum_data_size=1024
+tinyAVR012_noloader.menu.01_variant.ATtiny827.upload.maximum_size=8192
+tinyAVR012_noloader.menu.01_variant.ATtiny827=tinyAVR-2 24pin ATtiny827 (8KiB+1KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny427.build.board=AVR_ATTINY427
+tinyAVR012_noloader.menu.01_variant.ATtiny427.build.mcu=attiny427
+tinyAVR012_noloader.menu.01_variant.ATtiny427.build.variant=tinyAVR2_24
+tinyAVR012_noloader.menu.01_variant.ATtiny427.upload.maximum_data_size=512
+tinyAVR012_noloader.menu.01_variant.ATtiny427.upload.maximum_size=4096
+tinyAVR012_noloader.menu.01_variant.ATtiny427=tinyAVR-2 24pin ATtiny427 (4KiB+512B)
+
+tinyAVR012_noloader.menu.01_variant.separator1=-
+
+tinyAVR012_noloader.menu.01_variant.ATtiny3226.build.board=AVR_ATTINY3226
+tinyAVR012_noloader.menu.01_variant.ATtiny3226.build.mcu=attiny3226
+tinyAVR012_noloader.menu.01_variant.ATtiny3226.build.variant=tinyAVR2_20
+tinyAVR012_noloader.menu.01_variant.ATtiny3226.build.linker_script=avrxmega3_p128.x
+tinyAVR012_noloader.menu.01_variant.ATtiny3226.upload.maximum_data_size=3072
+tinyAVR012_noloader.menu.01_variant.ATtiny3226.upload.maximum_size=32768
+tinyAVR012_noloader.menu.01_variant.ATtiny3226=tinyAVR-2 20pin ATtiny3226 (32KiB+3KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny1626.build.board=AVR_ATTINY1626
+tinyAVR012_noloader.menu.01_variant.ATtiny1626.build.mcu=attiny1626
+tinyAVR012_noloader.menu.01_variant.ATtiny1626.build.variant=tinyAVR2_20
+tinyAVR012_noloader.menu.01_variant.ATtiny1626.upload.maximum_data_size=2048
+tinyAVR012_noloader.menu.01_variant.ATtiny1626.upload.maximum_size=16384
+tinyAVR012_noloader.menu.01_variant.ATtiny1626=tinyAVR-2 20pin ATtiny1626 (16KiB+2KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny826.build.board=AVR_ATTINY826
+tinyAVR012_noloader.menu.01_variant.ATtiny826.build.mcu=attiny826
+tinyAVR012_noloader.menu.01_variant.ATtiny826.build.variant=tinyAVR2_20
+tinyAVR012_noloader.menu.01_variant.ATtiny826.upload.maximum_data_size=1024
+tinyAVR012_noloader.menu.01_variant.ATtiny826.upload.maximum_size=8192
+tinyAVR012_noloader.menu.01_variant.ATtiny826=tinyAVR-2 20pin ATtiny826 (8KiB+1KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny426.build.board=AVR_ATTINY426
+tinyAVR012_noloader.menu.01_variant.ATtiny426.build.mcu=attiny426
+tinyAVR012_noloader.menu.01_variant.ATtiny426.build.variant=tinyAVR2_20
+tinyAVR012_noloader.menu.01_variant.ATtiny426.upload.maximum_data_size=512
+tinyAVR012_noloader.menu.01_variant.ATtiny426.upload.maximum_size=4096
+tinyAVR012_noloader.menu.01_variant.ATtiny426=tinyAVR-2 20pin ATtiny426 (4KiB+512B)
+
+tinyAVR012_noloader.menu.01_variant.separator2=-
+
+tinyAVR012_noloader.menu.01_variant.ATtiny3224.build.board=AVR_ATTINY3224
+tinyAVR012_noloader.menu.01_variant.ATtiny3224.build.mcu=attiny3224
+tinyAVR012_noloader.menu.01_variant.ATtiny3224.build.variant=tinyAVR2_14
+tinyAVR012_noloader.menu.01_variant.ATtiny3224.build.linker_script=avrxmega3_p128.x
+tinyAVR012_noloader.menu.01_variant.ATtiny3224.upload.maximum_data_size=3072
+tinyAVR012_noloader.menu.01_variant.ATtiny3224.upload.maximum_size=32768
+tinyAVR012_noloader.menu.01_variant.ATtiny3224=tinyAVR-2 14pin ATtiny3224 (32KiB+3KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny1624.build.board=AVR_ATTINY1624
+tinyAVR012_noloader.menu.01_variant.ATtiny1624.build.mcu=attiny1624
+tinyAVR012_noloader.menu.01_variant.ATtiny1624.build.variant=tinyAVR2_14
+tinyAVR012_noloader.menu.01_variant.ATtiny1624.upload.maximum_data_size=2048
+tinyAVR012_noloader.menu.01_variant.ATtiny1624.upload.maximum_size=16384
+tinyAVR012_noloader.menu.01_variant.ATtiny1624=tinyAVR-2 14pin ATtiny1624 (16KiB+2KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny824.build.board=AVR_ATTINY824
+tinyAVR012_noloader.menu.01_variant.ATtiny824.build.mcu=attiny824
+tinyAVR012_noloader.menu.01_variant.ATtiny824.build.variant=tinyAVR2_14
+tinyAVR012_noloader.menu.01_variant.ATtiny824.upload.maximum_data_size=1024
+tinyAVR012_noloader.menu.01_variant.ATtiny824.upload.maximum_size=8192
+tinyAVR012_noloader.menu.01_variant.ATtiny824=tinyAVR-2 14pin ATtiny824 (8KiB+1KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny424.build.board=AVR_ATTINY424
+tinyAVR012_noloader.menu.01_variant.ATtiny424.build.mcu=attiny424
+tinyAVR012_noloader.menu.01_variant.ATtiny424.build.variant=tinyAVR2_14
+tinyAVR012_noloader.menu.01_variant.ATtiny424.upload.maximum_data_size=512
+tinyAVR012_noloader.menu.01_variant.ATtiny424.upload.maximum_size=4096
+tinyAVR012_noloader.menu.01_variant.ATtiny424=tinyAVR-2 14pin ATtiny424 (4KiB+512B)
+
+tinyAVR012_noloader.menu.01_variant.separator3=-
+
+tinyAVR012_noloader.menu.01_variant.ATtiny3217.build.board=AVR_ATTINY3217
+tinyAVR012_noloader.menu.01_variant.ATtiny3217.build.mcu=attiny3217
+tinyAVR012_noloader.menu.01_variant.ATtiny3217.build.variant=tinyAVR1_24
+tinyAVR012_noloader.menu.01_variant.ATtiny3217.build.linker_script=avrxmega3_p128.x
+tinyAVR012_noloader.menu.01_variant.ATtiny3217.upload.maximum_data_size=2048
+tinyAVR012_noloader.menu.01_variant.ATtiny3217.upload.maximum_size=32768
+tinyAVR012_noloader.menu.01_variant.ATtiny3217=tinyAVR-1 24pin ATtiny3217 (32KiB+2KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny1617.build.board=AVR_ATTINY1617
+tinyAVR012_noloader.menu.01_variant.ATtiny1617.build.mcu=attiny1617
+tinyAVR012_noloader.menu.01_variant.ATtiny1617.build.variant=tinyAVR1_24
+tinyAVR012_noloader.menu.01_variant.ATtiny1617.upload.maximum_data_size=2048
+tinyAVR012_noloader.menu.01_variant.ATtiny1617.upload.maximum_size=16384
+tinyAVR012_noloader.menu.01_variant.ATtiny1617=tinyAVR-1 24pin ATtiny1617 (16KiB+2KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny817.build.board=AVR_ATTINY817
+tinyAVR012_noloader.menu.01_variant.ATtiny817.build.mcu=attiny817
+tinyAVR012_noloader.menu.01_variant.ATtiny817.build.variant=tinyAVR1_24
+tinyAVR012_noloader.menu.01_variant.ATtiny817.upload.maximum_data_size=512
+tinyAVR012_noloader.menu.01_variant.ATtiny817.upload.maximum_size=8192
+tinyAVR012_noloader.menu.01_variant.ATtiny817=tinyAVR-1 24pin ATtiny817 (8KiB+512B)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny417.build.board=AVR_ATTINY417
+tinyAVR012_noloader.menu.01_variant.ATtiny417.build.mcu=attiny417
+tinyAVR012_noloader.menu.01_variant.ATtiny417.build.variant=tinyAVR1_24
+tinyAVR012_noloader.menu.01_variant.ATtiny417.upload.maximum_data_size=256
+tinyAVR012_noloader.menu.01_variant.ATtiny417.upload.maximum_size=4096
+tinyAVR012_noloader.menu.01_variant.ATtiny417=tinyAVR-1 24pin ATtiny417 (4KiB+256B)
+
+tinyAVR012_noloader.menu.01_variant.separator4=-
+
+tinyAVR012_noloader.menu.01_variant.ATtiny3216.build.board=AVR_ATTINY3216
+tinyAVR012_noloader.menu.01_variant.ATtiny3216.build.mcu=attiny3216
+tinyAVR012_noloader.menu.01_variant.ATtiny3216.build.variant=tinyAVR1_20
+tinyAVR012_noloader.menu.01_variant.ATtiny3216.build.linker_script=avrxmega3_p128.x
+tinyAVR012_noloader.menu.01_variant.ATtiny3216.upload.maximum_data_size=2048
+tinyAVR012_noloader.menu.01_variant.ATtiny3216.upload.maximum_size=32768
+tinyAVR012_noloader.menu.01_variant.ATtiny3216=tinyAVR-1 20pin ATtiny3216 (32KiB+2KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny1616.build.board=AVR_ATTINY1616
+tinyAVR012_noloader.menu.01_variant.ATtiny1616.build.mcu=attiny1616
+tinyAVR012_noloader.menu.01_variant.ATtiny1616.build.variant=tinyAVR1_20
+tinyAVR012_noloader.menu.01_variant.ATtiny1616.upload.maximum_data_size=2048
+tinyAVR012_noloader.menu.01_variant.ATtiny1616.upload.maximum_size=16384
+tinyAVR012_noloader.menu.01_variant.ATtiny1616=tinyAVR-1 20pin ATtiny1616 (16KiB+2KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny816.build.board=AVR_ATTINY816
+tinyAVR012_noloader.menu.01_variant.ATtiny816.build.mcu=attiny816
+tinyAVR012_noloader.menu.01_variant.ATtiny816.build.variant=tinyAVR1_20
+tinyAVR012_noloader.menu.01_variant.ATtiny816.upload.maximum_data_size=512
+tinyAVR012_noloader.menu.01_variant.ATtiny816.upload.maximum_size=8192
+tinyAVR012_noloader.menu.01_variant.ATtiny816=tinyAVR-1 20pin ATtiny816 (8KiB+512B)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny416.build.board=AVR_ATTINY416
+tinyAVR012_noloader.menu.01_variant.ATtiny416.build.mcu=attiny416
+tinyAVR012_noloader.menu.01_variant.ATtiny416.build.variant=tinyAVR1_20
+tinyAVR012_noloader.menu.01_variant.ATtiny416.upload.maximum_data_size=256
+tinyAVR012_noloader.menu.01_variant.ATtiny416.upload.maximum_size=4096
+tinyAVR012_noloader.menu.01_variant.ATtiny416=tinyAVR-1 20pin ATtiny416 (4KiB+256B)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny416auto.build.board=AVR_ATTINY416
+tinyAVR012_noloader.menu.01_variant.ATtiny416auto.build.mcu=attiny416auto
+tinyAVR012_noloader.menu.01_variant.ATtiny416auto.build.variant=tinyAVR1_20
+tinyAVR012_noloader.menu.01_variant.ATtiny416auto.upload.maximum_data_size=256
+tinyAVR012_noloader.menu.01_variant.ATtiny416auto.upload.maximum_size=3584
+tinyAVR012_noloader.menu.01_variant.ATtiny416auto=tinyAVR-1 20pin ATtiny416auto (4KiB+256B)
+
+tinyAVR012_noloader.menu.01_variant.separator5=-
+
+tinyAVR012_noloader.menu.01_variant.ATtiny1614.build.board=AVR_ATTINY1614
+tinyAVR012_noloader.menu.01_variant.ATtiny1614.build.mcu=attiny1614
+tinyAVR012_noloader.menu.01_variant.ATtiny1614.build.variant=tinyAVR1_14
+tinyAVR012_noloader.menu.01_variant.ATtiny1614.upload.maximum_data_size=2048
+tinyAVR012_noloader.menu.01_variant.ATtiny1614.upload.maximum_size=16384
+tinyAVR012_noloader.menu.01_variant.ATtiny1614=tinyAVR-1 14pin ATtiny1614 (16KiB+2KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny814.build.board=AVR_ATTINY814
+tinyAVR012_noloader.menu.01_variant.ATtiny814.build.mcu=attiny814
+tinyAVR012_noloader.menu.01_variant.ATtiny814.build.variant=tinyAVR1_14
+tinyAVR012_noloader.menu.01_variant.ATtiny814.upload.maximum_data_size=512
+tinyAVR012_noloader.menu.01_variant.ATtiny814.upload.maximum_size=8192
+tinyAVR012_noloader.menu.01_variant.ATtiny814=tinyAVR-1 14pin ATtiny814 (8KiB+512B)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny414.build.board=AVR_ATTINY414
+tinyAVR012_noloader.menu.01_variant.ATtiny414.build.mcu=attiny414
+tinyAVR012_noloader.menu.01_variant.ATtiny414.build.variant=tinyAVR1_14
+tinyAVR012_noloader.menu.01_variant.ATtiny414.upload.maximum_data_size=256
+tinyAVR012_noloader.menu.01_variant.ATtiny414.upload.maximum_size=4096
+tinyAVR012_noloader.menu.01_variant.ATtiny414=tinyAVR-1 14pin ATtiny414 (4KiB+256B)
+
+tinyAVR012_noloader.menu.01_variant.separator6=-
+
+tinyAVR012_noloader.menu.01_variant.ATtiny412.build.board=AVR_ATTINY412
+tinyAVR012_noloader.menu.01_variant.ATtiny412.build.mcu=attiny412
+tinyAVR012_noloader.menu.01_variant.ATtiny412.build.variant=tinyAVR1_8
+tinyAVR012_noloader.menu.01_variant.ATtiny412.upload.maximum_data_size=256
+tinyAVR012_noloader.menu.01_variant.ATtiny412.upload.maximum_size=4096
+tinyAVR012_noloader.menu.01_variant.ATtiny412=tinyAVR-1 8pin ATtiny412 (4KiB+256B)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny212.build.board=AVR_ATTINY212
+tinyAVR012_noloader.menu.01_variant.ATtiny212.build.mcu=attiny212
+tinyAVR012_noloader.menu.01_variant.ATtiny212.build.variant=tinyAVR1_8
+tinyAVR012_noloader.menu.01_variant.ATtiny212.upload.maximum_data_size=128
+tinyAVR012_noloader.menu.01_variant.ATtiny212.upload.maximum_size=2048
+tinyAVR012_noloader.menu.01_variant.ATtiny212=tinyAVR-1 8pin ATtiny212 (2KiB+128B)
+
+tinyAVR012_noloader.menu.01_variant.separator7=-
+
+tinyAVR012_noloader.menu.01_variant.ATtiny1607.build.board=AVR_ATTINY1607
+tinyAVR012_noloader.menu.01_variant.ATtiny1607.build.mcu=attiny1607
+tinyAVR012_noloader.menu.01_variant.ATtiny1607.build.variant=tinyAVR0_24
+tinyAVR012_noloader.menu.01_variant.ATtiny1607.upload.maximum_data_size=1024
+tinyAVR012_noloader.menu.01_variant.ATtiny1607.upload.maximum_size=16384
+tinyAVR012_noloader.menu.01_variant.ATtiny1607=tinyAVR-0 24pin ATtiny1607 (16KiB+1KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny807.build.board=AVR_ATTINY807
+tinyAVR012_noloader.menu.01_variant.ATtiny807.build.mcu=attiny807
+tinyAVR012_noloader.menu.01_variant.ATtiny807.build.variant=tinyAVR0_24
+tinyAVR012_noloader.menu.01_variant.ATtiny807.upload.maximum_data_size=512
+tinyAVR012_noloader.menu.01_variant.ATtiny807.upload.maximum_size=8192
+tinyAVR012_noloader.menu.01_variant.ATtiny807=tinyAVR-0 24pin ATtiny807 (8KiB+512B)
+
+tinyAVR012_noloader.menu.01_variant.separator8=-
+
+tinyAVR012_noloader.menu.01_variant.ATtiny1606.build.board=AVR_ATTINY1606
+tinyAVR012_noloader.menu.01_variant.ATtiny1606.build.mcu=attiny1606
+tinyAVR012_noloader.menu.01_variant.ATtiny1606.build.variant=tinyAVR0_20
+tinyAVR012_noloader.menu.01_variant.ATtiny1606.upload.maximum_data_size=1024
+tinyAVR012_noloader.menu.01_variant.ATtiny1606.upload.maximum_size=16384
+tinyAVR012_noloader.menu.01_variant.ATtiny1606=tinyAVR-0 20pin ATtiny1606 (16KiB+1KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny806.build.board=AVR_ATTINY806
+tinyAVR012_noloader.menu.01_variant.ATtiny806.build.mcu=attiny806
+tinyAVR012_noloader.menu.01_variant.ATtiny806.build.variant=tinyAVR0_20
+tinyAVR012_noloader.menu.01_variant.ATtiny806.upload.maximum_data_size=512
+tinyAVR012_noloader.menu.01_variant.ATtiny806.upload.maximum_size=8192
+tinyAVR012_noloader.menu.01_variant.ATtiny806=tinyAVR-0 20pin ATtiny806 (8KiB+512B)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny406.build.board=AVR_ATTINY406
+tinyAVR012_noloader.menu.01_variant.ATtiny406.build.mcu=attiny406
+tinyAVR012_noloader.menu.01_variant.ATtiny406.build.variant=tinyAVR0_20
+tinyAVR012_noloader.menu.01_variant.ATtiny406.upload.maximum_data_size=256
+tinyAVR012_noloader.menu.01_variant.ATtiny406.upload.maximum_size=4096
+tinyAVR012_noloader.menu.01_variant.ATtiny406=tinyAVR-0 20pin ATtiny406 (4KiB+256B)
+
+tinyAVR012_noloader.menu.01_variant.separator9=-
+
+tinyAVR012_noloader.menu.01_variant.ATtiny1604.build.board=AVR_ATTINY1604
+tinyAVR012_noloader.menu.01_variant.ATtiny1604.build.mcu=attiny1604
+tinyAVR012_noloader.menu.01_variant.ATtiny1604.build.variant=tinyAVR0_14
+tinyAVR012_noloader.menu.01_variant.ATtiny1604.upload.maximum_data_size=1024
+tinyAVR012_noloader.menu.01_variant.ATtiny1604.upload.maximum_size=16384
+tinyAVR012_noloader.menu.01_variant.ATtiny1604=tinyAVR-0 14pin ATtiny1604 (16KiB+1KiB)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny804.build.board=AVR_ATTINY804
+tinyAVR012_noloader.menu.01_variant.ATtiny804.build.mcu=attiny804
+tinyAVR012_noloader.menu.01_variant.ATtiny804.build.variant=tinyAVR0_14
+tinyAVR012_noloader.menu.01_variant.ATtiny804.upload.maximum_data_size=512
+tinyAVR012_noloader.menu.01_variant.ATtiny804.upload.maximum_size=8192
+tinyAVR012_noloader.menu.01_variant.ATtiny804=tinyAVR-0 14pin ATtiny804 (8KiB+512B)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny404.build.board=AVR_ATTINY404
+tinyAVR012_noloader.menu.01_variant.ATtiny404.build.mcu=attiny404
+tinyAVR012_noloader.menu.01_variant.ATtiny404.build.variant=tinyAVR0_14
+tinyAVR012_noloader.menu.01_variant.ATtiny404.upload.maximum_data_size=256
+tinyAVR012_noloader.menu.01_variant.ATtiny404.upload.maximum_size=4096
+tinyAVR012_noloader.menu.01_variant.ATtiny404=tinyAVR-0 14pin ATtiny404 (4KiB+256B)
+
+tinyAVR012_noloader.menu.01_variant.separatorA=-
+
+tinyAVR012_noloader.menu.01_variant.ATtiny402.build.board=AVR_ATTINY402
+tinyAVR012_noloader.menu.01_variant.ATtiny402.build.mcu=attiny402
+tinyAVR012_noloader.menu.01_variant.ATtiny402.build.variant=tinyAVR0_8
+tinyAVR012_noloader.menu.01_variant.ATtiny402.upload.maximum_data_size=256
+tinyAVR012_noloader.menu.01_variant.ATtiny402.upload.maximum_size=4096
+tinyAVR012_noloader.menu.01_variant.ATtiny402=tinyAVR-0 8pin ATtiny402 (4KiB+256B)
+
+tinyAVR012_noloader.menu.01_variant.ATtiny202.build.board=AVR_ATTINY202
+tinyAVR012_noloader.menu.01_variant.ATtiny202.build.mcu=attiny202
+tinyAVR012_noloader.menu.01_variant.ATtiny202.build.variant=tinyAVR0_8
+tinyAVR012_noloader.menu.01_variant.ATtiny202.upload.maximum_data_size=128
+tinyAVR012_noloader.menu.01_variant.ATtiny202.upload.maximum_size=1536
+tinyAVR012_noloader.menu.01_variant.ATtiny202=tinyAVR-0 8pin ATtiny202 (2KiB+128B)
+
+tinyAVR012_noloader.menu.02_clock.20MHz.bootloader.bod_sample=0
+tinyAVR012_noloader.menu.02_clock.20MHz.build.f_cpu=20000000L
+tinyAVR012_noloader.menu.02_clock.20MHz=Internal 20 MHz
+
+tinyAVR012_noloader.menu.02_clock.10MHz.bootloader.bod_sample=0
+tinyAVR012_noloader.menu.02_clock.10MHz.build.f_cpu=10000000L
+tinyAVR012_noloader.menu.02_clock.10MHz=Internal 10 MHz
+
+tinyAVR012_noloader.menu.02_clock.5MHz.bootloader.bod_sample=0
+tinyAVR012_noloader.menu.02_clock.5MHz.build.f_cpu=5000000L
+tinyAVR012_noloader.menu.02_clock.5MHz=Internal 5 MHz
+
+tinyAVR012_noloader.menu.02_clock.separator1=-
+
+tinyAVR012_noloader.menu.02_clock.16MHz.bootloader.OSCCFG=0x7D
+tinyAVR012_noloader.menu.02_clock.16MHz.bootloader.bod_sample=0
+tinyAVR012_noloader.menu.02_clock.16MHz.build.f_cpu=16000000L
+tinyAVR012_noloader.menu.02_clock.16MHz=Internal 16 MHz
+
+tinyAVR012_noloader.menu.02_clock.8MHz.bootloader.OSCCFG=0x7D
+tinyAVR012_noloader.menu.02_clock.8MHz.bootloader.bod_sample=0
+tinyAVR012_noloader.menu.02_clock.8MHz.build.f_cpu=8000000L
+tinyAVR012_noloader.menu.02_clock.8MHz=Internal 8 MHz
+
+tinyAVR012_noloader.menu.02_clock.4MHz.bootloader.OSCCFG=0x7D
+tinyAVR012_noloader.menu.02_clock.4MHz.bootloader.bod_sample=0
+tinyAVR012_noloader.menu.02_clock.4MHz.build.f_cpu=4000000L
+tinyAVR012_noloader.menu.02_clock.4MHz=Internal 4 MHz
+
+tinyAVR012_noloader.menu.02_clock.1MHz.bootloader.OSCCFG=0x7D
+tinyAVR012_noloader.menu.02_clock.1MHz.bootloader.bod_sample=0
+tinyAVR012_noloader.menu.02_clock.1MHz.build.f_cpu=1000000L
+tinyAVR012_noloader.menu.02_clock.1MHz=Internal 1 MHz
+
+tinyAVR012_noloader.menu.02_clock.separator2=-
+
+tinyAVR012_noloader.menu.02_clock.2MHz.bootloader.bod_sample=0
+tinyAVR012_noloader.menu.02_clock.2MHz.build.f_cpu=2000000L
+tinyAVR012_noloader.menu.02_clock.2MHz=Internal 2 MHz
+
+tinyAVR012_noloader.menu.02_clock.32768Hz.bootloader.bod_sample=1
+tinyAVR012_noloader.menu.02_clock.32768Hz.build.f_cpu=32768
+tinyAVR012_noloader.menu.02_clock.32768Hz=Internal 32.768 kHz (ULP)
+
+# tinyAVR012_noloader.menu.11_BODMODE.Disabled.bootloader.bod_mode=00
+# tinyAVR012_noloader.menu.11_BODMODE.Disabled=BOD Disabled
+# tinyAVR012_noloader.menu.11_BODMODE.Enabled.bootloader.bod_mode=01
+# tinyAVR012_noloader.menu.11_BODMODE.Enabled=BOD Enabled
+# tinyAVR012_noloader.menu.11_BODMODE.Sampled.bootloader.bod_mode=10
+# tinyAVR012_noloader.menu.11_BODMODE.Sampled=BOD Sampled
+# tinyAVR012_noloader.menu.11_BODMODE.EnableWait.bootloader.bod_mode=11
+# tinyAVR012_noloader.menu.11_BODMODE.EnableWait=BOD Enabled hold wakeup
+
 # tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL0.bootloader.bod_lvl=000
 # tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL0=Level 1.8V (default)
 # tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL2.bootloader.bod_lvl=010
 # tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL2=Level 2.6V
 # tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL7.bootloader.bod_lvl=111
 # tinyAVR012_noloader.menu.12_BODLVL.BODLEVEL7=Level 4.3V
-# tinyAVR012_noloader.menu.22_updipin.01_updi.bootloader.reset_bit=01
-# tinyAVR012_noloader.menu.22_updipin.01_updi=PA0 pin=UPDI (default)
-# tinyAVR012_noloader.menu.22_updipin.02_resetalt.bootloader.reset_bit=11
-# tinyAVR012_noloader.menu.22_updipin.02_resetalt=PA0 pin=UPDI and PB4 pin=RESET (tinyAVR-2 20/24pin only)
-# tinyAVR012_noloader.menu.22_updipin.10_separator=-
-# tinyAVR012_noloader.menu.22_updipin.11_reset.bootloader.reset_bit=10
-# tinyAVR012_noloader.menu.22_updipin.11_reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
-# tinyAVR012_noloader.menu.22_updipin.12_gpio.bootloader.reset_bit=00
-# tinyAVR012_noloader.menu.22_updipin.12_gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
-tinyAVR012_noloader.menu.24_eeprom.01_keep.bootloader.eesave_bit=1
-tinyAVR012_noloader.menu.24_eeprom.01_keep=Save guard "Retained"
-tinyAVR012_noloader.menu.24_eeprom.02_erase.bootloader.eesave_bit=0
-tinyAVR012_noloader.menu.24_eeprom.02_erase=Save guard "Erase"
-tinyAVR012_noloader.menu.24_eeprom.03_upload.bootloader.eepupload={bootloader.eeprom}
-tinyAVR012_noloader.menu.24_eeprom.03_upload.bootloader.eesave_bit=1
-tinyAVR012_noloader.menu.24_eeprom.03_upload=Upload ".eep" file
-tinyAVR012_noloader.menu.26_userrow.02_keep=Save guard "Retained"
-tinyAVR012_noloader.menu.26_userrow.03_upload.bootloader.urowupload={bootloader.userrow}
-tinyAVR012_noloader.menu.26_userrow.03_upload=Upload ".urow" file
-tinyAVR012_noloader.menu.27_fusefile.01_menu=Specify in the MENU
-tinyAVR012_noloader.menu.27_fusefile.03_upload.bootloader.fuseupload={bootloader.fusefile}
-tinyAVR012_noloader.menu.27_fusefile.03_upload=Upload ".fuse" file (Use with caution)
-tinyAVR012_noloader.menu.51_buildopt.01_Release=Build Release (default)
-tinyAVR012_noloader.menu.51_buildopt.02_Debug1.build.buildopt=-DDEBUG=1
-tinyAVR012_noloader.menu.51_buildopt.02_Debug1=Build DEBUG=1
-tinyAVR012_noloader.menu.51_buildopt.03_Debug2.build.buildopt=-DDEBUG=2
-tinyAVR012_noloader.menu.51_buildopt.03_Debug2=Build DEBUG=2
-tinyAVR012_noloader.menu.52_macroapi.01_Enable=Macro API Enable (default)
-tinyAVR012_noloader.menu.52_macroapi.02_Withoutboot.compiler.ldflags=-nostartfiles -DWOSFILES=1
-tinyAVR012_noloader.menu.52_macroapi.02_Withoutboot=Macro API Enable without startup
-tinyAVR012_noloader.menu.52_macroapi.03_Disable.build.macroapi=
-tinyAVR012_noloader.menu.52_macroapi.03_Disable=Macro API Disable
-tinyAVR012_noloader.menu.52_macroapi.04_AllDisable.build.macroapi=
-tinyAVR012_noloader.menu.52_macroapi.04_AllDisable.compiler.ldflags=-nostartfiles -nostdlib -DWOSFILES=1 -DWOSTDLIB=1
-tinyAVR012_noloader.menu.52_macroapi.04_AllDisable=Standard Library All Disable
-tinyAVR012_noloader.menu.53_printf.01_default=default
-tinyAVR012_noloader.menu.53_printf.02_full.build.printf=-DUSE_PRINTF_FLT
-tinyAVR012_noloader.menu.53_printf.02_full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
-tinyAVR012_noloader.menu.53_printf.02_full=Float Support
-tinyAVR012_noloader.menu.54_console_select.01_UART0_B2_LA7.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA7
-tinyAVR012_noloader.menu.54_console_select.01_UART0_B2_LA7=UART0 TX:PB2 RX:PB3 LED=PA7
-tinyAVR012_noloader.menu.54_console_select.02_UART0_A1_LA7.build.console_select=-DSerial=Serial0B -DLED_BUILTIN=PIN_PA7
-tinyAVR012_noloader.menu.54_console_select.02_UART0_A1_LA7=UART0 TX:PA1 RX:PA2 LED=PA7 (alternative)
-tinyAVR012_noloader.menu.54_console_select.03_UART1_A1_LA7.build.console_select=-DSerial=Serial1A -DLED_BUILTIN=PIN_PA7
-tinyAVR012_noloader.menu.54_console_select.03_UART1_A1_LA7=UART1 TX:PA1 RX:PA2 LED=PA7 (tinyAVR-2)
-tinyAVR012_noloader.menu.54_console_select.04_UART1_C2_LA7.build.console_select=-DSerial=Serial1B -DLED_BUILTIN=PIN_PA7
-tinyAVR012_noloader.menu.54_console_select.04_UART1_C2_LA7=UART1 TX:PC2 RX:PC1 LED=PA7 (tinyAVR-2 alt)
-tinyAVR012_noloader.menu.54_console_select.10_separator=-
-tinyAVR012_noloader.menu.54_console_select.11_UART0_A6_LA3.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA3
-tinyAVR012_noloader.menu.54_console_select.11_UART0_A6_LA3=UART0 TX:PA6 RX:PA7 LED=PA3 (8pin)
-tinyAVR012_noloader.menu.54_console_select.12_UART0_A1_LA3.build.console_select=-DSerial=Serial0B -DLED_BUILTIN=PIN_PA3
-tinyAVR012_noloader.menu.54_console_select.12_UART0_A1_LA3=UART0 TX:PA1 RX:PA2 LED=PA3 (8pin)
-tinyAVR012_noloader.menu.54_console_select.20_separator=-
-tinyAVR012_noloader.menu.54_console_select.21_UART0_A1_LB5_SB4_XplainedNano.build.console_select=-DSerial=Serial0B -DLED_BUILTIN=PIN_PB5 -DSW_BUILTIN=PIN_PB4
-tinyAVR012_noloader.menu.54_console_select.21_UART0_A1_LB5_SB4_XplainedNano=UART0 TX:PA1 RX:PA2 LED=PB5 SW=PB4 (ATtiny416 Xplained Nano)
-tinyAVR012_noloader.menu.54_console_select.22_UART0_B2_LC0_SC5_XplainedMini.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PC0 -DSW_BUILTIN=PIN_PC5
-tinyAVR012_noloader.menu.54_console_select.22_UART0_B2_LC0_SC5_XplainedMini=UART0 TX:PB2 RX:PB3 LED=PC0 SW=PC5 (ATtiny817 Xplained Mini)
-tinyAVR012_noloader.menu.54_console_select.23_UART0_B2_LC7_SB5_XplainedPro.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PC7 -DSW_BUILTIN=PIN_PB5
-tinyAVR012_noloader.menu.54_console_select.23_UART0_B2_LC7_SB5_XplainedPro=UART0 TX:PB2 RX:PB3 LED=PC7 SW=PB5 (ATtiny817/3217 Xplained Pro)
-tinyAVR012_noloader.menu.54_console_select.24_UART0_B2_LB2_SC4_Curiosity.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PB7 -DSW_BUILTIN=PIN_PC4
-tinyAVR012_noloader.menu.54_console_select.24_UART0_B2_LB2_SC4_Curiosity=UART0 TX:PB2 RX:PB3 LED=PB7 SW=PC4 (ATtiny1607/1627 Curiosity Nano)
-tinyAVR012_noloader.menu.54_console_select.25_UART0_B2_LA3_SB7_Curiosity.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA3 -DSW_BUILTIN=PIN_PB7
-tinyAVR012_noloader.menu.54_console_select.25_UART0_B2_LA3_SB7_Curiosity=UART0 TX:PB2 RX:PA3 LED=PA3 SW=PB7 (ATtiny3217 Curiosity Nano)
-tinyAVR012_noloader.menu.90_console_baud.01_9600bps.build.console_baud=-DCONSOLE_BAUD=9600
-tinyAVR012_noloader.menu.90_console_baud.01_9600bps=CONSOLE_BAUD=9600 bps (default)
-tinyAVR012_noloader.menu.90_console_baud.03_38400bps.build.console_baud=-DCONSOLE_BAUD=38400
-tinyAVR012_noloader.menu.90_console_baud.03_38400bps=CONSOLE_BAUD=38400 bps
-tinyAVR012_noloader.menu.90_console_baud.04_57600bps.build.console_baud=-DCONSOLE_BAUD=57600
-tinyAVR012_noloader.menu.90_console_baud.04_57600bps=CONSOLE_BAUD=57600 bps
-tinyAVR012_noloader.menu.90_console_baud.05_115200bps.build.console_baud=-DCONSOLE_BAUD=115200
-tinyAVR012_noloader.menu.90_console_baud.05_115200bps=CONSOLE_BAUD=115200 bps
-tinyAVR012_noloader.menu.90_console_baud.06_230400bps.build.console_baud=-DCONSOLE_BAUD=230400
-tinyAVR012_noloader.menu.90_console_baud.06_230400bps=CONSOLE_BAUD=230400 bps
-tinyAVR012_noloader.menu.90_console_baud.14_500000bps.build.console_baud=-DCONSOLE_BAUD=500000
-tinyAVR012_noloader.menu.90_console_baud.14_500000bps=CONSOLE_BAUD=500000 bps
-tinyAVR012_noloader.menu.90_console_baud.15_1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
-tinyAVR012_noloader.menu.90_console_baud.15_1000000bps=CONSOLE_BAUD=1000000 bps
-tinyAVR012_noloader.menu.90_console_baud.20_separator=-
-tinyAVR012_noloader.menu.90_console_baud.21_2400bps.build.console_baud=-DCONSOLE_BAUD=2400
-tinyAVR012_noloader.menu.90_console_baud.21_2400bps=CONSOLE_BAUD=2400 bps (for ULP)
-# tinyAVR012_noloader.menu.95_bootloader.01_woBootloader=without Bootloader
+
+# tinyAVR012_noloader.menu.22_updipin.Updi.bootloader.reset_bit=01
+# tinyAVR012_noloader.menu.22_updipin.Updi=PA0 pin=UPDI (default)
+# tinyAVR012_noloader.menu.22_updipin.ResetAlt.bootloader.reset_bit=11
+# tinyAVR012_noloader.menu.22_updipin.ResetAlt=PA0 pin=UPDI and PB4 pin=RESET (tinyAVR-2 20/24pin only)
+# tinyAVR012_noloader.menu.22_updipin.separator1=-
+# tinyAVR012_noloader.menu.22_updipin.Reset.bootloader.reset_bit=10
+# tinyAVR012_noloader.menu.22_updipin.Reset=PA0 pin=Reset (DANGER:NOT RECOMMENDED)
+# tinyAVR012_noloader.menu.22_updipin.Gpio.bootloader.reset_bit=00
+# tinyAVR012_noloader.menu.22_updipin.Gpio=PA0 pin=GPIO (DANGER:NOT RECOMMENDED)
+
+tinyAVR012_noloader.menu.24_eeprom.Retained.bootloader.eesave_bit=1
+tinyAVR012_noloader.menu.24_eeprom.Retained=Save guard "Retained"
+
+tinyAVR012_noloader.menu.24_eeprom.Erase.bootloader.eesave_bit=0
+tinyAVR012_noloader.menu.24_eeprom.Erase=Save guard "Erase"
+
+tinyAVR012_noloader.menu.24_eeprom.Upload.bootloader.eepupload={bootloader.eeprom}
+tinyAVR012_noloader.menu.24_eeprom.Upload.bootloader.eesave_bit=1
+tinyAVR012_noloader.menu.24_eeprom.Upload=Upload ".eep" file
+
+tinyAVR012_noloader.menu.26_userrow.Keep=Save guard "Retained"
+tinyAVR012_noloader.menu.26_userrow.Upload.bootloader.urowupload={bootloader.userrow}
+tinyAVR012_noloader.menu.26_userrow.Upload=Upload ".urow" file
+
+tinyAVR012_noloader.menu.27_fusefile.Menu=Specify in the MENU
+tinyAVR012_noloader.menu.27_fusefile.Upload.bootloader.fuseupload={bootloader.fusefile}
+tinyAVR012_noloader.menu.27_fusefile.Upload=Upload ".fuse" file (Use with caution)
+
+tinyAVR012_noloader.menu.51_buildopt.Release=Release (default)
+
+tinyAVR012_noloader.menu.51_buildopt.Debug1.build.buildopt=-DDEBUG=1
+tinyAVR012_noloader.menu.51_buildopt.Debug1=DEBUG=1
+
+tinyAVR012_noloader.menu.51_buildopt.Debug2.build.buildopt=-DDEBUG=2
+tinyAVR012_noloader.menu.51_buildopt.Debug2=DEBUG=2
+
+tinyAVR012_noloader.menu.52_macroapi.Enable=Macro API Enable (default)
+
+tinyAVR012_noloader.menu.52_macroapi.WoStartup.build.macroapi=-DENABLE_MACRO_API -DWOSFILES=1
+tinyAVR012_noloader.menu.52_macroapi.WoStartup.compiler.ldflags=-nostartfiles
+tinyAVR012_noloader.menu.52_macroapi.WoStartup=Macro API Enable without startup
+
+tinyAVR012_noloader.menu.52_macroapi.Disable.build.macroapi=
+tinyAVR012_noloader.menu.52_macroapi.Disable=Macro API Disable
+
+tinyAVR012_noloader.menu.52_macroapi.AllDisable.build.macroapi=-DWOSFILES=1 -DWOSTDLIB=1
+tinyAVR012_noloader.menu.52_macroapi.AllDisable.compiler.ldflags=-nostartfiles -nostdlib
+tinyAVR012_noloader.menu.52_macroapi.AllDisable=Standard Library All Disable
+
+tinyAVR012_noloader.menu.53_printf.Default=Integer Only
+
+tinyAVR012_noloader.menu.53_printf.Full=Float Support
+tinyAVR012_noloader.menu.53_printf.Full.build.printf=-DUSE_PRINTF_FLT
+tinyAVR012_noloader.menu.53_printf.Full.build.printflt=-Wl,-u,vfprintf -lprintf_flt
+
+tinyAVR012_noloader.menu.54_console_select.UART0_B2_LA7=UART0 TX:PB2 RX:PB3 LED=PA7
+tinyAVR012_noloader.menu.54_console_select.UART0_B2_LA7.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA7
+
+tinyAVR012_noloader.menu.54_console_select.UART0_A1_LA7=UART0 TX:PA1 RX:PA2 LED=PA7 (alternative)
+tinyAVR012_noloader.menu.54_console_select.UART0_A1_LA7.build.console_select=-DSerial=Serial0B -DLED_BUILTIN=PIN_PA7
+
+tinyAVR012_noloader.menu.54_console_select.UART1_A1_LA7=UART1 TX:PA1 RX:PA2 LED=PA7 (tinyAVR-2)
+tinyAVR012_noloader.menu.54_console_select.UART1_A1_LA7.build.console_select=-DSerial=Serial1A -DLED_BUILTIN=PIN_PA7
+
+tinyAVR012_noloader.menu.54_console_select.UART1_C2_LA7=UART1 TX:PC2 RX:PC1 LED=PA7 (tinyAVR-2 Alt)
+tinyAVR012_noloader.menu.54_console_select.UART1_C2_LA7.build.console_select=-DSerial=Serial1B -DLED_BUILTIN=PIN_PA7
+
+tinyAVR012_noloader.menu.54_console_select.separator1=-
+
+tinyAVR012_noloader.menu.54_console_select.UART0_A6_LA3=UART0 TX:PA6 RX:PA7 LED=PA3 (8pin)
+tinyAVR012_noloader.menu.54_console_select.UART0_A6_LA3.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA3
+
+tinyAVR012_noloader.menu.54_console_select.UART0_A1_LA3=UART0 TX:PA1 RX:PA2 LED=PA3 (8pin)
+tinyAVR012_noloader.menu.54_console_select.UART0_A1_LA3.build.console_select=-DSerial=Serial0B -DLED_BUILTIN=PIN_PA3
+
+tinyAVR012_noloader.menu.54_console_select.separator2=-
+
+tinyAVR012_noloader.menu.54_console_select.UART0_A1_LB5_SB4_XplainedNano=UART0 TX:PA1 RX:PA2 LED=PB5 SW=PB4 (ATtiny416 Xplained Nano)
+tinyAVR012_noloader.menu.54_console_select.UART0_A1_LB5_SB4_XplainedNano.build.console_select=-DSerial=Serial0B -DLED_BUILTIN=PIN_PB5 -DSW_BUILTIN=PIN_PB4
+
+tinyAVR012_noloader.menu.54_console_select.UART0_B2_LC0_SC5_XplainedMini=UART0 TX:PB2 RX:PB3 LED=PC0 SW=PC5 (ATtiny817 Xplained Mini)
+tinyAVR012_noloader.menu.54_console_select.UART0_B2_LC0_SC5_XplainedMini.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PC0 -DSW_BUILTIN=PIN_PC5
+
+tinyAVR012_noloader.menu.54_console_select.UART0_B2_LC7_SB5_XplainedPro=UART0 TX:PB2 RX:PB3 LED=PC7 SW=PB5 (ATtiny817/3217 Xplained Pro)
+tinyAVR012_noloader.menu.54_console_select.UART0_B2_LC7_SB5_XplainedPro.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PC7 -DSW_BUILTIN=PIN_PB5
+
+tinyAVR012_noloader.menu.54_console_select.UART0_B2_LB2_SC4_Curiosity=UART0 TX:PB2 RX:PB3 LED=PB7 SW=PC4 (ATtiny1607/1627 Curiosity Nano)
+tinyAVR012_noloader.menu.54_console_select.UART0_B2_LB2_SC4_Curiosity.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PB7 -DSW_BUILTIN=PIN_PC4
+
+tinyAVR012_noloader.menu.54_console_select.UART0_B2_LA3_SB7_Curiosity=UART0 TX:PB2 RX:PA3 LED=PA3 SW=PB7 (ATtiny3217 Curiosity Nano)
+tinyAVR012_noloader.menu.54_console_select.UART0_B2_LA3_SB7_Curiosity.build.console_select=-DSerial=Serial0A -DLED_BUILTIN=PIN_PA3 -DSW_BUILTIN=PIN_PB7
+
+tinyAVR012_noloader.menu.90_console_baud.9600bps=9600 bps (default)
+tinyAVR012_noloader.menu.90_console_baud.9600bps.build.console_baud=-DCONSOLE_BAUD=9600
+
+tinyAVR012_noloader.menu.90_console_baud.38400bps=38400 bps
+tinyAVR012_noloader.menu.90_console_baud.38400bps.build.console_baud=-DCONSOLE_BAUD=38400
+
+tinyAVR012_noloader.menu.90_console_baud.57600bps=57600 bps
+tinyAVR012_noloader.menu.90_console_baud.57600bps.build.console_baud=-DCONSOLE_BAUD=57600
+
+tinyAVR012_noloader.menu.90_console_baud.115200bps=115200 bps
+tinyAVR012_noloader.menu.90_console_baud.115200bps.build.console_baud=-DCONSOLE_BAUD=115200
+
+tinyAVR012_noloader.menu.90_console_baud.230400bps=230400 bps
+tinyAVR012_noloader.menu.90_console_baud.230400bps.build.console_baud=-DCONSOLE_BAUD=230400
+
+tinyAVR012_noloader.menu.90_console_baud.500000bps=500000 bps
+tinyAVR012_noloader.menu.90_console_baud.500000bps.build.console_baud=-DCONSOLE_BAUD=500000
+
+tinyAVR012_noloader.menu.90_console_baud.1000000bps=1000000 bps
+tinyAVR012_noloader.menu.90_console_baud.1000000bps.build.console_baud=-DCONSOLE_BAUD=1000000
+
+tinyAVR012_noloader.menu.90_console_baud.separator1=-
+
+tinyAVR012_noloader.menu.90_console_baud.2400bps=2400 bps (for ULP)
+tinyAVR012_noloader.menu.90_console_baud.2400bps.build.console_baud=-DCONSOLE_BAUD=2400
 
 
