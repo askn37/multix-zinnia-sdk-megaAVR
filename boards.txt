@@ -211,7 +211,7 @@ megaAVR0.menu.02_clock.2MHz.build.f_cpu=2000000L
 
 megaAVR0.menu.02_clock.32768Hz=Internal 32.768 kHz (ULP)
 megaAVR0.menu.02_clock.32768Hz.bootloader.bod_sample=1
-megaAVR0.menu.02_clock.32768Hz.build.f_cpu=32768
+megaAVR0.menu.02_clock.32768Hz.build.f_cpu=32768L
 
 # megaAVR0.menu.11_BODMODE.Disabled=BOD Disabled
 # megaAVR0.menu.11_BODMODE.Disabled.bootloader.bod_mode=00
@@ -647,7 +647,7 @@ tinyAVR012.menu.02_clock.2MHz.build.f_cpu=2000000L
 tinyAVR012.menu.02_clock.2MHz=Internal 2 MHz
 
 tinyAVR012.menu.02_clock.32768Hz.bootloader.bod_sample=1
-tinyAVR012.menu.02_clock.32768Hz.build.f_cpu=32768
+tinyAVR012.menu.02_clock.32768Hz.build.f_cpu=32768L
 tinyAVR012.menu.02_clock.32768Hz=Internal 32.768 kHz (ULP)
 
 # tinyAVR012.menu.11_BODMODE.Disabled.bootloader.bod_mode=00
@@ -869,7 +869,7 @@ tinyAVR01.menu.02_clock.2MHz.build.f_cpu=2000000L
 tinyAVR01.menu.02_clock.2MHz=Internal 2 MHz
 
 tinyAVR01.menu.02_clock.32768Hz.bootloader.bod_sample=1
-tinyAVR01.menu.02_clock.32768Hz.build.f_cpu=32768
+tinyAVR01.menu.02_clock.32768Hz.build.f_cpu=32768L
 tinyAVR01.menu.02_clock.32768Hz=Internal 32.768 kHz (ULP)
 
 # tinyAVR01.menu.11_BODMODE.Disabled.bootloader.bod_mode=00
@@ -1137,7 +1137,7 @@ megaAVR0_noloader.menu.02_clock.2MHz.build.f_cpu=2000000L
 megaAVR0_noloader.menu.02_clock.2MHz=Internal 2 MHz
 
 megaAVR0_noloader.menu.02_clock.32768Hz.bootloader.bod_sample=1
-megaAVR0_noloader.menu.02_clock.32768Hz.build.f_cpu=32768
+megaAVR0_noloader.menu.02_clock.32768Hz.build.f_cpu=32768L
 megaAVR0_noloader.menu.02_clock.32768Hz=Internal 32.768 kHz (ULP)
 
 # megaAVR0_noloader.menu.11_BODMODE.Disabled.bootloader.bod_mode=00
@@ -1615,7 +1615,7 @@ tinyAVR012_noloader.menu.02_clock.2MHz.build.f_cpu=2000000L
 tinyAVR012_noloader.menu.02_clock.2MHz=Internal 2 MHz
 
 tinyAVR012_noloader.menu.02_clock.32768Hz.bootloader.bod_sample=1
-tinyAVR012_noloader.menu.02_clock.32768Hz.build.f_cpu=32768
+tinyAVR012_noloader.menu.02_clock.32768Hz.build.f_cpu=32768L
 tinyAVR012_noloader.menu.02_clock.32768Hz=Internal 32.768 kHz (ULP)
 
 # tinyAVR012_noloader.menu.11_BODMODE.Disabled.bootloader.bod_mode=00
