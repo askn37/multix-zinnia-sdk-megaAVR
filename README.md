@@ -353,9 +353,10 @@ UPDI端子の機能を無効化せずに（RESET起動式の）ブートロー�
 
 \* 既に既知の対象全品種に対応済なので`atpack`と共通submodule以外の火急の更新予定はない。
 
-- 0.4.10 (26/09/13)
+- 0.4.10 (26/09/17)
   - (core) 機能追加: `api/CVT.h`
   - (board) IDE2.x 修正
+  - (variants) Refactoring
 
 - 0.4.9 (26/09/07)
   - `boards.txt`と`platform.txt`の改修（FUSE周り）
