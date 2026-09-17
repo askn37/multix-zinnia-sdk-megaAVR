@@ -13,7 +13,6 @@
 #if defined(ENABLE_MACRO_API) && !defined(DISABLE_MACRO_API) && (__AVR_ARCH__ >= 102)
 #include <avr/io.h>
 #define AVR_MEGAAVR_LIKE_MODERNAVR
-#define AVR_MODERNAVR_LIKE_MEGAAVR
 
 #define __MSS_CLKCTRL_CLKSEL_OSCX__
 #define __MSS_CLKCTRL_PDIV_DIVN__
